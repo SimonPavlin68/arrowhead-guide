@@ -1,0 +1,11 @@
+/* Skrij original SVG */
+.md-select > button.md-icon svg {
+    display: none;
+}
+
+/* Dodaj emoji zastavo kot pseudo-element */
+.md-select > button.md-icon::before {
+    content: var(--emoji, "🌐");
+    font-size: 1.2em;
+    margin-right: 4px;
+}

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1900 750" background="aliceblue">
+
+	<title>Archer</title>
+
+	<defs>
+		<marker id="startarrow" markerWidth="10" markerHeight="7" 
+		refX="0" refY="3.5" orient="auto">
+		  <polygon points="10 0, 10 7, 0 3.5" />
+		</marker>
+		<marker id="endarrow" markerWidth="10" markerHeight="7" 
+		refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+		    <polygon points="0 0, 10 3.5, 0 7" />
+		</marker>
+
+		<g id="target" stroke-width="0.5" fill="none">
+		  <circle r="50" stroke="black" fill="black" />
+		  <circle r="40" stroke="white" stroke-width="1px" />
+		  <circle r="30" stroke="white" stroke-width="1px" />
+		  <circle r="20" stroke="white" stroke-width="1px" />
+		  <circle r="10" stroke="black" fill="yellow" />
+		  <circle r="5"  stroke="black" fill="none" stroke-width="1px" />
+		  <line x1="-2" y1="0" x2="2" y2="0" stroke="black" stroke-width="1px" />
+		  <line x1="0" y1="-2" x2="0" y2="2" stroke="black" stroke-width="1px" />
+		</g>
+
+	  <mask id="mask" x="0" y="0" width="80" height="30">
+		<rect width="50" height="50" fill="#fff"/>
+		<circle cx="25" cy="25" r="20" />
+	  </mask>
+		<g id="sight">
+		  <rect x="0" y="0" width="50" height="50" mask="url(#mask)" />    
+		  <circle r="20" cx="25" cy="25" stroke="red" stroke-width="2" fill="none" />
+		  <circle r="4" cx="25" cy="25" stroke="red" fill="red" />
+		  <rect x="0" y="0" width="50" height="50" fill="none" stroke="red" stroke-width="2px" />
+		</g>
+  	</defs>
+	
+// kotiranje
+	<g fill="black" stroke="black" stroke-width="2px" font-family="Comic Sans MS" font-size="30px">
+		// a
+		<g opacity="0">
+			<path d="M643,170 L643, 100" />
+			<path d="M253,170 L253, 100" />
+			<path d="M253,115 L643, 115" marker-end="url(#endarrow)" marker-start="url(#startarrow)"/>
+			<animate id="animation1" attributeName="opacity" from="0" to="1" dur="2s" begin="1s" fill="freeze" />
+		</g>
+		<text x="420" y="100" opacity="0">a
+			<animate id="animation2" attributeName="opacity" from="0" to="1" dur="2s" begin="animation1.end" fill="freeze" />
+		</text>
+		// b
+		<g opacity="0">
+			<path d="M643,155 L673, 155" />
+			<path d="M643,169 L673, 169" />
+			<path d="M663,115 L663, 155" marker-end="url(#endarrow)"/>
+			<path d="M663,210 L663, 169" marker-end="url(#endarrow)"/>
+			<animate id="animation3" attributeName="opacity" from="0" to="1" dur="2s" begin="animation2.end" fill="freeze" />	
+		</g>
+		<text x="683" y="145" opacity="0">b
+			<animate id="animation4" attributeName="opacity" from="0" to="1" dur="2s" begin="animation3.end" fill="freeze" />
+		</text>
+
+		<use xlink:href="#target" transform="translate(1800,170)" opacity="0">
+			<animate id="animation5" attributeName="opacity" from="0" to="1" dur="2s" begin="animation4.end" fill="freeze" />
+		</use>
+
+		// C
+		<g opacity="0">
+			<path d="M253,700 L253, 770" />
+			<path d="M1800,700 L1800, 770" />
+			<path d="M253,750 L1800, 750" marker-end="url(#endarrow)" marker-start="url(#startarrow)"/>
+			<animate id="animation6" attributeName="opacity" from="0" to="1" dur="2s" begin="animation5.end" fill="freeze" />
+		</g>
+		<text x="1000" y="720" opacity="0">C
+			<animate id="animation7" attributeName="opacity" from="0" to="1" dur="2s" begin="animation6.end" fill="freeze" />
+		</text>
+
+		// D
+		<g opacity="0">
+ 			<path d="M253,168 L1874,171" />
+			<path d="M253,168 L1875,119" />
+			<path d="M1865,80 L1865, 120" marker-end="url(#endarrow)"/>
+			<path d="M1865,210 L1865, 170" marker-end="url(#endarrow)"/>
+			<animate id="animation9" attributeName="opacity" from="0" to="1" dur="2s" begin="animation8.end" fill="freeze" />	
+		</g>
+		<text x="1860" y="155" opacity="0">D
+			<animate id="animation10" attributeName="opacity" from="0" to="1" dur="2s" begin="animation9.end" fill="freeze" />
+		</text>
+		<g transform="translate(1500,-100)">
+			<use xlink:href="#sight" id="Sight" opacity="0">
+				<animateTransform
+					xlink:href="#Sight"
+					attributeName="transform"
+					type="translate"
+					from="0,0"
+					to="275,221"
+					dur="2s"
+					begin="animation7.end" 
+					fill="freeze"
+					repeacount="indefinite"/>
+				<animate id="animation8" attributeName="opacity" from="0" to="1" dur="2s" begin="animation7.end" fill="freeze" />
+			</use>
+		</g>
+	</g>
+	<g fill="blue" stroke="blue">
+		// glava
+		<circle cx="210" cy="170" r="45"/>
+		// lok
+		<path d="M505,36 Q616,326 404,574" stroke-width="12px" fill="transparent" stroke-linecap="round" />
+		<line x1="540" y1="183" x2="643" y2="183" stroke-width="12px" />
+		<line x1="643" y1="153" x2="643" y2="213" stroke-width="12px" stroke-linecap="round" />
+		// roke	
+		<line x1="89" y1="243" x2="552" y2="243" stroke-width="45px" stroke-linecap="round" />
+		// trup
+		<rect x="194" y="256" width="109" height="150" />
+
+		// leva noga
+		<path d="M194,449 L254,449 L81,622 L81,563 z" stroke-width="1px" />
+		<line x1="102" y1="580" x2="102" y2="710" stroke-width="43px" stroke-linecap="round" />
+
+		// desna noga
+		<path d="M255,449 L315,449 L561,695 L532,726 z" stroke-width="1px" />
+		<circle cx="550" cy="714" r="22" />
+	</g>
+</svg>
