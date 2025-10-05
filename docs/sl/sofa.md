@@ -1,5 +1,5 @@
 # Kavč
-Na tekmi ni opravičila: "Narobe sem nastavil merilno", "Izgubil sem tab" ali kaj podobnega. Vse to je potrebno urediti že prej. Nabolje doma v miru. Jaz sem to vedno počel v dnevni sobi za klubsko mizico, v miru na toplem, ob zvokih prijetne glasbe, sedeč na kavču. Ko zmagaš za krog ali dva, je to mogoče ravno zaradi dobre priprave doma. Vedno sem zagovarjal tezo, da se tekma lahko zmaga "na kavču".
+Na tekmi ni opravičila: "Narobe sem nastavil merilno", "Izgubil sem tab" ali kaj podobnega. Vse to je najbolje v miru doma urediti že prej. Jaz sem to vedno počel v dnevni sobi za klubsko mizico, v miru na toplem, ob zvokih prijetne glasbe, sedeč na kavču. Ko zmagaš za krog ali dva, je to mogoče ravno zaradi dobre priprave doma. Vedno sem zagovarjal tezo, da se tekma lahko zmaga "na kavču".
 # Skala na merilni napravi
 Priprava skale na merilni napravi je postopek dolg nekaj dni, tudi en teden.
 Moj postopek je sledeč:
@@ -7,11 +7,9 @@ Moj postopek je sledeč:
 + Naslednji korak je tako imenovano nastreljevane. Postavim se na 10m, streljam in premikam merilno napravo, da dobim zadetke točne po višini. Nato narahlo zarišem črtico in se premaknem za pet ali deset metrov nazaj. Pri nastreljevanju, e predpogoj, da imamo kar se da uglašen lok. Prav tako je potrebno nastreljevati pri ustreznih vremenskih pogojih (veter, svetloba). Pa seveda na ravnem terenu. Če nimamo "dneva za streljanje", ne nastreljuemo!
  Postopek ponavljam, dokler nimam zarisanih vseh željenih razdalj po pet metrov. Jaz običajno cel postopek nastreljevanja ponovljam več dni.
 + Preden se lotim končnega risanja skale, preverim, da ni na skali kakšnih anomalij. To pomeni, da se razdalja med črticami počasi veča z razdaljo. Če ni tako, je nekaj narobe z nastreljevanjem ali uglasitvijo loka.
-+ Ko sem z nastreljevanjem zadovoljen, grem spet na kavč. Vzamem svinčnik in skalo izrišem tako da bo med streljanem enoumno in pregledno katero razdaljo želim nastaviti. Jaz sem si za risanje skale pripravil kar nekakšno šablono.
++ Ko sem z nastreljevanjem zadovoljen, grem spet na kavč. Vzamem svinčnik in skalo izrišem tako da bo med streljanem enoumno in pregledno katero razdaljo želim nastaviti. Jaz sem si za risanje skale pripravil kar nekakšno šablono. Ko sem z narisanim zadovoljen vse skupaj polakiram s prozornim lakom za nohte, zaradi zaščite pred dežjem, umazanijo in obrabo.
 # Rezervna oprema
 Vedno imej v rezervi, tab, šlingo, tetivo... Priporočljivo je ti s seboj škatlico z drobnarijami in orodjem.
-# Ostala oprema
-Ker se tekmovanje Arrowhed odvija po terenu, kakšna tarča zna biti precej daleč od kovčka z opremo, kateri po navadi ostane v avtu, je dobro s seboj imeti torbo oziroma nahrbtnik, po možnosti nahrbtnik kateri na katerem se da sedeti....
 
  
  
