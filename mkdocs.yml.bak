@@ -30,7 +30,7 @@ nav:
 plugins:
   - search
   # - inline-svg-mod
-  # - include-markdown
+  - include-markdown
 
 
 extra_css:

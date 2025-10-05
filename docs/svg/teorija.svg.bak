@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 400">
+	<rect x="0" y="0" width="400" height="300" fill="none" />
+	<g font-family="Comic Sans MS" font-size="30px" fill="blue" >
+	<!--text x="100" y="100">Izrek o podobnih trikotnikih:</text-->
+
+	<line x1="100" y1="250" x2="800" y2="50" stroke="gray" stroke-width="2" />
+	<line x1="100" y1="250" x2="400" y2="250" stroke="gray" stroke-width="2">
+		<animate attributeName="stroke" values="gray;blue;gray" begin="animation1.begin" dur="2s" fill="freeze" />
+		<animate attributeName="stroke-width" values="2;5;2" begin="animation1.begin" dur="2s" fill="freeze" />
+		<animate attributeName="stroke"	values="gray;blue;gray"	begin="animation8.end" dur="2s"	fill="freeze" />
+		<animate attributeName="stroke-width" values="2;5;2" begin="animation8.end"	dur="2s" fill="freeze" />
+	</line>
+	<line x1="400" y1="250" x2="800" y2="250" stroke="gray" stroke-width="2">
+		<animate attributeName="stroke"	values="gray;blue;gray"	begin="animation8.end" dur="2s" fill="freeze" />
+		<animate attributeName="stroke-width" values="2;5;2" begin="animation8.end"	dur="2s" fill="freeze" />
+	</line>
+	<line x1="800" y1="50" x2="800" y2="250" stroke="gray" stroke-width="2">
+		<animate attributeName="stroke" values="gray;red;gray" begin="animation10.end" dur="2s" fill="freeze" />
+		<animate attributeName="stroke-width" values="2;5;2" begin="animation10.end" dur="2s" fill="freeze" />
+	</line>
+	<line x1="400" y1="164" x2="400" y2="250" stroke="gray" stroke-width="2">
+		<animate attributeName="stroke"	values="gray;red;gray" begin="animation6.end" dur="2s" fill="freeze" />
+		<animate attributeName="stroke-width" values="2;5;2" begin="animation6.end"	dur="2s" fill="freeze" />
+	</line>
+	<circle cx="100" cy="250" r="5" fill="gray" />
+	<circle cx="800" cy="50" r="5" fill="gray" />
+	<circle cx="800" cy="250" r="5" fill="gray" />
+	<circle cx="400" cy="164" r="5" fill="gray" />
+	<circle cx="400" cy="250" r="5" fill="gray" />
+
+	<text x="260" y="240" id="a" opacity="0">a
+		<animate id="animation1" attributeName="opacity" from="0" to="1" dur="1.5s" begin="1s;animation11.end+7s" fill="freeze" />
+		<animate attributeName="opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+	</text>
+	<text x="410" y="215" id="b" fill="red" opacity="0">b
+		<animate id="animation2" attributeName="opacity" from="0" to="1" dur="1.5s" begin="animation6.end" fill="freeze" />
+		<animate attributeName="opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+	</text>
+	<text x="460" y="280" id="c" opacity="0">C
+		<animate id="animation3" attributeName="opacity" from="0" to="1" dur="1.5s" begin="animation8.end" fill="freeze" />
+		<animate attributeName="opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+	</text>
+	<text x="810" y="160" id="d" fill="red" opacity="0" >D
+		<animate id="animation4" attributeName="opacity" from="0" to="1" dur="1.5s" begin="animation10.end"	fill="freeze" />
+		<animate attributeName="opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</text>
+	<text x="200" y="100" id="formula1">
+		<tspan fill-opacity="0">a
+			<animate id="animation5" attributeName="fill-opacity" from="0" to="1" dur="1.5s" begin="animation1.begin" fill="freeze" />
+			<animate attributeName="fill-opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</tspan>
+		<tspan fill-opacity="0" fill="black">:
+			<animate id="animation6" attributeName="fill-opacity" from="0" to="1" dur="1.5s" begin="animation1.end"	fill="freeze" />
+			<animate attributeName="fill-opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</tspan>
+		<tspan fill-opacity="0" fill="red">b
+			<animate id="animation7" attributeName="fill-opacity" from="0" to="1" dur="1.5s" begin="animation6.end" fill="freeze" />
+			<animate attributeName="fill-opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</tspan>
+		<tspan fill-opacity="0" fill="black">=
+			<animate id="animation8" attributeName="fill-opacity" from="0" to="1" dur="1.5s" begin="animation7.end" fill="freeze" />
+			<animate attributeName="fill-opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</tspan>
+		<tspan fill-opacity="0">C
+			<animate id="animation9" attributeName="fill-opacity" from="0" to="1" dur="1.5s" begin="animation8.end" fill="freeze" />
+			<animate attributeName="fill-opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</tspan>
+		<tspan fill-opacity="0" fill="black">:
+			<animate id="animation10" attributeName="fill-opacity" from="0" to="1" dur="1.5s" begin="animation9.end" fill="freeze" />
+			<animate attributeName="fill-opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</tspan>
+		<tspan fill-opacity="0" fill="red">D
+			<animate id="animation11" attributeName="fill-opacity" from="0" to="1" dur="1.5s" begin="animation10.end" fill="freeze" />
+			<animate attributeName="fill-opacity" from="1" to="0" dur="0.5s" begin="animation11.end+5s" fill="freeze" />
+		</tspan>
+	</text>
+	</g>
+</svg>
