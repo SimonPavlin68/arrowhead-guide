@@ -8,77 +8,79 @@
      onmousemove="Drag(evt)"
      onmouseup="Drop(evt)">
 
-  <title>Arrowhead</title>
-  <style>
-    .merek { cursor: pointer; }
-  </style>
+	<title>Arrowhead</title>
+	<style>
+		.merek { cursor: pointer; }
+	</style>
 
-  <defs>
-    <mask id="mask" x="0" y="0" width="30" height="30">
-      <rect width="99" height="99" fill="#fff"/>
-      <circle cx="50" cy="50" r="40" />
-    </mask>
-    <g id="target" stroke-width="0.5" fill="none">
-      <circle r="100" stroke="black" fill="black" stroke-width="0.5px" />
-      <circle r="80" stroke="white" stroke-width="0.5px" />
-      <circle r="60" stroke="white" stroke-width="0.5px" />
-      <circle r="40" stroke="white" stroke-width="0.5px" />
-      <circle r="20" stroke="black" fill="yellow" />
-      <circle r="10" stroke="black" fill="none" stroke-width="0.5px" />
-      <line x1="-4" y1="0" x2="4" y2="0" stroke="black" stroke-width="0.5px" />
-      <line x1="0" y1="-4" x2="0" y2="4" stroke="black" stroke-width="0.5px" />
-    </g>
+	<defs>
+		<mask id="mask" x="0" y="0" width="30" height="30">
+			<rect width="99" height="99" fill="#fff"/>
+			<circle cx="50" cy="50" r="40" />
+		</mask>
+		<g id="target" stroke-width="0.5" fill="none">
+			<circle r="100" stroke="black" fill="black" stroke-width="0.5px" />
+			<circle r="80" stroke="white" stroke-width="0.5px" />
+			<circle r="60" stroke="white" stroke-width="0.5px" />
+			<circle r="40" stroke="white" stroke-width="0.5px" />
+			<circle r="20" stroke="black" fill="yellow" />
+			<circle r="10" stroke="black" fill="none" stroke-width="0.5px" />
+			<line x1="-4" y1="0" x2="4" y2="0" stroke="black" stroke-width="0.5px" />
+			<line x1="0" y1="-4" x2="0" y2="4" stroke="black" stroke-width="0.5px" />
+		</g>
 
-    <g id="sight" class="merek">
-      <rect x="0" y="0" width="99" height="99" mask="url(#mask)" />
-      <circle r="40" cx="50" cy="50" stroke="red" stroke-width="2" fill="none" />
-      <circle r="8" cx="50" cy="50" stroke="red" fill="red" />
-      <rect x="0" y="0" width="99" height="99" fill="none" stroke="red" stroke-width="1px" />
-    </g>
-  </defs>
+		<g id="sight" class="merek">
+			<rect x="0" y="0" width="99" height="99" mask="url(#mask)" />
+			<circle r="40" cx="50" cy="50" stroke="red" stroke-width="2" fill="none" />
+			<circle r="8" cx="50" cy="50" stroke="red" fill="red" />
+			<rect x="0" y="0" width="99" height="99" fill="none" stroke="red" stroke-width="1px" />
+		</g>
+	</defs>
 
-  <rect id="BackDrop" x="-10%" y="-10%" width="110%" height="110%" pointer-events="all" fill="AliceBlue" />
-  <text x="550" y="50" font-family="Comic Sans MS" font-size="16px">
-    V prikazanem primeru pokrije merek točno polovico tarče na razdalji 20m.
-  </text>
-  <text x="550" y="80" font-family="Comic Sans MS" font-size="16px">
-    Merek je premakljiv, zagrabi ga z miško in poskusi prekriti tarčo.
-  </text>
-  <text x="550" y="115" font-family="Comic Sans MS" font-size="16px" fill="blue">
-    Razdalje se naključno preračunajo, za nov izračun span ponovno naloži stran.
-  </text>
+	<rect id="BackDrop" x="-10%" y="-10%" width="110%" height="110%" pointer-events="all" fill="AliceBlue" />
+	<text x="550" y="50" font-family="Comic Sans MS" font-size="16px">
+		V prikazanem primeru pokrije merek točno polovico tarče na razdalji 20m.
+	</text>
+	<text x="550" y="80" font-family="Comic Sans MS" font-size="16px">
+		Merek je premakljiv, zagrabi ga z miško in poskusi prekriti tarčo.
+	</text>
+	<text x="550" y="115" font-family="Comic Sans MS" font-size="16px" fill="blue">
+		Razdalje se naključno preračunajo, za nov izračun span ponovno naloži stran.
+	</text>
 
-  <g transform="translate(200,120)" stroke-width="0.5" fill="none">
-    <g id="Target1" transform="scale(1)">  <!-- direktna končna transformacija -->
-      <use xlink:href="#target" />
-      <rect x="80" y="80" width="40" height="40" rx="5px" ry="5px" fill="red" stroke="black" stroke-width="1px"/>
-      <text id="Number1" x="100" y="102" dominant-baseline="middle" text-anchor="middle" fill="black" font-size="28px">1</text>
-    </g>
-  </g>
+	<g transform="translate(200,120)" stroke-width="0.5" fill="none">
+		<g id="Target1" transform="scale(1)">
+			<!-- direktna končna transformacija -->
+			<use xlink:href="#target" />
+			<rect x="80" y="80" width="40" height="40" rx="5px" ry="5px" fill="red" stroke="black" stroke-width="1px"/>
+			<text id="Number1" x="100" y="102" dominant-baseline="middle" text-anchor="middle" fill="black" font-size="28px">1</text>
+		</g>
+	</g>
 
-  <g transform="translate(200,370)" stroke-width="0.5" fill="none">
-    <g id="Target2" transform="scale(1)">
-      <use xlink:href="#target" />
-      <rect x="80" y="80" width="40" height="40" rx="5px" ry="5px" fill="red" stroke="black" stroke-width="1px"/>
-      <text id="Number2" x="100" y="102" dominant-baseline="middle" text-anchor="middle" fill="black" font-size="28px">2</text>
-    </g>
-  </g>
+	<g transform="translate(200,370)" stroke-width="0.5" fill="none">
+		<g id="Target2" transform="scale(1)">
+			<use xlink:href="#target" />
+			<rect x="80" y="80" width="40" height="40" rx="5px" ry="5px" fill="red" stroke="black" stroke-width="1px"/>
+			<text id="Number2" x="100" y="102" dominant-baseline="middle" text-anchor="middle" fill="black" font-size="28px">2</text>
+		</g>
+	</g>
 
-  <g transform="translate(200,620)" stroke-width="0.5" fill="none">
-    <g id="Target3" transform="scale(1)">
-      <use xlink:href="#target" />
-      <rect x="80" y="80" width="40" height="40" rx="5px" ry="5px" fill="red" stroke="black" stroke-width="1px"/>
-      <text id="Number3" x="100" y="102" dominant-baseline="middle" text-anchor="middle" fill="black" font-size="28px">3</text>
-    </g>
-  </g>
+	<g transform="translate(200,620)" stroke-width="0.5" fill="none">
+		<g id="Target3" transform="scale(1)">
+			<use xlink:href="#target" />
+			<rect x="80" y="80" width="40" height="40" rx="5px" ry="5px" fill="red" stroke="black" stroke-width="1px"/>
+			<text id="Number3" x="100" y="102" dominant-baseline="middle" text-anchor="middle" fill="black" font-size="28px">3</text>
+		</g>
+	</g>
 
-  <use xlink:href="#sight" id="Sign" transform="translate(400,100)" />
+	<use xlink:href="#sight" id="Sign" transform="translate(400,100)" />
 
-  <text id="razdalja1" x="500" y="500" font-family="Comic Sans MS" font-size="21px">prva tarča:</text>
-  <text id="razdalja2" x="500" y="550" font-family="Comic Sans MS" font-size="21px">druga tarča:</text>
-  <text id="razdalja3" x="500" y="600" font-family="Comic Sans MS" font-size="21px">tretja tarča:</text>
+	<text id="razdalja1" x="500" y="500" font-family="Comic Sans MS" font-size="21px">prva tarča:</text>
+	<text id="razdalja2" x="500" y="550" font-family="Comic Sans MS" font-size="21px">druga tarča:</text>
+	<text id="razdalja3" x="500" y="600" font-family="Comic Sans MS" font-size="21px">tretja tarča:</text>
 
-  <script><![CDATA[
+	<script>
+		<![CDATA[
     var SVGDocument = null;
     var SVGRoot = null;
     var TrueCoords = null;
@@ -164,6 +166,7 @@
       TrueCoords.x = (evt.clientX - translation.x) / newScale;
       TrueCoords.y = (evt.clientY - translation.y) / newScale;
     }
-  ]]></script>
+  ]]>
+	</script>
 
 </svg>

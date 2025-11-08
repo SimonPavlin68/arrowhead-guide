@@ -3,6 +3,7 @@ Na tekmi ni opravičila: "Narobe sem nastavil merilno", "Izgubil sem tab" ali ka
 # Skala na merilni napravi
 Priprava skale na merilni napravi je postopek dolg nekaj dni, tudi en teden.
 Moj postopek je sledeč:
+
 + Najprej nalepim nov bel trakec na merilno napravo. Jaz vzamem vedno samolepilne etikete, tiste za na šolske knjige. Trakec ustrezo odrežem, tako da izkoristim maksimalni prostor kar ga omogoča merilna naprava, da imam za risanje čim več prostora.
 + Naslednji korak je tako imenovano nastreljevane. Postavim se na 10m, streljam in premikam merilno napravo, da dobim zadetke točne po višini. Nato narahlo zarišem črtico in se premaknem za pet ali deset metrov nazaj. Pri nastreljevanju, e predpogoj, da imamo kar se da uglašen lok. Prav tako je potrebno nastreljevati pri ustreznih vremenskih pogojih (veter, svetloba). Pa seveda na ravnem terenu. Če nimamo "dneva za streljanje", ne nastreljuemo!
  Postopek ponavljam, dokler nimam zarisanih vseh željenih razdalj po pet metrov. Jaz običajno cel postopek nastreljevanja ponovljam več dni.

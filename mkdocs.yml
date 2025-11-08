@@ -12,9 +12,11 @@ theme:
 
 nav:
   - En:
-      - Arrowhead Shooting Guide: en/index.md
-  #    - Equipment: en/getting-started.md
-  #    - Shooting Technique: en/techniques.md
+      - Instead of an introduction: en/getting-started.md
+      - Distances: en/distances.md
+      - Distance Estimation: en/estimation.md
+      - Oblique throw: en/graph.md
+      - Sofa: en/sofa.md
   - Sl:
       - Namesto uvoda: sl/getting-started.md
       - Razdalje: sl/distances.md
@@ -33,7 +35,6 @@ plugins:
   # - inline-svg-mod
   # - include-markdown
 
-
 extra_css:
   - stylesheets/extra.css
   
@@ -41,6 +42,8 @@ extra_javascript:
   - js/language_switcher.js
 
 extra:
+  search:
+    language: en
   alternate:
     - name: 🇬🇧 English
       link: /en/
