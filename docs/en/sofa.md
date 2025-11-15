@@ -12,4 +12,6 @@ I repeat the process until I have drawn all the desired distances of five meters
 + When I am satisfied with the shooting, I go back to the couch. I take a pencil and draw the rock so that it will be clear and unambiguous during the shooting what distance I want to set. I prepared a kind of template for drawing the rock. When I am satisfied with the drawing, I polish everything with clear nail polish to protect it from rain, dirt and wear.
 
 # Spare equipment
-Always have a spare tab, sling, string... It is recommended that you bring a box of small items and tools with you.
+Always have a spare tab, sling, string...
+![Reserve](../img/reserve.jpg)
+It is recommended that you bring a box of small items and tools with you.

@@ -29,8 +29,7 @@
 	</defs>
 
   <!-- Ozadje -->
-  <rect width="100%" height="100%" fill="lightblue"/>
-
+  <rect width="100%" height="100%" fill="#FBE9E7"/>
   
 	<g transform="translate(200,120)" stroke-width="0.5" fill="none">
 		<g id="Target1" transform="scale(0.75)">
@@ -61,7 +60,7 @@
 	<text id="razdalja3" x="600" y="630" font-family="Comic Sans MS" font-size="35px">tretja tar&#269;a: 18m</text>
 
 	<!-- Povleci me element -->
-	<use xlink:href="#sight" id="dragme" transform="translate(500,200)" />
+	<use xlink:href="#sight" id="dragme" transform="translate(500,200)" class="merek" cursor="grab"/>
 
 
 </svg>
