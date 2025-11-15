@@ -12,7 +12,7 @@ Moj postopek je sledeč:
 # Rezervna oprema
 Vedno imej v rezervi, tab, šlingo, tetivo...
 ![Rezerva](../img/reserve.jpg)
-Priporočljivo je ti s seboj škatlico z drobnarijami in orodjem.
+Priporočljivo je imeti s seboj škatlico z drobnarijami in orodjem.
 
  
  
