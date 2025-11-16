@@ -2,7 +2,8 @@ server {
     listen 8888;
 
     location / {
-        root /home/pavlin/arrowhead-guide/site;
+        root /home/simon/arrowhead-guide/mkdocs/site;
+
         index index.html;
         try_files $uri $uri/ /index.html;
     }
@@ -13,3 +14,4 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
     }
 }
+
