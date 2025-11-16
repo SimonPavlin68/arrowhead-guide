@@ -24,6 +24,7 @@ nav:
       - Kavč: sl/sofa.md
       - Skrivnostni obrat: sl/mystery.md
       - Pred tekmovanjem: sl/other.md
+      - Izračun (Flask): sl/calculate.md
 
   #- Sr:
   #    - Arrowhead Guide: sr/index.md 
