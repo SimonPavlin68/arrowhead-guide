@@ -34,6 +34,11 @@ def compute_result(v0, l, deg):
     return round(m, 1)
 
 
+@app.route("/api/hello", methods=["GET"])
+def hello():
+    return jsonify({"message": "Hello, world!"})
+
+
 @app.route("/api/merek", methods=["POST"])
 def api_merek():
     data = request.json
