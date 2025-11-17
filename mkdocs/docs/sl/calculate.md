@@ -1,20 +1,70 @@
-# Izračun merek
+# Izračun
 
-Spodaj lahko vneseš začetno hitrost, razdaljo in kot, ter izračunaš Merek.
+<style>
+/* Vrstice obrazca – horizontalna postavitev */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;               /* razmak med label in input */
+    margin-bottom: 10px;
+}
 
-<label for="v0">Začetna hitrost v0:</label>
-<input id="v0" type="number" value="55">
+/* Label širina – da so lepo poravnani */
+.form-row label {
+    width: 180px;            /* lahko spremeniš */
+    font-weight: 500;
+}
 
-<label for="distance">Razdalja:</label>
-<input id="distance" type="number" value="30">
+/* Splošni stil vhodnih polj */
+input[type="number"], input[readonly] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    font-size: 14px;
+}
 
-<label for="angle">Kot:</label>
-<input id="angle" type="number" value="0">
+/* Stil gumba */
+#calcBtn {
+    padding: 10px 16px;
+    background-color: var(--md-primary-fg-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#calcBtn:hover {
+    background-color: var(--md-primary-fg-color--dark);
+}
+</style>
+
+Spodaj lahko vneseš začetno hitrost, razdaljo in kot, ter izračunaš kako nastaviti merek.
+
+<div class="form-row">
+    <label for="v0">Začetna hitrost (m/s):</label>
+    <input id="v0" type="number" value="55">
+</div>
+
+<div class="form-row">
+    <label for="distance">Razdalja (m):</label>
+    <input id="distance" type="number" value="30">
+</div>
+
+<div class="form-row">
+    <label for="angle">Kot (stopinje):</label>
+    <input id="angle" type="number" value="0">
+</div>
 
 <button id="calcBtn">Izračunaj</button>
 
-<label for="merek">Merek:</label>
-<input id="merek" readonly>
+<div class="form-row">
+    <label for="merek">Merek (m):</label>
+    <input id="merek" readonly>
+</div>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
