@@ -103,7 +103,7 @@
 			</use>
 		</g>
 	</g>
-	<g fill="blue" stroke="blue">
+	<g fill="#303fa1" stroke="#303fa1">
 		// glava
 		<circle cx="210" cy="170" r="45"/>
 		// lok

@@ -29,27 +29,27 @@ nav:
       - Pred tekmovanjem: sl/other.md
       - Izračun: sl/calculate.md
 
-  #- Sr:
-  #    - Arrowhead Guide: sr/index.md 
+  - Sr:
+      - Уместо увода: sr/getting-started.md
+      - Удаљености: sr/distances.md
+      - Израчунавање: sr/calculate.md
 
 plugins:
   - search
-  # - inline-svg-mod
-  # - include-markdown
 
 extra_css:
   - stylesheets/extra.css
   
-extra_javascript:
-  - js/language_switcher.js
+#extra_javascript:
+#  - js/language_switcher.js
 
 extra:
   search:
     language: en
-  alternate:
-    - name: 🇬🇧 English
-      link: /en/
-    - name: 🇸🇮 Slovenščina
-      link: /sl
-    - name: 🇷🇸 Srpski
-      link: /sr
+#  alternate:
+#    - name: 🇬🇧 English
+#      link: /en/getting-started.md
+#    - name: 🇸🇮 Slovenščina
+#      link: /sl/getting-started.md
+#    - name: 🇷🇸 Srpski
+#      link: /sr/getting-started.md
