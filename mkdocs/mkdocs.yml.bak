@@ -18,7 +18,6 @@ nav:
       - Test: en/test.md
       - Oblique throw: en/graph.md
       - Sofa: en/sofa.md
-      - Calculate: en/calculate.md
   - Sl:
       - Namesto uvoda: sl/getting-started.md
       - Razdalje: sl/distances.md

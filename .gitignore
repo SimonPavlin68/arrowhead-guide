@@ -1,2 +1,4 @@
-mkdocs/site/
-mkdocs/venv/
+mkdocs/site
+mkdocs/venv
+venv
+site
