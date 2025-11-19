@@ -8,7 +8,7 @@
 
 /* Label širina – da so lepo poravnani */
 .form-row label {
-    width: 180px;            /* lahko spremeniš */
+    width: 200px;            /* lahko spremeniš */
     font-weight: 500;
 }
 
