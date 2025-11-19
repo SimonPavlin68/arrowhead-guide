@@ -1,46 +1,5 @@
 # Izračun
 
-<style>
-/* Vrstice obrazca – horizontalna postavitev */
-.form-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;               /* razmak med label in input */
-    margin-bottom: 10px;
-}
-
-/* Label širina – da so lepo poravnani */
-.form-row label {
-    width: 180px;            /* lahko spremeniš */
-    font-weight: 500;
-}
-
-/* Splošni stil vhodnih polj */
-input[type="number"], input[readonly] {
-    padding: 8px;
-    width: 200px;
-    border: 1px solid #888;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* Stil gumba */
-#calcBtn {
-    padding: 10px 16px;
-    background-color: var(--md-primary-fg-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-#calcBtn:hover {
-    background-color: var(--md-primary-fg-color--dark);
-}
-</style>
-
 Spodaj lahko vneseš začetno hitrost, razdaljo in kot, ter izračunaš kako nastaviti merek.
 
 <div class="form-row">

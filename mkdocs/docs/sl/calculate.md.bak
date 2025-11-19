@@ -1,26 +1,67 @@
-# Израчунавање
+# Izračun
 
-Испод можете унети почетну брзину, удаљеност и угао, и израчунати како поставити циљ.
+<style>
+/* Vrstice obrazca – horizontalna postavitev */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;               /* razmak med label in input */
+    margin-bottom: 10px;
+}
+
+/* Label širina – da so lepo poravnani */
+.form-row label {
+    width: 180px;            /* lahko spremeniš */
+    font-weight: 500;
+}
+
+/* Splošni stil vhodnih polj */
+input[type="number"], input[readonly] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Stil gumba */
+#calcBtn {
+    padding: 10px 16px;
+    background-color: var(--md-primary-fg-color);
+    color: red;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#calcBtn:hover {
+    background-color: var(--md-primary-fg-color--dark);
+}
+</style>
+
+Spodaj lahko vneseš začetno hitrost, razdaljo in kot, ter izračunaš kako nastaviti merek.
 
 <div class="form-row">
-    <label for="v0">Почетна брзина (м/с):</label>
+    <label for="v0">Začetna hitrost (m/s):</label>
     <input id="v0" type="number" value="55">
 </div>
 
 <div class="form-row">
-    <label for="distance">Удаљеност (м):</label>
+    <label for="distance">Razdalja (m):</label>
     <input id="distance" type="number" value="30">
 </div>
 
 <div class="form-row">
-    <label for="angle">Угао (степени):</label>
+    <label for="angle">Kot (stopinje):</label>
     <input id="angle" type="number" value="0">
 </div>
 
-<button id="calcBtn">Израчунај</button>
+<button id="calcBtn">Izračunaj</button>
 
 <div class="form-row">
-    <label for="merek">Нишан (м):</label>
+    <label for="merek">Merek (m):</label>
     <input id="merek" readonly>
 </div>
 
@@ -54,9 +95,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             const data = await response.json();
-            merekEl.value = data.merek ?? "Грешка";
+            merekEl.value = data.merek ?? "Napaka";
         } catch (err) {
-            merekEl.value = "Грешка при слању";
+            merekEl.value = "Napaka pri pošiljanju";
             console.error(err);
         }
     }
