@@ -47,7 +47,7 @@ plugins:
 
 
 extra_css:
-  # - stylesheets/extra.css
+  - stylesheets/extra.css
   - stylesheets/arrowhead.css
   
 #extra_javascript:
