@@ -1,5 +1,18 @@
-#  Pred tekmovanjem
+### Pred tekmovanjem
 
-seti se Mujo...
+Na progo se odpravimo **dobro obuti**, najbolje kar v visoke planinske čevlje – tako imenovane *gojzarje*.  
+S seboj vzamemo **nahrbtnik**, ki se lahko po možnosti spremeni v stolček.  
+Pregovor pravi: *"Bolje slabo sedeti kot dobro stati."*
 
-I Haso!
+Za zaščito pred različnimi vremenskimi razmerami vzamemo:
+- **pokrivalo** za močno sonce,
+- **dežnik** ali lahko pelerino za dež.
+
+V nahrbtniku naj ne manjka:
+- **pijača** (najbolje voda ali izotonični napitek),
+- **prigrizek** – danes imamo na voljo celo vrsto energijskih ploščic,
+- **zaščita proti klopom** (repelent),
+- **osnovni komplet prve pomoči** (obliži, gaza, razkužilo),
+- po potrebi **rezervna vrvica**, trak ali mali multitool.
+
+Ker streljanje 24 tarč lahko traja tudi **4–5 ur**, je dobro biti pripravljen na vse pogoje, ki nas lahko presenetijo na progi.
