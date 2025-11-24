@@ -18,6 +18,7 @@ nav:
       - Test: en/test.md
       - Oblique throw: en/graph.md
       - Sofa: en/sofa.md
+      - Before the competition: en/other.md
       - Calculator: en/calculate.md
   - Sl:
       - Namesto uvoda: sl/getting-started.md
@@ -26,7 +27,7 @@ nav:
       - Test: sl/test.md
       - Poševni met: sl/graph.md
       - Kavč: sl/sofa.md
-      - Skrivnostni obrat: sl/mystery.md
+      # - Skrivnostni obrat: sl/mystery.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
 
@@ -37,6 +38,7 @@ nav:
       - Тест: sr/test.md
       - Косо бацање: sr/graph.md
       - Софа: sr/sofa.md
+      - Пре такмичења: sr/other.md
       - Калкулатор: sr/calculate.md
 
 # plugins:
