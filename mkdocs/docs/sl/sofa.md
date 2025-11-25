@@ -11,8 +11,11 @@ Moj postopek je sledeč:
 + Ko sem z nastreljevanjem zadovoljen, grem spet na kavč. Vzamem svinčnik in skalo izrišem tako da bo med streljanem enoumno in pregledno katero razdaljo želim nastaviti. Jaz sem si za risanje skale pripravil kar nekakšno šablono. Ko sem z narisanim zadovoljen vse skupaj polakiram s prozornim lakom za nohte, zaradi zaščite pred dežjem, umazanijo in obrabo.
 # Rezervna oprema
 Vedno imej v rezervi, tab, šlingo, tetivo...
+
 ![Rezerva](../img/reserve.jpg)
+
 Priporočljivo je imeti s seboj škatlico z drobnarijami in orodjem.
+
 ![Orodje](../img/tool_box.jpg)
 
  

@@ -13,5 +13,9 @@ I repeat the process until I have drawn all the desired distances of five meters
 
 # Spare equipment
 Always have a spare tab, sling, string...
+
 ![Reserve](../img/reserve.jpg)
+
 It is recommended that you bring a box of small items and tools with you.
+
+![Tool box](../img/tool_box.jpg)
