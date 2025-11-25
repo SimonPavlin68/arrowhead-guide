@@ -11,6 +11,9 @@ I repeat the process until I have drawn all the desired distances of five meters
 + Before I start the final drawing of the rock, I check that there are no anomalies on the rock. This means that the distance between the lines slowly increases with distance. If not, there is something wrong with the shooting or the tuning of the bow.
 + When I am satisfied with the shooting, I go back to the couch. I take a pencil and draw the rock so that it will be clear and unambiguous during the shooting what distance I want to set. I prepared a kind of template for drawing the rock. When I am satisfied with the drawing, I polish everything with clear nail polish to protect it from rain, dirt and wear.
 
+![Skala 1986](../img/skala-86.png)
+*my scale made for the 1986 World Cup*
+
 # Spare equipment
 Always have a spare tab, sling, string...
 
