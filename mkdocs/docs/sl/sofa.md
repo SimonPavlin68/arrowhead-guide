@@ -13,6 +13,7 @@ Moj postopek je sledeč:
 Vedno imej v rezervi, tab, šlingo, tetivo...
 ![Rezerva](../img/reserve.jpg)
 Priporočljivo je imeti s seboj škatlico z drobnarijami in orodjem.
+![Orodje](../img/tool_box.jpg)
 
  
  
