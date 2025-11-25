@@ -10,7 +10,7 @@ Naredili so ga Švedi. Na strelišče so pripeljali ogromen žerjav, potem pa st
 
 V roke vzamem svinčnik in papir in po nekaj dneh mi uspe razvozljati uganko, dobim formulo. Zanemaril sem zračni upor, ki bi se tako ali tako kompenziral, saj se dolžina parabole malenkost spremeni pod različnimi koti. Zanimivo je to, da edino kar vpliva na izračun, je začetna hitrost in pa seveda gravitacijski pospešek. Slednji je pri nas tako ali tako približno 9.81 m/s2. Izpeljava je bila kar trd oreh, ker se je v formuli pojavila kar kompleksna trigonometrična funkcija, pa ne bi sedaj o tem.
 
-![izračun](../img/izracun.jpg)
+![formula](../img/izracun.jpg)
 *izpeljana formula na papirju*
 
 Nato pa za računalnik, sprogramirati in narisati graf. V spustnem meniju so predstavljeni grafi v odvisnosti od začetne hitrosti (v0).
