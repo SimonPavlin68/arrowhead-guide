@@ -27,7 +27,7 @@ nav:
       - Test: sl/test.md
       - Poševni met: sl/graph.md
       - Kavč: sl/sofa.md
-      - Skrivnostni obrat: sl/mystery.md
+      # - Skrivnostni obrat: sl/mystery.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
 
@@ -38,7 +38,11 @@ nav:
       - Тест: sr/test.md
       - Косо бацање: sr/graph.md
       - Софа: sr/sofa.md
+<<<<<<< HEAD
       - Пре такмичења: sr/other.md
+=======
+      - Мистериозни заокрет: sr/mystery.md
+>>>>>>> 8b8e9125c32b429b9ec63d5525e0f19d983c73e9
       - Калкулатор: sr/calculate.md
 
 # plugins:
@@ -49,7 +53,7 @@ plugins:
 
 
 extra_css:
-  # - stylesheets/extra.css
+  - stylesheets/extra.css
   - stylesheets/arrowhead.css
   
 #extra_javascript:

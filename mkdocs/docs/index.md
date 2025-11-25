@@ -1,4 +1,4 @@
-<script>
-  // default na en
-  window.location.href = "/en/index.html";
-</script>
+<script> // default na en 
+
+Window.location.href = "/en/index.html"; </script> 
+

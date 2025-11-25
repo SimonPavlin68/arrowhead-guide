@@ -39,6 +39,7 @@ nav:
       - Косо бацање: sr/graph.md
       - Софа: sr/sofa.md
       - Пре такмичења: sr/other.md
+      # - Мистериозни заокрет: sr/mystery.md
       - Калкулатор: sr/calculate.md
 
 # plugins:
@@ -49,7 +50,7 @@ plugins:
 
 
 extra_css:
-  # - stylesheets/extra.css
+  - stylesheets/extra.css
   - stylesheets/arrowhead.css
   
 #extra_javascript:
