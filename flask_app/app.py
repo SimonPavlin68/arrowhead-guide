@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import math
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -52,6 +53,20 @@ def api_merek():
     result = compute_result(v0, distance, angle)
     return jsonify({"merek": result})
 
+# login endpoint
+@app.route("/api/login", methods=["POST"])
+def api_login():
+    data = request.json
+    username = data.get("username", "Unknown")
+    ip = request.remote_addr
+    timestamp = datetime.utcnow().isoformat()
+
+    # zapiši v datoteko
+    with open("logins.csv", "a") as f:
+        f.write(f"{timestamp},{ip},{username}\n")
+
+    print(f"[LOGIN] {timestamp} {ip} {username}")
+    return jsonify({"status": "ok"})
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000)
