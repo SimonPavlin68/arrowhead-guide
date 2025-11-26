@@ -1,12 +1,19 @@
 (function() {
+    const LANGUAGES = {
+        en: { flag: "🇬🇧", texts: { title: "Enter your name", placeholder: "Your name", button: "Login" } },
+        sl: { flag: "🇸🇮", texts: { title: "Vpiši svoje ime", placeholder: "Tvoje ime", button: "Prijava" } },
+        sr: { flag: "🇷🇸", texts: { title: "Unesite ime", placeholder: "Vaše ime", button: "Prijava" } }
+    };
+
     function initHeaderUser() {
         const user = localStorage.getItem("arrowheadUser");
+        const lang = localStorage.getItem("arrowheadLang") || "en";
         if (!user) return;
 
         const tryAddChip = () => {
             const headerInner = document.querySelector(".md-header__inner");
             if (!headerInner) {
-                requestAnimationFrame(tryAddChip); // retry naslednji frame
+                requestAnimationFrame(tryAddChip);
                 return;
             }
 
@@ -16,7 +23,7 @@
             chip.id = "userChip";
 
             const spanUser = document.createElement("span");
-            spanUser.textContent = user;
+            spanUser.textContent = `${user} ${LANGUAGES[lang].flag}`;
             spanUser.style.marginRight = "8px";
 
             const btnLogout = document.createElement("button");
@@ -28,6 +35,7 @@
             btnLogout.style.fontWeight = "bold";
             btnLogout.onclick = () => {
                 localStorage.removeItem("arrowheadUser");
+                localStorage.removeItem("arrowheadLang");
                 location.reload();
             };
 
@@ -54,6 +62,7 @@
 
     function showLoginModal() {
         let user = localStorage.getItem("arrowheadUser");
+        const savedLang = localStorage.getItem("arrowheadLang") || "sl";
         if (user) {
             initHeaderUser();
             return;
@@ -69,46 +78,74 @@
         const modal = document.createElement("div");
         modal.style = `
             background:white;padding:2rem;border-radius:12px;
-            min-width:300px;box-shadow:0 4px 12px rgba(0,0,0,0.3);
-            text-align:center;
+            min-width:320px;box-shadow:0 4px 12px rgba(0,0,0,0.3);
+            text-align:center;font-family:sans-serif;
         `;
 
         const title = document.createElement("h2");
-        title.textContent = "Vpiši svoje ime";
         title.style.marginBottom = "1rem";
 
+        // Input za ime
         const input = document.createElement("input");
-        input.type = "text";
-        input.placeholder = "Tvoje ime";
-        input.style = "padding:0.5rem 1rem;width:80%;margin-bottom:1rem;border-radius:6px;border:1px solid #ccc;font-size:1rem;";
+        input.style = "padding:0.5rem 1rem;border-radius:6px;border:1px solid #ccc;font-size:1rem;width:80%;margin-bottom:1rem;";
 
+        // Dropdown za jezik
+        const langSelect = document.createElement("select");
+        langSelect.style = "padding:0.3rem 0.5rem;border-radius:6px;border:1px solid #ccc;font-size:0.9rem;width:80%;margin-bottom:1rem;";
+
+        Object.entries(LANGUAGES).forEach(([code, {flag}]) => {
+            const option = document.createElement("option");
+            option.value = code;
+            option.textContent = `${flag} ${code.toUpperCase()}`;
+            langSelect.appendChild(option);
+        });
+        langSelect.value = savedLang;
+
+        // Gumb v novi vrstici
         const btn = document.createElement("button");
-        btn.textContent = "Prijava";
         btn.style = `
             padding:0.5rem 1.5rem;font-size:1rem;border-radius:6px;
             border:none;background:#3f51b5;color:white;cursor:pointer;
+            display:block;margin:0 auto;
         `;
+
+        const updateTexts = () => {
+            const lang = langSelect.value;
+            const texts = LANGUAGES[lang].texts;
+            title.textContent = texts.title;
+            input.placeholder = texts.placeholder;
+            btn.textContent = texts.button;
+        };
+
+        langSelect.addEventListener("change", updateTexts);
+        updateTexts(); // initial
 
         btn.onclick = () => {
             const value = input.value.trim();
+            const lang = langSelect.value;
             if (!value) return;
+
             localStorage.setItem("arrowheadUser", value);
+            localStorage.setItem("arrowheadLang", lang);
 
             fetch("/api/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username: value })
+                body: JSON.stringify({ username: value, lang })
             });
 
             document.body.removeChild(overlay);
 
-            initHeaderUser(); // TU dodamo chip
+            initHeaderUser();
             initFetchPatch();
         };
 
+        // Dodamo vse elemente po vrsticah
         modal.appendChild(title);
         modal.appendChild(input);
+        modal.appendChild(langSelect);
         modal.appendChild(btn);
+
         overlay.appendChild(modal);
         document.body.appendChild(overlay);
     }
@@ -118,11 +155,12 @@
         window.fetch = function(url, options = {}) {
             options.headers = options.headers || {};
             const name = localStorage.getItem("arrowheadUser") || "Unknown";
+            const lang = localStorage.getItem("arrowheadLang") || "en";
             options.headers["X-User"] = name;
+            options.headers["X-Lang"] = lang;
             return origFetch(url, options);
         };
     }
 
     document.addEventListener("DOMContentLoaded", showLoginModal);
 })();
-
