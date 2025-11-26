@@ -4,54 +4,60 @@
   {{ super() }}
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let user = localStorage.getItem("arrowheadUser");
+    function initHeaderUser() {
+        const user = localStorage.getItem("arrowheadUser");
         if (!user) return;
 
-        const headerInner = document.querySelector(".md-header__inner");
-        if (!headerInner) return;
+        // retry dokler headerInner ni na voljo
+        const interval = setInterval(() => {
+            const headerInner = document.querySelector(".md-header__inner");
+            if (!headerInner) return;
 
-        // prepreči podvajanje
-        if (document.getElementById("userChip")) return;
+            clearInterval(interval);
 
-        const chip = document.createElement("div");
-        chip.id = "userChip";
+            if (document.getElementById("userChip")) return;
 
-        // tekst + gumb Odjava
-        const spanUser = document.createElement("span");
-        spanUser.textContent = user;
-        spanUser.style.marginRight = "8px";
+            const chip = document.createElement("div");
+            chip.id = "userChip";
 
-        const btnLogout = document.createElement("button");
-        btnLogout.textContent = "×";
-        btnLogout.style.cursor = "pointer";
-        btnLogout.style.background = "none";
-        btnLogout.style.border = "none";
-        btnLogout.style.color = "white";
-        btnLogout.style.fontWeight = "bold";
-        btnLogout.onclick = () => {
-            localStorage.removeItem("arrowheadUser");
-            location.reload();
-        };
+            const spanUser = document.createElement("span");
+            spanUser.textContent = user;
+            spanUser.style.marginRight = "8px";
 
-        chip.appendChild(spanUser);
-        chip.appendChild(btnLogout);
+            const btnLogout = document.createElement("button");
+            btnLogout.textContent = "×";
+            btnLogout.style.cursor = "pointer";
+            btnLogout.style.background = "none";
+            btnLogout.style.border = "none";
+            btnLogout.style.color = "white";
+            btnLogout.style.fontWeight = "bold";
+            btnLogout.onclick = () => {
+                localStorage.removeItem("arrowheadUser");
+                location.reload();
+            };
 
-        // styling chip (Material-like)
-        chip.style.background = "rgba(255,255,255,0.15)";
-        chip.style.padding = "4px 12px";
-        chip.style.borderRadius = "20px";
-        chip.style.fontSize = "0.8rem";
-        chip.style.color = "white";
-        chip.style.fontWeight = "500";
-        chip.style.display = "flex";
-        chip.style.alignItems = "center";
-        chip.style.height = "32px";
-        chip.style.marginLeft = "auto"; // POTISNE ČISTO DESNO
-        chip.style.whiteSpace = "nowrap";
+            chip.appendChild(spanUser);
+            chip.appendChild(btnLogout);
 
-        headerInner.appendChild(chip);
-    });
+            // Material-like styling
+            chip.style.background = "rgba(255,255,255,0.15)";
+            chip.style.padding = "4px 12px";
+            chip.style.borderRadius = "20px";
+            chip.style.fontSize = "0.8rem";
+            chip.style.color = "white";
+            chip.style.fontWeight = "500";
+            chip.style.display = "flex";
+            chip.style.alignItems = "center";
+            chip.style.height = "32px";
+            chip.style.marginLeft = "auto";
+            chip.style.whiteSpace = "nowrap";
+
+            headerInner.appendChild(chip);
+        }, 50); // preverja vsakih 50ms
+    }
+
+    document.addEventListener("DOMContentLoaded", initHeaderUser);
+    window.initHeaderUser = initHeaderUser;
   </script>
 {% endblock %}
 
