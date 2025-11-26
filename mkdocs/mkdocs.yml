@@ -52,7 +52,10 @@ plugins:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/arrowhead.css
-  
+
+markdown_extensions:
+  - md_in_html
+
 #extra_javascript:
 #  - js/language_switcher.js
 

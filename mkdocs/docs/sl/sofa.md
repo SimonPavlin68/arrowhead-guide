@@ -4,14 +4,15 @@ Na tekmi ni opravičila: "Narobe sem nastavil merilno", "Izgubil sem tab" ali ka
 Priprava skale na merilni napravi je postopek dolg nekaj dni, tudi en teden.
 Moj postopek je sledeč:
 
+<img src="/img/skala-86.png" alt="Skala 1986" style="float: right; margin: 0 0 1em 1em; width: 70px;" />
+
 + Najprej nalepim nov bel trakec na merilno napravo. Jaz vzamem vedno samolepilne etikete, tiste za na šolske knjige. Trakec ustrezo odrežem, tako da izkoristim maksimalni prostor kar ga omogoča merilna naprava, da imam za risanje čim več prostora.
 + Naslednji korak je tako imenovano nastreljevane. Postavim se na 10m, streljam in premikam merilno napravo, da dobim zadetke točne po višini. Nato narahlo zarišem črtico in se premaknem za pet ali deset metrov nazaj. Pri nastreljevanju, e predpogoj, da imamo kar se da uglašen lok. Prav tako je potrebno nastreljevati pri ustreznih vremenskih pogojih (veter, svetloba). Pa seveda na ravnem terenu. Če nimamo "dneva za streljanje", ne nastreljuemo!
  Postopek ponavljam, dokler nimam zarisanih vseh željenih razdalj po pet metrov. Jaz običajno cel postopek nastreljevanja ponovljam več dni.
 + Preden se lotim končnega risanja skale, preverim, da ni na skali kakšnih anomalij. To pomeni, da se razdalja med črticami počasi veča z razdaljo. Če ni tako, je nekaj narobe z nastreljevanjem ali uglasitvijo loka.
 + Ko sem z nastreljevanjem zadovoljen, grem spet na kavč. Vzamem svinčnik in skalo izrišem tako da bo med streljanem enoumno in pregledno katero razdaljo želim nastaviti. Jaz sem si za risanje skale pripravil kar nekakšno šablono. Ko sem z narisanim zadovoljen vse skupaj polakiram s prozornim lakom za nohte, zaradi zaščite pred dežjem, umazanijo in obrabo.
 
-![Skala 1986](../img/skala-86.png)
-*moja skala narejena za svetovno prvenstvo leta 1986*
+<!--*moja skala narejena za svetovno prvenstvo leta 1986*-->
 
 # Rezervna oprema
 Vedno imej v rezervi, tab, šlingo, tetivo...
