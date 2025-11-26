@@ -1,0 +1,41 @@
+{% extends "nav.html" %}
+
+{% block nav %}
+  {{ super() }}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nav = document.querySelector(".md-nav");
+      if (!nav) return;
+
+      // Prepreči podvajanje
+      if (document.getElementById("logoutItem")) return;
+
+      const item = document.createElement("li");
+      item.id = "logoutItem";
+      item.className = "md-nav__item";
+
+      const link = document.createElement("button");
+      link.textContent = "Odjava";
+      link.className = "md-nav__link";
+      link.style.cursor = "pointer";
+      link.style.background = "none";
+      link.style.border = "none";
+      link.style.width = "100%";
+      link.style.textAlign = "left";
+      link.style.padding = "0.6rem 1.2rem";
+      link.style.fontSize = "0.9rem";
+
+      link.onclick = () => {
+        localStorage.removeItem("arrowheadUser");
+        location.reload();
+      };
+
+      item.appendChild(link);
+
+      // Dodamo na konec navigacije
+      nav.appendChild(item);
+    });
+  </script>
+{% endblock %}
+

@@ -24,6 +24,21 @@
             chip.id = "userChip";
             chip.textContent = user;
 
+	    // Dodamo gumb X
+	    const logout = document.createElement("span");
+	    logout.textContent = "×";
+	    logout.style.marginLeft = "8px";
+	    logout.style.cursor = "pointer";
+	    logout.style.fontWeight = "bold";
+
+	    // klik = izbriši user + reload
+	    logout.onclick = () => {
+	        localStorage.removeItem("arrowheadUser");
+	        location.reload();
+	    };
+	    
+	    chip.appendChild(logout);
+
             // Chip styling
             chip.style.background = "rgba(255,255,255,0.15)";
             chip.style.padding = "4px 14px";
