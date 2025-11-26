@@ -12,8 +12,6 @@ Moj postopek je sledeč:
 + Preden se lotim končnega risanja skale, preverim, da ni na skali kakšnih anomalij. To pomeni, da se razdalja med črticami počasi veča z razdaljo. Če ni tako, je nekaj narobe z nastreljevanjem ali uglasitvijo loka.
 + Ko sem z nastreljevanjem zadovoljen, grem spet na kavč. Vzamem svinčnik in skalo izrišem tako da bo med streljanem enoumno in pregledno katero razdaljo želim nastaviti. Jaz sem si za risanje skale pripravil kar nekakšno šablono. Ko sem z narisanim zadovoljen vse skupaj polakiram s prozornim lakom za nohte, zaradi zaščite pred dežjem, umazanijo in obrabo.
 
-<!--*moja skala narejena za svetovno prvenstvo leta 1986*-->
-
 # Rezervna oprema
 Vedno imej v rezervi, tab, šlingo, tetivo...
 
