@@ -6,6 +6,12 @@
         user = prompt("Vnesi svoje ime (za statistiko):");
         if (user) {
             localStorage.setItem("arrowheadUser", user);
+             // pošljemo na Flask
+            fetch("/api/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username: user })
+            }).then(r => console.log("User sent to server"));
         }
     }
 

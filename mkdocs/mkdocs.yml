@@ -60,6 +60,7 @@ markdown_extensions:
 extra_javascript:
 #  - js/language_switcher.js
   - js/login.js
+  # - js/logout.js
 
 
 #extra:
