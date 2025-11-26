@@ -1,6 +1,7 @@
 site_name: Arrowhead Guide
 theme:
   name: material
+  custom_dir: overrides
   language: sl
   palette:
     primary: indigo
@@ -56,8 +57,10 @@ extra_css:
 markdown_extensions:
   - md_in_html
 
-#extra_javascript:
+extra_javascript:
 #  - js/language_switcher.js
+  - js/login.js
+
 
 #extra:
 #  search:
