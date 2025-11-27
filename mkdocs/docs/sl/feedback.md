@@ -15,20 +15,30 @@ const feedbackList = document.getElementById('feedback-list');
 
 // Funkcija za osvežitev seznama mnenj
 function loadFeedback() {
-    fetch('/api/feedback')
-        .then(res => res.json())
+    fetch('http://127.0.0.1:5000/api/feedback')
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`Napaka pri GET: ${res.status} ${res.statusText}`);
+            }
+            return res.json(); // če ni veljaven JSON, skoči v catch
+        })
         .then(data => {
             feedbackList.innerHTML = '';
             data.forEach(f => {
                 const li = document.createElement('li');
                 li.style.borderBottom = '1px solid #eee';
                 li.style.padding = '0.5rem 0';
-                li.textContent = f.message; // predvidevamo da je objekt {message: "..." }
+                const date = new Date(f.timestamp).toLocaleString();
+                li.textContent = `[${f.lang}] ${f.user} (${date}): ${f.message}`;
                 feedbackList.appendChild(li);
             });
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            feedbackList.innerHTML = `<li style="color:red;">Ne morem naložiti mnenj: ${err.message}</li>`;
+            console.error('Napaka pri GET feedback:', err);
+        });
 }
+
 
 // Pošlji novo mnenje
 feedbackSubmit.addEventListener('click', () => {
