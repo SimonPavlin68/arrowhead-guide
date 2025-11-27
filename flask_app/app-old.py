@@ -60,19 +60,6 @@ def get_ip(request):
     return request.remote_addr
 
 
-FEEDBACK_FILE = 'feedback.json'
-
-# preberi mnenja iz JSON datoteke
-def load_feedback():
-    if not os.path.exists(FEEDBACK_FILE):
-        return []
-    with open(FEEDBACK_FILE, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-# shrani mnenja v JSON datoteko
-def save_feedback(feedbacks):
-    with open(FEEDBACK_FILE, 'w', encoding='utf-8') as f:
-        json.dump(feedbacks, f, ensure_ascii=False, indent=2)
 
 @app.route("/api/hello", methods=["GET"])
 def hello():
@@ -97,44 +84,24 @@ def api_merek():
 def api_login():
     data = request.json
     username = data.get("username", "Unknown")
-    # ip = request.remote_addr
+
+    lang = data.get("lang", "Unknown")
+    # če obstaja forwarded for, vzemi prvega (pravi uporabniški IP)
+    # if request.headers.getlist("X-Forwarded-For"):
+    #    ip = request.headers.getlist("X-Forwarded-For")[0]
+    # else:
+    #    ip = request.headers.get("X-Real-IP", request.remote_addr)
     ip = get_ip(request)
+
+
     timestamp = datetime.utcnow().isoformat()
 
-    # zapiši v datoteko
     with open("logins.csv", "a") as f:
-        # f.write(f"{timestamp},{ip},{username}\n")
         f.write(f"{timestamp},{ip},{username},{lang}\n")
-
 
     print(f"[LOGIN] {timestamp} {ip} {username}")
     return jsonify({"status": "ok"})
 
-@app.route("/api/feedback", methods=["GET"])
-def get_feedback():
-    feedbacks = load_feedback()
-    # zadnja mnenja naj bodo zgoraj
-    return jsonify(list(reversed(feedbacks)))
-
-@app.route("/api/feedback", methods=["POST"])
-def post_feedback():
-    data = request.get_json()
-    message = data.get("message")
-    user = request.headers.get("X-User", "Anonimni")
-    lang = request.headers.get("X-Lang", "en")
-    
-    if not message:
-        return jsonify({"error": "Missing message"}), 400
-
-    feedbacks = load_feedback()
-    feedbacks.append({
-        "message": message,
-        "user": user,
-        "lang": lang,
-        "timestamp": datetime.utcnow().isoformat()
-    })
-    save_feedback(feedbacks)
-    return jsonify({"ok": True})
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000)
