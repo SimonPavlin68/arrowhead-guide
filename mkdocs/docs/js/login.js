@@ -28,19 +28,19 @@
 		localStorage.setItem(key, JSON.stringify(item));
 	}
 
-	function getWithExpiry(key) {
-		const itemStr = localStorage.getItem(key);
-		if (!itemStr) return null;
+	//function getWithExpiry(key) {
+	//	const itemStr = localStorage.getItem(key);
+	//	if (!itemStr) return null;
+//
+	//	const item = JSON.parse(itemStr);
+//
+	//	if (Date.now() > item.expiry) {
+		//	localStorage.removeItem(key);
+	//		return null;
+	//	}
 
-		const item = JSON.parse(itemStr);
-
-		if (Date.now() > item.expiry) {
-			localStorage.removeItem(key);
-			return null;
-		}
-
-		return item.value;
-	}
+		//return item.value;
+	//}
 
 
     function initHeaderUser() {
@@ -48,6 +48,9 @@
 		const user = getWithExpiry("arrowheadUser");
         const lang = localStorage.getItem("arrowheadLang") || "en";
         if (!user) return;
+		
+		// 🟢 posodobi levi jezikovni meni takoj!
+		updateAlternateMenu(lang);
 
         const tryAddChip = () => {
             const headerInner = document.querySelector(".md-header__inner");
@@ -169,6 +172,10 @@
             //localStorage.setItem("arrowheadUser", value);
 			setWithExpiry("arrowheadUser", value, 2);
             localStorage.setItem("arrowheadLang", lang);
+			// 🟢 POSODBI MENI IKONO TAKOJ
+			if (window.setLanguageFromModal) {
+				window.setLanguageFromModal(lang);
+			}
 
             fetch("/api/login", {
                 method: "POST",
