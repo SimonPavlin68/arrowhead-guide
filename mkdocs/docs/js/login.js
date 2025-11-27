@@ -1,9 +1,22 @@
 (function() {
-    const LANGUAGES = {
-        en: { flag: "🇬🇧", texts: { title: "Enter your name", placeholder: "Your name", button: "Login" } },
-        sl: { flag: "🇸🇮", texts: { title: "Vpiši svoje ime", placeholder: "Tvoje ime", button: "Prijava" } },
-        sr: { flag: "🇷🇸", texts: { title: "Унесите своје име", placeholder: "Твоје име", button: "Пријава" } }
-    };
+   const LANGUAGES = {
+    en: { 
+        flag: "🇬🇧", 
+        name: "English",
+        texts: { title: "Enter your name", placeholder: "Your name", button: "Login" } 
+    },
+    sl: { 
+        flag: "🇸🇮", 
+        name: "Slovenščina",
+        texts: { title: "Vpiši svoje ime", placeholder: "Tvoje ime", button: "Prijava" } 
+    },
+    sr: { 
+        flag: "🇷🇸", 
+        name: "Српски",
+        texts: { title: "Унесите своје име", placeholder: "Твоје име", button: "Пријава" } 
+    }
+};
+;
 	
 	function setWithExpiry(key, value, hours = 24) {
 		const now = Date.now();
@@ -119,14 +132,14 @@
 
         // Dropdown za jezik
         const langSelect = document.createElement("select");
-        langSelect.style = "padding:0.3rem 0.5rem;border-radius:6px;border:1px solid #ccc;font-size:0.9rem;width:30%;margin-bottom:1rem;";
+        langSelect.style = "padding:0.3rem 0.5rem;border-radius:6px;border:1px solid #ccc;font-size:0.9rem;width:40%;margin-bottom:1rem;";
 
-        Object.entries(LANGUAGES).forEach(([code, {flag}]) => {
-            const option = document.createElement("option");
-            option.value = code;
-            option.textContent = `${flag} ${code.toUpperCase()}`;
-            langSelect.appendChild(option);
-        });
+        Object.entries(LANGUAGES).forEach(([code, {flag, name}]) => {
+			const option = document.createElement("option");
+			option.value = code;
+			option.textContent = `${flag} ${name}`;
+			langSelect.appendChild(option);
+		});
         langSelect.value = savedLang;
 
         // Gumb v novi vrstici
@@ -183,7 +196,8 @@
         const origFetch = window.fetch;
         window.fetch = function(url, options = {}) {
             options.headers = options.headers || {};
-            const name = localStorage.getItem("arrowheadUser") || "Unknown";
+            // const name = localStorage.getItem("arrowheadUser") || "Unknown";
+			const name = getWithExpiry("arrowheadUser") || "Unknown";
             const lang = localStorage.getItem("arrowheadLang") || "en";
             options.headers["X-User"] = name;
             options.headers["X-Lang"] = lang;

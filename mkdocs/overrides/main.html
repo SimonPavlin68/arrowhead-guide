@@ -5,7 +5,8 @@
 
   <script>
     function initHeaderUser() {
-        const user = localStorage.getItem("arrowheadUser");
+        // const user = localStorage.getItem("arrowheadUser");
+		const user = getWithExpiry("arrowheadUser")
         if (!user) return;
 
         // retry dokler headerInner ni na voljo
