@@ -3,7 +3,7 @@ import math
 import os
 import json
 from datetime import datetime
-from flask_cors import cross_origin
+from flask_cors import cross_origin, CORS
 
 app = Flask(__name__)
 
