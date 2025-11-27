@@ -1,34 +1,53 @@
-# Zgodba o poševnem metu
+# Pošlji svoje mnenje
 
-Ko sem začel streljati Arrowhead, takrat imenovan še Hunter & Field,
-sem se vedno spraševal, koliko odbiti ali dodati na merilni napravi, če tarča ni postavljena vodoravno,
-se pravi če streljaš navzgor ali navzdol.
-Med lokostrelci so se kresala mnenja, izmenjevale izkušnje...
-Potem pa v osemdesetih letih dobim fotokopijo nekega grafa.
+<div id="feedback-container" style="max-width:600px;margin:1rem auto;padding:1rem;border:1px solid #ccc;border-radius:8px;">
+    <textarea id="feedback-input" placeholder="Napiši svoje mnenje..." rows="4" style="width:100%;padding:0.5rem;border-radius:6px;border:1px solid #ccc;margin-bottom:0.5rem;"></textarea>
+    <button id="feedback-submit" style="padding:0.5rem 1rem;border:none;border-radius:6px;background:#3f51b5;color:white;cursor:pointer;">Pošlji</button>
 
-![Švedski graf](../img/graph-s.jpg)
+    <h3 style="margin-top:1rem;">Obstoječa mnenja:</h3>
+    <ul id="feedback-list" style="list-style:none;padding:0;"></ul>
+</div>
 
-*Švedski graf*
+<script>
+const feedbackInput = document.getElementById('feedback-input');
+const feedbackSubmit = document.getElementById('feedback-submit');
+const feedbackList = document.getElementById('feedback-list');
 
-Naredili so ga Švedi. Na strelišče so pripeljali ogromen žerjav, potem pa streljali na različne razdalje pod različnimi koti. Poskušali znova in znova. Narisali so ga popolnoma empirično - s poskušanjem, brez fizikalne osnove. Ta graf sem uporabljal in moram priznati, je kar držal. Ampak po glavi se mi je motalo kar naprej, kako bi to točno izračunal. Ker mi matematika in fizika nista tuji, sem se lotil zadeve. Cilj mi je bil, kako nastaviti merilno napravo pri določeni razdalji in kotu, kot bi streljal na ravnem.
+// Funkcija za osvežitev seznama mnenj
+function loadFeedback() {
+    fetch('/api/feedback')
+        .then(res => res.json())
+        .then(data => {
+            feedbackList.innerHTML = '';
+            data.forEach(f => {
+                const li = document.createElement('li');
+                li.style.borderBottom = '1px solid #eee';
+                li.style.padding = '0.5rem 0';
+                li.textContent = f.message; // predvidevamo da je objekt {message: "..." }
+                feedbackList.appendChild(li);
+            });
+        })
+        .catch(err => console.error(err));
+}
 
-V roke vzamem svinčnik in papir in po nekaj dneh mi uspe razvozljati uganko, dobim formulo. Zanemaril sem zračni upor, ki bi se tako ali tako kompenziral, saj se dolžina parabole malenkost spremeni pod različnimi koti. Zanimivo je to, da edino kar vpliva na izračun, je začetna hitrost in pa seveda gravitacijski pospešek. Slednji je pri nas tako ali tako približno 9.81 m/s2. Izpeljava je bila kar trd oreh, ker se je v formuli pojavila kar kompleksna trigonometrična funkcija, pa ne bi sedaj o tem.
+// Pošlji novo mnenje
+feedbackSubmit.addEventListener('click', () => {
+    const message = feedbackInput.value.trim();
+    if(!message) return;
 
-![formula](../img/izracun.jpg)
-*izpeljana formula na papirju*
+    fetch('/api/feedback', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({message})
+    })
+    .then(res => res.json())
+    .then(data => {
+        feedbackInput.value = '';
+        loadFeedback(); // osveži seznam
+    })
+    .catch(err => console.error(err));
+});
 
-Nato pa za računalnik, sprogramirati in narisati graf.
-<!--V spustnem meniju so predstavljeni grafi v odvisnosti od začetne hitrosti (v0).-->
-Kratka razlaga: različno obarvane pikice so kjer je treba dodati ali odvzeti meter, dva, tri ...
-
-![35m/s](../img/35-s.jpg)
-
-*izračunan graf pri začetni hitrosti puščice 35m/s*
-
-Seveda je potrebno pri tem upoštevati, da se ustreli tako kot na ravnem. Se pravi zgornji del, ramenski obroč, roke v liniji, spust... Bistvo je da se prepogneš v bokih. Je težko, samo z nekaj treninga se da.
-
-Ena misel: Ko so vprašali najboljšega plezalca vseh časov Wolfganga Güllicha, katera mišica je najpomembnejša pri plezanju. Je odgovoril: glava. To velja tudi v lokostrelstvu. 
-
-
-
-
+// naloži obstoječa mnenja ob zagonu
+loadFeedback();
+</script>

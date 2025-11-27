@@ -50,7 +50,7 @@
         if (!user) return;
 		
 		// 🟢 posodobi levi jezikovni meni takoj!
-		updateAlternateMenu(lang);
+		// updateAlternateMenu(lang);
 
         const tryAddChip = () => {
             const headerInner = document.querySelector(".md-header__inner");
