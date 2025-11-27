@@ -47,11 +47,12 @@ feedbackSubmit.addEventListener('click', () => {
 
     // preberi uporabnika iz localStorage
     const user = getWithExpiry("arrowheadUser") || "Unknown";
+    const lang = localStorage.getItem("arrowheadLang") || "en";
 
     fetch('/api/feedback', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ message, user }) // dodaj user
+        body: JSON.stringify({ message, user, lang })
     })
     .then(res => res.json())
     .then(data => {

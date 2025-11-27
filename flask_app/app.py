@@ -121,10 +121,12 @@ def get_feedback():
 @app.route("/api/feedback", methods=["POST"])
 def post_feedback():
     data = request.get_json()
+    print(data)
     message = data.get("message")
-    user = request.headers.get("X-User", "Anonimni")
-    lang = request.headers.get("X-Lang", "en")
-    
+    # user = request.headers.get("X-User", "Anonimni")
+    user = data.get("user")
+    # lang = request.headers.get("X-Lang", "en")
+    lang = data.get("lang")
     if not message:
         return jsonify({"error": "Missing message"}), 400
 
