@@ -21,6 +21,7 @@ nav:
       - Sofa: en/sofa.md
       - Before the competition: en/other.md
       - Calculator: en/calculate.md
+      - Finally: en/about.md
   - Sl:
       - Namesto uvoda: sl/getting-started.md
       - Razdalje: sl/distances.md
@@ -31,6 +32,7 @@ nav:
       # - Skrivnostni obrat: sl/mystery.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
+      - Za konec: sl/about.md
 
   - Sr:
       - Уместо увода: sr/getting-started.md
@@ -42,6 +44,7 @@ nav:
       - Пре такмичења: sr/other.md
       # - Мистериозни заокрет: sr/mystery.md
       - Калкулатор: sr/calculate.md
+      - Коначно: sr/about.md
 
 # plugins:
 #  - search

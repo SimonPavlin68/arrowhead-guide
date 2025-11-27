@@ -4,9 +4,35 @@
         sl: { flag: "🇸🇮", texts: { title: "Vpiši svoje ime", placeholder: "Tvoje ime", button: "Prijava" } },
         sr: { flag: "🇷🇸", texts: { title: "Унесите своје име", placeholder: "Твоје име", button: "Пријава" } }
     };
+	
+	function setWithExpiry(key, value, hours = 24) {
+		const now = Date.now();
+		const item = {
+			value,
+			// expiry: now + hours * 60 * 60 * 1000
+			expiry: now + 2 * 60 * 1000
+		};
+		localStorage.setItem(key, JSON.stringify(item));
+	}
+
+	function getWithExpiry(key) {
+		const itemStr = localStorage.getItem(key);
+		if (!itemStr) return null;
+
+		const item = JSON.parse(itemStr);
+
+		if (Date.now() > item.expiry) {
+			localStorage.removeItem(key);
+			return null;
+		}
+
+		return item.value;
+	}
+
 
     function initHeaderUser() {
-        const user = localStorage.getItem("arrowheadUser");
+        // const user = localStorage.getItem("arrowheadUser");
+		const user = getWithExpiry("arrowheadUser");
         const lang = localStorage.getItem("arrowheadLang") || "en";
         if (!user) return;
 
@@ -62,7 +88,8 @@
     }
 
     function showLoginModal() {
-        let user = localStorage.getItem("arrowheadUser");
+        //let user = localStorage.getItem("arrowheadUser");
+		let user = getWithExpiry("arrowheadUser");
         const savedLang = localStorage.getItem("arrowheadLang") || "sl";
         if (user) {
             initHeaderUser();
@@ -126,7 +153,8 @@
             const lang = langSelect.value;
             if (!value) return;
 
-            localStorage.setItem("arrowheadUser", value);
+            //localStorage.setItem("arrowheadUser", value);
+			setWithExpiry("arrowheadUser", value, 24);
             localStorage.setItem("arrowheadLang", lang);
 
             fetch("/api/login", {
