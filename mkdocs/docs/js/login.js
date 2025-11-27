@@ -22,8 +22,8 @@
 		const now = Date.now();
 		const item = {
 			value,
-			// expiry: now + hours * 60 * 60 * 1000
-			expiry: now + 2 * 60 * 1000
+			expiry: now + hours * 60 * 60 * 1000
+			// expiry: now + 2 * 60 * 1000
 		};
 		localStorage.setItem(key, JSON.stringify(item));
 	}
@@ -167,7 +167,7 @@
             if (!value) return;
 
             //localStorage.setItem("arrowheadUser", value);
-			setWithExpiry("arrowheadUser", value, 24);
+			setWithExpiry("arrowheadUser", value, 2);
             localStorage.setItem("arrowheadLang", lang);
 
             fetch("/api/login", {

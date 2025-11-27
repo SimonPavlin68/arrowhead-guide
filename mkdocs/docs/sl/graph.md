@@ -1,6 +1,10 @@
 # Zgodba o poševnem metu
 
-Ko sem začel streljati Arrowhead, takrat imenovan še Hunter & Field, sem se vedno spraševal, koliko odbiti ali dodati na merilni napravi, če tarča ni v horizontali. Med lokostrelci so se kresala mnenja, izmenjevale izkušnje... Potem pa v osemdesetih letih dobim fotokopijo nekega grafa.
+Ko sem začel streljati Arrowhead, takrat imenovan še Hunter & Field,
+sem se vedno spraševal, koliko odbiti ali dodati na merilni napravi, če tarča ni postavljena vodoravno,
+se pravi če streljaš navzgor ali navzdol.
+Med lokostrelci so se kresala mnenja, izmenjevale izkušnje...
+Potem pa v osemdesetih letih dobim fotokopijo nekega grafa.
 
 ![Švedski graf](../img/graph-s.jpg)
 
@@ -13,7 +17,8 @@ V roke vzamem svinčnik in papir in po nekaj dneh mi uspe razvozljati uganko, do
 ![formula](../img/izracun.jpg)
 *izpeljana formula na papirju*
 
-Nato pa za računalnik, sprogramirati in narisati graf. V spustnem meniju so predstavljeni grafi v odvisnosti od začetne hitrosti (v0).
+Nato pa za računalnik, sprogramirati in narisati graf.
+<!--V spustnem meniju so predstavljeni grafi v odvisnosti od začetne hitrosti (v0).-->
 Kratka razlaga: različno obarvane pikice so kjer je treba dodati ali odvzeti meter, dva, tri ...
 
 ![35m/s](../img/35-s.jpg)
