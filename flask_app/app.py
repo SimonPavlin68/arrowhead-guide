@@ -7,6 +7,8 @@ from flask_cors import cross_origin
 
 app = Flask(__name__)
 
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 g = 9.81
 
 def merek_neg(v0, alpha, beta):
