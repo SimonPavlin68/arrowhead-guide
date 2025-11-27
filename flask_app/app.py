@@ -3,6 +3,7 @@ import math
 import os
 import json
 from datetime import datetime
+from flask_cors import cross_origin
 
 app = Flask(__name__)
 
@@ -113,6 +114,7 @@ def api_login():
     return jsonify({"status": "ok"})
 
 @app.route("/api/feedback", methods=["GET"])
+@cross_origin(origin="http://127.0.0.1:5000")  # frontend origin
 def get_feedback():
     feedbacks = load_feedback()
     # zadnja mnenja naj bodo zgoraj
