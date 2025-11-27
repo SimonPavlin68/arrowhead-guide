@@ -2,7 +2,7 @@
     const LANGUAGES = {
         en: { flag: "🇬🇧", texts: { title: "Enter your name", placeholder: "Your name", button: "Login" } },
         sl: { flag: "🇸🇮", texts: { title: "Vpiši svoje ime", placeholder: "Tvoje ime", button: "Prijava" } },
-        sr: { flag: "🇷🇸", texts: { title: "Unesite ime", placeholder: "Vaše ime", button: "Prijava" } }
+        sr: { flag: "🇷🇸", texts: { title: "Унесите своје име", placeholder: "Твоје име", button: "Пријава" } }
     };
 
     function initHeaderUser() {
@@ -23,7 +23,8 @@
             chip.id = "userChip";
 
             const spanUser = document.createElement("span");
-            spanUser.textContent = `${user} ${LANGUAGES[lang].flag}`;
+            // spanUser.textContent = `${user} ${LANGUAGES[lang].flag}`;
+			spanUser.textContent = `${user}`;
             spanUser.style.marginRight = "8px";
 
             const btnLogout = document.createElement("button");
@@ -91,7 +92,7 @@
 
         // Dropdown za jezik
         const langSelect = document.createElement("select");
-        langSelect.style = "padding:0.3rem 0.5rem;border-radius:6px;border:1px solid #ccc;font-size:0.9rem;width:80%;margin-bottom:1rem;";
+        langSelect.style = "padding:0.3rem 0.5rem;border-radius:6px;border:1px solid #ccc;font-size:0.9rem;width:30%;margin-bottom:1rem;";
 
         Object.entries(LANGUAGES).forEach(([code, {flag}]) => {
             const option = document.createElement("option");
