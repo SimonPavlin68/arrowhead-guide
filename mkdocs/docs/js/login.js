@@ -28,20 +28,6 @@
 		localStorage.setItem(key, JSON.stringify(item));
 	}
 
-	//function getWithExpiry(key) {
-	//	const itemStr = localStorage.getItem(key);
-	//	if (!itemStr) return null;
-//
-	//	const item = JSON.parse(itemStr);
-//
-	//	if (Date.now() > item.expiry) {
-		//	localStorage.removeItem(key);
-	//		return null;
-	//	}
-
-		//return item.value;
-	//}
-
 
     function initHeaderUser() {
         // const user = localStorage.getItem("arrowheadUser");
@@ -204,7 +190,7 @@
         window.fetch = function(url, options = {}) {
             options.headers = options.headers || {};
             // const name = localStorage.getItem("arrowheadUser") || "Unknown";
-			const name = getWithExpiry("arrowheadUser") || "Unknown";
+	    const name = getWithExpiry("arrowheadUser") || "Unknown";
             const lang = localStorage.getItem("arrowheadLang") || "en";
             options.headers["X-User"] = name;
             options.headers["X-Lang"] = lang;

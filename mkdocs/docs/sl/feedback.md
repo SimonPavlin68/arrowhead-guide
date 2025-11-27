@@ -43,12 +43,15 @@ function loadFeedback() {
 // Pošlji novo mnenje
 feedbackSubmit.addEventListener('click', () => {
     const message = feedbackInput.value.trim();
-    if(!message) return;
+    if (!message) return;
+
+    // preberi uporabnika iz localStorage
+    const user = getWithExpiry("arrowheadUser") || "Unknown";
 
     fetch('/api/feedback', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({message})
+        body: JSON.stringify({ message, user }) // dodaj user
     })
     .then(res => res.json())
     .then(data => {
@@ -57,6 +60,7 @@ feedbackSubmit.addEventListener('click', () => {
     })
     .catch(err => console.error(err));
 });
+
 
 // naloži obstoječa mnenja ob zagonu
 loadFeedback();
