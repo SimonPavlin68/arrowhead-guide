@@ -15,7 +15,7 @@ const feedbackList = document.getElementById('feedback-list');
 
 // Funkcija za osvežitev seznama mnenj
 function loadFeedback() {
-    fetch('http://127.0.0.1:5000/api/feedback')
+    fetch('/api/feedback')
         .then(res => {
             if (!res.ok) {
                 throw new Error(`Napaka pri GET: ${res.status} ${res.statusText}`);
