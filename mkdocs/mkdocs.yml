@@ -22,6 +22,7 @@ nav:
       - Before the competition: en/other.md
       - Calculator: en/calculate.md
       - Finally: en/about.md
+      - Opinions: en/feedback.md
   - Sl:
       - Namesto uvoda: sl/getting-started.md
       - Razdalje: sl/distances.md
@@ -46,6 +47,7 @@ nav:
       # - Мистериозни заокрет: sr/mystery.md
       - Калкулатор: sr/calculate.md
       - Коначно: sr/about.md
+      - Мишљења: sr/feedback.md
 
 # plugins:
 #  - search
