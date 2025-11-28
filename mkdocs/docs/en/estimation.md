@@ -21,7 +21,9 @@ The more the thumb covers, the farther the target is, and vice versa.
 # Sighting – the forbidden fruit
 Sighting is one of the more accurate methods of estimating target distance. The principle is based on Thales’ theorem of proportionality.
 ![Thales’ theorem](../svg/teorija.svg)
+<div align="center">
 *Thales’ theorem*
+</div>
 
 How does this help us?
 
@@ -37,7 +39,8 @@ D = diameter of the target (or the proportional amount of the target covered by 
 
 If we assume that a, b, and D are constants, we can compute C from their ratio using
 ![Sighting](../svg/archer-more.svg)
-
+<div align="center">
 *Sighting*
+</div>
 
 

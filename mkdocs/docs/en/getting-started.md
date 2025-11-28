@@ -7,3 +7,8 @@ The arrow must always be given the same "support" when shooting.
 The body geometry must not be "knocked down", because then physics will let us down.
 
 In short: When shooting up/down, try to "bend" at the hips, as low as possible, and in no case should we change the "geometry" of the shoulder girdle!
+
+![T-position](../svg/archer-T.svg)
+<div align="center">
+*T-position*
+</div>

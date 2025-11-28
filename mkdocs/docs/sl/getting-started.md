@@ -10,5 +10,6 @@
 Na kratko: Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim nižje, nikakor ne smemo spreminjati "geometrije" ramenskega obroča! 
 
 ![postavitev T](../svg/archer-T.svg)
-
+<div align="center">
 *postavitev T*
+</div>
