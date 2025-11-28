@@ -21,4 +21,10 @@ Na kratko: Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim niž
 	onSVGLoadClick(svgRoot);
   });
 </script>
+<div align="center">
 postavitev T – Klikni na sliko za animacijo
+</div>
+Če je stojišče neravno potem pokrčimo levo ali desno nogo:
+<object type="image/svg+xml" data="../../svg/archer-T-up.svg"></object>
+
+<object type="image/svg+xml" data="../../svg/archer-T-down.svg"></object>

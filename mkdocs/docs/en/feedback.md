@@ -5,7 +5,7 @@
     <button id="feedback-submit" style="padding:0.5rem 1rem;border:none;border-radius:6px;background:#3f51b5;color:white;cursor:pointer;">Send</button>
 
     <h3 style="margin-top:1rem;">Existing opinions:</h3>
-    <ul id="feedback-list" style="list-style:none;padding:0;"></ul>
+    <div id="feedback-list"></div>
 </div>
 
 <script>
@@ -13,31 +13,69 @@ const feedbackInput = document.getElementById('feedback-input');
 const feedbackSubmit = document.getElementById('feedback-submit');
 const feedbackList = document.getElementById('feedback-list');
 
-// Funkcija za osvežitev seznama mnenj
+
 function loadFeedback() {
-    fetch('/api/feedback')
-        .then(res => {
-            if (!res.ok) {
-                throw new Error(`Napaka pri GET: ${res.status} ${res.statusText}`);
-            }
-            return res.json(); // če ni veljaven JSON, skoči v catch
-        })
-        .then(data => {
-            feedbackList.innerHTML = '';
-            data.forEach(f => {
-                const li = document.createElement('li');
-                li.style.borderBottom = '1px solid #eee';
-                li.style.padding = '0.5rem 0';
-                const date = new Date(f.timestamp).toLocaleString();
-                li.textContent = `[${f.lang}] ${f.user} (${date}): ${f.message}`;
-                feedbackList.appendChild(li);
+    // MOCK fetch: vrne fiksne podatke
+    const mockResponse = [
+        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:03:30", message: "Jeba od zgoraj" },
+        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:01:29", message: "Bum tresk" },
+        { lang: "en", user: "Alice", timestamp: "2025-11-27T19:55:12", message: "Great job!" }
+    ];
+
+    // Simulacija asinkronega fetch
+    new Promise((resolve) => {
+        setTimeout(() => resolve({ ok: true, json: async () => mockResponse }), 200);
+    })
+    .then(res => {
+        if (!res.ok) {
+            throw new Error(`Napaka pri GET`);
+        }
+        return res.json();
+    })
+    .then(data => {
+        // ustvarimo tabelo
+        feedbackList.innerHTML = ''; // počisti seznam
+        feedbackList.innerHTML = '';
+
+            const table = document.createElement('table');
+            table.style.borderCollapse = 'collapse';
+            table.style.width = '100%';
+
+            // HEADER
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+<tr style="background-color:#303fa1; color:white;">
+    <th style="padding:0.5rem; border:1px solid #ddd">Uporabnik</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Jezik</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Čas</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Sporočilo</th>
+</tr>
+            `;
+            table.appendChild(thead);
+
+            const tbody = document.createElement('tbody');
+            data.forEach((f, i) => {
+                const tr = document.createElement('tr');
+                tr.style.backgroundColor = i % 2 === 0 ? '#f9f9f9' : '#ffffff';
+                tr.innerHTML = `
+<td style="padding:0.5rem; border:1px solid #ddd">${f.user}</td>
+<td style="padding:0.5rem; border:1px solid #ddd">${f.lang}</td>
+<td style="padding:0.5rem; border:1px solid #ddd">${new Date(f.timestamp).toLocaleString()}</td>
+<td style="padding:0.5rem; border:1px solid #ddd">${f.message}</td>
+                `;
+                tbody.appendChild(tr);
             });
-        })
-        .catch(err => {
-            feedbackList.innerHTML = `<li style="color:red;">Ne morem naložiti mnenj: ${err.message}</li>`;
-            console.error('Napaka pri GET feedback:', err);
-        });
+
+            table.appendChild(tbody);
+        feedbackList.appendChild(table);
+    })
+    .catch(err => {
+        feedbackList.innerHTML = `<p style="color:red;">Ne morem naložiti mnenj: ${err.message}</p>`;
+        console.error('Napaka pri GET feedback:', err);
+    });
 }
+
+
 
 
 // Pošlji novo mnenje
