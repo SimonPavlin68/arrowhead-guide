@@ -24,4 +24,18 @@ function formatDate(dateStr) {
     return `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;
 }
 
+function showMark() {
+	const checkmark = svg.getElementById("checkmark");
+	const t_sign = svg.getElementById("t_sign");
+	checkmark.style.display = 'block'; // prikaži kljukico
+	t_sign.style.display= 'block';
+}
+
+function hideMark() {
+	const checkmark = svg.getElementById("checkmark");
+	const t_sign = svg.getElementById("t_sign");
+	checkmark.style.display = 'none'; // skrij kljukico
+	t_sign.style.display= 'none';
+}
+
 

@@ -8,8 +8,10 @@
     <circle cx="400" cy="210" r="15" stroke-width="15px" />
     <line x1="400" y1="250" x2="400" y2="325" />
     <line x1="340" y1="250" x2="490" y2="250" />
-    <line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
-    <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+	<g id="t_sign" style="display:none;">
+		<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+		<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+	</g>
     <path d="M460,140 Q570,250 460,360" stroke-width="15px"/>
   </g>
 
@@ -24,6 +26,9 @@
   <!-- DESNA NOGA (animirana kolena) -->
   <polyline id="rightLeg" points="400,350 420,405 440,460" stroke="#303fa1" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
+  <!-- Zelena kljukica (skrita na začetku) -->
+  <text id="checkmark" x="330" y="330" font-size="50" fill="green" style="display:none;">✔</text>
+
   <script><![CDATA[
     const svg = document.currentScript.parentElement;
     const trunk = svg.getElementById("trunk");
@@ -35,6 +40,20 @@
     const pivot = {x:360, y:460};
     const L = 55; // dolžina stegna/spodnjega dela noge
 
+
+function showMark() {
+	const checkmark = svg.getElementById("checkmark");
+	const t_sign = svg.getElementById("t_sign");
+	checkmark.style.display = 'block'; // prikaži kljukico
+	t_sign.style.display= 'block';
+}
+
+function hideMark() {
+	const checkmark = svg.getElementById("checkmark");
+	const t_sign = svg.getElementById("t_sign");
+	checkmark.style.display = 'none'; // skrij kljukico
+	t_sign.style.display= 'none';
+}
     function rotatePoint(x, y, cx, cy, angleDeg) {
       const rad = angleDeg * Math.PI / 180;
       const dx = x - cx;
@@ -62,6 +81,7 @@
     }
 
     svg.addEventListener("click", () => {
+	  hideMark();
       const duration = 3000; // ms
       const start = performance.now();
 
@@ -80,7 +100,11 @@
         // trup
         trunk.setAttribute("transform", `rotate(${angle} 400 325)`);
 
-        if (t < 1) requestAnimationFrame(animate);
+		if (t >= 1) {
+            showMark();
+        } else {
+			requestAnimationFrame(animate);
+		}
       }
 
       requestAnimationFrame(animate);

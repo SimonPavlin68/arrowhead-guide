@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="200 120 600 350"
+     style="cursor:pointer;" onclick="startAnimation(evt)">
+
+  <title>Archer</title>
+
+  <g id="archer" stroke="#303fa1" stroke-width="20px" fill="none"
+     stroke-linecap="round" stroke-linejoin="round">
+    
+    <g id="body_group" transform="rotate(0, 400,325)">
+      <!-- ANIMACIJA ROTACIJE -->
+      <animateTransform 
+        id="rotateAnim"
+        attributeName="transform"
+        type="rotate"
+        dur="10s"
+        begin="indefinite"
+        values="0 400 325; 50 400 325; -50 400 325"
+        fill="freeze"
+      />
+
+      <!-- Rdeči klicaj (blink) -->
+      <animate 
+        xlink:href="#warning"
+        attributeName="opacity"
+        begin="rotateAnim.begin + 1.2s"
+        dur="0.8s"
+        values="0;1;0"
+        repeatCount="6"
+        fill="freeze" />
+
+      <!-- Zelena kljukica -->
+      <animate 
+        xlink:href="#checkmark_right"
+        attributeName="opacity"
+        begin="rotateAnim.begin + 9s"
+        dur="1s"
+        values="0;1;0"
+        repeatCount="6"
+        fill="remove" />
+
+      <!-- telo -->
+      <circle cx="400" cy="210" r="15" stroke-width="15px" />
+      <line x1="400" y1="250" x2="400" y2="325" />
+      <line x1="340" y1="250" x2="490" y2="250" />
+
+      <!-- T -->
+      <line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+      <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+
+      <!-- lok -->
+      <path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
+    </g>
+
+    <!-- noge -->
+    <line x1="400" y1="350" x2="440" y2="455" />
+    <line x1="400" y1="350" x2="360" y2="455" />
+
+    <!-- znaki -->
+    <text id="checkmark_right" x="380" y="280" font-size="50" stroke-width="5"
+          fill="green" stroke="green" opacity="0">✔</text>
+    <text id="warning" x="430" y="420" font-size="50" stroke-width="5"
+          fill="red" stroke="red" opacity="0">!</text>
+
+  </g>
+
+  <script type="application/ecmascript"><![CDATA[
+    function startAnimation(evt) {
+      const svg = evt.currentTarget;
+      const anim = svg.getElementById("rotateAnim");
+	  const checkmark = svg.getElementById("checkmark_right");
+	  checkmark.style.opacity = 0; // nastavitev začetne nevidnosti
+
+      // resetiraj animacijo (če želiš)
+      // anim.setAttribute("fill","remove");
+
+      // sproži SMIL animacijo
+      anim.beginElement();
+    }
+  ]]></script>
+
+</svg>

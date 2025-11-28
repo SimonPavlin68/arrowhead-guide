@@ -9,7 +9,7 @@
 
 Na kratko: Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim nižje, nikakor ne smemo spreminjati "geometrije" ramenskega obroča! 
 
-<object id="archer-object" type="image/svg+xml" data="../../svg/archer-T.svg"></object>
+<object id="archer-object" type="image/svg+xml" data="../../svg/archer-T-animate.svg"></object>
 <script src="../../js/dragdrop.js"></script>
 <script>
   const obj = document.getElementById('archer-object');
@@ -24,7 +24,3 @@ Na kratko: Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim niž
 <div align="center">
 postavitev T – Klikni na sliko za animacijo
 </div>
-Če je stojišče neravno potem pokrčimo levo ali desno nogo:
-<object type="image/svg+xml" data="../../svg/archer-T-up.svg"></object>
-
-<object type="image/svg+xml" data="../../svg/archer-T-down.svg"></object>

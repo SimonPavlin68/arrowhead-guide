@@ -25,6 +25,7 @@ nav:
       - Opinions: en/feedback.md
   - Sl:
       - Namesto uvoda: sl/getting-started.md
+      - T postavitev: sl/position.md
       - Razdalje: sl/distances.md
       - Ocenjevanje razdalj: sl/estimation.md
       - Test: sl/test.md

@@ -8,7 +8,7 @@
 
 Укратко: Приликом гађања горе/доле, покушајте да се „савијете“ у куковима, што је могуће ниже, и ни у ком случају не смемо мењати „геометрију“ раменог појаса! 
 
-<object id="archer-object" type="image/svg+xml" data="../../svg/archer-T.svg"></object>
+<object id="archer-object" type="image/svg+xml" data="../../svg/archer-T-animate.svg"></object>
 <script src="../../js/dragdrop.js"></script>
 <script>
   const obj = document.getElementById('archer-object');

@@ -8,7 +8,7 @@ The body geometry must not be "knocked down", because then physics will let us d
 
 In short: When shooting up/down, try to "bend" at the hips, as low as possible, and in no case should we change the "geometry" of the shoulder girdle!
 
-<object id="archer-object" type="image/svg+xml" data="../../svg/archer-T.svg"></object>
+<object id="archer-object" type="image/svg+xml" data="../../svg/archer-T-animate.svg"></object>
 <script src="../../js/dragdrop.js"></script>
 <script>
   const obj = document.getElementById('archer-object');
