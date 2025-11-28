@@ -45,10 +45,10 @@ function loadFeedback() {
             const thead = document.createElement('thead');
             thead.innerHTML = `
 <tr style="background-color:#303fa1; color:white;">
-    <th style="padding:0.5rem; border:1px solid #ddd">Uporabnik</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Jezik</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Čas</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Sporočilo</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Корисник</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Језик</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Датум</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Порука</th>
 </tr>
             `;
             table.appendChild(thead);
