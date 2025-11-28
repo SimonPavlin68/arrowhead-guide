@@ -14,9 +14,9 @@
         id="rotateAnim"
         attributeName="transform"
         type="rotate"
-        dur="10s"
+        dur="3s"
         begin="indefinite"
-        values="0 400 325; 50 400 325; -50 400 325"
+        values="0 400 325; 50 400 325;"
         fill="freeze"
       />
 
@@ -25,20 +25,10 @@
         xlink:href="#warning"
         attributeName="opacity"
         begin="rotateAnim.begin + 1.2s"
-        dur="0.8s"
-        values="0;1;0"
-        repeatCount="6"
-        fill="freeze" />
-
-      <!-- Zelena kljukica -->
-      <animate 
-        xlink:href="#checkmark_right"
-        attributeName="opacity"
-        begin="rotateAnim.begin + 9s"
-        dur="1s"
-        values="0;1;0"
-        repeatCount="6"
-        fill="remove" />
+        dur="2s"
+        values="0;1;0;1"
+        repeatCount="3"
+/>
 
       <!-- telo -->
       <circle cx="400" cy="210" r="15" stroke-width="15px" />
@@ -54,19 +44,26 @@
     </g>
 
     <!-- noge -->
-    <line x1="400" y1="350" x2="440" y2="455" />
-    <line x1="400" y1="350" x2="360" y2="455" />
+    <line x1="400" y1="350" x2="440" y2="460" />
+    <line x1="400" y1="350" x2="360" y2="460" />
 
   </g>
   <!-- znaki -->
-  <text id="checkmark_right" x="380" y="280" font-size="50" fill="green" opacity="0">✔</text>
+  <text id="checkmark_right" x="360" y="300" font-size="50" fill="green" opacity="0">✔</text>
   <text id="warning" x="440" y="420" font-size="50" fill="red" opacity="0">!</text>
+  
 
-  <script type="application/ecmascript"><![CDATA[
+<script type="application/ecmascript"><![CDATA[
     function startAnimation(evt) {
       const svg = evt.currentTarget;
       const anim = svg.getElementById("rotateAnim");
+	  const xMark = document.getElementById("checkmark_right");
+		xMark.style.opacity = 0; // skrij ✖
       anim.beginElement();
+	  anim.addEventListener("endEvent", () => {
+		const xMark = document.getElementById("checkmark_right");
+		xMark.style.opacity = 1; // pokaži ✖
+	  });
     }
   ]]></script>
 

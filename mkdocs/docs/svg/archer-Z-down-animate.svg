@@ -16,7 +16,7 @@
 			    id="rotateAnim"
 				attributeName="transform"
 				type="rotate"
-				dur="5s"
+				dur="3s"
 				begin="click"
 				values="0 400 250; 50 400 250"
 				fill="freeze"
@@ -33,27 +33,23 @@
 		<!-- Z -->
 		<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
 		<!-- noge -->
-		<line x1="400" y1="350" x2="440" y2="455" />
-		<line x1="400" y1="350" x2="360" y2="455" />	
+		<line x1="400" y1="350" x2="440" y2="460" />
+		<line x1="400" y1="350" x2="360" y2="460" />	
 	</g>
 	<!-- Rdeč križec (skrit na začetku) -->
 	<text id="checkmark_right" x="330" y="290" font-size="50" fill="red" opacity="0">✖</text>
 
-	<!-- animacija za prikaz križca ob koncu rotateAnim -->
-	<animate 
-		xlink:href="#checkmark_right"
-		attributeName="opacity"
-		begin="rotateAnim.end"
-		dur="0.1s"
-		from="0" to="1"
-		fill="freeze" />
-
-	
-	  <script type="application/ecmascript"><![CDATA[
+  <script type="application/ecmascript"><![CDATA[
     function startAnimation(evt) {
       const svg = evt.currentTarget;
       const anim = svg.getElementById("rotateAnim");
+	  const xMark = document.getElementById("checkmark_right");
+		xMark.style.opacity = 0; // skrij ✖
       anim.beginElement();
+	  anim.addEventListener("endEvent", () => {
+		const xMark = document.getElementById("checkmark_right");
+		xMark.style.opacity = 1; // pokaži ✖
+	  });
     }
   ]]></script>
 </svg>
