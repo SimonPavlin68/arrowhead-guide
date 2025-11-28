@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 120 600 380">
+
+	<title>Archer</title>
+	
+	<g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+		<g transform="rotate(20, 400,325)">
+		<!-- ANIMACIJA ROTACIJE -->
+			<animateTransform 
+				attributeName="transform"
+				type="rotate"
+				dur="20s"
+				begin="click"
+				values="0 400 325; 50 400 325; -50 400 325; 0 400 325"
+				fill="freeze"
+			/>
+			<circle cx="400" cy="210" r="15" stroke-width="15px" />
+			<!-- trup zgoraj -->
+			<line x1="400" y1="250" x2="400" y2="325" />
+			<!-- roke -->
+			<line x1="340" y1="250" x2="490" y2="250" />
+			<!-- T -->
+			<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+			<!-- lok -->
+			<path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
+		</g>
+		<!-- podlaga -->
+		<g transform="rotate(20, 440,455)">
+			<line x1="200" y1="455" x2="550" y2="455" stroke="silver" stroke-width="5px"/>
+		</g>
+		<!-- noge -->
+		<polyline points="400,350 335,363 313,408 "/>
+		<line x1="400" y1="350" x2="440" y2="455" />
+		<!--line x1="400" y1="350" x2="360" y2="455" /-->
+		
+		
+	</g>
+</svg>
