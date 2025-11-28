@@ -14,58 +14,46 @@ const feedbackSubmit = document.getElementById('feedback-submit');
 const feedbackList = document.getElementById('feedback-list');
 
 function loadFeedback() {
-    // MOCK fetch: vrne fiksne podatke
-    const mockResponse = [
-        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:03:30", message: "Jeba od zgoraj sssslllllllllll" },
-        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:01:29", message: "Bum tresk" },
-        { lang: "en", user: "Alice", timestamp: "2025-11-27T19:55:12", message: "Great job!" }
-    ];
-
-    // Simulacija asinkronega fetch
-    new Promise((resolve) => {
-        setTimeout(() => resolve({ ok: true, json: async () => mockResponse }), 200);
-    })
+    fetch('/api/feedback')
     .then(res => {
         if (!res.ok) {
-            throw new Error(`Napaka pri GET`);
+            throw new Error(`Napaka pri GET: ${res.status}`);
         }
         return res.json();
     })
     .then(data => {
-        // ustvarimo tabelo
-        feedbackList.innerHTML = ''; // počisti seznam
         feedbackList.innerHTML = '';
 
-            const table = document.createElement('table');
-            table.style.borderCollapse = 'collapse';
-            table.style.width = '100%';
+        const table = document.createElement('table');
+        table.style.borderCollapse = 'collapse';
+        table.style.width = '100%';
 
-            // HEADER
-            const thead = document.createElement('thead');
-            thead.innerHTML = `
+        // HEADER
+        const thead = document.createElement('thead');
+        thead.innerHTML = `
 <tr style="background-color:#303fa1; color:white;">
     <th style="padding:0.5rem; border:1px solid #ddd">Uporabnik</th>
     <th style="padding:0.5rem; border:1px solid #ddd">Jezik</th>
     <th style="padding:0.5rem; border:1px solid #ddd">Datum</th>
     <th style="padding:0.5rem; border:1px solid #ddd">Sporočilo</th>
 </tr>
-            `;
-            table.appendChild(thead);
+        `;
+        table.appendChild(thead);
 
-            const tbody = document.createElement('tbody');
-            data.forEach((f, i) => {
-                const tr = document.createElement('tr');
-                tr.style.backgroundColor = i % 2 === 0 ? '#f9f9f9' : '#ffffff';
-                tr.innerHTML = `
+        const tbody = document.createElement('tbody');
+        data.forEach((f, i) => {
+            const tr = document.createElement('tr');
+            tr.style.backgroundColor = i % 2 === 0 ? '#f9f9f9' : '#ffffff';
+            tr.innerHTML = `
 <td style="padding:0.5rem; border:1px solid #ddd">${f.user}</td>
 <td style="padding:0.5rem; border:1px solid #ddd">${f.lang}</td>
 <td style="padding:0.5rem; border:1px solid #ddd">${formatDate(f.timestamp)}</td>
 <td style="padding:0.5rem; border:1px solid #ddd">${f.message}</td>
-                `;
-                tbody.appendChild(tr);
-            });
+            `;
+            tbody.appendChild(tr);
+        });
 
-            table.appendChild(tbody);
+        table.appendChild(tbody);
         feedbackList.appendChild(table);
     })
     .catch(err => {
@@ -73,6 +61,7 @@ function loadFeedback() {
         console.error('Napaka pri GET feedback:', err);
     });
 }
+
 
 
 
