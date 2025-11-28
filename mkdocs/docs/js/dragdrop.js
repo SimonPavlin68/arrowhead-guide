@@ -28,3 +28,17 @@ function onSVGLoad(svgRoot) {
     svgRoot.addEventListener('mouseup', () => { DragTarget = null; });
     svgRoot.addEventListener('mouseleave', () => { DragTarget = null; });
 }
+
+function onSVGLoadClick(svgRoot) {
+    // najdemo animacijo
+    const anim = svgRoot.getElementById("animRot");
+    if (!anim) {
+        console.warn("animRot not found inside SVG");
+        return;
+    }
+
+    // klik na SVG za start animacije
+    svgRoot.addEventListener("click", () => {
+        anim.beginElement();
+    });
+}

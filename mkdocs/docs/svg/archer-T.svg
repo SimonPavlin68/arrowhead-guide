@@ -11,8 +11,9 @@
 				attributeName="transform"
 				type="rotate"
 				dur="20s"
-				repeatCount="indefinite"
+				begin="click"
 				values="0 400 325; 50 400 325; -50 400 325; 0 400 325"
+				fill="freeze"
 			/>
 			<circle cx="400" cy="210" r="15" stroke-width="15px" />
 			<!-- trup zgoraj -->
@@ -23,7 +24,7 @@
 			<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
 			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
 			<!-- lok -->
-			<path d="M460,140 Q570,250 460,360 "/>
+			<path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
 		</g>
 		<!-- noge -->
 		<line x1="400" y1="350" x2="440" y2="455" />
