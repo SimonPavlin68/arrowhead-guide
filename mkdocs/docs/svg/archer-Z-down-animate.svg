@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="500" height="400"  viewBox="150 130 500 350"
+ style="background:#f8f8f8; cursor:pointer;" onclick="startAnimation(evt)">
+	<title>Archer</title>
+	<g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+	<!-- TLA -->
+	<line x1="250" y1="460" x2="550" y2="460" stroke="silver" stroke-width="10" />
+					<!-- trup zgoraj -->
+			<line x1="400" y1="250" x2="400" y2="325" />
+		<g transform="rotate(0, 400,250)">
+
+		<!-- ANIMACIJA ROTACIJE -->
+			<animateTransform 
+			    id="rotateAnim"
+				attributeName="transform"
+				type="rotate"
+				dur="5s"
+				begin="click"
+				values="0 400 250; 50 400 250"
+				fill="freeze"
+			/>
+			<circle cx="400" cy="210" r="15" stroke-width="15px" />
+			
+			<!-- roke -->
+			<line x1="340" y1="250" x2="490" y2="250" />
+			<!-- T -->
+			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+			<!-- lok -->
+			<path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
+		</g>
+		<!-- Z -->
+		<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+		<!-- noge -->
+		<line x1="400" y1="350" x2="440" y2="455" />
+		<line x1="400" y1="350" x2="360" y2="455" />	
+	</g>
+	<!-- Rdeč križec (skrit na začetku) -->
+	<text id="checkmark_right" x="330" y="290" font-size="50" fill="red" opacity="0">✖</text>
+
+	<!-- animacija za prikaz križca ob koncu rotateAnim -->
+	<animate 
+		xlink:href="#checkmark_right"
+		attributeName="opacity"
+		begin="rotateAnim.end"
+		dur="0.1s"
+		from="0" to="1"
+		fill="freeze" />
+
+	
+	  <script type="application/ecmascript"><![CDATA[
+    function startAnimation(evt) {
+      const svg = evt.currentTarget;
+      const anim = svg.getElementById("rotateAnim");
+      anim.beginElement();
+    }
+  ]]></script>
+</svg>

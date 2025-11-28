@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 300">
-	<rect x="0" y="0" width="400" height="300" fill="none" />
-	<g font-family="Comic Sans MS" font-size="30px" fill="blue" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 300" background="#f8f8f8">
+	<rect x="0" y="0" width="900" height="300" fill="#f8f8f8" />
+	<g font-family="Comic Sans MS" font-size="30px" fill="#303fa1" >
 	<!--text x="100" y="100">Izrek o podobnih trikotnikih:</text-->
 
 	<line x1="100" y1="250" x2="800" y2="50" stroke="gray" stroke-width="2" />
 	<line x1="100" y1="250" x2="400" y2="250" stroke="gray" stroke-width="2">
-		<animate attributeName="stroke" values="gray;blue;gray" begin="animation1.begin" dur="2s" fill="freeze" />
+		<animate attributeName="stroke" values="gray;#303fa1;gray" begin="animation1.begin" dur="2s" fill="freeze" />
 		<animate attributeName="stroke-width" values="2;5;2" begin="animation1.begin" dur="2s" fill="freeze" />
-		<animate attributeName="stroke"	values="gray;blue;gray"	begin="animation8.end" dur="2s"	fill="freeze" />
+		<animate attributeName="stroke"	values="gray;#303fa1;gray"	begin="animation8.end" dur="2s"	fill="freeze" />
 		<animate attributeName="stroke-width" values="2;5;2" begin="animation8.end"	dur="2s" fill="freeze" />
 	</line>
 	<line x1="400" y1="250" x2="800" y2="250" stroke="gray" stroke-width="2">
-		<animate attributeName="stroke"	values="gray;blue;gray"	begin="animation8.end" dur="2s" fill="freeze" />
+		<animate attributeName="stroke"	values="gray;#303fa1;gray"	begin="animation8.end" dur="2s" fill="freeze" />
 		<animate attributeName="stroke-width" values="2;5;2" begin="animation8.end"	dur="2s" fill="freeze" />
 	</line>
 	<line x1="800" y1="50" x2="800" y2="250" stroke="gray" stroke-width="2">

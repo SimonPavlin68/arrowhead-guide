@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1900 750" background="aliceblue">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 800" >
 
 	<title>Archer</title>
 
@@ -36,7 +36,7 @@
 		  <rect x="0" y="0" width="50" height="50" fill="none" stroke="red" stroke-width="2px" />
 		</g>
   	</defs>
-	
+	<rect x="0" y="0" width="2000" height="1000" fill="#f8f8f8" />
 // kotiranje
 	<g fill="black" stroke="black" stroke-width="2px" font-family="Comic Sans MS" font-size="30px">
 		// a

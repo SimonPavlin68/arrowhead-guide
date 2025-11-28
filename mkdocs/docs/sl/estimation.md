@@ -11,7 +11,7 @@ Ne pozabi: Če napačno oceniš razdaljo do polovice, boš naredili dvojno napak
 # Polaganje "metrov"
 Ta metoda je uporabna pri majhnih razdaljah, ideja pa je, da poskušamo razdaljo oceniti tako da "polagamo" meter za metrom.
 # Tehnika 10 metrov
-Naučite se, kako dolga/daleč je 10 metrov na različnih vrstah terena.
+Naučite se oceniti, kolikšna je razdalja 10 metrov na različnih vrstah terena.
 Poiščite točko na terenu, ki je 10 metrov oddaljena od vas. Preverite, kako pogosto se ta razdalja ujema med vami in ciljem. Preostalo razdaljo prištejte ali odštejte.
 Ne pozabi: če napačno oceniš prvih 10 metrov, se bo ta napačna ocena vsakič ponovila.
 # Metoda sove
@@ -31,14 +31,14 @@ Ocenjevanje "na palec" je v bistvu precej stara metoda in je predhodnica viziran
 Viziranje je ena bolj natančnih metod ocenjevanja razdalje do tarče. Ideja viziranja temelji na Talesov-em izreku o sorazmerjih.
 ![Talesov izrek](../svg/teorija.svg)
 <div align="center">
-*Talesov izrek*
+Talesov izrek
 </div>
 Kako si s tem lahko pomagamo?
 Vzemimo da je a razdalja med očesom in merkom, b je premer merka, C razdalja do tarče in D premer tarče, oziroma sorazmerni delež pokritosti tarče z merkom.
 Privzamemo da so a, b in D konstante, potem lahko iz teh podatkov izračunamo C.
 ![Viziranje](../svg/archer-more.svg)
 <div align="center">
-*Viziranje*
+Viziranje
 </div>
 
 

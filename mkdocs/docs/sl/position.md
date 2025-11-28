@@ -11,23 +11,16 @@ Pri streljanju navzgor in navzdol pazimo da se prepognemo v bokih.
 Zgornji del telesa naj bo vedno v obliki črke T. Pri streljanju navzdol pazimo, da nas spodnji krak ne udari v nogo:
 
 <object id="archer-object" type="image/svg+xml" data="../../svg/archer-T-animate.svg"></object>
-<script src="../../js/dragdrop.js"></script>
-<script>
-  const obj = document.getElementById('archer-object');
-  obj.addEventListener('load', function() {
-	const svgDoc = obj.contentDocument;
-	const svgRoot = svgDoc.documentElement;
-	svgRoot.style.cursor = "pointer";
-	// Inicializiraj click
-	onSVGLoadClick(svgRoot);
-  });
-</script>
 
 pravilna T-postavitev
 
-<object id="archer-object" type="image/svg+xml" data="../../svg/archer-Z-animate.svg"></object>
+<object id="archer-object" type="image/svg+xml" data="../../svg/archer-Z-up-animate.svg"></object>
 
-nepravilna postavitev
+nepravilna postavitev pri streljanju navzdor
+
+<object id="archer-object" type="image/svg+xml" data="../../svg/archer-Z-down-animate.svg"></object>
+
+nepravilna postavitev pri streljanju navzdol
 
 
 
