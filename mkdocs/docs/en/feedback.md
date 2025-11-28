@@ -17,7 +17,7 @@ const feedbackList = document.getElementById('feedback-list');
 function loadFeedback() {
     // MOCK fetch: vrne fiksne podatke
     const mockResponse = [
-        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:03:30", message: "Jeba od zgoraj" },
+        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:03:30", message: "Jeba od zgoraj eeeeeeeeeeeeee" },
         { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:01:29", message: "Bum tresk" },
         { lang: "en", user: "Alice", timestamp: "2025-11-27T19:55:12", message: "Great job!" }
     ];
@@ -45,10 +45,10 @@ function loadFeedback() {
             const thead = document.createElement('thead');
             thead.innerHTML = `
 <tr style="background-color:#303fa1; color:white;">
-    <th style="padding:0.5rem; border:1px solid #ddd">Uporabnik</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Jezik</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Čas</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Sporočilo</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">User</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Language</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Time</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Message</th>
 </tr>
             `;
             table.appendChild(thead);
@@ -60,7 +60,7 @@ function loadFeedback() {
                 tr.innerHTML = `
 <td style="padding:0.5rem; border:1px solid #ddd">${f.user}</td>
 <td style="padding:0.5rem; border:1px solid #ddd">${f.lang}</td>
-<td style="padding:0.5rem; border:1px solid #ddd">${new Date(f.timestamp).toLocaleString()}</td>
+<td style="padding:0.5rem; border:1px solid #ddd">${formatDate(f.timestamp)}</td>
 <td style="padding:0.5rem; border:1px solid #ddd">${f.message}</td>
                 `;
                 tbody.appendChild(tr);

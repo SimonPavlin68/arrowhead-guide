@@ -5,7 +5,7 @@
     <button id="feedback-submit" style="padding:0.5rem 1rem;border:none;border-radius:6px;background:#3f51b5;color:white;cursor:pointer;">Pošlji</button>
 
     <h3 style="margin-top:1rem;">Obstoječa mnenja:</h3>
-    <div id="feedback-list" style="list-style:none;padding:0;"></div>
+    <div id="feedback-list"></div>
 </div>
 
 <script>
@@ -16,7 +16,7 @@ const feedbackList = document.getElementById('feedback-list');
 function loadFeedback() {
     // MOCK fetch: vrne fiksne podatke
     const mockResponse = [
-        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:03:30", message: "Jeba od zgoraj" },
+        { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:03:30", message: "Jeba od zgoraj sssslllllllllll" },
         { lang: "sl", user: "Simon", timestamp: "2025-11-27T20:01:29", message: "Bum tresk" },
         { lang: "en", user: "Alice", timestamp: "2025-11-27T19:55:12", message: "Great job!" }
     ];
@@ -46,7 +46,7 @@ function loadFeedback() {
 <tr style="background-color:#303fa1; color:white;">
     <th style="padding:0.5rem; border:1px solid #ddd">Uporabnik</th>
     <th style="padding:0.5rem; border:1px solid #ddd">Jezik</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Čas</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Datum</th>
     <th style="padding:0.5rem; border:1px solid #ddd">Sporočilo</th>
 </tr>
             `;
@@ -59,7 +59,7 @@ function loadFeedback() {
                 tr.innerHTML = `
 <td style="padding:0.5rem; border:1px solid #ddd">${f.user}</td>
 <td style="padding:0.5rem; border:1px solid #ddd">${f.lang}</td>
-<td style="padding:0.5rem; border:1px solid #ddd">${new Date(f.timestamp).toLocaleString()}</td>
+<td style="padding:0.5rem; border:1px solid #ddd">${formatDate(f.timestamp)}</td>
 <td style="padding:0.5rem; border:1px solid #ddd">${f.message}</td>
                 `;
                 tbody.appendChild(tr);
