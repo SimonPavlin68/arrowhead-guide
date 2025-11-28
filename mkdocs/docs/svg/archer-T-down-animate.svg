@@ -24,12 +24,16 @@
   <!-- DESNA NOGA -->
   <polyline id="rightLeg" points="400,350 420,405 440,460" stroke="#303fa1" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
+  <!-- Zelena kljukica (skrita na začetku) -->
+  <text id="checkmark" x="350" y="310" font-size="50" fill="green" style="display:none;">✔</text>
+
   <script><![CDATA[
     const svg = document.currentScript.parentElement;
     const trunk = svg.getElementById("trunk");
     const ground = svg.getElementById("ground");
     const rightLeg = svg.getElementById("rightLeg");
     const leftLeg = svg.getElementById("leftLeg");
+	const checkmark = svg.getElementById("checkmark");
 
     const hip = {x:400, y:350};
     const footRight0 = {x:440, y:460};  // desno stopalo
@@ -87,6 +91,9 @@
         // trup se rahlo vrti (npr. polovico kota tal)
         trunk.setAttribute("transform", `rotate(${angle} 400 325)`);
 
+		if (t >= 1) {
+          checkmark.style.display = 'block'; // prikaži kljukico
+        }
         if (t < 1) requestAnimationFrame(animate);
       }
 

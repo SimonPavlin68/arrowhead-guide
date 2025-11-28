@@ -29,5 +29,18 @@
 		<!-- noge -->
 		<line x1="400" y1="350" x2="440" y2="455" />
 		<line x1="400" y1="350" x2="360" y2="455" />
+		
+		<!-- Zelena kljukica (skrita na začetku) -->
+		<text id="checkmark" x="400" y="150" font-size="50" fill="green" style="display:none;">✔</text>
 	</g>
+	<script type="application/javascript">
+		// Čakamo, da se animacija zaključi
+		const anim = document.getElementById('rotateAnim');
+		const checkmark = document.getElementById('checkmark');
+
+		// Ko animacija zaključi, pokaži kljukico
+		anim.addEventListener('end', () => {
+			checkmark.style.display = 'block'; // Pokaži kljukico
+		});
+	</script>
 </svg>
