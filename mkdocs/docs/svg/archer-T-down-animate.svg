@@ -1,7 +1,7 @@
-<svg width="500" height="500" viewBox="100 100 500 500"
+<svg width="500" height="400"  viewBox="150 130 500 350"
      xmlns="http://www.w3.org/2000/svg"
      style="background:#f8f8f8; cursor:pointer;">
-  <title>Archer-T nagib navzdol - 3s animacija</title>
+  <title>Archer-T down - 3s animation</title>
 
   <!-- TRUP -->
   <g id="trunk" stroke="#303fa1" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round">
