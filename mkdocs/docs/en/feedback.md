@@ -24,6 +24,10 @@ function loadFeedback() {
     ];
     */
 
+    // Simulacija asinkronega fetch
+    // new Promise((resolve) => {
+    //    setTimeout(() => resolve({ ok: true, json: async () => mockResponse }), 200);
+    // })
     // -- PRAVI API klic --
     fetch('/api/feedback')
     .then(res => {
