@@ -47,7 +47,7 @@ function loadFeedback() {
 <tr style="background-color:#303fa1; color:white;">
     <th style="padding:0.5rem; border:1px solid #ddd">User</th>
     <th style="padding:0.5rem; border:1px solid #ddd">Language</th>
-    <th style="padding:0.5rem; border:1px solid #ddd">Time</th>
+    <th style="padding:0.5rem; border:1px solid #ddd">Date</th>
     <th style="padding:0.5rem; border:1px solid #ddd">Message</th>
 </tr>
             `;
