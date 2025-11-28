@@ -1,0 +1,89 @@
+<svg width="500" height="500" viewBox="100 100 500 500"
+     xmlns="http://www.w3.org/2000/svg"
+     style="background:#f8f8f8; cursor:pointer;">
+  <title>Archer-T up - 3s animation</title>
+
+  <!-- TRUP -->
+  <g id="trunk" transform="rotate(0,400,325)" stroke="#303fa1" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="400" cy="210" r="15" stroke-width="15px" />
+    <line x1="400" y1="250" x2="400" y2="325" />
+    <line x1="340" y1="250" x2="490" y2="250" />
+    <line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+    <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+    <path d="M460,140 Q570,250 460,360" stroke-width="15px"/>
+  </g>
+
+  <!-- TLA -->
+  <g id="ground" transform="rotate(0 360 460)">
+    <line x1="250" y1="460" x2="550" y2="460" stroke="silver" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- LEVA NOGA (statična) -->
+  <polyline id="leftLeg" points="400,350 380,405 360,460" stroke="#303fa1" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- DESNA NOGA (animirana kolena) -->
+  <polyline id="rightLeg" points="400,350 420,405 440,460" stroke="#303fa1" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <script><![CDATA[
+    const svg = document.currentScript.parentElement;
+    const trunk = svg.getElementById("trunk");
+    const ground = svg.getElementById("ground");
+    const rightLeg = svg.getElementById("rightLeg");
+
+    const hip = {x:400, y:350};
+    const foot0 = {x:440, y:460};
+    const pivot = {x:360, y:460};
+    const L = 55; // dolžina stegna/spodnjega dela noge
+
+    function rotatePoint(x, y, cx, cy, angleDeg) {
+      const rad = angleDeg * Math.PI / 180;
+      const dx = x - cx;
+      const dy = y - cy;
+      return {
+        x: cx + dx*Math.cos(rad) - dy*Math.sin(rad),
+        y: cy + dx*Math.sin(rad) + dy*Math.cos(rad)
+      };
+    }
+
+    function computeKnee(hip, foot, L) {
+      const dx = foot.x - hip.x;
+      const dy = foot.y - hip.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      const D = Math.min(Math.max(dist,0.0001),2*L);
+      const a = D/2;
+      const h = Math.sqrt(Math.max(L*L - a*a,0));
+      const mx = hip.x + dx/2;
+      const my = hip.y + dy/2;
+      const ux = dx / D;
+      const uy = dy / D;
+      const px = -uy; // koleno obrnjeno v drugo smer
+      const py = ux;
+      return {x: mx - px*h, y: my - py*h};
+    }
+
+    svg.addEventListener("click", () => {
+      const duration = 3000; // ms
+      const start = performance.now();
+
+      function animate(now) {
+        const t = Math.min((now - start)/duration, 1);
+        const angle = -20 * t;
+
+        // tla
+        ground.setAttribute("transform", `rotate(${angle} ${pivot.x} ${pivot.y})`);
+
+        // desna noga
+        const foot = rotatePoint(foot0.x, foot0.y, pivot.x, pivot.y, angle);
+        const knee = computeKnee(hip, foot, L);
+        rightLeg.setAttribute("points", `${hip.x},${hip.y} ${knee.x},${knee.y} ${foot.x},${foot.y}`);
+
+        // trup
+        trunk.setAttribute("transform", `rotate(${angle} 400 325)`);
+
+        if (t < 1) requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    });
+  ]]></script>
+</svg>
