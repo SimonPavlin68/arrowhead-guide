@@ -26,12 +26,16 @@
 			<!-- roke -->
 			<line x1="340" y1="250" x2="490" y2="250" />
 			<!-- T -->
-			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+			<g id="t_mark" opacity="0">
+			  <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+			</g>
 			<!-- lok -->
 			<path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
 		</g>
 		<!-- Z -->
-		<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+		<g id="z_mark" opacity="0">
+		  <line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+		</g>
 		<!-- noge -->
 		<line x1="400" y1="350" x2="440" y2="460" />
 		<line x1="400" y1="350" x2="360" y2="460" />	
@@ -45,11 +49,19 @@
       const svg = evt.currentTarget;
       const anim = svg.getElementById("rotateAnim");
 	  const xMark = document.getElementById("checkmark_right");
-		xMark.style.opacity = 0; // skrij ✖
+	  xMark.style.opacity = 0; // skrij ✖
+	  const tMark = document.getElementById("t_mark");
+	  tMark.style.opacity = 0;
+	  const zMark = document.getElementById("z_mark");
+	  zMark.style.opacity = 0;
       anim.beginElement();
 	  anim.addEventListener("endEvent", () => {
 		const xMark = document.getElementById("checkmark_right");
 		xMark.style.opacity = 1; // pokaži ✖
+		const tMark = document.getElementById("t_mark");
+		tMark.style.opacity = 1;
+		const zMark = document.getElementById("z_mark");
+	    zMark.style.opacity = 1;
 	  });
     }
   ]]></script>
