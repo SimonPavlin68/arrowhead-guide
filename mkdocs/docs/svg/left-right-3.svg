@@ -1,0 +1,91 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<defs>
+		<filter id="shadow" x="0" y="0" width="200%" height="200%">
+            <feOffset id="shoff" result="offOut" dx="0" dy="20" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+		<g id="field" stroke-width="0.5">
+			<circle r="50" stroke="white" fill="black"/>
+			<circle r="40" stroke="white" />
+			<circle r="30" stroke="white" />
+			<circle r="20" stroke="white" />
+			<circle r="10" stroke="black" fill="yellow" />
+			<circle r="5"  stroke="black" fill="none" />
+			<line x1="-2" y1="0" x2="2" y2="0" stroke="black" />
+			<line x1="0" y1="-2" x2="0" y2="2" stroke="black" />
+		</g>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<line id="line1" x1="0" y1="300" x2="800" y2="300" fill="black" stroke="silver" stroke-width="10" />
+	<g id="target" transform=" translate(400, 100)">
+		<use xlink:href="#field" transform=" scale(2)" />
+	</g>
+	<g id="arrows" transform="translate(330, 100)" fill="magenta">;
+		<circle cx="0" cy="-11" r="10" />
+		<circle cx="11" cy="8" r="10" />
+		<circle cx="-11" cy="8" r="10" />
+		<animateTransform
+			xlink:href="#arrows"
+			attributeName="transform"
+			type="translate"
+			from="330,100"
+			to="470,500"
+			dur="1.5s"
+			begin="anim1.begin" 
+			fill="freeze"
+			repeacount="indefinite" />
+		<animateTransform
+			xlink:href="#arrows"
+			attributeName="transform"
+			type="translate"
+			from="470,500"
+			to="330,100"
+			dur="1.5s"
+			begin="anim3.begin" 
+			fill="freeze"
+			repeacount="indefinite" />
+	</g>
+
+<animateTransform
+			xlink:href="#target"
+			id="anim1"
+			attributeName="transform"
+			type="translate"
+			from="400,100"
+			to="400,500"
+			dur="1.5s"
+			begin="indefinite" 
+			fill="freeze"
+			repeacount="indefinite" />
+<animateTransform
+			xlink:href="#target"
+			id="anim3"
+			attributeName="transform"
+			type="translate"
+			from="400,500"
+			to="400,100"
+			dur="1.5s"
+			begin="indefinite" 
+			fill="freeze"
+			repeacount="indefinite" />
+
+<script><![CDATA[
+
+var first = true;
+
+function OnClick() {
+	if(first) {
+		var elem = document.getElementById('anim1');
+		elem.beginElement();
+	} else {
+		var elem = document.getElementById('anim3');
+		elem.beginElement();
+	}
+	first = !first;
+}
+
+]]></script>
+</svg>

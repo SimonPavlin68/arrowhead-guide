@@ -1,0 +1,73 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<defs>
+		<g id="field" stroke-width="0.5">
+			<circle r="50" stroke="white" fill="black"/>
+			<circle r="40" stroke="white" />
+			<circle r="30" stroke="white" />
+			<circle r="20" stroke="white" />
+			<circle r="10" stroke="black" fill="yellow" />
+			<circle r="5"  stroke="black" fill="none" />
+			<line x1="-2" y1="0" x2="2" y2="0" stroke="black" />
+			<line x1="0" y1="-2" x2="0" y2="2" stroke="black" />
+		</g>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	
+	<!-- TLA -->
+	<line id="line" x1="0" y1="0" x2="800" y2="600" stroke="silver" stroke-width="10" />
+	
+	
+	
+	<use xlink:href="#field"  transform="translate(400,200) scale(2)" />
+	<g id="arrows" transform="translate(470, 200)" fill="magenta">;
+		<circle cx="0" cy="-11" r="10" />
+		<circle cx="11" cy="8" r="10" />
+		<circle cx="-11" cy="8" r="10" />
+		<animateTransform
+			xlink:href="#arrows"
+			attributeName="transform"
+			type="translate"
+			from="470,200"
+			to="330,200"
+			dur="1.5s"
+			begin="anim1.begin" 
+			fill="freeze"
+			repeacount="indefinite" />
+		<animateTransform
+			xlink:href="#arrows"
+			attributeName="transform"
+			type="translate"
+			from="330,200"
+			to="470,200"
+			dur="1.5s"
+			begin="anim3.begin" 
+			fill="freeze"
+			repeacount="indefinite" />
+	</g>
+
+	<animate xlink:href="#line" id="anim1" attributeName="y1" values="0; 600;" begin="indefinite" dur="1.5s" fill="freeze" />
+	<animate xlink:href="#line" attributeName="y2" values="600; 0;" begin="anim1.begin" dur="1.5s" fill="freeze" />
+
+	<animate xlink:href="#line" id="anim3" attributeName="y1" values="600; 0;" begin="indefinite" dur="1.5s" fill="freeze" />
+	<animate xlink:href="#line" attributeName="y2" values="0; 600;" begin="anim3.begin" dur="1.5s" fill="freeze" />
+
+<script><![CDATA[
+
+var first = true;
+
+function OnClick() {
+	if(first) {
+		var elem = document.getElementById('anim1');
+		elem.beginElement();
+	} else {
+		var elem = document.getElementById('anim3');
+		elem.beginElement();
+	}
+	first = !first;
+}
+
+]]></script>
+
+</svg>
