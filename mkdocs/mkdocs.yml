@@ -14,6 +14,8 @@ theme:
 nav:
   - En:
       - Instead of an introduction: en/getting-started.md
+      - Position: en/position.md
+      - Left - right: en/left-right.md
       - Distances: en/distances.md
       - Distance Estimation: en/estimation.md
       - Test: en/test.md
@@ -32,7 +34,6 @@ nav:
       - Test: sl/test.md
       - Poševni met: sl/graph.md
       - Kavč: sl/sofa.md
-      # - Skrivnostni obrat: sl/mystery.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
       - Za konec: sl/about.md
@@ -40,13 +41,14 @@ nav:
 
   - Sr:
       - Уместо увода: sr/getting-started.md
+      - Распоред: sr/position.md     
+      - Лево - Десно: sr/left-right.md
       - Удаљености: sr/distances.md
       - Процена удаљености: sr/estimation.md
       - Тест: sr/test.md
       - Косо бацање: sr/graph.md
       - Софа: sr/sofa.md
       - Пре такмичења: sr/other.md
-      # - Мистериозни заокрет: sr/mystery.md
       - Калкулатор: sr/calculate.md
       - Коначно: sr/about.md
       - Мишљења: sr/feedback.md

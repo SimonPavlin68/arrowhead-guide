@@ -15,6 +15,21 @@ Here, the archer visually divides the whole distance into two halves and then es
 This reduces the estimation error because evaluating shorter segments is easier.
 # Laying down “meters”
 This method is useful on short distances. The idea is to mentally “lay down” one-meter segments along the ground and count them until reaching the target.
+# 10 Meter Technique
+Learn to estimate the distance of 10 meters on different types of terrain.
+Find a point on the terrain that is 10 meters away from you. Check how often this distance matches between you and the target. Add or subtract the remaining distance.
+Remember: if you misjudge the first 10 meters, this misjudgement will be repeated every time.
+# Owl Method
+The owl method is especially useful if the terrain in front of the target is not clear (undulating, across a valley, across water, etc.).
+This makes the other methods more or less useless.
+First, estimate the distance to an object somewhere between you and the target (a branch, a tree, etc.).
+Pay attention to how this object is aligned with the target or with any part of the target.
+Move your head sideways and observe how the object moves relative to the target.
+If it only moves a small distance, the distance between the object and the target will be relatively small.
+If the object moves in line with the head movement, the object is halfway to the target,
+but if the object moves more, the object is less than halfway to the target.
+# "Addition" method
+When shooting in a well-maintained forest (tree line) or along a fence, you can add up fixed distances. For example, the distances between fence posts, between trees in an avenue...
 # Thumb estimation
 Thumb estimation is a traditional method and a predecessor of string-walking sighting techniques. The archer extends their arm and observes how much of the target is covered by the raised thumb.
 The more the thumb covers, the farther the target is, and vice versa.

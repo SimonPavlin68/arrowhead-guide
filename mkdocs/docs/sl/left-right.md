@@ -14,7 +14,7 @@ Svetloba lahko vpliva na zadetke levo, desno.
 
 <object type="image/svg+xml" data="../../svg/left-right-3.svg"></object>
 
-Pri streljanju navzdor ali navzdol običajno ne ustrelimo,kot bi na ravnem, kar vodi do zadetkov izven smeri.
+Kadar je tarča izven horizontale, običajno naš položaj pri strelu ni kot na ravnem, kar vodi do zadetkov levo ali desno.
 
 
 
