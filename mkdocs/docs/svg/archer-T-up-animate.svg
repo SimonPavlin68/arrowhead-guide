@@ -27,7 +27,7 @@
   <polyline id="rightLeg" points="400,350 420,405 440,460" stroke="#303fa1" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Zelena kljukica (skrita na začetku) -->
-  <text id="checkmark" x="330" y="330" font-size="50" fill="green" style="display:none;">✔</text>
+  <text id="checkmark" x="320" y="340" font-size="50" fill="green" style="display:none;">✔</text>
   
 
   <script><![CDATA[

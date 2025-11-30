@@ -41,7 +41,7 @@
 		<line x1="400" y1="350" x2="360" y2="460" />	
 	</g>
 	<!-- Rdeč križec (skrit na začetku) -->
-	<text id="checkmark_right" x="430" y="290" font-size="50" fill="red" opacity="0">✖</text>
+	<text id="checkmark_right" x="420" y="290" font-size="50" fill="red" opacity="0">✖</text>
 
 
   <script type="application/ecmascript"><![CDATA[
