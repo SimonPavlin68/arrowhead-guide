@@ -1,14 +1,20 @@
 ﻿# Levo - desno
 
-Pri streljanju po različnih konfiguracijah terena so včasih zadetki levo ali desno.
-
-Vzroki so različni, nagib terena, svetloba, streljanje navkreber ali navzdol...
+Ko streljamo po razgibanem terenu, se lahko zgodi, da puščice priletijo nekoliko izven smeri – bolj levo ali desno, kot bi pričakovali.
+Na to vpliva več dejavnikov: od svetlobe in nagiba terena do položaja strelca, ko streljamo bočno na pobočje.
+Tudi pri strelih navzgor ali navzdol pogosto ne ustrelimo enako kot na ravni površini, kar še dodatno vpliva na smer zadetka.
 
 <object type="image/svg+xml" data="../../svg/left-right-1.svg"></object>
 
+Streljanje bočno na nagib terena.
+
 <object type="image/svg+xml" data="../../svg/left-right-2.svg"></object>
 
+Svetloba lahko vpliva na zadetke levo, desno.
+
 <object type="image/svg+xml" data="../../svg/left-right-3.svg"></object>
+
+Pri streljanju navzdor ali navzdol običajno ne ustrelimo,kot bi na ravnem, kar vodi do zadetkov izven smeri.
 
 
 
