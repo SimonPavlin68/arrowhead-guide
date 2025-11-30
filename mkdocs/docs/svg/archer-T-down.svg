@@ -5,7 +5,7 @@
 	<title>Archer</title>
 	
 	<g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
-		<g transform="rotate(20, 400,325)">
+		<g transform="rotate(0, 400,325)">
 			<circle cx="400" cy="210" r="15" stroke-width="15px" />
 			<!-- trup zgoraj -->
 			<line x1="400" y1="250" x2="400" y2="325" />

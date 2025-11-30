@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 120 600 380" style="background:#f8f8f8; cursor:pointer;" onclick="startAnimation(evt)">
+
+  <title>Archer</title>
+  
+  <g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g id="archer" transform="rotate(0, 400,325)">
+      <circle cx="400" cy="210" r="15" stroke-width="15px" />
+      <line x1="400" y1="250" x2="400" y2="325" />
+
+      <!-- arm shape -->
+      <line id="arm" x1="400" y1="250" x2="490" y2="250">
+        <animate id="armAnim" attributeName="x1" from="400" to="340" dur="1.5s" begin="indefinite" fill="freeze" />
+      </line>
+
+      <!-- bow shape -->
+      <path id="bow" d="M500,140 Q530,250 500,360" stroke-width="15px">
+        <animate id="bowAnim" attributeName="d" from="M500,140 Q530,250 500,360" to="M460,140 Q570,250 460,360" dur="1.5s" begin="indefinite" fill="freeze" />
+      </path>
+
+      <!-- rotate animation -->
+      <animateTransform id="rotateAnim" attributeName="transform" type="rotate" dur="1.5s" begin="indefinite" values="0 400 325; -50 400 325" fill="freeze" />
+    </g>
+
+    <g transform="rotate(0, 440,455)">
+      <line x1="200" y1="455" x2="550" y2="455" stroke="silver" stroke-width="5px"/>
+    </g>
+
+    <line x1="400" y1="350" x2="440" y2="455" />
+    <line x1="400" y1="350" x2="360" y2="455" />
+  </g>
+
+  <!-- znak ✖ -->
+  <text id="x_mark" x="380" y="290" font-size="50" fill="red" opacity="0">✖</text>
+
+  <script type="application/ecmascript"><![CDATA[
+    function cloneAnimElement(orig) {
+      if (!orig) return null;
+      const parent = orig.parentNode;
+      try { parent.removeChild(orig); } catch(e) {}
+      const clone = orig.cloneNode(true);
+      parent.appendChild(clone);
+      return clone;
+    }
+
+    function startAnimation(evt) {
+      const svg = evt.currentTarget;
+      const xMark = svg.getElementById("x_mark");
+      xMark.setAttribute("opacity", "0");
+
+      const armAnim = cloneAnimElement(svg.getElementById("armAnim"));
+      const bowAnim = cloneAnimElement(svg.getElementById("bowAnim"));
+      const rotate = cloneAnimElement(svg.getElementById("rotateAnim"));
+
+      const armShape = svg.getElementById("arm");
+      const bowShape = svg.getElementById("bow");
+
+      // reset shapes
+      armShape.setAttribute("x1", "400");
+      bowShape.setAttribute("d", "M500,140 Q530,250 500,360");
+
+      // trigger rotate after arm and bow finish
+      armAnim.addEventListener("endEvent", () => {
+        try { rotate.beginElement(); } catch(e) {}
+      }, { once:true });
+
+      bowAnim.addEventListener("endEvent", () => {
+        try { rotate.beginElement(); } catch(e) {}
+      }, { once:true });
+
+      // show ✖ when rotate finishes
+      rotate.addEventListener("endEvent", () => {
+        xMark.setAttribute("opacity", "1");
+      }, { once:true });
+
+      // start arm and bow first
+      armAnim.beginElement();
+      bowAnim.beginElement();
+    }
+  ]]></script>
+</svg>

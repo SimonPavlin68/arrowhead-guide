@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 120 600 380"
+     style="background:#f8f8f8; cursor:pointer;" onclick="startAnimation(evt)">
+
+  <title>Archer</title>
+  <g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g id="archer" transform="rotate(0, 400,325)">
+
+      <!-- rotate anim (begin will be controlled from script via cloned element) -->
+      <animateTransform id="rotateAnim"
+        attributeName="transform"
+        type="rotate"
+        dur="1.5s"
+        begin="indefinite"
+        values="0 400 325; -50 400 325"
+        fill="freeze"/>
+
+      <circle cx="400" cy="210" r="15" stroke-width="15px" />
+      <line x1="400" y1="250" x2="400" y2="325" />
+
+      <!-- arm shape -->
+      <line id="arm" x1="400" y1="250" x2="490" y2="250">
+        <!-- arm animation -->
+        <animate id="armAnim"
+                 attributeName="x1"
+                 from="400" to="340"
+                 dur="1.5s"
+                 begin="indefinite"
+                 fill="freeze"/>
+      </line>
+
+      <!-- bow shape -->
+      <path id="bow" d="M500,140 Q530,250 500,360" stroke-width="15px">
+        <!-- bow animation -->
+        <animate id="bowAnim"
+                 attributeName="d"
+                 from="M500,140 Q530,250 500,360"
+                 to="M460,140 Q570,250 460,360"
+                 dur="1.5s"
+                 begin="indefinite"
+                 fill="freeze"/>
+      </path>
+    </g>
+
+    <g transform="rotate(0, 440,455)">
+      <line x1="200" y1="455" x2="550" y2="455" stroke="silver" stroke-width="5px"/>
+    </g>
+
+    <line x1="400" y1="350" x2="440" y2="455" />
+    <line x1="400" y1="350" x2="360" y2="455" />
+  </g>
+  
+  <!-- znaki -->
+  <text id="checkmark_right" x="380" y="280" font-size="50" fill="green" opacity="0">✔</text>
+
+  <script type="application/ecmascript"><![CDATA[
+    // Helper: clone an animation element and return the clone (appended next to original's parent).
+    function cloneAnimElement(orig) {
+      if (!orig) return null;
+      const parent = orig.parentNode;
+      // remove original from DOM (if present)
+      try { parent.removeChild(orig); } catch(e) {}
+      // clone (deep)
+      const clone = orig.cloneNode(true);
+      // append clone to same parent
+      parent.appendChild(clone);
+      return clone;
+    }
+
+    function startAnimation(evt) {
+      const svg = evt.currentTarget; // the <svg>
+	  const check = svg.getElementById("checkmark_right");
+	  check.setAttribute("opacity", "0");
+      // get current elements (may be originals or clones)
+      const rotateOrig = svg.getElementById("rotateAnim");
+      const armOrig = svg.getElementById("armAnim");
+      const bowOrig = svg.getElementById("bowAnim");
+      const armShape = svg.getElementById("arm");
+      const bowShape = svg.getElementById("bow");
+
+      // 1) Remove & re-insert clones to fully reset SMIL internal state
+      const rotate = cloneAnimElement(rotateOrig);
+      const armAnim = cloneAnimElement(armOrig);
+      const bowAnim = cloneAnimElement(bowOrig);
+	  
+	  bowAnim.addEventListener("endEvent", () => {
+		check.setAttribute("opacity", "1");
+	}, { once:true });
+
+      // 2) Reset the visible attributes on the shapes (now safe because animations are not in DOM)
+      armShape.setAttribute("x1", "400");
+      bowShape.setAttribute("d", "M500,140 Q530,250 500,360");
+
+      // 3) Wire end-event: when rotate ends, start armAnim and bowAnim
+      if (rotate && armAnim && bowAnim) {
+        // ensure we only attach one handler
+        rotate.addEventListener("endEvent", function onRotEnd() {
+          // begin the arm and bow animations
+          try { armAnim.beginElement(); } catch(e){}
+          try { bowAnim.beginElement(); } catch(e){}
+          // remove listener to avoid multiple firings on subsequent clicks
+          rotate.removeEventListener("endEvent", onRotEnd);
+        }, { once: true });
+      }
+
+      // 4) Start rotation (which will trigger the rest on its end)
+      try { rotate.beginElement(); } catch(e) {
+        // fallback: sometimes beginElement might not exist in some engines — log for debugging
+        console.warn("rotate.beginElement() failed:", e);
+      }
+    }
+  ]]></script>
+</svg>
