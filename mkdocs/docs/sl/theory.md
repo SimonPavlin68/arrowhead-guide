@@ -1,6 +1,6 @@
 ﻿# Teorija
 
-### *Terminologija korekcij merilne naprave*
+### *Terminologija korekcije merilne naprave*
 
 V tem priročniku uporabljamo naslednje izraze:
 
@@ -20,13 +20,23 @@ Pri poševnem metu sta dve različni “dolžini”, ki se pogosto pomešata:
 
 **čas leta** do tarče
 
-**dolžina tira** (dejanska dolžina krivulje v prostoru)
+**trajektorija** (dejanska dolžina krivulje v prostoru)
 
 Trditev: Navzgor puščica leti dlje do tarče
 
 - časovno → pravilno
 
 - prostorsko → ni nujno, odvisno od kota in geometrije
+
+Pri strelih pod naklonom je treba ločiti dva različna kota, ki imata različen pomen.
+
+**kot tarče** (geometrijski kot)
+Kot med linijo pogleda na tarčo in vodoravnico.
+Ta kot opisuje teren in položaj tarče, ne pa balistike leta puščice.
+
+** kot izmeta**
+Dejanski kot, pod katerim puščica zapusti lok.
+Ta kot določa čas leta, padec puščice in s tem potrebno nastavitev merilne naprave.
 
 ---
 
