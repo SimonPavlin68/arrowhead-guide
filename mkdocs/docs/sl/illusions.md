@@ -142,8 +142,8 @@ Ker puščica vedno pada navpično glede na smer gravitacije, vsak nagib loka po
 ---
 
 #### Zakaj se to dogaja
-Človeški vid in ravnotežni sistem sta navajena vodoravnega sveta. Na nagnjenem terenu možgani skušajo uskladiti vidno sliko s telesnim ravnotežjem, kar vodi v napačno poravnavo loka.
 
+Človeški vid in ravnotežni sistem sta navajena vodoravnega sveta. Na nagnjenem terenu možgani skušajo uskladiti vidno sliko s telesnim ravnotežjem, kar vodi v napačno poravnavo loka.
 To ni zavestna napaka, temveč refleks.
 
 ---
@@ -156,6 +156,7 @@ To ni zavestna napaka, temveč refleks.
 ---
 
 #### Pomembno opozorilo
+
 Pri streljanju na nagnjenem terenu ni treba »poravnati« sveta, temveč lok.
 Teren je lahko poševen – gravitacija ni.
 
