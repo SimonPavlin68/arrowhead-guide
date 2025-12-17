@@ -11,9 +11,7 @@ Optične prevare so v field streljanju posebej izrazite, ker tarče niso postavl
 Pomembno je poudariti, da optične prevare:
 
 - delujejo tudi pri izkušenih strelcih,
-
 - se pojavljajo ponavljajoče in predvidljivo,
-
 - niso stvar »občutka«, temveč zaznavnega sistema.
 
 Zato se v fieldu ne trenira odprave optičnih prevar, temveč njihovo prepoznavanje in kompenziranje.
@@ -25,21 +23,15 @@ V primerjavi s tarčnim lokostrelstvom field streljanje poteka v neprimerljivo b
 Na tarčnem strelišču so ti pogoji skoraj idealni:
 
 - ravna podlaga,
-
 - znana višina tarč,
-
 - enotno ozadje,
-
 - ponavljajoče se razdalje.
 
 V fieldu pa so referenčne točke nejasne ali zavajajoče:
 
 - teren je nagnjen ali razgiban,
-
 - tarče so postavljene nad ali pod strelcem,
-
 - ozadje je lahko temno, svetlo ali povsem neenotno,
-
 - velikost in kontrast tarče se spreminjata.
 
 Možgani v takem okolju nezavedno prilagajajo oceno razdalje in kota na podlagi vizualnih namigov, ki pa niso nujno povezani z dejansko balistiko strela.
@@ -59,6 +51,7 @@ V nadaljevanju so opisani najpogostejši primeri optičnih prevar v fieldu.
 Pri strelih navzgor tarča pogosto deluje bližje, kot je v resnici. Razlog je v tem, da oko težje oceni globino prostora, kadar gleda v pobočje ali proti nebu, kjer primanjkuje referenčnih točk.
 
 Pogosta posledica:
+
 - strelec razdaljo podceni,
 - nastavitev merilne naprave je prenizka,
 - zadetek je nizek.
@@ -72,6 +65,7 @@ To je klasičen primer, kjer se optična prevara lahko prekriva z balističnim u
 Pri strelih navzdol se pogosto zgodi nasprotno: tarča deluje dlje, kot je dejanska razdalja. Globina prostora je zaradi odprtega terena ali doline optično poudarjena, kar povzroči precenjevanje razdalje.
 
 Pogosta posledica:
+
 - strelec razdaljo preceni,
 - merilna naprava je nastavljena previsoko,
 - zadetek je visok.
@@ -85,6 +79,7 @@ Ta prevara je ena najpogostejših pri začetnikih, vendar se pojavlja tudi pri i
 Tarča pred temnim ozadjem (gozd, senca, skalovje) pogosto deluje bližje. Kontrast poveča zaznano velikost tarče, kar možgani interpretirajo kot krajšo razdaljo.
 
 Pogosta posledica:
+
 - prenizka ocena razdalje,
 - zadetki pod središčem.
 
@@ -95,6 +90,7 @@ Pogosta posledica:
 Tarča pred svetlim ozadjem (nebo, odprt travnik, svetla skala) deluje manjša in bolj oddaljena.
 
 Pogosta posledica:
+
 - previsoka ocena razdalje,
 - zadetki nad središčem.
 
@@ -107,7 +103,6 @@ Na neravnem ali razgibanem terenu izginejo običajne referenčne točke (višina
 Pogosta posledica:
 
 - velika nihanja v ocenah razdalje,
-
 - nedosledni zadetki.
 
 ---
@@ -119,7 +114,6 @@ Tarče enake velikosti, postavljene v različna okolja, ne delujejo enako oddalj
 Pogosta posledica:
 
 - napačna primerjava z “običajnimi” razdaljami,
-
 - nepravilna izbira razdalje na merilni napravi.
 
 ---
@@ -133,7 +127,6 @@ Vzrok ni balistika, temveč nezavedna prilagoditev strelca terenu.
 Ko strelec stoji na nagnjeni podlagi, možgani težijo k temu, da »poravnajo« okolico. Posledica je, da strelec:
 
 - nezavedno nagne lok,
-
 - prilagodi držo telesa tako, da sledi terenu namesto gravitaciji.
 
 Ker puščica vedno pada navpično glede na smer gravitacije, vsak nagib loka povzroči stranski odklon zadetka.
@@ -143,9 +136,7 @@ Ker puščica vedno pada navpično glede na smer gravitacije, vsak nagib loka po
 #### Tipični znaki te prevare
 
 - razdalja je pravilno ocenjena,
-
 - višina zadetka je dobra,
-
 - zadetki pa so konstantno levo ali desno.
 
 ---
@@ -160,7 +151,6 @@ To ni zavestna napaka, temveč refleks.
 #### Kako to kompenzirati
 
 - Lok mora biti vedno poravnan glede na gravitacijo, ne glede na teren.
-
 - Referenca naj bo lok, ne linija terena.
 
 ---

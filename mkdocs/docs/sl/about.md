@@ -1,7 +1,7 @@
 # Za konec
 
 Te strani so nastale iz želje deliti znanje in izkušnje, nabrane skozi mnoga
-leta streljanja Field-a. Številne zadete, še več zgrešenih tarč. Kup zvitih,
+leta streljanja Field-a. Nešteto zadetih, mnogo zgrešenih tarč. Kup zvitih,
 polomljenih in izgubljenih puščic, ki še danes tiho životarijo nekje v grmovju.
 Vsebina je namenjena vsem, ki želijo izboljšati znanje, rutino in veselje do
 tega športa.
