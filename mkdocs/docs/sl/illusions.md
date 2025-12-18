@@ -120,7 +120,7 @@ Pogosta posledica:
 
 ### 7. Nagnjen teren – stranski odklon zadetka zaradi nagiba loka
 
-Pri strelih na terenu, ki ni vodoraven (bočni nagib pobočja), se pogosto pojavljajo zadetki levo ali desno, kljub pravilni oceni razdalje in višine.
+Pri strelih na terenu, ki ni vodoraven (bočni nagib), se pogosto pojavljajo zadetki levo ali desno, kljub pravilni oceni razdalje in višine.
 
 Vzrok ni balistika, temveč nezavedna prilagoditev strelca terenu.
 

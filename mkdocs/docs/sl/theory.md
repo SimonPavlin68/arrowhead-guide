@@ -47,7 +47,7 @@ Pri strelih navzgor in navzdol razdalja do tarče ostaja enaka, spremeni pa se r
 ### *Strel navzgor*
 Pri strelu navzgor se del začetne kinetične energije puščice porabi za pridobivanje potencialne energije (dvig v višino).  
 Zaradi tega se zmanjša razpoložljiva energija za gibanje naprej, hitrost se zmanjša, pot puščice do tarče pa je krajša kot pri vodoravnem strelu.
-
+<object id="archer-object" type="image/svg+xml" data="../../svg/parabola.svg"></object>
 Posledično ima gravitacija manj vpliva na padec puščice, zato je potrebno na merilni napravi izvesti korekcijo v skladu z geometrijo strela (po izračunu).
 
 ### *Strel navzdol*
