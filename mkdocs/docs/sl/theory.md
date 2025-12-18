@@ -52,7 +52,7 @@ Posledično ima gravitacija manj vpliva na padec puščice, zato je potrebno na 
 
 ### *Strel navzdol*
 Pri strelu navzdol se potencialna energija pretvarja v dodatno kinetično energijo. Hitrost puščice se poveča, čas leta se skrajša, pot puščice do tarče pa je prav tako krajša kot pri vodoravnem strelu.
-
+<object id="archer-object" type="image/svg+xml" data="../../svg/parabola-down.svg"></object>
 Ker ima gravitacija manj časa za delovanje, puščica pade manj, zato je pri strelu navzdol na merilni napravi vedno potrebno odvzemati.
 
 ### *Energijsko prelivanje in realni učinek na zadetek*
