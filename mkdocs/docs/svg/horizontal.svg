@@ -1,0 +1,43 @@
+<svg width="201" height="121" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 201 121">
+
+  <defs>
+    <!-- Grid vzorec -->
+    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M10 0 L0 0 0 10" fill="none"
+            stroke="#ccc" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Sivo ozadje -->
+  <rect width="201" height="121" fill="#eee"/>
+
+  <!-- Grid čez ozadje -->
+  <rect width="201" height="121" fill="url(#grid)"/>
+<g stroke-linecap="round" stroke-linejoin="round">
+  <!-- Nagnjen teren -->
+  <line x1="10" y1="100" x2="190" y2="50"
+        stroke="#303fa1" stroke-width="4"/>
+
+  <!-- Lok (pokončen) -->
+  <line x1="90" y1="20" x2="100" y2="100"
+        stroke="#303fa1" stroke-width="4"/>
+
+
+  <!-- Optični premik -->
+  <line x1="90" y1="40" x2="70" y2="40"
+        stroke="red" stroke-width="1.5"
+        marker-end="url(#arrow)"/>
+  <text x="100" y="43" font-size="12" fill="red">
+    optični premik
+  </text>
+</g>
+  <!-- Puščica -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10"
+            refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+    </marker>
+  </defs>
+
+</svg>

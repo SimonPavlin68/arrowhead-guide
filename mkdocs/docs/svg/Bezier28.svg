@@ -1,0 +1,2844 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg"
+	onload="InitDrag(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)"
+	onwheel="onWheel(evt)">
+<style>
+svg {
+	font-weight: bold;
+	font-size: 8;
+	font-family: Arial;
+}
+
+.draggable {
+	cursor: move;
+	stroke-width: 2;
+	opacity: 0.8;
+}
+.draggable:hover {
+	stroke: red;
+	stroke-width: 4;
+	fill: whitesmoke;
+}
+
+.control:hover {
+	stroke: red;
+	stroke-width: 4;
+	cursor: move;	
+}
+
+.controlLine {
+	stroke: silver;
+	stroke-width: 1;	
+}
+
+.selected {
+    stroke: red;
+	fill: whitesmoke;
+	stroke-width: 4;
+}
+
+.hidden {
+	display: none;
+}
+
+#Display {
+	fill: green;
+}
+
+.radio {
+	cursor: pointer;
+}
+
+.close {
+	cursor: pointer;
+	fill: blue;
+}
+
+<![CDATA[
+@font-face {
+    font-family: 'SpeedFez';
+    src: url('../fonts/SpeedFez.otf');
+}
+@font-face {
+	font-family: 'BigFat';
+	src: url('../fonts/BigFat.otf');
+}
+@font-face {
+	font-family: 'Paris2024';
+	src: url('../fonts/Paris2024.ttf');
+}
+]]>
+
+</style>
+<g id="grid" stroke="silver" fill="transparent"></g>
+<image id="image" href="escher-eye.png1" x="0" y="0" 
+   width="600" height="600" transform="scale(1) translate(100,0)" />
+<rect id="BackDrop" x="0%" y="0%" width="100%" height="100%" stroke="red" fill="none" pointer-events="all" />
+<g id="Krneki" stroke="red" fill="black">
+<g id="sketch" fill="none" stroke="silver" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+	<g stroke="black" stroke-width="2px" fill="none">
+		<path d="M300,300 A300,300 0 0 1 0,600" stroke="#ccc"/>
+	
+		<path d="M0,300 Q150,200 300,300" />
+		<!-- 15 -->
+		<path d="M0,300 Q180,265 285,385" />
+		<!-- 30 -->
+		<path d="M0,300 Q175,320 255,460" />
+		<!-- 45 -->
+		<path d="M3,301 Q160,365 205,515" />
+		<!-- 60 -->
+		<path d="M0,300 Q125,425 150,560" />
+		<!-- 75 -->
+		<path d="M0,300 Q60,450 80,590" />
+		<!-- 90 -->
+		<path d="M0,300 Q0,450 0,600;"/>
+		
+	</g>
+</g>
+</g>
+<!-- begin control -->
+<text id="Display" x="10" y="20"></text>
+	<circle cx="20" cy="40" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="C" class="type radio" cx="20" cy="40" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="45">Cubic</text>	
+	<circle cx="20" cy="60" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="Q" class="type radio" cx="20" cy="60" r="4" fill="green" onclick="changeType(this.id)" />
+	<text x="40" y="65">Quadratic</text>
+	<circle cx="20" cy="80" r="7" fill="none" stroke="black" stroke-width="2px" />                            
+	<circle id="A" class="type radio" cx="20" cy="80" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="85">Arc</text>
+	<circle cx="20" cy="100" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="P" class="type radio" cx="20" cy="100" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="105">Polygon</text>
+	<circle cx="20" cy="120" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="I" class="type radio" cx="20" cy="120" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="125">Polyline</text>
+	<circle cx="20" cy="140" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="L" class="type radio" cx="20" cy="140" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="145">Line</text>
+	<circle cx="20" cy="160" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="R" class="type radio" cx="20" cy="160" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="165">Rect</text>
+	<circle cx="20" cy="180" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="K" class="type radio" cx="20" cy="180" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="185">Circle</text>
+	<circle cx="20" cy="200" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="E" class="type radio" cx="20" cy="200" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="205">Ellipse</text>
+	<circle cx="20" cy="220" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="SH" class="type radio" cx="20" cy="220" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="225">Shape</text>
+	
+	<circle cx="20" cy="240" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="T" class="type radio" cx="20" cy="240" r="4" fill="white" onclick="changeType(this.id)" />
+	<text x="40" y="245">Text</text>
+	
+	<rect x="13" y="253" width="14" height="14"  fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="imgCheck" cx="20" cy="260" r="5" fill="green" class="radio" onclick="toggleImage()" />
+	<text x="40" y="265">Image</text>
+	<rect x="13" y="273" width="14" height="14"  fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="gridCheck" cx="20" cy="280" r="5" fill="green" class="radio" onclick="toggleGrid()" />
+	<text x="40" y="285">Grid</text>
+	<rect x="13" y="293" width="14" height="14"  fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+	<circle id="sketchCheck" cx="20" cy="300" r="5" fill="green" class="radio" onclick="toggleSketch()" />
+	<text x="40" y="305">Sketch</text>
+	
+	<g id="BezierMenu" class="hidden" transform="translate(0,-20)">
+		<rect x="50" y="60" width="140" height="60"
+		fill="white" stroke="black" stroke-width="2" rx="10" ry="10"/>
+		<text x="170" y="80" onclick="closeBezierMenu()" class="radio">x</text>
+		<rect x="63" y="73" width="14" height="14" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="tangent" cx="70" cy="80" r="5" fill="white" 
+		class="radio" onclick="toggleTangent(this)" />
+		<text x="90" y="85">Tangent</text>
+		<rect x="63" y="93" width="14" height="14" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="symetric" cx="70" cy="100" r="5" fill="white" 
+		class="radio" onclick="toggleSymetric(this)" />
+		<text x="90" y="105">Symetric</text>
+	</g>
+	<g id="ArcMenu" class="hidden" transform="translate(0,0)">
+		<rect x="50" y="80" width="140" height="60"
+		fill="white" stroke="black" stroke-width="2" rx="10" ry="10"/>
+		<text x="170" y="100" onclick="closeArcMenu()" class="radio">x</text>
+		<rect x="63" y="93" width="14" height="14" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="large" cx="70" cy="100" r="5" fill="white" 
+		class="radio" onclick="toggleLarge()" />
+		<text x="90" y="105">Large</text>
+		<rect x="63" y="113" width="14" height="14"  fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="sweep" cx="70" cy="120" r="5" fill="white" 
+		class="radio" onclick="toggleSweep()" />
+		<text x="90" y="125">Sweep</text>
+	</g>
+	<g id="ShapeMenu" class="hidden" transform="translate(0,-40)">
+		<rect x="50" y="260" width="140" height="180"
+		fill="white" stroke="black" stroke-width="2" rx="10" ry="10"/>
+		<text x="170" y="280" onclick="closeShapeMenu()" class="radio">x</text>
+		<circle cx="70" cy="280" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="Triangle" class="sType radio" cx="70" cy="280" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="285">Triangle</text>
+		<circle cx="70" cy="300" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="Star" class="sType radio" cx="70" cy="300" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="305">Star</text>
+		<circle cx="70" cy="320" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="Pentagram" class="sType radio" cx="70" cy="320" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="325">Pentagram</text>
+		<circle cx="70" cy="340" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="Arrow" class="sType radio" cx="70" cy="340" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="345">Arrow</text>
+		<circle cx="70" cy="360" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="SmallArrow" class="sType radio" cx="70" cy="360" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="365">Small Arrow</text>
+		<circle cx="70" cy="380" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="Hexagram" class="sType radio" cx="70" cy="380" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="385">Hexagram</text>
+		<circle cx="70" cy="400" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="Square" class="sType radio" cx="70" cy="400" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="405">Square</text>
+		<!--circle cx="70" cy="420" r="7" fill="none" stroke="black" stroke-width="2px" class="radio" />  
+		<circle id="Krneki" class="sType radio" cx="70" cy="420" r="4" fill="white" onclick="changeStype(this.id, true)" />
+		<text x="90" y="425">Krneki</text-->
+		
+		<rect x="83" y="413" width="14" height="14"  fill="none" stroke="black" stroke-width="2px" class="radio" />                            
+		<circle id="curve" cx="90" cy="420" r="5" fill="white" 
+		class="radio" onclick="toggleCurve()" />
+		<text x="110" y="425">Curve</text>
+	</g>
+<!-- end control -->
+
+<!-- menu -->
+<g id="menu" class="hidden">
+	<rect x="0" y="0" width="160" height="160"
+	fill="white" stroke="blue" stroke-width="2" rx="10" ry="10"/>
+	<text x="140" y="20" class="close" onclick="closePopup()">x</text>
+	<text x="10" y="25" class="close" id="menu-select" onclick="selectObject()">Select</text>
+	<text x="10" y="50" class="close" onclick="copyObject()">copy to clipbord</text>
+	<g id="menu-arc">
+		<rect x="10" y="64" width="14" height="14" fill="none" stroke="blue" stroke-width="2px" />                            
+		<circle id="menu-large" cx="17" cy="71" r="5" fill="silver"
+		class="radio" onclick="toggleLargeMenu()" />
+		<text x="35" y="75" class="close">large</text>
+		<rect x="10" y="84" width="14" height="14" fill="none" stroke="blue" stroke-width="2px" />                            
+		<circle id="menu-sweep" cx="17" cy="91" r="5" fill="silver"
+		class="radio" onclick="toggleSweepMenu()" />
+		<text x="35" y="95" class="close">sweep</text>
+	</g>
+	<text id="menu-convert" x="10" y="120" class="close hidden" onclick="convert2polygon()">convert to polygon</text>
+	<text id="menu-convert-back" x="10" y="120" class="close hidden" onclick="convert2polyline()">convert to polyline</text>
+	<text id="menu-convert-golden" x="10" y="120" class="close hidden" onmouseover="openGoldenMenu()">golden section</text>
+	<text id="menu-set-text" x="10" y="120" class="close hidden" onclick="openTextMenu(event)">edit text</text>
+	<g id="GoldenMenu" class="hidden" transform="translate(140,0)">
+		<rect x="0" y="64" width="150" height="50"	fill="white" stroke="blue" stroke-width="2" rx="10" ry="10"/>
+		<!--text x="80" y="80" onclick="closeGoldenMenu()" class="close">x</text-->
+		<text x="10" y="85" class="close" onclick="convert2golden(true)">minor horizontal</text>
+		<text x="10" y="105" class="close" onclick="convert2golden(false)">minor vertical</text>
+	</g>
+	<line x1="10" y1="130" x2="150" y2="130" stroke="blue" stroke-width="2" />
+	<text x="10" y="150" class="close" onclick="deleteObject()">delete</text>
+</g>
+	<g id="TextMenu" class="hidden">
+		<rect x="0" y="0" width="140" height="150"
+		fill="white" stroke="blue" stroke-width="2" rx="10" ry="10"/>
+		<text x="120" y="20" onclick="closeTextMenu()" class="close">x</text>
+		<circle cx="15" cy="20" r="7" fill="none" stroke="blue" stroke-width="2px" class="radio" />                            
+		<circle id="BigFat" class="ff radio" cx="15" cy="20" r="4" fill="white" onclick="changeFontFamily(this.id)" />
+		<text x="30" y="25" class="close">Big Fat</text>
+		<circle cx="15" cy="40" r="7" fill="none" stroke="blue" stroke-width="2px" class="radio" />                            
+		<circle id="SpeedFez" class="ff radio" cx="15" cy="40" r="4" fill="white" onclick="changeFontFamily(this.id)" />
+		<text x="30" y="45" class="close">Speed Fez</text>
+		<circle cx="15" cy="60" r="7" fill="none" stroke="blue" stroke-width="2px" class="radio" />                            
+		<circle id="Paris2024" class="ff radio" cx="15" cy="60" r="4" fill="white" onclick="changeFontFamily(this.id)" />
+		<text x="30" y="65" class="close">Paris 2024</text>
+		<line x1="10" y1="75" x2="130" y2="75" stroke="blue" stroke-width="2" />
+		<rect x="10" y="83" width="14" height="14" fill="none" stroke="blue" stroke-width="2px" />                            
+		<circle id="menu-italic" cx="17" cy="90" r="5" fill="silver" class="radio" onclick="toggleItalic()" />
+		<text x="35" y="95" class="close">italic</text>
+		<rect x="10" y="103" width="14" height="14" fill="none" stroke="blue" stroke-width="2px" />                            
+		<circle id="menu-bold" cx="17" cy="110" r="5" fill="silver" class="radio" onclick="toggleBold()" />
+		<text x="35" y="115" class="close">bold</text>
+		<line x1="10" y1="125" x2="130" y2="125" stroke="blue" stroke-width="2" />
+		<text x="10" y="145" class="close" onclick="setText()">set text</text>
+	</g>
+<script><![CDATA[
+
+var svg = document.getElementById('Krneki');
+
+var svgns = "http://www.w3.org/2000/svg";
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var BackDrop = null;
+var DragTarget = null;
+var Offset = null;
+
+var wheelDelta = 1;
+var cType = null;
+var aSymetric = false;
+var aTangent = false;
+var hideImage = false;
+var hideGrid = false;
+var hideSketch = false;
+var aSweep = 0;
+var aLarge = 0;
+var aCurve = false;
+var aRadius = 50;
+var sType = "Triangle";
+var eY=rY = 70;
+var eX=rX = goldenMax(eY);
+//var fillColor = 'black';
+var fillColor = 'transparent';
+//var fillColor = 'whitesmoke';
+var pointRadius = 3;
+
+var points = [];
+var ellipses = [];
+var circles = [];
+var rects = [];
+var lines = [];
+var polygons = [];
+var polylines = [];
+var arcs = [];
+var quadratics = [];
+var shapes = [];
+var texts = [];
+
+function InitDrag(evt) {
+	SVGDocument = evt.target.ownerDocument;
+	SVGRoot = SVGDocument.documentElement;
+	TrueCoords = SVGRoot.createSVGPoint();
+	Offset = SVGRoot.createSVGPoint();
+	BackDrop = SVGDocument.getElementById('BackDrop');
+	BackDrop.addEventListener('contextmenu', (ev)=>{
+      ev.preventDefault(); 
+	  createPoint(ev);
+    });
+	
+	sType = getCookie("sType");
+	if(!sType) {
+    	sType = 'Triangle';
+	}
+	changeStype(sType, false);
+	
+	cType = getCookie("cType");
+	if(!cType) {
+		cType = 'C';
+	}
+	changeType(cType);
+
+	cTangent = getCookie("aTangent");
+	cSymetric = getCookie("aSymetric");
+	
+	if(cTangent == "true") {
+		aTangent = true;
+	}
+	
+	if(cSymetric == "true") {
+		aSymetric = true;
+	}
+	
+	if(aSymetric && !aTangent) {
+		document.getElementById('symetric').setAttribute('fill',getColor('control'));
+	}
+	
+	if(aTangent) {
+		document.getElementById('tangent').setAttribute('fill',getColor('control'));
+	}
+	
+	aSweep = getCookie("aSweep");
+	if(!aSweep) {
+		aSweep = 0;
+	}
+	if(aSweep == 1) {
+		document.getElementById('sweep').setAttribute('fill',getColor('control'));
+	}
+	aLarge = getCookie("aLarge");
+	if(!aLarge) {
+		aLarge = 0;
+	}
+	if(aLarge == 1) {
+		document.getElementById('large').setAttribute('fill',getColor('control'));
+	}
+	if(getCookie("aCurve" )== "true"){
+		aCurve = true;
+	}
+	if(aCurve) {
+		document.getElementById('curve').setAttribute('fill',getColor('control'));
+	}
+	if(getCookie("hideImage") == "true") {
+		hideImage = true;
+	}
+	if(hideImage) {
+		document.getElementById('image').setAttribute('class','hidden');
+		document.getElementById('imgCheck').setAttribute('fill','white');
+	}
+	if(getCookie("hideGrid") == "true") {
+		hideGrid = true;
+	}
+	if(hideGrid) {
+		document.getElementById('grid').setAttribute('class','hidden');
+		document.getElementById('gridCheck').setAttribute('fill','white');
+	}
+	if(getCookie("hideSketch") == "true") {
+		hideSketch = true;
+	}
+	if(hideSketch) {
+		document.getElementById('sketch').setAttribute('class','hidden');
+		document.getElementById('sketchCheck').setAttribute('fill','white');
+	}
+
+	InitGrid();
+	Init();
+}
+
+function Grab(evt) {
+ var targetElement = evt.target;
+ if (BackDrop != targetElement) {
+	if(targetElement.id.startsWith("Point") || targetElement.id.startsWith("Circle") ||
+	targetElement.id.startsWith("Ellipse") || targetElement.id.startsWith("Arc") ||
+	targetElement.id.startsWith("Rect") || targetElement.id.startsWith("Line") ||
+	targetElement.id.startsWith("Polygon") || targetElement.id.startsWith("Quadratic")|| 
+	targetElement.id.startsWith("Cubic") || targetElement.id.startsWith("Polyline") ||
+	targetElement.id.startsWith("Shape") || targetElement.id.startsWith("Text")
+	){
+        DragTarget = targetElement;
+        DragTarget.parentNode.appendChild( DragTarget );
+        DragTarget.setAttribute('pointer-events', 'none');
+        var transMatrix = DragTarget.getCTM();
+		var idx = getIdx(DragTarget.id);
+		if(DragTarget.id.startsWith("Ellipse") || DragTarget.id.startsWith("PointE")) {
+			Offset.x = TrueCoords.x-ellipses[idx][0];
+			Offset.y = TrueCoords.y-ellipses[idx][1];
+		} else if(DragTarget.id.startsWith("Rect") || DragTarget.id.startsWith("PointR")) {
+			Offset.x = TrueCoords.x-rects[idx][0];
+			Offset.y = TrueCoords.y-rects[idx][1];
+		} else if(DragTarget.id.startsWith("Circle") || DragTarget.id.startsWith("PointK")) {
+			Offset.x = TrueCoords.x-circles[idx][0];
+			Offset.y = TrueCoords.y-circles[idx][1];
+		} else if(DragTarget.id.startsWith("Line") || DragTarget.id.startsWith("PointL")) {
+			Offset.x = (TrueCoords.x-lines[idx][0]).toFixed(0);
+			Offset.y = (TrueCoords.y-lines[idx][1]).toFixed(0);
+		} else if(DragTarget.id.startsWith("Polygon") || DragTarget.id.startsWith("PointP")) {
+			Offset.x = TrueCoords.x-polygons[idx][0];
+			Offset.y = TrueCoords.y-polygons[idx][1];
+		} else if(DragTarget.id.startsWith("Polyline") || DragTarget.id.startsWith("PointI")) {
+			Offset.x = TrueCoords.x-polylines[idx][0];
+			Offset.y = TrueCoords.y-polylines[idx][1];
+		} else if(DragTarget.id.startsWith("Arc") || DragTarget.id.startsWith("PointArc")) {
+			Offset.x = TrueCoords.x-arcs[idx][0];
+			Offset.y = TrueCoords.y-arcs[idx][1];
+		} else if(DragTarget.id.startsWith("Quadratic") || DragTarget.id.startsWith("PointQ")) {
+			Offset.x = TrueCoords.x-quadratics[idx][0];
+			Offset.y = TrueCoords.y-quadratics[idx][1];
+		} else if(DragTarget.id.startsWith("Text")) {
+			Offset.x = TrueCoords.x-texts[idx][0];
+			Offset.y = TrueCoords.y-texts[idx][1];
+		}  else if(DragTarget.id.startsWith("Shape") || DragTarget.id.startsWith("PointShape")) {
+			Offset.x = TrueCoords.x-shapes[idx][0];
+			Offset.y = TrueCoords.y-shapes[idx][1];
+			setDisplay("Size: " + shapes[idx][2]  + ", Angle: " + shapes[idx][4]);
+		} else {
+		    console.log(DragTarget.id);
+			Offset.x = TrueCoords.x-points[idx][0];
+			Offset.y = TrueCoords.y-points[idx][1];
+		}
+	}  else {
+	// console.log(targetElement.parentElement.id);
+ }
+ }
+}
+
+function Drag(evt) {
+ GetTrueCoords(evt);
+ if (DragTarget) {
+    DragTarget.setAttribute('cx', TrueCoords.x);
+	DragTarget.setAttribute('cy', TrueCoords.y);
+	//console.log(Drag.target);
+	if(DragTarget.id.startsWith("Ellipse") || DragTarget.id.startsWith("PointE")) {
+		DragEllipse(evt);
+	} else if(DragTarget.id.startsWith("Circle") || DragTarget.id.startsWith("PointK")) {
+		DragCircle(evt);
+	} else if (DragTarget.id.startsWith("Rect") || DragTarget.id.startsWith("PointR")) {
+		DragRect(evt);
+	} else if(DragTarget.id.startsWith("Line")) {
+		DragLine(evt);
+	} else if(DragTarget.id.startsWith("PointL")) {
+		DragLinePoint(evt);
+	} else if(DragTarget.id.startsWith("Polygon")) {
+		DragPolygon(evt);
+	} else if(DragTarget.id.startsWith("PointP")) {
+		DragPolygonPoint(evt);
+	} else if(DragTarget.id.startsWith("Polyline")) {
+		DragPolyline(evt);
+	} else if(DragTarget.id.startsWith("PointI")) {
+		DragPolylinePoint(evt);
+	} else if(DragTarget.id.startsWith("Quadratic")) {
+		DragQuadratic(evt);
+	} else if(DragTarget.id.startsWith("Cubic")) {
+		DragCubic(evt);
+	} else if(DragTarget.id.startsWith("Arc")) {
+		DragArc(evt);
+	} else if(DragTarget.id.startsWith("PointArc")) {
+		DragArcPoint(evt);
+	} else if(DragTarget.id.startsWith("PointQ")) {
+		DragQuadraticPoint(evt);
+	} else if(DragTarget.id.startsWith("PointC")){
+		DragCubicPoint(evt);
+	}  else if(DragTarget.id.startsWith("Shape") || DragTarget.id.startsWith("PointShape")){
+		DragShape(evt);
+	} else if(DragTarget.id.startsWith("Text")){
+		DragText(evt);
+	}  
+	else {
+		console.log('še ena jeba');
+	}
+	Init();
+ }
+};
+
+function DragEllipse(evt) {
+	var idx = getIdx(DragTarget.id);
+	ellipses[idx][0] = TrueCoords.x-Offset.x;
+	ellipses[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragCircle(evt) {
+	var idx = getIdx(DragTarget.id);
+	circles[idx][0] = TrueCoords.x-Offset.x;
+	circles[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragShape(evt) {
+	var idx = getIdx(DragTarget.id);
+	shapes[idx][0] = TrueCoords.x-Offset.x;
+	shapes[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragRect(evt) {
+	var idx = getIdx(DragTarget.id);
+	rects[idx][0] = TrueCoords.x-Offset.x;
+	rects[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragText(evt) {
+	var idx = getIdx(DragTarget.id);
+	texts[idx][0] = TrueCoords.x-Offset.x;
+	texts[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragLine(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = lines[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = lines[idx][1] - (TrueCoords.y-Offset.y);
+	lines[idx][0] = TrueCoords.x-Offset.x;
+	lines[idx][1] = TrueCoords.y-Offset.y;
+	lines[idx-1][0] = lines[idx-1][0] - dx;
+	lines[idx-1][1] = lines[idx-1][1] - dy;
+}
+
+function DragLinePoint(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = lines[idx][0] - TrueCoords.x-Offset.x;
+	var dy = lines[idx][1] - TrueCoords.y-Offset.y;
+	if(evt.ctrlKey) {
+		if(idx%2 === 0) {
+			switch (directionX(lines[idx], lines[idx+1])) {
+				case 'X':
+					lines[idx][0] = TrueCoords.x-Offset.x;
+					lines[idx][1] = lines[idx+1][1];
+					break;
+				case 'Y':
+					lines[idx][0] = lines[idx+1][0];
+					lines[idx][1] = TrueCoords.y-Offset.y;
+					break;
+				default:
+					break;
+			}
+		} else {
+			switch (directionX(lines[idx-1], lines[idx])) {
+				case 'X':
+					lines[idx][0] = TrueCoords.x-Offset.x;
+					lines[idx][1] = lines[idx-1][1];
+					break;
+				case 'Y':
+					lines[idx][0] = lines[idx-1][0];
+					lines[idx][1] = TrueCoords.y-Offset.y;
+					break;
+				default:
+					break;
+			}
+		}
+	} else {
+		lines[idx][0] = TrueCoords.x-Offset.x;
+		lines[idx][1] = TrueCoords.y-Offset.y;
+	}
+}
+
+function DragPolygon(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = polygons[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = polygons[idx][1] - (TrueCoords.y-Offset.y);
+	for (var i=0; i < polygons.length; i++) {
+		polygons[i][0] = polygons[i][0] - dx;
+		polygons[i][1] = polygons[i][1] - dy;
+	}
+}
+
+function DragPolygonPoint(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = polygons[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = polygons[idx][1] - (TrueCoords.y-Offset.y);
+	polygons[idx][0] = TrueCoords.x-Offset.x;
+	polygons[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragPolyline(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = polylines[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = polylines[idx][1] - (TrueCoords.y-Offset.y);
+	for (var i=0; i < polylines.length; i++) {
+		polylines[i][0] = polylines[i][0] - dx;
+		polylines[i][1] = polylines[i][1] - dy;
+	}
+}
+
+function DragPolylinePoint(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = polylines[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = polylines[idx][1] - (TrueCoords.y-Offset.y);
+	polylines[idx][0] = TrueCoords.x-Offset.x;
+	polylines[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragArc(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = arcs[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = arcs[idx][1] - (TrueCoords.y-Offset.y);
+	arcs[idx][0] = TrueCoords.x-Offset.x;
+	arcs[idx][1] = TrueCoords.y-Offset.y;
+	arcs[idx-1][0] = arcs[idx-1][0] - dx;
+	arcs[idx-1][1] = arcs[idx-1][1] - dy;
+}
+
+function DragArcPoint(evt) {
+	var idx = getIdx(DragTarget.id);
+	arcs[idx][0] = TrueCoords.x-Offset.x;
+	arcs[idx][1] = TrueCoords.y-Offset.y;
+}
+
+function DragQuadratic(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = quadratics[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = quadratics[idx][1] - (TrueCoords.y-Offset.y);
+	for (var i=0; i < quadratics.length; i++) {
+		quadratics[i][0] = quadratics[i][0] - dx;
+		quadratics[i][1] = quadratics[i][1] - dy;
+	}
+	clearDrawing();
+	//clearControl();
+}
+function DragQuadraticPoint(evt) {
+	var idx = getIdx(DragTarget.id);
+	var dx = quadratics[idx][0] - (TrueCoords.x-Offset.x);
+	var dy = quadratics[idx][1] - (TrueCoords.y-Offset.y);
+	quadratics[idx][0] = (TrueCoords.x-Offset.x).toFixed(0);
+	quadratics[idx][1] = (TrueCoords.y-Offset.y).toFixed(0);
+	switch (idx%2) {
+		case 0:
+			if(quadratics[idx+1]) {
+				quadratics[idx+1][0] = quadratics[idx+1][0] - dx;
+				quadratics[idx+1][1] = quadratics[idx+1][1] - dy;
+			}
+			if(quadratics[idx-1]) {
+				quadratics[idx-1][0] = quadratics[idx-1][0] - dx;
+				quadratics[idx-1][1] = quadratics[idx-1][1] - dy;
+			}
+			break;
+		case 1:
+			if(aSymetric) {
+				if(quadratics[idx-1] && quadratics[idx-2]) {
+					quadratics[idx-2][0] = 2*quadratics[idx-1][0] - quadratics[idx][0];
+					quadratics[idx-2][1] = 2*quadratics[idx-1][1] - quadratics[idx][1];
+				}
+				if(quadratics[idx+1] && quadratics[idx+2]) {
+					quadratics[idx+2][0] = 2*quadratics[idx+1][0] - quadratics[idx][0];
+					quadratics[idx+2][1] = 2*quadratics[idx+1][1] - quadratics[idx][1];
+				}
+			} else if(aTangent) {
+				if(quadratics[idx-1] && quadratics[idx-2]) {
+					var alpha = angle(quadratics[idx], quadratics[idx-1]);
+					var len = length(quadratics[idx-1], quadratics[idx-2]);
+					var dx = len*Math.cos(alpha);
+					var dy = len*Math.sin(alpha);
+					quadratics[idx-2][0] = (quadratics[idx-1][0] - dx).toFixed(0);
+					quadratics[idx-2][1] = (quadratics[idx-1][1] - dy).toFixed(0);
+				}
+				if(quadratics[idx+1] && quadratics[idx+2]) {
+					var alpha = angle(quadratics[idx], quadratics[idx+1]);
+					var len = length(quadratics[idx+1], quadratics[idx+2]);
+					var dx = len*Math.cos(alpha);
+					var dy = len*Math.sin(alpha);
+					quadratics[idx+2][0] = (quadratics[idx+1][0] - dx).toFixed(0);
+					quadratics[idx+2][1] = (quadratics[idx+1][1] - dy).toFixed(0);
+				}
+			}
+			break;
+	}
+	clearDrawing();
+}
+
+function DragCubic(evt) {
+	try {
+		var idx = getIdx(DragTarget.id);
+		var dx = points[idx][0] - (TrueCoords.x-Offset.x).toFixed(0);
+		var dy = points[idx][1] - (TrueCoords.y-Offset.y).toFixed(0);
+		for (var i=0; i < points.length; i++) {
+			points[i][0] = points[i][0] - dx;
+			points[i][1] = points[i][1] - dy;
+		}
+		clearDrawing();
+	} catch (e) {
+		console.log(e);
+	}
+}
+
+function DragCubicPoint(evt) {
+	try {
+		var idx = getIdx(DragTarget.id);
+		var dx = TrueCoords.x - points[idx][0];
+		var dy = TrueCoords.y - points[idx][1];
+		points[idx][0] = parseInt(TrueCoords.x);
+		points[idx][1] = parseInt(TrueCoords.y);
+		switch (idx%3) {
+			case 0:
+				if(points[idx+1]) {
+					points[idx+1][0] = points[idx+1][0] + dx;
+					points[idx+1][1] = points[idx+1][1] + dy;
+					if(!Number.isInteger(points[idx+1][0])) {
+							console.log(points[idx+1][0]);
+						}
+				}
+				if(points[idx-1]) {
+					points[idx-1][0] = points[idx-1][0] + dx;
+					points[idx-1][1] = points[idx-1][1] + dy;
+					if(!Number.isInteger(points[idx-1][0])) {
+						console.log(points[idx-1][0]);
+					}
+				}
+			break;
+			case 1:
+				if(aSymetric) {
+					if(points[idx-1] && points[idx-2]) {
+						points[idx-2][0] = 2*points[idx-1][0] - points[idx][0];
+						points[idx-2][1] = 2*points[idx-1][1] - points[idx][1];
+						console.log(Number.isInteger(points[idx-2][0]));
+					}
+				} else if(aTangent) {
+					if(points[idx-1] && points[idx-2]) {
+						var alpha = angle(points[idx], points[idx-1]);
+						var len = length(points[idx-1], points[idx-2]);
+						var dx = len*Math.cos(alpha);
+						var dy = len*Math.sin(alpha);
+						points[idx-2][0] = parseInt((points[idx-1][0] - dx).toFixed(0));
+						points[idx-2][1] = parseInt((points[idx-1][1] - dy).toFixed(0));
+						//console.log(Number.isInteger(points[idx-2][0]));
+						if(!Number.isInteger(points[idx-2][0])) {
+							console.log(points[idx-2][0]);
+						}
+					}
+				}
+				break;
+			case 2:
+				if(points[idx+1]) {
+					if(aSymetric) {
+						if(points[idx+1] && points[idx+2]) {
+							points[idx+2][0] = 2*points[idx+1][0] - points[idx][0];
+							points[idx+2][1] = 2*points[idx+1][1] - points[idx][1];
+							console.log(Number.isInteger(points[idx+2][0]));
+						}
+					}  else if(aTangent) {
+						if(points[idx+1] && points[idx+2]) {
+							var alpha = angle(points[idx], points[idx+1]);
+							var len = length(points[idx+1], points[idx+2]);
+							var dx = len*Math.cos(alpha);
+							var dy = len*Math.sin(alpha);
+							points[idx+2][0] = parseInt((points[idx+1][0] - dx).toFixed(0));
+							points[idx+2][1] = parseInt((points[idx+1][1] - dy).toFixed(0));
+							console.log(Number.isInteger(points[idx+2][0]));
+							if(!Number.isInteger(points[idx+2][0])) {
+								console.log(points[idx+2][0]);
+							}
+						}
+					}
+				}
+				break;
+		}
+		clearDrawing();
+	} catch (e) {
+		console.log(e);
+	}
+
+}
+
+function Drop(evt) {
+ if (DragTarget) {
+    var targetElement = evt.target;
+    DragTarget.setAttribute('pointer-events', 'all');
+    DragTarget = null;
+ }
+}
+
+
+function GetTrueCoords(evt) {
+ var newScale = SVGRoot.currentScale;
+ var translation = SVGRoot.currentTranslate;
+ TrueCoords.x = (evt.clientX - translation.x)/newScale;
+ TrueCoords.y = (evt.clientY - translation.y)/newScale;
+}
+
+function InitGrid() {
+	var grid = document.getElementById('grid');
+	for(var i=1; i<8; i++) {
+		var line = document.createElementNS(svgns, 'line');
+		line.setAttribute('x1', 100*i);
+		line.setAttribute('y1', 0);
+		line.setAttribute('x2', 100*i);
+		line.setAttribute('y2', 600);
+		grid.appendChild(line);
+	}
+	for(var j=1; j<6; j++) {
+		var line = document.createElementNS(svgns, 'line');
+		line.setAttribute('x1', 0);
+		line.setAttribute('y1', 100*j);
+		line.setAttribute('x2', 800);
+		line.setAttribute('y2', 100*j);
+		grid.appendChild(line);
+	}
+}
+
+function Init() {
+	clearControl();
+	drawCubic();
+	drawQuadratic();
+	drawCircles();
+	drawEllipses();
+	drawRects();
+	drawLines();
+	drawPolygon();
+	drawPolyline();
+	drawArcs();
+	drawShapes();
+	drawPoints();
+	drawTexts();
+}
+
+function clearDrawing() {
+	var elements = document.getElementsByClassName('draggable');
+	while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+	clearControlLine();
+}
+
+function clearControl() {
+	var elements = document.getElementsByClassName('control');
+	while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+}
+
+function clearControlLine() {
+	var elements = document.getElementsByClassName('controlLine');
+	while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+}
+
+function createPoint(evt) {
+	switch (cType) {
+		case "E":
+			ellipses.push([evt.clientX, evt.clientY, eX, eY, 0]); //last attribute - angle for rotate
+			break;
+		case "K":
+			circles.push([evt.clientX, evt.clientY, aRadius]);
+			break;
+		case "R":
+			rects.push([evt.clientX, evt.clientY, rX, rY, 0]); //last attribute - angle for rotate
+			break;
+		case "L":
+			lines.push([evt.clientX, evt.clientY]);
+			break;
+		case "P":
+			polygons.push([evt.clientX, evt.clientY]);
+			break;
+		case "I":
+			polylines.push([evt.clientX, evt.clientY]);
+			break;
+		case "A":
+			arcs.push([evt.clientX, evt.clientY, aRadius, aLarge, aSweep]);
+			break;
+		case "Q":
+			quadratics.push([evt.clientX, evt.clientY]);
+			break;
+		case "SH":
+			shapes.push([evt.clientX, evt.clientY, aRadius, sType, 0, aCurve]); //fifth attribute - angle for rotate
+			setDisplay("Size: " + aRadius);
+			break;
+		case "T":
+			console.log("bum");
+			// x, y, font-size, font-family, rotate angle, text , textPath
+			// TODO 
+			texts.push([evt.clientX, evt.clientY, "24", "BigFat", "italic", "normal", "txt", 0, "myPath"]);
+			break;
+		default:
+			points.push([evt.clientX, evt.clientY]);
+			break;
+	}
+	Init();
+}
+
+function removePoint(evt) {
+	if (evt.ctrlKey) {
+		const idx = getIdx(evt.target.id);
+		if (evt.target.id.startsWith("PointE")) {
+			ellipses.splice(idx,1);
+		} else if (evt.target.id.startsWith("PointK")) {
+			circles.splice(idx,1);
+		} else if (evt.target.id.startsWith("PointR")) {
+			rects.splice(idx,1);
+		} else if (evt.target.id.startsWith("PointL")) {
+			if(idx%2 === 0) {
+				lines.splice(idx,2);
+			} else {
+				lines.splice(idx-1,2);
+			}
+		} else if (evt.target.id.startsWith("PointP")) {
+			polygons.splice(idx,1);
+		} else if (evt.target.id.startsWith("PointI")) {
+			polylines.splice(idx,1);
+		} else if (evt.target.id.startsWith("PointArc")) {
+		    if(idx%2 === 0) {
+				arcs.splice(idx,2);
+			} else {
+				arcs.splice(idx-1,2);
+			}
+		} else if (evt.target.id.startsWith("PointQ")) {
+			quadratics.splice(idx,1);
+		} else {
+			points.splice(idx,1);
+		}
+		clearDrawing();
+		Init();
+	}
+}
+
+function rightClick(evt) {
+	if (evt.ctrlKey) {
+		toggleSelected(evt.target);
+	} else {
+		showPopup(evt);
+	}
+}
+
+function drawControlLine(a, b, idx, type) {
+	try {
+		var line = document.createElementNS(svgns, 'line');
+		line.setAttribute('x1', a[0]);
+		line.setAttribute('y1', a[1]);
+		line.setAttribute('x2', b[0]);
+		line.setAttribute('y2', b[1]);
+		line.setAttribute('id', 'ControlLine' + type + idx);
+		line.setAttribute('class', 'controlLine');
+		line.setAttribute('stroke', 'silver');
+		svg.appendChild(line);
+	} catch (e) {
+		console.log(e);
+	}
+}
+
+function drawPoints() {
+	drawPointsCubic();
+	drawPointsQuadratic();
+	drawPointsEllipse();
+	drawPointsCircle();
+	drawPointsRect();
+	drawPointsLine();
+	drawPointsPolygon();
+	drawPointsPolyline();
+	drawPointsArc();
+	drawPointsShape();
+}
+
+function drawPointsCubic() {
+    try {
+		for (var i=0; i < points.length; i++) {
+			var circle = SVGDocument.getElementById('PointC'+i);
+			if(!circle) {
+				circle = document.createElementNS(svgns, 'circle');
+				circle.setAttribute('cx', points[i][0]);
+				circle.setAttribute('cy', points[i][1]);
+				circle.setAttribute('fill', getColor("C"));
+				switch (i%3) {
+					case 0:
+						if(points[i-1]) {
+							drawControlLine(points[i], points[i-1], i, "C");
+						}
+						break;
+					case 1:
+						circle.setAttribute('fill', getColor('control'));					
+						if(points[i-1]) {
+							drawControlLine(points[i], points[i-1], i, "C");
+						}
+						break;
+					case 2:
+						circle.setAttribute('fill', getColor('control'));
+						break;
+				}
+				circle.setAttribute('id', "PointC"+i);
+				circle.setAttribute('class', 'control');
+				circle.setAttribute('r', pointRadius);
+				circle.addEventListener('contextmenu', (ev)=>{
+				  ev.preventDefault(); 
+				   removePoint(ev)
+				});
+				//addEventListener("mouseover",()=>{
+				//	circle.setAttribute("r", pointRadius*2);
+				//});
+				//circle.addEventListener("mouseout",()=>{
+				//	circle.setAttribute("r", pointRadius);
+				//});
+				svg.appendChild(circle);
+			} else {
+				circle.setAttribute('cx', points[i][0]);
+				circle.setAttribute('cy', points[i][1]);
+			}
+		}
+	} catch (e) {
+		console.log(e);
+	}
+}
+function drawPointsQuadratic() {
+	for (var i=0; i < quadratics.length; i++) {
+		var circle = SVGDocument.getElementById('PointQ'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('fill', getColor("Q"));
+			circle.setAttribute('id', "PointQ"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			switch (i%2) {
+				case 0:
+					if(quadratics[i-1]) {
+						drawControlLine(quadratics[i], quadratics[i-1], i, "Q");
+					}
+					break;
+				case 1:
+					circle.setAttribute('fill', getColor('control'));
+					if(quadratics[i-1]) {
+						drawControlLine(quadratics[i], quadratics[i-1], i, "Q");
+					}
+					break;
+			}
+			circle.setAttribute('cx', quadratics[i][0]);
+			circle.setAttribute('cy', quadratics[i][1]);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault(); 
+			   removePoint(ev)
+			});
+
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', quadratics[i][0]);
+			circle.setAttribute('cy', quadratics[i][1]);
+		}
+	}
+}
+
+function drawPointsEllipse() {
+	for (var i=0; i < ellipses.length; i++) {
+		var circle = SVGDocument.getElementById('PointE'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', ellipses[i][0]);
+			circle.setAttribute('cy', ellipses[i][1]);
+			circle.setAttribute('fill', getColor("E"));
+			circle.setAttribute('id', "PointE"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', ellipses[i][0]);
+			circle.setAttribute('cy', ellipses[i][1]);
+		}
+	}
+}
+
+function drawPointsCircle() {
+	for (var i=0; i < circles.length; i++) {
+		var circle = SVGDocument.getElementById('PointK'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', circles[i][0]);
+			circle.setAttribute('cy', circles[i][1]);
+			circle.setAttribute('fill', getColor("K"));
+			circle.setAttribute('id', "PointK"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', circles[i][0]);
+			circle.setAttribute('cy', circles[i][1]);
+		}
+	}
+}
+
+function drawPointsRect() {
+	for (var i=0; i < rects.length; i++) {
+		var circle = SVGDocument.getElementById('PointR'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', rects[i][0]);
+			circle.setAttribute('cy', rects[i][1]);
+			circle.setAttribute('fill', getColor("R"));
+			circle.setAttribute('id', "PointR"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', rects[i][0]);
+			circle.setAttribute('cy', rects[i][1]);
+		}
+	}
+}
+
+function drawPointsLine() {
+	for (var i=0; i < lines.length; i++) {
+		var circle = SVGDocument.getElementById('PointL'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', lines[i][0]);
+			circle.setAttribute('cy', lines[i][1]);
+			circle.setAttribute('fill', getColor("L"));
+			circle.setAttribute('id', "PointL"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', lines[i][0]);
+			circle.setAttribute('cy', lines[i][1]);
+		}
+	}
+}
+
+function drawPointsPolygon() {
+	for (var i=0; i < polygons.length; i++) {
+		var circle = SVGDocument.getElementById('PointP'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', polygons[i][0]);
+			circle.setAttribute('cy', polygons[i][1]);
+			circle.setAttribute('fill', getColor("P"));
+			circle.setAttribute('id', "PointP"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', polygons[i][0]);
+			circle.setAttribute('cy', polygons[i][1]);
+		}
+	}
+}
+
+function drawPointsPolyline() {
+	for (var i=0; i < polylines.length; i++) {
+		var circle = SVGDocument.getElementById('PointI'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', polylines[i][0]);
+			circle.setAttribute('cy', polylines[i][1]);
+			circle.setAttribute('fill', getColor("I"));
+			circle.setAttribute('id', "PointI"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', polylines[i][0]);
+			circle.setAttribute('cy', polylines[i][1]);
+		}
+	}
+}
+
+function drawPointsArc() {
+	for (var i=0; i < arcs.length; i++) {
+		var circle = SVGDocument.getElementById('PointArc'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', arcs[i][0]);
+			circle.setAttribute('cy', arcs[i][1]);
+			circle.setAttribute('fill', getColor("A"));
+			circle.setAttribute('id', "PointArc"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', arcs[i][0]);
+			circle.setAttribute('cy', arcs[i][1]);
+		}
+	}
+}
+
+function drawPointsShape() {
+	for (var i=0; i < shapes.length; i++) {
+		var circle = SVGDocument.getElementById('PointShape'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('cx', shapes[i][0]);
+			circle.setAttribute('cy', shapes[i][1]);
+			circle.setAttribute('fill', getColor("K"));
+			circle.setAttribute('id', "PointShape"+i);
+			circle.setAttribute('class', 'control');
+			circle.setAttribute('r', pointRadius);
+			circle.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault();
+			   removePoint(ev)
+			});
+			svg.appendChild(circle);
+		} else {
+			circle.setAttribute('cx', shapes[i][0]);
+			circle.setAttribute('cy', shapes[i][1]);
+		}
+	}
+}
+
+function drawCubic() {
+	var cubic = SVGDocument.getElementById('Cubic0');
+	if(!cubic) {
+		cubic = document.createElementNS(svgns, 'path');
+		cubic.setAttribute('id', 'Cubic0');
+	}
+	cubic.setAttribute('class', 'draggable');
+	cubic.setAttribute('fill', fillColor);
+	var d = "";
+	var part = " C";
+	if(points.length > 3) {
+		d = "M" + points[0][0] + "," + points[0][1];
+		for (k=1; k < points.length; k++) {
+			part = part + points[k][0] + "," + points[k][1] + " ";
+			if(k%3 === 0) {
+				d = d + part;
+				part = "C";
+			}
+		}
+	}
+	cubic.setAttribute("d", d);
+	cubic.addEventListener('contextmenu', (ev)=>{
+	  ev.preventDefault();
+	   rightClick(ev)
+	});
+	console
+	svg.appendChild(cubic);
+}
+
+function drawQuadratic() {
+	var quadratic = SVGDocument.getElementById('Quadratic0');
+	if(!quadratic) {
+		quadratic = document.createElementNS(svgns, 'path');
+		quadratic.setAttribute('id', 'Quadratic0');
+	}
+	quadratic.setAttribute('class', 'draggable');
+	quadratic.setAttribute('fill', fillColor);
+	
+	var d = "";
+	var part = " Q";
+	if(quadratics.length > 2) {
+		d = "M" + quadratics[0][0] + "," + quadratics[0][1];
+		for (k=1; k < quadratics.length; k++) {
+			part = part + quadratics[k][0] + "," + quadratics[k][1] + " ";
+			if(k%2 === 0) {
+				d = d + part;
+				part = "Q";
+			}
+		}
+	}
+	quadratic.setAttribute("d", d);
+	quadratic.addEventListener('contextmenu', (ev)=>{
+	  ev.preventDefault();
+	   rightClick(ev)
+	});
+	svg.appendChild(quadratic);
+}
+
+function drawPolygon() {
+	var polygon = SVGDocument.getElementById('Polygon0');
+	if(!polygon) {
+		polygon = document.createElementNS(svgns, 'polygon');
+		polygon.setAttribute('id', 'Polygon0');
+	}
+	polygon.setAttribute('class', 'draggable');
+	polygon.setAttribute('fill', fillColor);
+	var d = ""
+	var k = 0;
+	while (k < polygons.length) {
+		d = d + polygons[k][0] + "," + polygons[k][1] + " ";
+		k++;
+	}
+	polygon.setAttribute("points", d);
+	polygon.addEventListener('contextmenu', (ev)=>{
+	  ev.preventDefault();
+	   rightClick(ev);
+	});
+	svg.appendChild(polygon);
+}
+
+function drawPolyline() {
+	var polyline = SVGDocument.getElementById('Polyline0');
+	if(!polyline) {
+		polyline = document.createElementNS(svgns, 'polyline');
+		polyline.setAttribute('id', 'Polyline0');
+	}
+	polyline.setAttribute('class', 'draggable');
+	polyline.setAttribute('fill', fillColor);
+	var d = ""
+	var k = 0;
+	while (k < polylines.length) {
+		d = d + polylines[k][0] + "," + polylines[k][1] + " ";
+		k++;
+	}
+	polyline.setAttribute("points", d);
+	polyline.addEventListener('contextmenu', (ev)=>{
+	  ev.preventDefault();
+	   rightClick(ev);
+	});
+	svg.appendChild(polyline);
+}
+
+function drawCircles() {
+	for (var i=0; i < circles.length; i++) {
+		var circle = SVGDocument.getElementById('Circle'+i);
+		if(!circle) {
+			circle = document.createElementNS(svgns, 'circle');
+			circle.setAttribute('id', "Circle"+i);
+		}
+		circle.setAttribute('cx', circles[i][0]);
+		circle.setAttribute('cy', circles[i][1]);
+		circle.setAttribute('class', 'draggable');
+		circle.setAttribute('fill', fillColor);
+		var r = circles[i][2];
+		circle.setAttribute('r', r);
+		circle.addEventListener('contextmenu', (ev)=>{
+		  ev.preventDefault(); 
+		   rightClick(ev)
+		});
+		svg.appendChild(circle);
+	}
+}
+
+function drawEllipses() {
+	for (var i=0; i < ellipses.length; i++) {
+		var ellipse = SVGDocument.getElementById('Ellipse'+i);
+		if(!ellipse) {
+			ellipse = document.createElementNS(svgns, 'ellipse');
+			ellipse.setAttribute('id', "Ellipse"+i);
+		}
+		ellipse.setAttribute('cx', ellipses[i][0]);
+		ellipse.setAttribute('cy', ellipses[i][1]);
+		ellipse.setAttribute('class', 'draggable');
+		ellipse.setAttribute('fill', fillColor);
+		var rx = ellipses[i][2]
+		ellipse.setAttribute('rx', rx);
+		var ry = ellipses[i][3]
+		ellipse.setAttribute('ry', ry);
+		ellipse.setAttribute('transform', 'rotate(' + ellipses[i][4] + ' ' + ellipses[i][0] + ',' + ellipses[i][1] + ')');
+		ellipse.addEventListener('contextmenu', (ev)=>{
+		  ev.preventDefault();
+		   rightClick(ev)
+		});
+		svg.appendChild(ellipse);
+	}
+}
+
+function drawRects() {
+	for (var i=0; i < rects.length; i++) {
+			var rect = SVGDocument.getElementById('Rect'+i);
+			if(!rect) {
+				rect = document.createElementNS(svgns, 'rect');
+				rect.setAttribute('id', "Rect"+i);
+			}
+			rect.setAttribute('x', rects[i][0]);
+			rect.setAttribute('y', rects[i][1]);
+			rect.setAttribute('width', rects[i][2]);
+			rect.setAttribute('height', rects[i][3]);
+			rect.setAttribute('class', 'draggable');
+			rect.setAttribute('fill', fillColor);
+			rect.setAttribute('transform', 'rotate(' + rects[i][4] + ' ' + rects[i][0] + ',' + rects[i][1] + ')');
+			rect.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault(); 
+			   rightClick(ev)
+			});
+			svg.appendChild(rect);
+	}
+}
+
+function drawTexts() {
+	for (var i=0; i < texts.length; i++) {
+		var text = SVGDocument.getElementById('Text'+i);
+		if(!text) {
+			text = document.createElementNS(svgns, 'text');
+			text.setAttribute('id', "Text"+i);
+		}
+		text.setAttribute('x', texts[i][0]);
+		text.setAttribute('y', texts[i][1]);
+		text.setAttribute('font-size', texts[i][2]);
+		text.setAttribute('font-family', texts[i][3]);
+		text.setAttribute('font-style', texts[i][4]);
+		text.setAttribute('font-weight', texts[i][5]);
+		text.setAttribute('class', 'draggable');
+		text.setAttribute('stroke', 'black');
+		text.setAttribute('transform', 'rotate(' + texts[i][7] + ' ' + texts[i][0] + ',' + texts[i][1] + ')');
+		text.addEventListener('contextmenu', (ev)=>{
+		  ev.preventDefault(); 
+		   rightClick(ev)
+		});
+		
+		if (texts[i][8]) {
+			console.log('je');
+			console.log(texts[i]);
+			const textPath = document.createElementNS(svgns, 'textPath');
+			//textPath.setAttribute('href', '#'+texts[i][8]);
+			textPath.setAttributeNS(null, 'href', '#'+texts[i][8]);
+			textPath.setAttribute('startOffset', '0%');
+			textPath.textContent = texts[i][6];
+			//textPath.setAttribute('font-size', texts[i][2]);
+			while (text.firstChild) text.removeChild(text.firstChild);
+			text.appendChild(textPath);
+			//text.textContent = '<textPath href="' + texts[i][8] + '" font-size="70px">' + texts[i][6] + '</textPath>';
+		} else{
+			console.log('ni');
+			text.textContent = texts[i][6];
+		}
+		
+		
+		console.log(text);
+		svg.appendChild(text);
+	}
+}
+
+function drawLines() {
+	for (var i=1; i < lines.length; i+=2) {
+		if(lines[i-1]) {
+			var line = SVGDocument.getElementById('Line'+i);
+			if(!line) {
+				line = document.createElementNS(svgns, 'line');
+				line.setAttribute('id', 'Line'+i);
+			}
+			line.setAttribute('x1', lines[i-1][0]);
+			line.setAttribute('y1', lines[i-1][1]);
+			line.setAttribute('x2', lines[i][0]);
+			line.setAttribute('y2', lines[i][1]);
+			line.setAttribute('class', 'draggable');
+			line.setAttribute('fill', fillColor);
+			line.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault(); 
+			   rightClick(ev)
+			});
+			svg.appendChild(line);
+			}
+	}
+}
+
+function drawArcs() {
+	for (var i=1; i < arcs.length; i+=2) {
+		if(arcs[i-1]) {
+			var arc = SVGDocument.getElementById('Arc'+i);
+			if(!arc) {
+				arc = document.createElementNS(svgns, 'path');
+				arc.setAttribute('id', 'Arc'+i);
+			}
+			var d = getArcPath(i);
+			arc.setAttribute('d', d);
+			arc.setAttribute('class', 'draggable');
+			arc.setAttribute('fill', fillColor);
+			arc.addEventListener('contextmenu', (ev)=>{
+			  ev.preventDefault(); 
+			   rightClick(ev)
+			});
+			svg.appendChild(arc);
+			}
+	}
+}
+
+function getArcPath(i) {
+	var r = arcs[i][2] ? arcs[i][2] : aRadius;
+	var large = arcs[i][3];
+	var sweep = arcs[i][4];
+	var d = "M" + arcs[i-1][0] + "," + arcs[i-1][1] + " A" + r + "," + r +
+	" 0 " + large + " " + sweep + " " + arcs[i][0] + "," + arcs[i][1];
+	return d;
+}
+
+
+function getArrowPoints(idx) {
+	var x = shapes[idx][0];
+	var y = shapes[idx][1];
+	var e = shapes[idx][2]/2; // radius
+	var c = e*Math.cos(36*Math.PI/180);
+	var f = e*Math.sin(72*Math.PI/180);
+	var h = e*Math.cos(72*Math.PI/180);
+	var a = e*Math.sin(36*Math.PI/180)/Math.tan(18*Math.PI/180);
+	var x1 = (a+c)*Math.cos(36*Math.PI/180);
+	var y1 = (a+c)*Math.sin(36*Math.PI/180);
+	var d = [[(x-e).toFixed(0),y.toFixed(0)],
+	[(x-x1).toFixed(0),(y+y1).toFixed(0)],
+	[(x+a+c).toFixed(0),y.toFixed(0)],
+	[(x-x1).toFixed(0),(y-y1).toFixed(0)]];
+	return d;
+}
+
+function getSmallArrowPoints(idx) {
+	var x = shapes[idx][0];
+	var y = shapes[idx][1];
+	var e = shapes[idx][2]/2; // radius
+	var c = e*Math.cos(36*Math.PI/180);
+	var f = e*Math.sin(72*Math.PI/180);
+	var h = e*Math.cos(72*Math.PI/180);
+	var a = e*Math.sin(36*Math.PI/180)/Math.tan(18*Math.PI/180);
+	var x1 = (a+c)*Math.cos(36*Math.PI/180);
+	var y1 = (a+c)*Math.sin(36*Math.PI/180);
+	var d = [[(x).toFixed(0),y.toFixed(0)],  	// 0
+	[(x-h).toFixed(0),(y+f).toFixed(0)],		// 1
+	[(x+a+c).toFixed(0),y.toFixed(0)],			// 2
+	[(x-h).toFixed(0),(y-f).toFixed(0)]];		// 3
+	return d;
+}
+
+function getHexagramPoints(idx) {
+	var x = shapes[idx][0];
+	var y = shapes[idx][1]; 
+	var a = shapes[idx][2];
+	var R = a*Math.sin(toRadians(60));
+	var d = [[x-a, y], [x-a/2, (y-R).toFixed(0)], [x+a/2, (y-R).toFixed(0)], [x+a , y], [x+a/2, (y+R).toFixed(0)] , [x-a/2, (y+R).toFixed(0)]];
+	return d;
+}
+
+function getSquarePoints(idx) {
+	var x = shapes[idx][0];
+	var y = shapes[idx][1]; 
+	var a = shapes[idx][2]/2;
+	// matematično pozitivna smer
+	var d = [[x-a, y-a], [x-a , y+a], [x+a, y+a], [x+a, y-a]];
+	return d;
+}
+
+function getShapePoints(idx) {
+	var shape = shapes[idx][3];
+	var d = [];
+	switch (shape) {
+		case "Triangle":
+			d = getTrianglePoints(idx);
+			break;
+		case "Star":
+			d = getStarPoints(idx);
+			break;
+		case "Pentagram":
+			d = getPentagramPoints(idx);
+			break;
+		case "Arrow":
+			d = getArrowPoints(idx);
+			break;
+		case "SmallArrow":
+			d = getSmallArrowPoints(idx);
+			break;
+		case "Hexagram":
+			d = getHexagramPoints(idx);
+			break;
+		case "Square":
+			d = getSquarePoints(idx);
+			break;
+		default:
+			d = getTrianglePoints(idx);
+	}
+	return d;
+}
+
+function getTrianglePoints(idx) {
+	var x = shapes[idx][0];
+	var y = shapes[idx][1]; 
+	var a = shapes[idx][2];
+	var R = (a/Math.sqrt(3)).toFixed(0);
+	var r = (a/(2*Math.sqrt(3)));
+	// matematično pozitivna smer
+	var d = [[x, y-R], [x-a/2, (y+r).toFixed(0)], [x+a/2, (y+r).toFixed(0)]];
+	return d;
+}
+
+function getStarPoints(idx) {
+	var x = shapes[idx][0];
+	var y = shapes[idx][1]; 
+	var e = shapes[idx][2]/2;
+	var b = e*Math.sin(36*Math.PI/180);
+	var c = e*Math.cos(36*Math.PI/180);
+	var f = e*Math.sin(72*Math.PI/180);
+	var h = e*Math.cos(72*Math.PI/180);
+	var a = e*Math.sin(36*Math.PI/180)/Math.tan(18*Math.PI/180);
+	var x1 = (a+c)*Math.cos(36*Math.PI/180);
+	var y1 = (a+c)*Math.sin(36*Math.PI/180);
+	var x2 = (a+c)*Math.cos(72*Math.PI/180);
+	var y2 = (a+c)*Math.sin(72*Math.PI/180);
+	var d = "";
+	d = [[x.toFixed(0),(y+e).toFixed(0)],
+	[(x+y1).toFixed(0),(y+x1).toFixed(0)],
+	[(x+f).toFixed(0),(y+h).toFixed(0)],
+	[(x+y2).toFixed(0),(y-x2).toFixed(0)],
+	[(x+b).toFixed(0),(y-c).toFixed(0)],
+	[x.toFixed(0),(y-a-c).toFixed(0)],
+	[(x-b).toFixed(0),(y-c).toFixed(0)],
+	[(x-y2).toFixed(0),(y-x2).toFixed(0)],
+	[(x-f).toFixed(0),(y+h).toFixed(0)],
+	[(x-y1).toFixed(0),(y+x1).toFixed(0)]];
+	return d;
+}
+
+function getPentagramPoints(idx) {
+    // TODO recalculate !!!
+	var x = shapes[idx][0];
+	var y = shapes[idx][1]; 
+	var e = shapes[idx][2]/2;
+	var c = e*Math.cos(36*Math.PI/180);
+	var a = e*Math.sin(36*Math.PI/180)/Math.tan(18*Math.PI/180);
+	var x1 = (a+c)*Math.cos(36*Math.PI/180);
+	var y1 = (a+c)*Math.sin(36*Math.PI/180);
+	var x2 = (a+c)*Math.cos(72*Math.PI/180);
+	var y2 = (a+c)*Math.sin(72*Math.PI/180);
+	var d = [[(x+y1).toFixed(0),(y+x1).toFixed(0)],
+		[(x+y2).toFixed(0),(y-x2).toFixed(0)],
+		[x.toFixed(0),(y-a-c).toFixed(0)],
+		[(x-y2).toFixed(0),(y-x2).toFixed(0)],
+		[(x-y1).toFixed(0),(y+x1).toFixed(0)]];
+	return d;
+}
+
+function drawShapes() {
+	for (var i=0; i < shapes.length; i++) {
+			var shape = SVGDocument.getElementById('Shape'+i);
+			var curve = isCurve(i);
+			if(!shape) {
+				if(curve) {
+					shape = document.createElementNS(svgns, 'path');
+				} else {
+					shape = document.createElementNS(svgns, 'polygon');
+				}
+				shape.setAttribute('id', "Shape"+i);
+			}
+			shape.setAttribute('class', 'draggable');
+			shape.setAttribute('fill', fillColor);
+			var p = getShapePoints(i);
+			if(curve) {
+				var d = getShapePath(p, getRadius(i));
+				shape.setAttribute("d", d);
+			} else {
+				shape.setAttribute("points", p);
+			}
+			shape.setAttribute('transform', 'rotate(' + shapes[i][4] + ' ' + shapes[i][0] + ',' + shapes[i][1] + ')');
+			shape.addEventListener('contextmenu', (ev)=>{
+				ev.preventDefault();
+				rightClick(ev)
+			});
+			svg.appendChild(shape);
+	}
+}
+
+function isCurve(idx) {
+	var is = shapes[idx][5];
+	return is == 1 ? true : false;
+}
+
+function getRadius(idx) {
+	var r = shapes[idx][2];
+	return r;
+}
+
+function getShapePath(p,r) {
+	var start = p.length-1;
+	var d = "M" + p[start][0] + "," + p[start][1];
+	for(var l = 0; l<p.length; l++) {
+		d = d + " A" + r +"," + r + " 1 0 1 " + p[l][0] + "," + p[l][1];
+	}	
+	return d;
+}
+
+function toggleShapes(type) {
+	var elem = document.getElementById('ShapeMenu');
+	if(type === "SH") {
+		elem.classList.remove('hidden');
+	} else {
+		if(!elem.classList.contains('hidden')) {
+			elem.classList.add('hidden');
+		}
+	}
+}
+
+function closeShapeMenu() {
+	var elem = document.getElementById('ShapeMenu');
+	elem.classList.add('hidden');
+}
+
+function openTextMenu(evt) {
+	const menu = document.getElementById("TextMenu");
+
+	// Pretvorba zaslonskih koordinat v SVG koordinate
+	const pt = SVGRoot.createSVGPoint();
+	pt.x = evt.clientX;
+	pt.y = evt.clientY;
+	const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+
+	// Nastavi pozicijo menija
+	menu.setAttribute("transform", `translate(${svgP.x}, ${svgP.y})`);
+	menu.classList.remove("hidden");
+	
+	console.log(menuElement);
+	var family = menuElement.getAttribute("font-family");
+	changeFontFamily(family);
+	setItalic();
+	setBold();
+}
+
+function closeTextMenu() {
+	var elem = document.getElementById('TextMenu');
+	elem.classList.add('hidden');
+}
+
+function toggleArc(type) {
+	var elem = document.getElementById('ArcMenu');
+	if(type === "A") {
+		elem.classList.remove('hidden');
+	} else {
+		if(!elem.classList.contains('hidden')) {
+			elem.classList.add('hidden');
+		}
+	}
+}
+
+function closeArcMenu() {
+	var elem = document.getElementById('ArcMenu');
+	elem.classList.add('hidden');
+}
+
+function toggleBezier(type) {
+	var elem = document.getElementById('BezierMenu');
+	if(type === "C" || type === "Q") {
+		elem.classList.remove('hidden');
+	} else {
+		if(!elem.classList.contains('hidden')) {
+			elem.classList.add('hidden');
+		}
+	}
+}
+
+function closeBezierMenu() {
+	var elem = document.getElementById('BezierMenu');
+	elem.classList.add('hidden');
+}
+
+function openGoldenMenu() {
+	var elem = document.getElementById('GoldenMenu');
+	elem.classList.remove('hidden');
+}
+
+function setText() {
+	var idx = getIdx(menuElement.id);
+	let newText = prompt("Set text:", menuElement.textContent);
+	if (newText !== null) {
+		menuElement.textContent = newText;
+		closePopup();
+		texts[idx][6] = newText;
+	}
+}
+
+function closeGoldenMenu() {
+	var elem = document.getElementById('GoldenMenu');
+	elem.classList.add('hidden');
+}
+
+function changeType(type) {
+	cType = type;
+	var types = document.getElementsByClassName('type');
+	Array.from(types).forEach((el) => {
+		if(el.id === cType) {
+			el.setAttribute('fill',getColor(el.id));
+		} else {
+			el.setAttribute('fill','white');
+		}
+		setCookie("cType", cType);
+	Init();
+	toggleShapes(type);
+	toggleArc(type);
+	toggleBezier(type);
+	});
+}
+
+function changeStype(type, all) {
+	sType = type;
+	var types = document.getElementsByClassName('sType');
+	if(all){
+		changeType("SH");
+	}
+	Array.from(types).forEach((el) => {
+		if(el.id === sType) {
+			el.setAttribute('fill',getColor(el.id));
+		} else {
+			el.setAttribute('fill','white');
+		}
+		setCookie("sType", sType);
+	Init();
+	});
+}
+
+function changeFontFamily(fid) {
+	var fonts = document.getElementsByClassName('ff');
+	Array.from(fonts).forEach((el) => {
+		if(el.id === fid) {
+			el.setAttribute('fill',getColor('control'));
+		} else {
+			el.setAttribute('fill','white');
+		}
+	});
+	var idx = getIdx(menuElement.id);
+	texts[idx][3] = fid;
+	menuElement.setAttribute('font-family', fid);
+}
+
+function setItalic() {
+	var idx = getIdx(menuElement.id);
+	var style = texts[idx][4];
+	s = menuElement.getAttribute('font-style');
+	var elem = document.getElementById('menu-italic');
+	if(s == 'italic') {
+		elem.setAttribute('fill',getColor('control'));
+	} else {
+		elem.setAttribute('fill','white');
+	}
+}
+
+function toggleItalic() {
+	var elem = document.getElementById('menu-italic');
+	var idx = getIdx(menuElement.id);
+	if(elem.getAttribute('fill') == 'white') {
+		elem.setAttribute('fill',getColor('control'));
+		texts[idx][4] = 'italic';
+	} else {
+		elem.setAttribute('fill','white');
+		texts[idx][4] = 'normal';
+	}
+	menuElement.setAttribute('font-style', texts[idx][4]);
+}
+
+function setBold() {
+	var idx = getIdx(menuElement.id);
+	var style = texts[idx][5];
+	s = menuElement.getAttribute('font-weight');
+	var elem = document.getElementById('menu-bold');
+	if(s == 'bold') {
+		elem.setAttribute('fill',getColor('control'));
+	} else {
+		elem.setAttribute('fill','white');
+	}
+}
+
+function toggleBold() {
+	var elem = document.getElementById('menu-bold');
+	var idx = getIdx(menuElement.id);
+	if(elem.getAttribute('fill') == 'white') {
+		elem.setAttribute('fill',getColor('control'));
+		texts[idx][5] = 'bold';
+	} else {
+		elem.setAttribute('fill','white');
+		texts[idx][5] = 'normal';
+	}
+	menuElement.setAttribute('font-weight', texts[idx][5]);
+}
+
+function getColor(type) {
+	switch (type) {
+		case "C":
+		case "Q":
+			return "blue";
+		case "E":
+		case "R":
+		case "P":
+		case "I":
+		case "K":
+		case "L":
+		case "A":
+		case "SH":
+		case "T":
+			return "blue";
+		case "control":
+			return "red";
+		case "Triangle":
+		case "Star":
+		case "Pentagram":
+		case "Arrow":
+		case "SmallArrow":
+		case "Hexagram":
+		case "Square":
+			return "green";
+		default:
+			return "silver";
+	}
+}
+
+function toggleSymetric(symetric) {
+	if(symetric.getAttribute('fill') == 'white') {
+		symetric.setAttribute('fill', getColor('control'));
+		document.getElementById('tangent').setAttribute('fill', 'white');
+		aSymetric = true;
+		aTangent = false;
+	} else {
+		symetric.setAttribute('fill', 'white');
+		aSymetric = false;
+	}
+	setCookie("aTangent", aTangent);
+	setCookie("aSymetric", aSymetric);
+}
+
+function toggleTangent(tangent) {
+	if(tangent.getAttribute('fill') == 'white') {
+		tangent.setAttribute('fill', getColor('control'));
+		document.getElementById('symetric').setAttribute('fill', 'white');
+		aTangent = true;
+		aSymetric = false;
+	} else {
+		tangent.setAttribute('fill', 'white');
+		aTangent = false;
+	}
+	setCookie("aTangent", aTangent);
+	setCookie("aSymetric", aSymetric);
+}
+
+function toggleLarge() {
+	if(aLarge == 1) {
+		aLarge = 0;
+		document.getElementById('large').setAttribute('fill','white');
+	} else {
+		aLarge = 1;
+		document.getElementById('large').setAttribute('fill',getColor('control'));
+	}
+	setCookie("aLarge", aLarge);
+}
+	
+function toggleSweep() {
+	if(aSweep == 1) {
+		aSweep = 0;
+		document.getElementById('sweep').setAttribute('fill','white');
+	} else {
+		aSweep = 1;
+		document.getElementById('sweep').setAttribute('fill',getColor('control'));
+	}
+	setCookie("aSweep", aSweep);
+}
+
+function toggleCurve() {
+	if(aCurve) {
+		aCurve = false;
+		document.getElementById('curve').setAttribute('fill','white');
+	} else {
+		aCurve = true;
+		document.getElementById('curve').setAttribute('fill',getColor('control'));
+	}
+	setCookie("aCurve", aCurve);
+}
+
+function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+}
+
+function toggleSelected(element) {
+	element.classList.toggle('selected');
+}
+
+function getIdx(str) {
+	var matches = str.match(/\d+$/);
+	var number;
+	if (matches) {
+		number = matches[0];
+	} else {
+		console.log('no match!!!');
+	}
+	var idx = parseInt(number, 10);
+	return idx;
+}
+
+function onWheel(evt) {
+	evt.preventDefault();
+	if(evt.target.id.startsWith("Circle")) {
+		resizeCircle(evt);	
+	} else if(evt.target.id.startsWith("Ellipse")) {
+		resizeEllipse(evt);
+	} else if(evt.target.id.startsWith("Arc")) {
+		resizeArc(evt);
+	} else if(evt.target.id.startsWith("Rect")) {
+		resizeRect(evt);
+	} else if(evt.target.id.startsWith("Line")) {
+		resizeLine(evt);
+	} else if(evt.target.id.startsWith("Shape")) {
+		resizeShape(evt);
+	} else if(evt.target.id.startsWith("Text")) {
+		resizeText(evt);
+	}
+}
+
+function resizeCircle(evt) {
+	var selected = document.getElementsByClassName('selected');
+	var txt = 'Radius: ';
+	if (selected.length > 0) {
+		Array.from(selected).forEach((el) => {
+			txt = txt + resizeCircleR(evt, el) + ', ';
+		});
+		txt = txt.substring(0, txt.length-2);
+	} else {
+		txt = txt + resizeCircleR(evt);
+	}
+	setDisplay(txt);
+}
+
+function resizeCircleR(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldR = parseInt(el.getAttribute('r'));
+	var newR = evt.wheelDelta < 0 ? oldR+wheelDelta : oldR-wheelDelta;
+	if(newR < 1) {
+		newR = 1;
+	}
+	el.setAttribute('r', newR);
+	circles[idx][2] = newR;
+	return newR;
+}
+
+function resizeLine(evt) {
+	var selected = document.getElementsByClassName('selected');
+	if (selected.length > 0) {
+		Array.from(selected).forEach((el) => {
+			resizeLineXY(evt, el);
+		});
+	} else {
+		resizeLineXY(evt);
+	}
+}
+
+function resizeLineXY(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var alpha;
+	alpha = angle(lines[idx], lines[idx-1]);
+	var dx = wheelDelta*Math.cos(alpha).toFixed(0);
+	var dy = wheelDelta*Math.sin(alpha).toFixed(0);
+	if(evt.wheelDelta < 0) {
+		lines[idx-1][0] = lines[idx-1][0] - dx;
+		lines[idx-1][1] = lines[idx-1][1] - dy;
+		lines[idx][0] = lines[idx][0] + dx;
+		lines[idx][1] = lines[idx][1] + dy;
+	} else {
+		lines[idx-1][0] = lines[idx-1][0] + dx;
+		lines[idx-1][1] = lines[idx-1][1] + dy;
+		lines[idx][0] = lines[idx][0] - dx;
+		lines[idx][1] = lines[idx][1] - dy;
+	}
+	Init();
+}
+
+function resizeShape(evt) {
+	var selected = document.getElementsByClassName('selected');
+	var txt;
+	if(evt.shiftKey) {
+		txt = "Angle: ";
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + rotateShape(evt, el) + ', ';
+			});
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + rotateShape(evt);
+		}
+	} else {
+		txt = 'Size: ';
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + resizeShapeR(evt, el) + ', ';
+			});
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + resizeShapeR(evt);
+		}
+	}
+	setDisplay(txt);
+}
+
+function resizeText(evt) {
+	var selected = document.getElementsByClassName('selected');
+	if(evt.shiftKey) {
+		txt = "Angle: ";
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + rotateText(evt, el) + ', ';
+			});
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + rotateText(evt);
+		}
+	} else {
+		txt = 'Size: ';
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + resizeTextF(evt, el) + ', ';
+			});
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + resizeTextF(evt);
+		}
+	}
+	setDisplay(txt);
+}
+
+
+function resizeShapeR(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldR = parseInt(shapes[idx][2]);
+	var newR = evt.wheelDelta < 0 ? oldR+wheelDelta : oldR-wheelDelta;
+	if(newR < 1) {
+		newR = 1;
+	}
+	shapes[idx][2] = newR;
+	var p = getShapePoints(idx);
+	if(isCurve(idx)) {
+		var d = getShapePath(p, newR);
+		el.setAttribute("d", d);
+	} else {
+		el.setAttribute('points', p);
+	}
+	return newR;
+}
+
+function rotateShape(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldAngle = parseInt(shapes[idx][4]);
+	var newAngle = evt.wheelDelta < 0 ? oldAngle+wheelDelta : oldAngle-wheelDelta;
+	el.setAttribute('transform', 'rotate(' + newAngle + ' ' + shapes[idx][0] + ',' + shapes[idx][1] + ')');
+	shapes[idx][4] = newAngle;
+	return newAngle;
+}
+
+function rotateText(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldAngle = parseInt(texts[idx][7]);
+	var newAngle = evt.wheelDelta < 0 ? oldAngle+wheelDelta : oldAngle-wheelDelta;
+	el.setAttribute('transform', 'rotate(' + newAngle + ' ' + texts[idx][0] + ',' + texts[idx][1] + ')');
+	texts[idx][7] = newAngle;
+	return newAngle;
+}
+
+function resizeTextF(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	console.log(idx);
+	var oldF = parseInt(texts[idx][2]);
+	var newF = evt.wheelDelta < 0 ? oldF+wheelDelta : oldF-wheelDelta;
+	if(newF < 1) {
+		newF = 1;
+	}
+	console.log(texts[idx]);
+	texts[idx][2] = newF;
+	el.setAttribute('font-size', newF);
+	return newF;
+}
+
+function rotateEllipse(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldAngle = parseInt(ellipses[idx][4]);
+	var newAngle = evt.wheelDelta < 0 ? oldAngle+wheelDelta : oldAngle-wheelDelta;
+	el.setAttribute('transform', 'rotate(' + newAngle + ' ' + ellipses[idx][0] + ',' + ellipses[idx][1] + ')');
+	ellipses[idx][4] = newAngle;
+	return newAngle;
+}
+
+function rotateRect(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldAngle = parseInt(rects[idx][4]);
+	var newAngle = evt.wheelDelta < 0 ? oldAngle+wheelDelta : oldAngle-wheelDelta;
+	el.setAttribute('transform', 'rotate(' + newAngle + ' ' + rects[idx][0] + ',' + rects[idx][1] + ')');
+	rects[idx][4] = newAngle;
+	return newAngle;
+}
+
+function angle(p1, p2) {
+  var dx = p1[0] - p2[0];
+  var dy = p1[1] - p2[1];
+  var theta = Math.atan2(dy, dx); // range (-PI, PI]
+  //theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+  //if (theta < 0) theta = 360 + theta; // range [0, 360)
+  return theta;
+}
+
+function length(p1, p2) {
+  var dx = p1[0] - p2[0];
+  var dy = p1[1] - p2[1];
+  var len = Math.sqrt(Math.pow(dy,2) + Math.pow(dx, 2));
+  return len;
+}
+
+
+function directionX(p1, p2) {
+  var dx = Math.abs(p1[0] - p2[0]);
+  var dy = Math.abs(p1[1] - p2[1]);
+  var retVal = dx > dy ? 'X' : 'Y'
+  return retVal ;
+}
+
+function getAngle(start, end) {
+  var deltaX = end[0] - start[0],
+      deltaY = end[1] - start[1],
+      dist = Math.sqrt(Math.pow(deltaX,2) + Math.pow(deltaY,2));
+  var newAngle = Math.atan2(deltaY, deltaX);
+  var shiftedAngle = Math.round(newAngle / Math.PI * 4) / 4 * Math.PI;
+  //end = [start[0]+dist*Math.cos(shiftedAngle), start[1]+dist*Math.sin(shiftedAngle)];
+  return shiftedAngle * 180 / Math.PI;
+}
+
+function resizeEllipse(evt) {
+	var selected = document.getElementsByClassName('selected');
+	var txt;
+	if(evt.shiftKey) {
+		txt = "Angle: " + rotateEllipse(evt);
+	} else if(evt.ctrlKey) {
+		txt = "Y: "
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + resizeEllipseY(evt, el) + ', ';
+			});
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + resizeEllipseY(evt);
+		}
+	} else {
+		txt = "X: ";
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + resizeEllipseX(evt, el) + ', ';
+			});
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + resizeEllipseX(evt);
+		}
+	}
+	setDisplay(txt);
+}	
+
+function resizeEllipseX(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldRx = parseInt(el.getAttribute('rx'));
+	var newRx = evt.wheelDelta < 0 ? oldRx+wheelDelta : oldRx-wheelDelta;
+	newRx = (newRx < 1) ? 1 : newRx;
+	el.setAttribute('rx', newRx);
+	ellipses[idx][2] = newRx;
+	return newRx;
+}
+
+function resizeEllipseY(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldRy = parseInt(el.getAttribute('ry'));
+	var newRy = evt.wheelDelta < 0 ? oldRy+wheelDelta : oldRy-wheelDelta;
+	newRy = (newRy < 1) ? 1 : newRy;
+	el.setAttribute('ry', newRy);
+	ellipses[idx][3] = newRy;
+	return newRy;
+}
+
+function resizeArc(evt) {
+	var selected = document.getElementsByClassName('selected');
+	var txt = 'Radius: ';
+	if (selected.length > 0) {
+		Array.from(selected).forEach((el) => {
+			txt = txt + resizeArcR(evt, el) + ', ';
+		});
+		txt = txt.substring(0, txt.length-2);
+	} else {
+		txt = txt + resizeArcR(evt);
+	}
+	setDisplay(txt);
+}
+
+function resizeArcR(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldRx = arcs[idx][2];
+	var newRx = evt.wheelDelta < 0 ? oldRx+wheelDelta : oldRx-wheelDelta;
+	newRx = (newRx < 1) ? 1 : newRx;
+	arcs[idx][2] = newRx;
+	//var d = el.getAttribute('d');	
+	//var pos1 = getPosition(d, 'A', 1);
+	//var pos2 = getPosition(d, ' ', 2);
+	//var newD = d.substring(0, pos1+1) + newRx+"," + newRx + d.substring(pos2, d.length);
+	var newD = getArcPath(idx);
+	el.setAttribute('d', newD);
+	return newRx;
+}
+
+function resizeRect(evt) {
+	var selected = document.getElementsByClassName('selected');
+	var txt;
+	if(evt.shiftKey) {
+		txt = "Angle: " + rotateRect(evt);
+	} else if(evt.ctrlKey) {
+		txt = "Height: "
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + resizeRectY(evt, el) + ', ';
+			});	
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + resizeRectY(evt);
+		}
+	} else {
+		txt = "Width: "
+		if (selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				txt = txt + resizeRectX(evt, el) + ', ';
+			});
+			txt = txt.substring(0, txt.length-2);
+		} else {
+			txt = txt + resizeRectX(evt);
+		}
+	}
+	setDisplay(txt);
+}
+
+function resizeRectX(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldWidth = parseInt(el.getAttribute('width'));
+	var newWidth = evt.wheelDelta < 0 ? oldWidth+wheelDelta : oldWidth-wheelDelta;
+	if(newWidth < 1) {
+		newWidth = 1;
+	}
+	el.setAttribute('width', newWidth);			
+	rects[idx][2] = newWidth;
+	return newWidth;
+}
+
+function resizeRectY(evt, el) {
+	el = el ? el: evt.target;
+	var idx = getIdx(el.id);
+	var oldHeight = parseInt(el.getAttribute('height'));
+	var newHeight = evt.wheelDelta < 0 ? oldHeight+wheelDelta : oldHeight-wheelDelta;
+	if(newHeight < 1) {
+		newHeight = 1;
+	}
+	el.setAttribute('height', newHeight);			
+	rects[idx][3] = newHeight;
+	return newHeight;
+}
+
+var menuElement = null;
+var middlePointX = null;
+var middlePointY = null;
+
+function showPopup(evt) {
+	menuElement = evt.target;
+	//console.log(menuElement.id);
+	const idx = getIdx(evt.target.id);
+	var middlePointX = evt.clientX;
+	var middlePointY = evt.clientY;
+	var menu = document.getElementById('menu');
+	var trans = "translate("+ middlePointX + "," + middlePointY + ")";
+	menu.setAttribute('transform', trans);
+	menu.setAttribute('class', 'show');
+	var select = document.getElementById('menu-select');
+	if(evt.target.getAttribute('class').indexOf('selected') > -1) {
+		select.textContent = 'deselect';
+	} else {
+		select.textContent = 'select';
+	}
+	var sweep = document.getElementById('menu-sweep');
+	var large = document.getElementById('menu-large');
+	var convert = document.getElementById('menu-convert');
+	var convertBack = document.getElementById('menu-convert-back');
+	var convertGolden = document.getElementById('menu-convert-golden');
+	var setText = document.getElementById('menu-set-text');
+	convert.classList.add('hidden');
+	convertBack.classList.add('hidden');
+	convertGolden.classList.add('hidden');
+	setText.classList.add('hidden');
+	if(evt.target.getAttribute('id').startsWith("Arc")) {
+		if(arcs[idx][4] === 1) {
+			sweep.setAttribute('fill', 'red');
+		} else{
+			sweep.setAttribute('fill', 'white');
+		}
+		if(arcs[idx][3] === 1) {
+			large.setAttribute('fill', 'red');
+		} else{
+			large.setAttribute('fill', 'white');
+		}
+	} else if(evt.target.getAttribute('id').startsWith("Shape")) {
+		convertGolden.classList.add('hidden');
+		convert.classList.remove('hidden');
+	} else if(evt.target.getAttribute('id').startsWith("Polyline")) {
+		convert.classList.remove('hidden');
+	} else if(evt.target.getAttribute('id').startsWith("Polygon")) {
+		convertBack.classList.remove('hidden');
+	} else if(evt.target.getAttribute('id').startsWith("Text")) {
+		setText.classList.remove('hidden');
+	} else if(evt.target.getAttribute('id').startsWith("Rect") || evt.target.getAttribute('id').startsWith("Ellipse")) {
+		convertGolden.classList.remove('hidden');
+	} else {
+		large.setAttribute('fill', 'silver');
+		sweep.setAttribute('fill', 'silver');
+	}
+}
+
+function toggleLargeMenu() {
+    if(menuElement.getAttribute('id').startsWith("Arc")) {
+		var selected = document.getElementsByClassName('selected');
+		if(selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				var idx = getIdx(el.id);
+				arcs[idx][3] = arcs[idx][3] === 1 ? 0 : 1;
+				var newD = getArcPath(idx);
+				el.setAttribute('d', newD);
+			});
+		} else {		
+			var idx = getIdx(menuElement.id);
+			arcs[idx][3] = arcs[idx][3] === 1 ? 0 : 1;
+			var newD = getArcPath(idx);
+			menuElement.setAttribute('d', newD);
+		}
+		closePopup();
+	} else if(menuElement.getAttribute('id').startsWith("Star")) {
+		var selected = document.getElementsByClassName('selected');
+		if(selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				stars[idx][3] = stars[idx][3] === 1 ? 0 : 1;
+				var d = getStarPoints(idx);
+				el.setAttribute('points', d);
+			});
+		} else {		
+			var idx = getIdx(menuElement.id);
+			stars[idx][3] = stars[idx][3] === 1 ? 0 : 1;
+			var d = getStarPoints(idx);
+			menuElement.setAttribute('points', d);
+		}
+		closePopup();
+	}
+}
+
+function toggleSweepMenu() {
+    if(menuElement.getAttribute('id').startsWith("Arc")) {
+		var selected = document.getElementsByClassName('selected');
+		if(selected.length > 0) {
+			Array.from(selected).forEach((el) => {
+				arcs[idx][4] = arcs[idx][4] === 0 ? 1: 0;
+				var newD = getArcPath(idx);
+				el.setAttribute('d', newD);
+			});
+		} else {
+			//console.log(menuElement);
+			var idx = getIdx(menuElement.id);
+			arcs[idx][4] = arcs[idx][4] === 0 ? 1: 0;	
+			var newD = getArcPath(idx);
+			menuElement.setAttribute('d', newD);
+		}
+		closePopup();
+	}
+}
+
+function closePopup() {
+	var menu = document.getElementById('menu');
+	menu.classList.toggle('hidden');
+	menuElement = null;
+	middlePointX = null;
+	middlePointY = null;
+	closeGoldenMenu();
+	closeTextMenu();
+}
+
+function selectObject() {
+	toggleSelected(menuElement);
+	closePopup();
+}
+
+function copyObject() {
+	var selected = document.getElementsByClassName('selected');
+	var str = "";
+	if (selected.length > 1) {
+		Array.from(selected).forEach((el) => {
+			str = str + getStringFromObject(el);
+		});
+	} else {
+		str = getStringFromObject(menuElement);
+	}
+	navigator.clipboard.writeText(str);
+	setDisplay(str);
+	closePopup();
+}
+
+function setDisplay(str) {
+	SVGDocument.getElementById('Display').textContent = str;
+}
+
+function convert2polygon() {
+	console.log('menuElement');
+	console.log(menuElement);
+	if(menuElement.id.startsWith("Polyline")) {
+		// TODO omogoči več poligonov...
+		polygons = polylines;
+		polylines = [];
+	} else {
+		const idx = getIdx(menuElement.id);
+		if(menuElement.nodeName == "path") {
+			// TODO rotate
+			polygons = getShapePoints(idx);
+		} else {
+			let p = menuElement.getAttribute("points");
+			polygons = [];
+			arr = p.split(",");
+			let groupTransformMatrix  = menuElement.transform.baseVal[0].matrix;
+			for (let i = 0; i < arr.length; i += 2) {
+				let s = SVGRoot.createSVGPoint();
+				s.x = parseInt(arr[i]);;
+				s.y = parseInt(arr[i+1]);
+				let pt = s.matrixTransform(groupTransformMatrix);
+				polygons.push([(pt.x).toFixed(0), (pt.y).toFixed(0)]);
+			}
+		}
+		shapes.splice(idx,1);
+	}
+	clearDrawing();
+	clearControl();
+	closePopup();
+	Init();
+}
+
+function convert2polyline() {
+	//console.log(menuElement.id);
+	if(menuElement.id.startsWith("Polygon")) {
+		polylines = polygons;
+		polygons = [];
+	}
+	clearDrawing();
+	clearControl();
+	closePopup();
+	Init();
+}
+
+function convert2golden(horizontal) {
+	const idx = getIdx(menuElement.id);
+	if(menuElement.id.startsWith("Rect")) {
+		if(horizontal) {
+			rects[idx][2] = goldenMax(rects[idx][3]);
+		} else {
+			rects[idx][3] = goldenMax(rects[idx][2]);
+		}
+	} else if(menuElement.id.startsWith("Ellipse")) {
+		if(horizontal) {
+			ellipses[idx][2] = goldenMax(ellipses[idx][3]);
+		} else {
+			ellipses[idx][3] = goldenMax(ellipses[idx][2]);
+		}
+	} else {
+		console.log("Wrong shape! " + menuElement.id);
+	}
+	clearDrawing();
+	clearControl();
+	closePopup();
+	Init()
+}
+
+function goldenMax(a) {	
+	b = a/((1 + Math.sqrt(5))/2);
+	return b;
+}
+
+function goldenMin(a) {	
+	b = a - a/((1 + Math.sqrt(5))/2);
+	return b;
+}
+
+function toRadians (angle) {
+  return angle * (Math.PI / 180);
+}
+
+function getStringFromObject(el) {
+	var name = el.nodeName;
+	var str = "";
+	switch (name) {
+		case 'rect':
+			str = createRectString(el);
+			break;
+		case 'line':
+			str = createLineString(el);
+			break;
+		case 'path':
+			str = createPathString(el);
+			break;
+		case 'circle':
+			str = createCircleString(el);
+			break;
+		case 'ellipse':
+			str = createEllipseString(el);
+			break;
+		case 'polygon':
+			str = createPolygonString(el);
+			break;
+		case 'polyline':
+			str = createPolylineString(el);
+			break;
+		case 'text':
+			str = createTextString(el);
+			break;
+		default:
+			str = "unknown";
+		break;
+	}
+	return str;
+}
+
+function deleteObject() {
+	const idx = getIdx(menuElement.id);
+	var name = menuElement.nodeName;
+	switch (name) {
+		case 'rect':
+			rects.splice(idx,1);
+			clearDrawing();
+			break;
+		case 'line':
+			lines.splice(idx-1, 2);
+			clearDrawing();
+			break;
+		case 'text':
+			texts.splice(idx, 1);
+			clearDrawing();
+			break;
+		case 'path':
+			if(menuElement.id === "Cubic0") {
+				points = [];
+			} else if (menuElement.id === "Quadratic0"){
+				quadratics = [];
+			} else {
+				arcs.splice(idx-1, 2);
+			}
+			clearDrawing();
+			clearControl();
+			break;
+		case 'circle':
+			circles.splice(idx,1);
+			clearDrawing();
+			break;
+		case 'ellipse':
+			ellipses.splice(idx,1);
+			clearDrawing();
+			break;
+		case 'polygon':
+			if (menuElement.id.startsWith("Shape")) {
+				shapes.splice(idx,1);
+			} else {
+				polygons = [];
+			}
+			clearDrawing();
+			clearControl();
+			break;
+		case 'polyline':
+			polylines = [];
+			clearDrawing();
+			clearControl();
+			break;
+		default:
+		break;
+	}
+	closePopup();
+	Init();
+}
+
+function createCircleString(el) {
+	const str = '<circle cx="' + el.getAttribute('cx') +
+		'" cy="' + el.getAttribute('cy') +
+		'" r="' + el.getAttribute('r') +
+		'"/>';
+	return str;
+}
+
+function createEllipseString(el) {
+	var trans = el.getAttribute('transform');
+	var str = '<ellipse cx="' + el.getAttribute('cx') + '" cy="' +
+		el.getAttribute('cy') +	'" rx="' + el.getAttribute('rx') +
+		'" ry="' + el.getAttribute('ry');
+	if(trans && trans.indexOf("rotate(0") == -1) {
+		str = str + '" transform="' + trans;
+	} 
+	str = str + '"/>';
+	return str;
+}
+
+function createRectString(el) {
+	var trans = el.getAttribute('transform');
+	var str = '<rect x="' + el.getAttribute('x') + '" y="'
+		+ el.getAttribute('y') +
+		'" width="' + el.getAttribute('width') +
+		'" height="' + el.getAttribute('height');
+	if(trans && trans.indexOf("rotate(0") == -1) {
+		str = str + '" transform="' + trans;
+	}
+	str = str + '"/>';
+	return str;
+}
+
+function createLineString(el) {
+	const str = '<line x1="' + el.getAttribute('x1') + '" y1="'
+		+ el.getAttribute('y1') +
+		'" x2="' + el.getAttribute('x2') +
+		'" y2="' + el.getAttribute('y2') +
+		'"/>';
+	return str;
+}
+
+function createPathString(el) {
+	const str = '<path d="' + el.getAttribute('d') + '"/>';
+	return str;
+}
+
+function createPolygonString(el) {
+	var trans = el.getAttribute('transform');
+	var str = '<polygon points="' + el.getAttribute('points');
+	if(trans && trans.indexOf("rotate(0") == -1) {
+		str = str + '" transform="' + trans;
+	}
+	str = str + '"/>';
+	return str;
+}
+
+function createPolylineString(el) {
+	var trans = el.getAttribute('transform');
+	var str = '<polyline points="' + el.getAttribute('points');
+	//if(trans && trans.indexOf("rotate(0") == -1) {
+	//	str = str + '" transform="' + trans;
+	//}
+	str = str + '"/>';
+	return str;
+}
+
+function createTextString(el) {
+	var trans = el.getAttribute('transform');
+	var str = '<text x="' + el.getAttribute('x') + '" y="'
+		+ el.getAttribute('y') +
+		'" font-size="' + el.getAttribute('font-size')+
+		'" font-family="' + el.getAttribute('font-family')+
+		'" font-style="' + el.getAttribute('font-style')+
+		'" font-weight="' + el.getAttribute('font-weight')
+		;
+	if(trans && trans.indexOf("rotate(0") == -1) {
+		str = str + '" transform="' + trans;
+	}
+	str = str + '">' + el.textContent + '</text>';
+	return str;
+}
+
+function toggleImage() {
+	var el= document.getElementById('image');
+	el.classList.toggle('hidden');
+	var cb = document.getElementById('imgCheck');
+	if(el.classList.contains('hidden')) {
+		cb.setAttribute('fill', 'white');
+		hideImage = true;
+		setCookie("hideImage","true");
+	} else {
+		cb.setAttribute('fill', 'green');
+		hideImage = false;
+		setCookie("hideImage","false");
+	}	
+}
+
+function toggleGrid() {
+	var el= document.getElementById('grid');
+	el.classList.toggle('hidden');
+	var cb = document.getElementById('gridCheck');
+	if(el.classList.contains('hidden')) {
+		cb.setAttribute('fill', 'white');
+		hideGrid = true;
+		setCookie("hideGrid","true");
+	} else {
+		cb.setAttribute('fill', 'green');
+		hideGrid = false;
+		setCookie("hideGrid","false");
+	}	
+}
+
+function toggleSketch() {
+	var el= document.getElementById('sketch');
+	el.classList.toggle('hidden');
+	var cb = document.getElementById('sketchCheck');
+	if(el.classList.contains('hidden')) {
+		cb.setAttribute('fill', 'white');
+		hideSketch = true;
+		setCookie("hideSketch","true");
+	} else {
+		cb.setAttribute('fill', 'green');
+		hideSketch = false;
+		setCookie("hideSketch","false");
+	}	
+}
+
+function setCookie(cname, cvalue, exdays) {
+  //const d = new Date();
+  //d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  //let expires = "expires="+ d.toUTCString();
+  //document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = cname + "=" + cvalue + "; SameSite=Lax"
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+]]></script>
+</svg>

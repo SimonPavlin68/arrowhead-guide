@@ -1,0 +1,88 @@
+<svg width="201" height="121" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 201 121"
+style="cursor:pointer;" onclick="startAnimation(evt)">>
+
+  <defs>
+    <!-- Grid vzorec -->
+    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M10 0 L0 0 0 10" fill="none"
+            stroke="#ccc" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Sivo ozadje -->
+  <rect width="201" height="121" fill="#eee"/>
+
+  <!-- Grid čez ozadje -->
+  <rect width="201" height="121" fill="url(#grid)"/>
+<g stroke-linecap="round" stroke-linejoin="round">
+  <!-- Nagnjen teren -->
+  <line id="terrainAnim" x1="10" y1="75" x2="190" y2="75"
+        stroke="#303fa1" stroke-width="4">
+  <animate
+    attributeName="y1"
+    from="75" to="100"
+    dur="2.5s"
+    fill="freeze"
+    begin="indefinite"/>
+
+  <animate
+    attributeName="y2"
+    from="75" to="50"
+    dur="2.5s"
+    fill="freeze"
+    begin="indefinite"/>
+  </line>
+
+
+  <!-- Lok (pokončen) -->
+  <line id="terrainBow" x1="100" y1="20" x2="100" y2="100"
+        stroke="#303fa1" stroke-width="4">
+	<animate
+		attributeName="x1"
+		from="100" to="90"
+		dur="2.5s"
+		fill="freeze"
+		begin="indefinite"/>
+	</line>
+
+
+  <!-- Optični premik -->
+  <g id="tekst" opacity="0">
+  <animate attributeName="opacity"
+           from="0" to="1"
+           dur="2.5s"
+           fill="freeze"
+           begin="indefinite"/>
+  <line x1="90" y1="40" x2="70" y2="40"
+        stroke="red" stroke-width="1.5"
+        marker-end="url(#arrow)"/>
+  <text x="100" y="43" font-size="12" fill="red">
+    optični premik
+  </text>
+  </g>
+</g>
+  <!-- Puščica -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10"
+            refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+    </marker>
+  </defs>
+<script type="application/ecmascript"><![CDATA[
+    function startAnimation(evt) {
+	console.log("jeba");
+      document.getElementById("terrainAnim")
+  .querySelectorAll("animate")
+  .forEach(a => a.beginElement());
+      document.getElementById("terrainBow")
+  .querySelectorAll("animate")
+  .forEach(a => a.beginElement());
+  // tekst
+  document.getElementById("tekst")
+    .querySelectorAll("animate")
+    .forEach(a => a.beginElement());
+    }
+	
+  ]]></script>
+</svg>
