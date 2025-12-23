@@ -49,17 +49,33 @@ style="cursor:pointer;" onclick="startAnimation(evt)">>
 
   <!-- Optični premik -->
   <g id="tekst" opacity="0">
-  <animate attributeName="opacity"
-           from="0" to="1"
-           dur="2.5s"
-           fill="freeze"
-           begin="indefinite"/>
-  <line x1="90" y1="40" x2="70" y2="40"
-        stroke="red" stroke-width="1.5"
-        marker-end="url(#arrow)"/>
-  <text x="100" y="43" font-size="12" fill="red">
-    optični premik
-  </text>
+	  <animate attributeName="opacity"
+			   from="0" to="1"
+			   dur="2.5s"
+			   fill="freeze"
+			   begin="indefinite"/>
+		<line x1="135" y1="20" x2="115" y2="20"
+			stroke="red" stroke-width="1.5"
+			marker-end="url(#arrow)">
+			<animate attributeName="x1"
+					 from="135" to="125"
+					 dur="2.5s"
+					 fill="freeze"
+					 begin="indefinite"/>
+			<animate attributeName="x2"
+					 from="115" to="105"
+					 dur="2.5s"
+					 fill="freeze"
+					 begin="indefinite"/>
+		</line>
+	  <text x="120" y="33" font-size="12" fill="red">
+		optični premik
+		<animate attributeName="x"
+                 from="120" to="110"
+                 dur="2.5s"
+                 fill="freeze"
+                 begin="indefinite"/>
+	  </text>
   </g>
 </g>
   <!-- Puščica -->
