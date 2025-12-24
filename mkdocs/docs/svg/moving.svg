@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" style="background:#f8f8f8; cursor:pointer;"
+ onclick="startAnimation(evt)">
+  <metadata>Author: Simon Pavlin, 2025</metadata>
+  <title>Circle on Path</title>
+
+  <!-- Definicija poti -->
+  <path id="trajektorija" d="M50,150 C150,50 350,50 450,150" stroke="red" stroke-width="2" fill="none"/>
+
+  <!-- Krog, ki se bo premikal po poti -->
+  <circle id="movingCircle" cx="50" cy="150" r="10" fill="blue">
+    <!-- Animacija premika kroga po poti -->
+    <animateMotion dur="2s" begin="indefinite" repeatCount="1" fill="freeze">
+      <mpath href="#trajektorija"/>
+    </animateMotion>
+  </circle>
+
+  <script type="application/ecmascript"><![CDATA[
+    function startAnimation(evt) {
+      const movingCircle = document.getElementById("movingCircle");
+      const animation = movingCircle.getElementsByTagName("animateMotion")[0];
+
+      // Premaknemo krog na začetno pozicijo poti
+      movingCircle.setAttribute("cx", "0");
+      movingCircle.setAttribute("cy", "0");
+
+      // Začne animacijo
+      animation.beginElement();
+    }
+  ]]></script>
+</svg>
