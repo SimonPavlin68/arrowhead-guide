@@ -1,6 +1,7 @@
 <svg width="402" height="242" xmlns="http://www.w3.org/2000/svg"
 viewBox="0 0 201 121"
-style="cursor:pointer;" onclick="startAnimation(evt)">>
+style="cursor:pointer;" onclick="startAnimation(evt)">
+<metadata>Author: Simon Pavlin, 2025</metadata>
 
   <defs>
     <!-- Grid vzorec -->

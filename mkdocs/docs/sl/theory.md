@@ -10,7 +10,7 @@ Pomeni nastaviti merilno napravo na *večjo razdaljo*, kot je dejanska razdalja 
 **odvzeti**  
 Pomeni nastaviti merilno napravo na *manjšo razdaljo*, kot je dejanska razdalja do tarče.
 
-Ta terminologija se nanaša izključno na delo z merilno napravo in ne na spremembo kote izstrelitve ali položaja telesa.
+Ta terminologija se nanaša izključno na delo z merilno napravo.
 
 Gre za praktičen jezik field streljanja, kjer korekcija ne izhaja neposredno iz izmerjene razdalje, temveč iz razumevanja leta puščice.
 
@@ -31,7 +31,7 @@ Trditev: Navzgor puščica leti dlje do tarče
 Pri strelih pod naklonom je treba ločiti dva različna kota, ki imata različen pomen.
 
 **kot tarče** (geometrijski kot)
-Kot med linijo pogleda na tarčo in vodoravnico.
+Kot med linijo do tarče in vodoravnico.
 Ta kot opisuje teren in položaj tarče, ne pa balistike leta puščice.
 
 ** kot izmeta**
