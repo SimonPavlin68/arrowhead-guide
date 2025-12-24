@@ -33,10 +33,12 @@ Pri strelih pod naklonom je treba ločiti dva različna kota, ki imata različen
 **kot tarče** (geometrijski kot)
 Kot med linijo do tarče in vodoravnico.
 Ta kot opisuje teren in položaj tarče, ne pa balistike leta puščice.
+<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up.svg"></object>
 
-** kot izmeta**
+**kot izmeta**
 Dejanski kot, pod katerim puščica zapusti lok.
 Ta kot določa čas leta, padec puščice in s tem potrebno nastavitev merilne naprave.
+<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up-bow.svg"></object>
 
 ---
 
@@ -91,7 +93,10 @@ Pri strelih pod naklonom se spremeni:
 - občutek sidranja.
 
 Če se drža telesa spremeni, se spremeni tudi izmetna geometrija – ne glede na pravilno nastavljeno merilno napravo.
-
+Že majhna sprememba v drži lahko pomeni veliko razliko v tem, kako bo puščica letela, ne glede na vse ostalo.
+Zato je pozornost v pravilno telesno pozicijo ravno tako pomembna kot vse ostale tehnične nastavitve, če ne še bolj.
+<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up-bow-fire.svg"></object>
+<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up-bow-fire-Z.svg"></object>
 ---
 
 ## *Psihologija*
