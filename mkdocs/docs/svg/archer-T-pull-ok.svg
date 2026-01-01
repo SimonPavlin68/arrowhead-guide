@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="200 120 600 380"
      style="background:#f8f8f8; cursor:pointer;" onclick="startAnimation(evt)">
-
+<metadata>Author: Simon Pavlin, 2025</metadata>
   <title>Archer</title>
   <g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <g id="archer" transform="rotate(0, 400,325)">

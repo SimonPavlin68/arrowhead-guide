@@ -21,7 +21,7 @@
 	</marker>
 </defs>
 	<!-- TLA -->
-	<line x1="160" y1="460" x2="550" y2="460" stroke="silver" stroke-width="10" stroke-linecap="round"/>
+	<line x1="160" y1="460" x2="640" y2="460" stroke="silver" stroke-width="10" stroke-linecap="round"/>
 	<!-- linija do tarče -->
 	<g id="tekst" opacity="1">
 		<path id="trajektorija" d="M252,336 Q420,270 520,300" stroke="red" stroke-width="1px" fill="none" stroke-dasharray="5 12"/>
@@ -36,10 +36,6 @@
 		  <circle cx="400" cy="210" r="15" stroke-width="15px" />
 		  <line x1="400" y1="250" x2="400" y2="325" />
 		  <line x1="340" y1="250" x2="490" y2="250" />
-		  <g id="t_sign">
-			<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
-			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
-		  </g>
 		  <!-- lok -->
 		  <path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
 		</g>
@@ -50,8 +46,14 @@
 	</g>
 	
 	<!-- Zelena kljukica (skrita na začetku) -->
-	<text id="checkmark" x="290" y="370" font-size="50" fill="green" style="display:none;">✔</text>
-
+	<g id="checkmark" style="display:none;">
+		<text  x="270" y="390" font-size="50" fill="green">✔</text>
+		<text  x="550" y="320" font-size="50" fill="green">✔</text>
+		<g id="t_sign" transform="translate(20, 225) scale(0.5) rotate(-20, 400,325)">
+				<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+				<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+		</g>
+	</g>
 	<!-- Circle to move along path -->
 	<circle id="movingCircle" cx="252" cy="336" r="7" fill="red" style="display:none;">
 		<!-- Animation for moving along the path -->

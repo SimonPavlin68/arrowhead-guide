@@ -1,0 +1,47 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onclick="OnClick()" style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+<defs>
+		<pattern id="diagonalRight" width="7" height="10" patternTransform="rotate(70 0 0)" patternUnits="userSpaceOnUse">
+		  <line x1="0" y1="0" x2="0" y2="10" style="stroke:black; stroke-width:2" />
+		</pattern>
+		<pattern id="diagonalLeft" width="7" height="10" patternTransform="rotate(-70 0 0)" patternUnits="userSpaceOnUse">
+		  <line x1="0" y1="0" x2="0" y2="10" style="stroke:black; stroke-width:2" />
+		</pattern>
+</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+	<rect class="hide" x="200" y="150" width="400" height="20" stroke="black" stroke-width="2px" fill="url(#diagonalLeft)" />
+	<rect class="hide" x="200" y="200" width="400" height="20" stroke="black" stroke-width="2px" fill="url(#diagonalRight)" />
+	<rect class="hide" x="200" y="250" width="400" height="20" stroke="black" stroke-width="2px" fill="url(#diagonalLeft)" />
+	<rect class="hide" x="200" y="300" width="400" height="20" stroke="black" stroke-width="2px" fill="url(#diagonalRight)" />
+	<rect class="hide" x="200" y="350" width="400" height="20" stroke="black" stroke-width="2px" fill="url(#diagonalLeft)" />
+	<rect class="hide" x="200" y="400" width="400" height="20" stroke="black" stroke-width="2px" fill="url(#diagonalRight)" />
+
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg"
+
+var hide = true;
+
+function getPattern(i) {
+	return (i%2 == 0) ? 'url(#diagonalLeft)' : 'url(#diagonalRight)';
+}
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for (var i = 0; i < elements.length; i++) {
+		if(hide) {
+		elements[i].setAttribute('fill', 'none');
+	} else {
+		elements[i].setAttribute('fill', getPattern(i));
+	}
+	
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>

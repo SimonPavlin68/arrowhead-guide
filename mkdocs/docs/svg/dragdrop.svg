@@ -3,7 +3,7 @@
 <svg id="dragdrop-svg" width="600" height="400"
      xmlns="http://www.w3.org/2000/svg"
 	 xmlns:xlink="http://www.w3.org/1999/xlink">
-
+<metadata>Author: Simon Pavlin, 2025</metadata>
      <defs>
 		<mask id="mask" x="0" y="0" width="30" height="30">
 			<rect width="99" height="99" fill="#fff"/>

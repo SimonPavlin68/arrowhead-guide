@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      width="500" height="400"  viewBox="150 130 500 350"
 	 style="background:#f8f8f8; cursor:pointer;" onclick="startAnimation(evt)">
-
+<metadata>Author: Simon Pavlin, 2025</metadata>
   <title>Archer</title>
 
   <g id="archer" stroke="#303fa1" stroke-width="20px" fill="none"

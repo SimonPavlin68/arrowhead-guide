@@ -1,0 +1,109 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onload="InitDraw(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)"
+	onclick="OnClick()" style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Müller-Lyer Illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	
+	<g fill="black" stroke="black" stroke-width="15" stroke-linecap="round">
+		<line x1="200" y1="200" x2="500" y2="200" id="Line1" class="draggable" />
+		<line class="hide" x1="200" y1="200" x2="130" y2="130" />
+		<line class="hide" x1="200" y1="200" x2="130" y2="270" />
+		<line class="hide" x1="500" y1="200" x2="570" y2="130" />
+		<line class="hide" x1="500" y1="200" x2="570" y2="270" />
+
+	
+		<line x1="200" y1="400" x2="500" y2="400" id="Line2" class="draggable" />
+		<line class="hide" x1="200" y1="400" x2="270" y2="330" />
+		<line class="hide" x1="200" y1="400" x2="270" y2="470" />
+		<line class="hide" x1="500" y1="400" x2="430" y2="330" />
+		<line class="hide" x1="500" y1="400" x2="430" y2="470" />
+	</g>
+
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+function InitDraw(evt) {
+         SVGDocument = evt.target.ownerDocument;
+         SVGRoot = SVGDocument.documentElement;
+         TrueCoords = SVGRoot.createSVGPoint();
+         GrabPoint = SVGRoot.createSVGPoint();
+         BackDrop = SVGDocument.getElementById('BackDrop');
+		Init();
+      }
+
+      function Grab(evt) {
+         var targetElement = evt.target;
+         if (BackDrop != targetElement) {
+			if(targetElement.id === "Line1" || targetElement.id === "Line2") {;
+		        DragTarget = targetElement;
+		        DragTarget.parentNode.appendChild( DragTarget );
+		        DragTarget.setAttribute('pointer-events', 'none');
+		        var transMatrix = DragTarget.getCTM();
+		        GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+		        GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+			}
+         }
+      };
+
+      function Drag(evt) {
+         GetTrueCoords(evt);
+         if (DragTarget) {
+            var newX = TrueCoords.x - GrabPoint.x;
+            var newY = TrueCoords.y - GrabPoint.y;
+            DragTarget.setAttribute('transform', 'translate(' + newX + ',' + newY + ')');
+         }
+      };
+
+
+      function Drop(evt) {
+         if (DragTarget) {
+            var targetElement = evt.target;
+            DragTarget.setAttribute('pointer-events', 'all');
+            DragTarget = null;
+         }
+      };
+
+
+      function GetTrueCoords(evt) {
+         var newScale = SVGRoot.currentScale;
+         var translation = SVGRoot.currentTranslate;
+         TrueCoords.x = (evt.clientX - translation.x)/newScale;
+         TrueCoords.y = (evt.clientY - translation.y)/newScale;
+      };
+
+]]></script>
+
+</svg>

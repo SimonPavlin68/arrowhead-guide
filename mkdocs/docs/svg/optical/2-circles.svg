@@ -1,0 +1,40 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onclick="OnClick()" style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Delboeuf illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+	<circle cx="250" cy="300" r="20" fill="blue" class="draggable" />
+	<circle id="levi" cx="250" cy="300" r="130" fill="none" stroke="black" stroke-width="3px" />
+	<animate xlink:href="#levi" id="a1" attributeName="r" values="130; 30;" begin="indefinite" dur="1.5s" fill="freeze" />
+	<animate xlink:href="#levi" id="a2" attributeName="r" values="30; 130;" begin="indefinite" dur="1.5s" fill="freeze" />
+
+	<circle cx="450" cy="300" r="20" fill="blue" class="draggable" />
+	<circle id="desni" cx="450" cy="300" r="30" fill="none" stroke="black" stroke-width="3px" />	 
+	<animate xlink:href="#desni" id="a3" attributeName="r" values="30; 130;" begin="indefinite" dur="1.5s" fill="freeze" />
+	<animate xlink:href="#desni" id="a4" attributeName="r" values="130; 30;" begin="indefinite" dur="1.5s" fill="freeze" />
+
+<script><![CDATA[
+
+var elements = document.getElementsByTagName("animate");
+var goRight = true;
+
+function OnClick() {
+	for (var i = 0; i < elements.length; i++) {
+		if(goRight && (elements[i].id === 'a1' || elements[i].id === 'a3')) {
+			elements[i].beginElement();
+		} else if(!goRight && (elements[i].id === 'a2' || elements[i].id === 'a4')) {
+			elements[i].beginElement();
+		}
+	}
+	goRight = !goRight;
+}
+
+]]></script>
+
+</svg>

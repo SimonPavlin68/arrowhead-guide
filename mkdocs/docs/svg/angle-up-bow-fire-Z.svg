@@ -21,7 +21,7 @@
 	</marker>
 </defs>
 	<!-- TLA -->
-	<line x1="160" y1="460" x2="550" y2="460" stroke="silver" stroke-width="10" stroke-linecap="round"/>
+	<line x1="160" y1="460" x2="640" y2="460" stroke="silver" stroke-width="10" stroke-linecap="round"/>
 	<!-- linija do tarče -->
 	<g id="tekst" opacity="1">
 		<path id="trajektorija" d="M252,336 Q420,270 520,320" stroke="red" stroke-width="1px" fill="none" stroke-dasharray="5 12"/>
@@ -33,25 +33,28 @@
 	    <use xlink:href="#field"  transform="translate(1000,150)" />
 		<!-- trup zgoraj -->
 		<line x1="400" y1="250" x2="400" y2="325" />
-		<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+		
 		<g id="body_group" transform="rotate(-20, 400,250)">
 		  <!-- telo -->
 		  <circle cx="400" cy="210" r="15" stroke-width="15px" />
-		  <!--line x1="400" y1="250" x2="400" y2="325" /-->
 		  <line x1="340" y1="250" x2="490" y2="250" />
-		  <g id="t_sign">
-			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
-		  </g>
 		  <!-- lok -->
 		  <path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
 		</g>
 		<!-- noge -->
+		
 		<line x1="400" y1="350" x2="440" y2="455" />
 		<line x1="400" y1="350" x2="360" y2="455" />
 	</g>
 	<!-- Rdeč križec (skrit na začetku) -->
-	<text id="checkmark" x="300" y="370" font-size="50" fill="red" style="display:none;">✖</text>
-
+	<g id="checkmark" style="display:none;">
+		<text  x="280" y="390" font-size="50" fill="red" >✖</text>
+		<text  x="545" y="340" font-size="50" fill="red" >✖</text>
+		<g id="t_sign" transform="translate(20, 225) scale(0.5)">
+			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" transform="rotate(-20, 400,250)"/>
+			<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+			</g>	
+	</g>
 	<!-- Circle to move along path -->
 	<circle id="movingCircle" cx="252" cy="336" r="7" fill="red" style="display:none;">
 		<!-- Animation for moving along the path -->
@@ -63,6 +66,7 @@
 	<script type="application/ecmascript"><![CDATA[
     function startAnimation(evt) {
       const svg = evt.currentTarget;
+	  hideMark(svg)
       const movingCircle = svg.getElementById("movingCircle");
       const anim = movingCircle.getElementsByTagName("animateMotion")[0];
 
@@ -72,7 +76,6 @@
       movingCircle.style.display= 'block';
 	  // Sproži animacijo premika kroga po poti
 	  anim.addEventListener("endEvent", function() {
-        console.log("Animacija je zaključena!");
         showMark(svg);
       });
 

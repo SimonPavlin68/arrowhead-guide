@@ -33,8 +33,12 @@ nav:
       - Ocenjevanje razdalj: sl/estimation.md
       - Test: sl/test.md
       - Poševni met: sl/graph.md
-      - Teorija: sl/theory.md
-      - Optične prevare: sl/illusions.md
+      - Teorija:
+          - Teorija: sl/theory.md
+          - Skrivnostni obrat: sl/mystery.md
+      - Optične prevare:
+          - Optične prevare: sl/illusions.md
+          - Primeri: sl/illusions-example.md
       - Kavč: sl/sofa.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md

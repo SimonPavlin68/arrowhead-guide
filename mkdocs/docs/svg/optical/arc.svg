@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="600" width="800" viewBox="0 0 800 600"
+	onload="InitDrag(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)" 
+	style="background:#f8f8f8">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<path class="draggable" id="Arc1" fill="blue" stroke="black" stroke-width="2" d="M0,200 a200,200 0 0,1 200,-200 v 50 a150,150 0 0,0 -150,150 z" transform="translate(300,200)" />
+	<path class="draggable" id="Arc2" fill="red" stroke="black" stroke-width="2" d="M0,200 a200,200 0 0,1 200,-200 v 50 a150,150 0 0,0 -150,150 z" transform="translate(250,150)"/>
+	<script type="text/ecmascript"><![CDATA[
+
+	var svg = document.getElementsByTagName('svg')[0];
+	var svgns = "http://www.w3.org/2000/svg"
+
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+function InitDrag(evt) {
+	SVGDocument = evt.target.ownerDocument;
+	SVGRoot = SVGDocument.documentElement;
+	TrueCoords = SVGRoot.createSVGPoint();
+	GrabPoint = SVGRoot.createSVGPoint();
+	BackDrop = SVGDocument.getElementById('BackDrop');
+}
+
+function Grab(evt) {
+ var targetElement = evt.target;
+ if (BackDrop != targetElement) {
+	if(targetElement.id == 'Arc1' || targetElement.id == 'Arc2') {;
+        DragTarget = targetElement;
+        DragTarget.parentNode.appendChild( DragTarget );
+        DragTarget.setAttributeNS(null, 'pointer-events', 'none');
+        var transMatrix = DragTarget.getCTM();
+        GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+        GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+	}
+ }
+};
+
+function Drag(evt) {
+ GetTrueCoords(evt);
+ if (DragTarget) {
+    var newX = TrueCoords.x - GrabPoint.x;
+    var newY = TrueCoords.y - GrabPoint.y;
+    DragTarget.setAttributeNS(null, 'transform', 'translate(' + newX + ',' + newY + ')');
+	console.log('x 300: ' + newX);
+	for(l=0; l<lines.length; l++) {
+		lines[l].setAttribute('x2', (l*width-14*width + newX));
+	}
+ }
+};
+
+
+function Drop(evt) {
+ if (DragTarget) {
+    var targetElement = evt.target;
+    DragTarget.setAttributeNS(null, 'pointer-events', 'all');
+    DragTarget = null;
+ }
+};
+
+
+function GetTrueCoords(evt) {
+ var newScale = SVGRoot.currentScale;
+ var translation = SVGRoot.currentTranslate;
+ TrueCoords.x = (evt.clientX - translation.x)/newScale;
+ TrueCoords.y = (evt.clientY - translation.y)/newScale;
+};
+
+	]]> </script>
+
+</svg>
