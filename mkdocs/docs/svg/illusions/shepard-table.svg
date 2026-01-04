@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+width="700" viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Sheppard table Illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<defs>
+		<g id="romb">
+			<polygon points="154,324 202,133 298,132 252,328"/>
+		</g>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+	<g stroke-width="4" fill="#8b5a2b" stroke="black" stroke-linejoin="round">
+		<rect x="162" y="325" width="17" height="77"/>
+		<rect x="228" y="328" width="17" height="77"/>
+		<rect x="275" y="148" width="17" height="70"/>
+
+		<rect x="356" y="223" width="17" height="55"/>
+		<rect x="380" y="283" width="17" height="60"/>
+		<rect x="545" y="283" width="17" height="60"/>
+
+	
+	<use xlink:href="#romb" fill="red">
+		<animateTransform id="rotate1" attributeType="xml" attributeName="transform" type="rotate" from="0 330 390" to="76 330 390" dur="2s" fill="freeze" begin="rotate1.begin"/>
+		<animateTransform id="rotate2" attributeType="xml" attributeName="transform" type="rotate" from="76 330 390" to="0 330 390" dur="2s" fill="freeze" begin="rotate2.begin"/>
+	</use>
+	<use xlink:href="#romb"/>
+	<use xlink:href="#romb" transform="rotate(76 330 390)"/>
+		
+	</g>
+
+
+	<script type="text/ecmascript"><![CDATA[
+
+var vertical = true;
+
+function OnClick() {
+    console.log(vertical);
+	if (vertical) {
+		var element = document.getElementById('rotate1');
+		element.beginElement();
+	} else {
+		var element = document.getElementById('rotate2');
+		element.beginElement();
+	}
+	vertical = !vertical;
+}
+
+
+    ]]> </script>
+</svg>

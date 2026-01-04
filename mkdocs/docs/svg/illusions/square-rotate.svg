@@ -1,0 +1,41 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#bfbfbf" />
+    <rect x="200" y="100" height="400" width="400" stroke="#0000b2" stroke-width="5" fill="#0000b2">
+        <animateTransform
+            attributeName="transform"
+            begin="0s"
+            dur="15s"
+            type="rotate"
+            from="0 400 300"
+            to="360 400 300"
+            repeatCount="indefinite" />
+    </rect>
+
+	<rect x="110" y="10" height="280" width="280" stroke="#ffaa11" stroke-width="5" fill="#ffaa11" class="hide" />
+	<rect x="410" y="10" height="280" width="280" stroke="#ffaa11" stroke-width="5" fill="#ffaa11" class="hide" />
+	<rect x="110" y="310" height="280" width="280" stroke="#ffaa11" stroke-width="5" fill="#ffaa11" class="hide" />
+	<rect x="410" y="310" height="280" width="280" stroke="#ffaa11" stroke-width="5" fill="#ffaa11" class="hide" />
+
+<script><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('stroke', 'none');
+			elements[i].setAttribute('fill', 'none');
+		} else {
+			elements[i].setAttribute('stroke', '#ffaa11');
+			elements[i].setAttribute('fill', '#ffaa11');
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+</svg>
+

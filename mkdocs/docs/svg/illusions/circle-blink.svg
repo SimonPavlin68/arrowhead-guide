@@ -1,0 +1,66 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick()"
+	onload="Init()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+	<circle id="circle1" cx="200" cy="200" r="25" fill="blue" opacity="0" />
+	<circle id="circle2" cx="600" cy="200" r="25" fill="blue" />
+	<circle id="circle3" cx="200" cy="400" r="25" fill="blue" />
+	<circle id="circle4" cx="600" cy="400" r="25" fill="blue" opacity="0" />
+
+		<animateTransform xlink:href="#circle1" id="anim1" attributeName="transform" type="translate"
+			from="0,0" to="120,-100" dur="0.2s" begin="anim1.begin" fill="freeze" repeacount="indefinite" />
+		<animateTransform xlink:href="#circle1" id="anim2" attributeName="transform" type="translate" 
+			from="120,-100" to="0,0" dur="0.2s" begin="anim2.begin" fill="freeze" repeacount="indefinite" />
+		<animateTransform xlink:href="#circle2" attributeName="transform" type="translate"
+			from="0,0" to="-120,-100" dur="0.2s" begin="anim1.begin" fill="freeze" repeacount="indefinite" />
+		<animateTransform xlink:href="#circle2" attributeName="transform" type="translate" 
+			from="-120,-100" to="0,0" dur="0.2s" begin="anim2.begin" fill="freeze" repeacount="indefinite" />
+		<animateTransform xlink:href="#circle3" attributeName="transform" type="translate"
+			from="0,0" to="120,100" dur="0.2s" begin="anim1.begin" fill="freeze" repeacount="indefinite" />
+		<animateTransform xlink:href="#circle3" attributeName="transform" type="translate" 
+			from="120,100" to="0,0" dur="0.2s" begin="anim2.begin" fill="freeze" repeacount="indefinite" />
+		<animateTransform xlink:href="#circle4" id="anim1" attributeName="transform" type="translate"
+			from="0,0" to="-120,100" dur="0.2s" begin="anim1.begin" fill="freeze" repeacount="indefinite" />
+		<animateTransform xlink:href="#circle4" attributeName="transform" type="translate" 
+			from="-120,100" to="0,0" dur="0.2s" begin="anim2.begin" fill="freeze" repeacount="indefinite" />	
+
+
+<script><![CDATA[
+
+function Init() {
+	setInterval(timeout, 1000);
+}
+
+function timeout() {
+	var elements = document.getElementsByTagName('circle');
+	for(i=0; i<elements.length; i++) {
+		var o = elements[i].getAttribute('opacity');
+		if(o === "0") {
+			elements[i].setAttribute('opacity', "1");
+		} else {
+			elements[i].setAttribute('opacity', "0");
+		}
+			
+	}
+}
+
+var first = true;
+
+function OnClick() {
+	if(first) {
+		var elem = document.getElementById('anim1');
+		elem.beginElement();
+	} else {
+		var elem = document.getElementById('anim2');
+		elem.beginElement();
+	}
+	first = !first;
+}
+
+]]></script>
+</svg>
+

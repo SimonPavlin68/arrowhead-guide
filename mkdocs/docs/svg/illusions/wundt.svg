@@ -1,0 +1,47 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 -100 800 800"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Wundt Illusion</title>
+	<rect id="BackDrop" x="0" y="-100" width="800" height="800" pointer-events="all" fill="#f8f8f8" />
+	<g stroke-width="2px" stroke="black" stroke-linecap="round" fill="none" class="hide">
+	<polyline points="100,300 400,-50 700,300"/>
+	<polyline points="100,300 400,0 700,300"/>
+	<polyline points="100,300 400,50 700,300"/>
+	<polyline points="100,300 400,100 700,300"/>
+	<polyline points="100,300 400,150 700,300"/>
+	<polyline points="100,300 400,200 700,300"/>
+	<polyline points="100,300 400,250 700,300"/>
+	<polyline points="100,300 400,300 700,300"/>
+	<polyline points="100,300 400,350 700,300"/>
+	<polyline points="100,300 400,400 700,300"/>
+	<polyline points="100,300 400,450 700,300"/>
+	<polyline points="100,300 400,500 700,300"/>
+	<polyline points="100,300 400,550 700,300"/>
+	<polyline points="100,300 400,600 700,300"/>
+	<polyline points="100,300 400,650 700,300"/>
+	</g>
+	<g  stroke-width="4px" stroke="red" stroke-linecap="round" fill="none">
+	<line x1="325" y1="25" x2="325" y2="575" />
+	<line x1="475" y1="25" x2="475" y2="575" />
+	</g>
+<script><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>

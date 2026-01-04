@@ -1,0 +1,82 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onload="InitDrag(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Kanzis illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+<g fill="black">
+	<path d="M325,315 A50 50 0 1 0 350,358 L300,358 z" class="draggable"/>
+	<path d="M475,315 A50 50 0 1 1 450,358 L500,358 z" class="draggable"/>
+	<path d="M400,187 L425,230 A50 50 0 1 0 375,230 z" class="draggable"/>
+</g>
+<script><![CDATA[
+	
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+function InitDrag(evt) {
+	SVGDocument = evt.target.ownerDocument;
+	SVGRoot = SVGDocument.documentElement;
+	TrueCoords = SVGRoot.createSVGPoint();
+	GrabPoint = SVGRoot.createSVGPoint();
+	BackDrop = SVGDocument.getElementById('BackDrop');
+}
+
+function Grab(evt) {
+ var targetElement = evt.target;
+ if (BackDrop != targetElement) {
+	if(targetElement.classList.contains("draggable")) {
+        DragTarget = targetElement;
+        DragTarget.parentNode.appendChild( DragTarget );
+        DragTarget.setAttribute('pointer-events', 'none');
+        var transMatrix = DragTarget.getCTM();
+        GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+        GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+	}
+ }
+}
+
+function Drag(evt) {
+ GetTrueCoords(evt);
+ if (DragTarget) {
+    var newX = TrueCoords.x - GrabPoint.x;
+    newY = TrueCoords.y - GrabPoint.y;
+    DragTarget.setAttribute('transform', 'translate(' + newX + ',' + newY + ')');
+ }
+};
+
+
+function Drop(evt) {
+ if (DragTarget) {
+    var targetElement = evt.target;
+    DragTarget.setAttribute('pointer-events', 'all');
+    DragTarget = null;
+ }
+};
+
+function GetTrueCoords(evt) {
+ var newScale = SVGRoot.currentScale;
+ var translation = SVGRoot.currentTranslate;
+ TrueCoords.x = (evt.clientX - translation.x)/newScale;
+ TrueCoords.y = (evt.clientY - translation.y)/newScale;
+};
+
+]]></script>
+
+</svg>

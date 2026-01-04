@@ -1,0 +1,17 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Escher Illusion</title>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<g id="grid" stroke-width="5px" stroke="black" stroke-linecap="round" fill="none">
+		<polyline points="186,404 387,60 510,127 310,475"/>
+		<polyline points="510,127 532,158 336,502"/>
+		<polyline points="213,428 392,118 453,153 275,463"/>
+		<polyline points="392,118 415,154 247,440"/>
+		<line x1="415" y1="154" x2="445" y2="169"/>
+		<ellipse cx="198" cy="419" rx="10" ry="19" transform="rotate(-36 198,419)"/>
+		<ellipse cx="260" cy="453" rx="10" ry="19" transform="rotate(-36 260,453)"/>
+		<ellipse cx="321" cy="491" rx="10" ry="19" transform="rotate(-36 321,491)"/>
+	</g>
+
+</svg>

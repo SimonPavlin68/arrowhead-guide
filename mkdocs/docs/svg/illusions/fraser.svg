@@ -1,0 +1,31 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='600' height='600' viewBox="0 0 600 600"
+	onload="Init()"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Fraser illusion</title>
+
+	<image href="../../img/fraser_spiral.png" x="0" y="0" width="600" height="600"/>
+	<circle cx="300" cy="300" r="277" fill="none" stroke="red" stroke-width="8" opacity="0" />
+	<!--circle cx="300" cy="300" r="222" fill="none" stroke="red" stroke-width="5" opacity="0" />
+	<circle cx="300" cy="300" r="177" fill="none" stroke="red" stroke-width="5" opacity="0" /-->
+
+ <script><![CDATA[
+
+var show = true;
+function OnClick() {
+	var elements = document.getElementsByTagName('circle');
+	for (var i = 0; i < elements.length; i++) {
+		if(show) {
+		elements[i].setAttribute('opacity', 1);
+	} else {
+		elements[i].setAttribute('opacity', 0);
+	}
+	
+	}
+	show = !show;
+}
+   ]]></script>
+</svg>
+

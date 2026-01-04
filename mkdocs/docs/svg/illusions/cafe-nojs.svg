@@ -1,0 +1,102 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+onclick="OnClick()"
+style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Cafe Wall Illusion</title>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+<g fill="blue" class="hide">
+<rect x="120" y="110" width="40" height="40" />
+<rect x="200" y="110" width="40" height="40" />
+<rect x="280" y="110" width="40" height="40" />
+<rect x="360" y="110" width="40" height="40" />
+<rect x="440" y="110" width="40" height="40" />
+<rect x="520" y="110" width="40" height="40" />
+<rect x="600" y="110" width="40" height="40" />
+<rect x="133.33333333333334" y="150" width="40" height="40" />
+<rect x="213.33333333333334" y="150" width="40" height="40" />
+<rect x="293.3333333333333" y="150" width="40" height="40" />
+<rect x="373.3333333333333" y="150" width="40" height="40" />
+<rect x="453.3333333333333" y="150" width="40" height="40" />
+<rect x="533.3333333333334" y="150" width="40" height="40" />
+<rect x="613.3333333333334" y="150" width="40" height="40" />
+<rect x="146.66666666666666" y="190" width="40" height="40" />
+<rect x="226.66666666666666" y="190" width="40" height="40" />
+<rect x="306.6666666666667" y="190" width="40" height="40" />
+<rect x="386.6666666666667" y="190" width="40" height="40" />
+<rect x="466.6666666666667" y="190" width="40" height="40" />
+<rect x="546.6666666666666" y="190" width="40" height="40" />
+<rect x="626.6666666666666" y="190" width="40" height="40" />
+<rect x="133.33333333333334" y="230" width="40" height="40" />
+<rect x="213.33333333333334" y="230" width="40" height="40" />
+<rect x="293.3333333333333" y="230" width="40" height="40" />
+<rect x="373.3333333333333" y="230" width="40" height="40" />
+<rect x="453.3333333333333" y="230" width="40" height="40" />
+<rect x="533.3333333333334" y="230" width="40" height="40" />
+<rect x="613.3333333333334" y="230" width="40" height="40" />
+<rect x="120" y="270" width="40" height="40" />
+<rect x="200" y="270" width="40" height="40" />
+<rect x="280" y="270" width="40" height="40" />
+<rect x="360" y="270" width="40" height="40" />
+<rect x="440" y="270" width="40" height="40" />
+<rect x="520" y="270" width="40" height="40" />
+<rect x="600" y="270" width="40" height="40" />
+<rect x="133.33333333333334" y="310" width="40" height="40" />
+<rect x="213.33333333333334" y="310" width="40" height="40" />
+<rect x="293.3333333333333" y="310" width="40" height="40" />
+<rect x="373.3333333333333" y="310" width="40" height="40" />
+<rect x="453.3333333333333" y="310" width="40" height="40" />
+<rect x="533.3333333333334" y="310" width="40" height="40" />
+<rect x="613.3333333333334" y="310" width="40" height="40" />
+<rect x="146.66666666666666" y="350" width="40" height="40" />
+<rect x="226.66666666666666" y="350" width="40" height="40" />
+<rect x="306.6666666666667" y="350" width="40" height="40" />
+<rect x="386.6666666666667" y="350" width="40" height="40" />
+<rect x="466.6666666666667" y="350" width="40" height="40" />
+<rect x="546.6666666666666" y="350" width="40" height="40" />
+<rect x="626.6666666666666" y="350" width="40" height="40" />
+<rect x="133.33333333333334" y="390" width="40" height="40" />
+<rect x="213.33333333333334" y="390" width="40" height="40" />
+<rect x="293.3333333333333" y="390" width="40" height="40" />
+<rect x="373.3333333333333" y="390" width="40" height="40" />
+<rect x="453.3333333333333" y="390" width="40" height="40" />
+<rect x="533.3333333333334" y="390" width="40" height="40" />
+<rect x="613.3333333333334" y="390" width="40" height="40" />
+<rect x="120" y="430" width="40" height="40" />
+<rect x="200" y="430" width="40" height="40" />
+<rect x="280" y="430" width="40" height="40" />
+<rect x="360" y="430" width="40" height="40" />
+<rect x="440" y="430" width="40" height="40" />
+<rect x="520" y="430" width="40" height="40" />
+<rect x="600" y="430" width="40" height="40" />
+</g>
+	<line x1="115" y1="110" x2="670" y2="110" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="150" x2="670" y2="150" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="190" x2="670" y2="190" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="230" x2="670" y2="230" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="270" x2="670" y2="270" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="310" x2="670" y2="310" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="350" x2="670" y2="350" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="390" x2="670" y2="390" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="430" x2="670" y2="430" stroke="gray" stroke-width="3"/>
+	<line x1="115" y1="470" x2="670" y2="470" stroke="gray" stroke-width="3"/>
+
+<script><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+</svg>

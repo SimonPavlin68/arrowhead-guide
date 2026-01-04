@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='600' viewBox="100 100 600 400"
+ >
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<g transform="scale(2) translate(250,180)" stroke="black" stroke-width="3px" stroke-linejoin="round" > 
+		<path d="m0,0 l-10,17.3 h-100 l40,-69.3 l10,17.3 l-20,34.6 z" fill="#e7e7e7" />
+		<path d="m-70,-86.6 h20 l50,86.6 h-80 l10,-17.3 h40 z" fill="#a7a7a7" />
+		<path d="m-110, 17.3 l-10,-17.3 l50,-86.6 l40,69.3 h-20 l-20,-34.6 z" fill="#c7c7c7" />
+	</g>
+</svg>

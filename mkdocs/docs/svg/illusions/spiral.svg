@@ -1,0 +1,103 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onload="Init()"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Ebbinghaus illusion</title>
+
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#8e78b9" />
+
+	<!-- center of rotation -->
+	<circle cx="400" cy="300" r="72" fill="none" stroke="black" stroke-width="2" opacity="0" />
+	<circle cx="400" cy="300" r="118" fill="none" stroke="black" stroke-width="2" opacity="0" />
+	<circle cx="400" cy="300" r="170" fill="none" stroke="black" stroke-width="2" opacity="0" />
+	<circle cx="400" cy="300" r="225" fill="none" stroke="black" stroke-width="2" opacity="0" />
+
+ <script><![CDATA[
+
+
+	var svg = document.getElementsByTagName('svg')[0];
+	var svgns = "http://www.w3.org/2000/svg";
+
+      var SVGDocument = null;
+      var SVGRoot = null;
+
+      var TrueCoords = null;
+      var GrabPoint = null;
+      var BackDrop = null;
+      var DragTarget = null;
+
+var circles = [];
+
+var black = "#23143a";
+var white = "#ffffff";
+
+function Init() {
+	for (var i = 0; i < 18; i += 1) {
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('x', 320);
+		rect.setAttribute('y', 275);
+		rect.setAttribute('width', 20);
+		rect.setAttribute('height', 20);
+		rect.setAttribute('stroke', i%2==0 ? black : white);
+		rect.setAttribute('fill', 'none');
+		rect.setAttribute('transform', 'rotate(' + -i*20 + ',400,300)');
+		svg.appendChild(rect);
+		circles.push(rect);
+	}
+
+	for (var i = 0; i < 32; i += 1) {
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('x', 275);
+		rect.setAttribute('y', 265);
+		rect.setAttribute('width', 20);
+		rect.setAttribute('height', 20);
+		rect.setAttribute('stroke', i%2==0 ? black : white);
+		rect.setAttribute('fill', 'none');
+		rect.setAttribute('transform', 'rotate(' + i*11.25 + ',400,300)');
+		svg.appendChild(rect);
+		circles.push(rect);
+	}
+	for (var i = 0; i < 44; i += 1) {
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('x', 230);
+		rect.setAttribute('y', 230);
+		rect.setAttribute('width', 20);
+		rect.setAttribute('height', 20);
+		rect.setAttribute('stroke', i%2==0 ? black : white);
+		rect.setAttribute('fill', 'none');
+		rect.setAttribute('transform', 'rotate(' + i*8.1818 + ',400,300)');
+		svg.appendChild(rect);
+		circles.push(rect);
+	}
+
+	for (var i = 0; i < 58; i += 1) {
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('x', 190);
+		rect.setAttribute('y', 190);
+		rect.setAttribute('width', 20);
+		rect.setAttribute('height', 20);
+		rect.setAttribute('stroke', i%2==0 ? black : white);
+		rect.setAttribute('fill', 'none');
+		rect.setAttribute('transform', 'rotate(' + i*6.207 + ',400,300)');
+		svg.appendChild(rect);
+		circles.push(rect);
+	}
+}
+
+var show = true;
+function OnClick() {
+	var elements = document.getElementsByTagName('circle');
+	for (var i = 0; i < elements.length; i++) {
+		if(show) {
+		elements[i].setAttribute('opacity', 1);
+	} else {
+		elements[i].setAttribute('opacity', 0);
+	}
+	
+	}
+	show = !show;
+}
+
+
+   ]]></script>
+</svg>

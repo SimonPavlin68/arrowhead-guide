@@ -1,0 +1,111 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onload="InitDraw(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Gibanje "Tusi"</title>
+	<defs>
+		<g id="white" fill="white" stroke-width="2">
+			<circle cx="0" cy="0" r="20" />
+		</g>
+		<g id="line" stroke="black" stroke-width="3">
+			<line x1="100" y1="300" x2="700" y2="300" />
+		</g>
+		</defs>
+
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+<g transform="scale(1)">
+	<circle cx="400" cy="300" r="300" fill="red"/>
+	<use xlink:href="#line" transform="translate(0,0)" class="hide" opacity="0" />
+	<use xlink:href="#line" transform="rotate(22.5 400,300)" class="hide" opacity="0" />
+	<use xlink:href="#line" transform="rotate(45 400,300)" class="hide" opacity="0" />
+	<use xlink:href="#line" transform="rotate(67.5 400,300)" class="hide" opacity="0" />
+	<use xlink:href="#line" transform="rotate(90 400,300)" class="hide" opacity="0" />
+	<use xlink:href="#line" transform="rotate(112.5 400,300)" class="hide" opacity="0" />
+	<use xlink:href="#line" transform="rotate(135 400,300)" class="hide" opacity="0" />	
+	<use xlink:href="#line" transform="rotate(157.5 400,300)" class="hide" opacity="0" />
+
+	<use xlink:href="#white" transform="translate(120,300)" id="circle1" />
+	<use xlink:href="#white" transform="translate(141,193)" id="circle2" />
+	<use xlink:href="#white" transform="translate(202,102)" id="circle3" />
+	<use xlink:href="#white" transform="translate(293,41)" id="circle4" />
+	<use xlink:href="#white" transform="translate(400,20)" id="circle5" />
+	<use xlink:href="#white" transform="translate(507,41)" id="circle6" />
+	<use xlink:href="#white" transform="translate(598,102)" id="circle7" />
+	<use xlink:href="#white" transform="translate(659,193)" id="circle8" />
+
+<animateTransform xlink:href="#circle1" id="at1" attributeName="transform" type="translate"
+			from="120,300" to="680,300" dur="1.6s" begin="0s; at2.end" repeacount="indefinite" />
+<animateTransform xlink:href="#circle1"	id="at2" attributeName="transform" type="translate"
+			from="680,300" to="120,300" dur="1.6s" begin="at1.end" repeacount="indefinite" />
+
+<animateTransform xlink:href="#circle2" id="at3" attributeName="transform" type="translate"
+			from="141,193" to="659,407" dur="1.6s" begin="0.2s; at4.end" repeacount="indefinite"  />
+<animateTransform xlink:href="#circle2"	id="at4" attributeName="transform" type="translate"
+			from="659,407" to="141,193" dur="1.6s" begin="at3.end" repeacount="indefinite" />
+
+<animateTransform xlink:href="#circle3" id="at5" attributeName="transform" type="translate"
+			from="202,102" to="598,498" dur="1.6s" begin="0.4s; at6.end" repeacount="indefinite" />
+<animateTransform xlink:href="#circle3"	id="at6" attributeName="transform" type="translate"
+			from="598,498" to="202,102" dur="1.6s" begin="at5.end" repeacount="indefinite" />
+
+<animateTransform xlink:href="#circle4" id="at7" attributeName="transform" type="translate"
+			from="293,41" to="507,559" dur="1.6s" begin="0.6s; at8.end" repeacount="indefinite" />
+<animateTransform xlink:href="#circle4"	id="at8" attributeName="transform" type="translate"
+			from="507,559" to="293,41" dur="1.6s" begin="at7.end" repeacount="indefinite" />
+
+<animateTransform xlink:href="#circle5" id="at9" attributeName="transform" type="translate"
+			from="400,20" to="400,580" dur="1.6s" begin="0.8s; at10.end" repeacount="indefinite" />
+<animateTransform xlink:href="#circle5"	id="at10" attributeName="transform" type="translate"
+			from="400,580" to="400,20" dur="1.6s" begin="at9.end" repeacount="indefinite" />
+
+<animateTransform xlink:href="#circle6" id="at11" attributeName="transform" type="translate"
+			from="507,41" to="293,559" dur="1.6s" begin="1s; at12.end" repeacount="indefinite" />
+<animateTransform xlink:href="#circle6"	id="at12" attributeName="transform" type="translate"
+			from="293,559" to="507,41" dur="1.6s" begin="at11.end" repeacount="indefinite" />
+
+<animateTransform xlink:href="#circle7" id="at13" attributeName="transform" type="translate"
+			from="598,102" to="202,498" dur="1.6s" begin="1.2s; at14.end" repeacount="indefinite" />
+<animateTransform xlink:href="#circle7"	id="at14" attributeName="transform" type="translate"
+			from="202,498" to="598,102" dur="1.6s" begin="at13.end" repeacount="indefinite" />
+
+<animateTransform xlink:href="#circle8" id="at15" attributeName="transform" type="translate"
+			from="659,193" to="141,407" dur="1.6s" begin="1.4s; at16.end" repeacount="indefinite" />
+<animateTransform xlink:href="#circle8"	id="at16" attributeName="transform" type="translate"
+			from="141,407" to="659,193" dur="1.6s" begin="at15.end" repeacount="indefinite" />
+</g>
+	
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+var hide = false;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>

@@ -1,0 +1,191 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+onload="Init()"
+onclick="OnClick()"
+style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Zöllner illusion</title>
+	<style>
+      path, line {
+        stroke: black;
+		stroke-width:8px;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	
+	<line x1="0" y1="500" x2="100" y2="600" />
+	<path d="M -20, 500 h40" class="hide" />
+	<path d="M 0, 520 h40" class="hide" />
+	<path d="M 20, 540 h40" class="hide" />
+	<path d="M 40, 560 h40" class="hide" />
+	<path d="M 60, 580 h40" class="hide" />
+	<path d="M 80, 600 h40" class="hide" />
+	<line x1="0" y1="400" x2="200" y2="600" />
+	<path d="M 0, 380 v40" class="hide" />
+	<path d="M 20, 400 v40" class="hide" />
+	<path d="M 40, 420 v40" class="hide" />
+	<path d="M 60, 440 v40" class="hide" />
+	<path d="M 80, 460 v40" class="hide" />
+	<path d="M 100, 480 v40" class="hide" />
+	<path d="M 120, 500 v40" class="hide" />
+	<path d="M 140, 520 v40" class="hide" />
+	<path d="M 160, 540 v40" class="hide" />
+	<path d="M 180, 560 v40" class="hide" />
+	<path d="M 200, 580 v40" class="hide" />
+	<line x1="0" y1="300" x2="300" y2="600" />
+	<path d="M -20, 300 h40" class="hide" />
+	<path d="M 0, 320 h40" class="hide" />
+	<path d="M 20, 340 h40" class="hide" />
+	<path d="M 40, 360 h40" class="hide" />
+	<path d="M 60, 380 h40" class="hide" />
+	<path d="M 80, 400 h40" class="hide" />
+	<path d="M 100, 420 h40" class="hide" />
+	<path d="M 120, 440 h40" class="hide" />
+	<path d="M 140, 460 h40" class="hide" />
+	<path d="M 160, 480 h40" class="hide" />
+	<path d="M 180, 500 h40" class="hide" />
+	<path d="M 200, 520 h40" class="hide" />
+	<path d="M 220, 540 h40" class="hide" />
+	<path d="M 240, 560 h40" class="hide" />
+	<path d="M 260, 580 h40" class="hide" />
+	<path d="M 280, 600 h40" class="hide" />
+	<line x1="0" y1="200" x2="400" y2="600" />
+	<path d="M 0, 180 v40" class="hide" />
+	<path d="M 20, 200 v40" class="hide" />
+	<path d="M 40, 220 v40" class="hide" />
+	<path d="M 60, 240 v40" class="hide" />
+	<path d="M 80, 260 v40" class="hide" />
+	<path d="M 100, 280 v40" class="hide" />
+	<path d="M 120, 300 v40" class="hide" />
+	<path d="M 140, 320 v40" class="hide" />
+	<path d="M 160, 340 v40" class="hide" />
+	<path d="M 180, 360 v40" class="hide" />
+	<path d="M 200, 380 v40" class="hide" />
+	<path d="M 220, 400 v40" class="hide" />
+	<path d="M 240, 420 v40" class="hide" />
+	<path d="M 260, 440 v40" class="hide" />
+	<path d="M 280, 460 v40" class="hide" />
+	<path d="M 300, 480 v40" class="hide" />
+	<path d="M 320, 500 v40" class="hide" />
+	<path d="M 340, 520 v40" class="hide" />
+	<path d="M 360, 540 v40" class="hide" />
+	<path d="M 380, 560 v40" class="hide" />
+	<path d="M 400, 580 v40" class="hide" />
+	<line x1="0" y1="100" x2="500" y2="600" />
+	<path d="M -20, 100 h40" class="hide" />
+	<path d="M 0, 120 h40" class="hide" />
+	<path d="M 20, 140 h40" class="hide" />
+	<path d="M 40, 160 h40" class="hide" />
+	<path d="M 60, 180 h40" class="hide" />
+	<path d="M 80, 200 h40" class="hide" />
+	<path d="M 100, 220 h40" class="hide" />
+	<path d="M 120, 240 h40" class="hide" />
+	<path d="M 140, 260 h40" class="hide" />
+	<path d="M 160, 280 h40" class="hide" />
+	<path d="M 180, 300 h40" class="hide" />
+	<path d="M 200, 320 h40" class="hide" />
+	<path d="M 220, 340 h40" class="hide" />
+	<path d="M 240, 360 h40" class="hide" />
+	<path d="M 260, 380 h40" class="hide" />
+	<path d="M 280, 400 h40" class="hide" />
+	<path d="M 300, 420 h40" class="hide" />
+	<path d="M 320, 440 h40" class="hide" />
+	<path d="M 340, 460 h40" class="hide" />
+	<path d="M 360, 480 h40" class="hide" />
+	<path d="M 380, 500 h40" class="hide" />
+	<path d="M 400, 520 h40" class="hide" />
+	<path d="M 420, 540 h40" class="hide" />
+	<path d="M 440, 560 h40" class="hide" />
+	<path d="M 460, 580 h40" class="hide" />
+	<path d="M 480, 600 h40" class="hide" />
+	<line x1="0" y1="0" x2="600" y2="600" />
+	<path d="M 0, -20 v40" class="hide" />
+	<path d="M 20, 0 v40" class="hide" />
+	<path d="M 40, 20 v40" class="hide" />
+	<path d="M 60, 40 v40" class="hide" />
+	<path d="M 80, 60 v40" class="hide" />
+	<path d="M 100, 80 v40" class="hide" />
+	<path d="M 120, 100 v40" class="hide" />
+	<path d="M 140, 120 v40" class="hide" />
+	<path d="M 160, 140 v40" class="hide" />
+	<path d="M 180, 160 v40" class="hide" />
+	<path d="M 200, 180 v40" class="hide" />
+	<path d="M 220, 200 v40" class="hide" />
+	<path d="M 240, 220 v40" class="hide" />
+	<path d="M 260, 240 v40" class="hide" />
+	<path d="M 280, 260 v40" class="hide" />
+	<path d="M 300, 280 v40" class="hide" />
+	<path d="M 320, 300 v40" class="hide" />
+	<path d="M 340, 320 v40" class="hide" />
+	<path d="M 360, 340 v40" class="hide" />
+	<path d="M 380, 360 v40" class="hide" />
+	<path d="M 400, 380 v40" class="hide" />
+	<path d="M 420, 400 v40" class="hide" />
+	<path d="M 440, 420 v40" class="hide" />
+	<path d="M 460, 440 v40" class="hide" />
+	<path d="M 480, 460 v40" class="hide" />
+	<path d="M 500, 480 v40" class="hide" />
+	<path d="M 520, 500 v40" class="hide" />
+	<path d="M 540, 520 v40" class="hide" />
+	<path d="M 560, 540 v40" class="hide" />
+	<path d="M 580, 560 v40" class="hide" />
+	<path d="M 600, 580 v40" class="hide" />
+	<line x1="100" y1="0" x2="700" y2="600" />
+	<path d="M 80, 0 h40" class="hide" />
+	<path d="M 100, 20 h40" class="hide" />
+	<path d="M 120, 40 h40" class="hide" />
+	<path d="M 140, 60 h40" class="hide" />
+	<path d="M 160, 80 h40" class="hide" />
+	<path d="M 180, 100 h40" class="hide" />
+	<path d="M 200, 120 h40" class="hide" />
+	<path d="M 220, 140 h40" class="hide" />
+	<path d="M 240, 160 h40" class="hide" />
+	<path d="M 260, 180 h40" class="hide" />
+	<path d="M 280, 200 h40" class="hide" />
+	<path d="M 300, 220 h40" class="hide" />
+	<path d="M 320, 240 h40" class="hide" />
+	<path d="M 340, 260 h40" class="hide" />
+	<path d="M 360, 280 h40" class="hide" />
+	<path d="M 380, 300 h40" class="hide" />
+	<path d="M 400, 320 h40" class="hide" />
+	<path d="M 420, 340 h40" class="hide" />
+	<path d="M 440, 360 h40" class="hide" />
+	<path d="M 460, 380 h40" class="hide" />
+	<path d="M 480, 400 h40" class="hide" />
+	<path d="M 500, 420 h40" class="hide" />
+	<path d="M 520, 440 h40" class="hide" />
+	<path d="M 540, 460 h40" class="hide" />
+	<path d="M 560, 480 h40" class="hide" />
+	<path d="M 580, 500 h40" class="hide" />
+	<path d="M 600, 520 h40" class="hide" />
+	<path d="M 620, 540 h40" class="hide" /><path d="M 640, 560 h40" class="hide" /><path d="M 660, 580 h40" class="hide" /><path d="M 680, 600 h40" class="hide" /><line x1="200" y1="0" x2="800" y2="600" /><path d="M 200, -20 v40" class="hide" /><path d="M 220, 0 v40" class="hide" /><path d="M 240, 20 v40" class="hide" /><path d="M 260, 40 v40" class="hide" /><path d="M 280, 60 v40" class="hide" /><path d="M 300, 80 v40" class="hide" /><path d="M 320, 100 v40" class="hide" /><path d="M 340, 120 v40" class="hide" /><path d="M 360, 140 v40" class="hide" /><path d="M 380, 160 v40" class="hide" /><path d="M 400, 180 v40" class="hide" /><path d="M 420, 200 v40" class="hide" /><path d="M 440, 220 v40" class="hide" /><path d="M 460, 240 v40" class="hide" /><path d="M 480, 260 v40" class="hide" /><path d="M 500, 280 v40" class="hide" /><path d="M 520, 300 v40" class="hide" /><path d="M 540, 320 v40" class="hide" /><path d="M 560, 340 v40" class="hide" /><path d="M 580, 360 v40" class="hide" /><path d="M 600, 380 v40" class="hide" /><path d="M 620, 400 v40" class="hide" /><path d="M 640, 420 v40" class="hide" /><path d="M 660, 440 v40" class="hide" /><path d="M 680, 460 v40" class="hide" /><path d="M 700, 480 v40" class="hide" /><path d="M 720, 500 v40" class="hide" /><path d="M 740, 520 v40" class="hide" /><path d="M 760, 540 v40" class="hide" /><path d="M 780, 560 v40" class="hide" /><path d="M 800, 580 v40" class="hide" /><line x1="300" y1="0" x2="800" y2="500" /><path d="M 280, 0 h40" class="hide" /><path d="M 300, 20 h40" class="hide" /><path d="M 320, 40 h40" class="hide" /><path d="M 340, 60 h40" class="hide" /><path d="M 360, 80 h40" class="hide" /><path d="M 380, 100 h40" class="hide" /><path d="M 400, 120 h40" class="hide" /><path d="M 420, 140 h40" class="hide" /><path d="M 440, 160 h40" class="hide" /><path d="M 460, 180 h40" class="hide" /><path d="M 480, 200 h40" class="hide" /><path d="M 500, 220 h40" class="hide" /><path d="M 520, 240 h40" class="hide" /><path d="M 540, 260 h40" class="hide" /><path d="M 560, 280 h40" class="hide" /><path d="M 580, 300 h40" class="hide" /><path d="M 600, 320 h40" class="hide" /><path d="M 620, 340 h40" class="hide" /><path d="M 640, 360 h40" class="hide" /><path d="M 660, 380 h40" class="hide" /><path d="M 680, 400 h40" class="hide" /><path d="M 700, 420 h40" class="hide" /><path d="M 720, 440 h40" class="hide" /><path d="M 740, 460 h40" class="hide" /><path d="M 760, 480 h40" class="hide" /><path d="M 780, 500 h40" class="hide" /><line x1="400" y1="0" x2="800" y2="400" /><path d="M 400, -20 v40" class="hide" /><path d="M 420, 0 v40" class="hide" /><path d="M 440, 20 v40" class="hide" /><path d="M 460, 40 v40" class="hide" /><path d="M 480, 60 v40" class="hide" /><path d="M 500, 80 v40" class="hide" /><path d="M 520, 100 v40" class="hide" /><path d="M 540, 120 v40" class="hide" /><path d="M 560, 140 v40" class="hide" /><path d="M 580, 160 v40" class="hide" /><path d="M 600, 180 v40" class="hide" /><path d="M 620, 200 v40" class="hide" /><path d="M 640, 220 v40" class="hide" /><path d="M 660, 240 v40" class="hide" /><path d="M 680, 260 v40" class="hide" /><path d="M 700, 280 v40" class="hide" /><path d="M 720, 300 v40" class="hide" /><path d="M 740, 320 v40" class="hide" /><path d="M 760, 340 v40" class="hide" /><path d="M 780, 360 v40" class="hide" /><path d="M 800, 380 v40" class="hide" /><line x1="500" y1="0" x2="800" y2="300" /><path d="M 480, 0 h40" class="hide" /><path d="M 500, 20 h40" class="hide" /><path d="M 520, 40 h40" class="hide" /><path d="M 540, 60 h40" class="hide" /><path d="M 560, 80 h40" class="hide" /><path d="M 580, 100 h40" class="hide" /><path d="M 600, 120 h40" class="hide" /><path d="M 620, 140 h40" class="hide" /><path d="M 640, 160 h40" class="hide" /><path d="M 660, 180 h40" class="hide" /><path d="M 680, 200 h40" class="hide" /><path d="M 700, 220 h40" class="hide" /><path d="M 720, 240 h40" class="hide" /><path d="M 740, 260 h40" class="hide" /><path d="M 760, 280 h40" class="hide" /><path d="M 780, 300 h40" class="hide" /><line x1="600" y1="0" x2="800" y2="200" /><path d="M 600, -20 v40" class="hide" /><path d="M 620, 0 v40" class="hide" /><path d="M 640, 20 v40" class="hide" /><path d="M 660, 40 v40" class="hide" /><path d="M 680, 60 v40" class="hide" /><path d="M 700, 80 v40" class="hide" /><path d="M 720, 100 v40" class="hide" /><path d="M 740, 120 v40" class="hide" /><path d="M 760, 140 v40" class="hide" /><path d="M 780, 160 v40" class="hide" /><path d="M 800, 180 v40" class="hide" /><line x1="700" y1="0" x2="800" y2="100" /><path d="M 680, 0 h40" class="hide" /><path d="M 700, 20 h40" class="hide" /><path d="M 720, 40 h40" class="hide" /><path d="M 740, 60 h40" class="hide" />
+	<path d="M 760, 80 h40" class="hide" />
+	<path d="M 780, 100 h40" class="hide" />
+	
+<script><![CDATA[
+
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	var elements = document.getElementsByClassName('show');
+	for(i=0; i<elements.length; i++) {
+		if(!hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+</svg>

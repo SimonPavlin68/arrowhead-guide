@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="700" viewBox="0 50 800 400"
+	onload='Init()'
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<script type="text/ecmascript"><![CDATA[
+	var width = 15;
+	var height = 200;
+
+	var svg = document.getElementsByTagName('svg')[0];
+	var svgns = "http://www.w3.org/2000/svg"
+
+	function Init() {
+		for (var i = 0; i < 15; i += 1) {
+			var rect = document.createElementNS(svgns, 'rect');
+			rect.setAttribute('x', 10*width + i*2*width);
+			rect.setAttribute('y', 10*width);
+			rect.setAttribute('height', height);
+			rect.setAttribute('width', width);
+			rect.setAttribute('fill', 'red');
+			//svg.appendChild(rect);
+		}
+
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('id', 'blue');
+		rect.setAttribute('x', 3*width);
+		rect.setAttribute('y', 200);
+		rect.setAttribute('height', 2*width);
+		rect.setAttribute('width', 4*width);
+		rect.setAttribute('fill', 'black');
+		rect.setAttribute('stroke', 'black');
+		rect.setAttribute('stroke-width', 1);
+		svg.appendChild(rect);
+
+		rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('id', 'yellow');
+		rect.setAttribute('x', 3*width);
+		rect.setAttribute('y', 270);
+		rect.setAttribute('height', 2*width);
+		rect.setAttribute('width', 4*width);
+		rect.setAttribute('fill', '#f8f8f8');
+		rect.setAttribute('stroke', 'black');
+		rect.setAttribute('stroke-width', 1);
+		svg.appendChild(rect);
+
+	}
+
+var elements = document.getElementsByTagName("animateTransform");
+var goRight = true;
+
+function OnClick() {
+	if(goRight) {
+		var blue = document.getElementById('blue');
+		blue.setAttribute('stroke', 'black');
+		var yellow = document.getElementById('yellow');
+		yellow.setAttribute('stroke', '#f8f8f8');
+	} else {
+		var blue = document.getElementById('blue');
+		blue.setAttribute('stroke', '#f8f8f8');
+		var yellow = document.getElementById('yellow');
+		yellow.setAttribute('stroke', 'black');
+	}
+	for (var i = 0; i < elements.length; i++) {
+		if(goRight) {
+			if(elements[i].id === 'a1' || elements[i].id === 'a3') {
+				elements[i].beginElement();
+			}
+		} else {
+		    if(elements[i].id === 'a2' || elements[i].id === 'a4') {
+				elements[i].beginElement();
+			}
+		}
+	}
+	goRight = !goRight;
+}
+
+    ]]> </script>
+
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	
+	<rect x="150" y="150" height="200" width="15" fill="black"/>
+	<rect x="180" y="150" height="200" width="15" fill="black"/>
+	<rect x="210" y="150" height="200" width="15" fill="black"/>
+	<rect x="240" y="150" height="200" width="15" fill="black"/>
+	<rect x="270" y="150" height="200" width="15" fill="black"/>
+	<rect x="300" y="150" height="200" width="15" fill="black"/>
+	<rect x="330" y="150" height="200" width="15" fill="black"/>
+	<rect x="360" y="150" height="200" width="15" fill="black"/>
+	<rect x="390" y="150" height="200" width="15" fill="black"/>
+	<rect x="420" y="150" height="200" width="15" fill="black"/>
+	<rect x="450" y="150" height="200" width="15" fill="black"/>
+	<rect x="480" y="150" height="200" width="15" fill="black"/>
+	<rect x="510" y="150" height="200" width="15" fill="black"/>
+	<rect x="540" y="150" height="200" width="15" fill="black"/>
+	<rect x="570" y="150" height="200" width="15" fill="black"/>
+
+	<animateTransform
+		xlink:href="#blue"
+		id="a1"
+		attributeName="transform"
+		type="translate"
+		from="0,0"
+		to="600,0"
+		dur="12s"
+		begin="indefinite" 
+		fill="freeze"
+		repeacount="indefinite" />
+	<animateTransform
+		xlink:href="#blue"
+		id="a2"
+		attributeName="transform"
+		type="translate"
+		from="600,0"
+		to="0,0"
+		dur="12s"
+		begin="indefinate" 
+		fill="freeze"
+		repeacount="indefinite" />
+	<animateTransform
+		xlink:href="#yellow"
+		id="a3"
+		attributeName="transform"
+		type="translate"
+		from="0,0"
+		to="600,0"
+		dur="12s"
+		begin="right.begin" 
+		fill="freeze"
+		repeacount="indefinite" />
+<animateTransform
+		xlink:href="#yellow"
+		id="a4"
+		attributeName="transform"
+		type="translate"
+		from="600,0"
+		to="0,0"
+		dur="12s"
+		begin="indefinite" 
+		fill="freeze"
+		repeacount="indefinite" />
+</svg>

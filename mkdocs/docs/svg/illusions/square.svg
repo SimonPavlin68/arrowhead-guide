@@ -1,0 +1,42 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Hering Illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<circle cx="400" cy="300" r="25" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="50" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="75" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="100" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="125" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="150" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="175" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="200" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="225" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<circle cx="400" cy="300" r="250" fill="none" stroke="black" stroke-width="4px" class="hide"/>
+	<rect x="200" y="100" width="400" height="400" fill="none" stroke="red" stroke-width="4px" />
+<script><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for (var i = 0; i < elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>

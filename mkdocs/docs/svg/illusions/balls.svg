@@ -1,0 +1,171 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onload="InitDraw(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Munker illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<defs>
+		<g id="red" stroke="#F901FD" stroke-width="10">
+			<line x1="0" y1="5" x2="200" y2="5" />
+			<line x1="0" y1="25" x2="200" y2="25" />
+			<line x1="0" y1="45" x2="200" y2="45" />
+			<line x1="0" y1="65" x2="200" y2="65" />
+			<line x1="0" y1="85" x2="200" y2="85" />
+			<line x1="0" y1="105" x2="200" y2="105" />
+			<line x1="0" y1="125" x2="200" y2="125" />
+			<line x1="0" y1="145" x2="200" y2="145" />
+			<line x1="0" y1="165" x2="200" y2="165" />
+			<line x1="0" y1="185" x2="200" y2="185" />
+		</g>
+		<g id="green" stroke="#0E8103" stroke-width="10">
+			<line x1="0" y1="15" x2="200" y2="15" />
+			<line x1="0" y1="35" x2="200" y2="35" />
+			<line x1="0" y1="55" x2="200" y2="55" />
+			<line x1="0" y1="75" x2="200" y2="75" />
+			<line x1="0" y1="95" x2="200" y2="95" />
+			<line x1="0" y1="115" x2="200" y2="115" />
+			<line x1="0" y1="135" x2="200" y2="135" />
+			<line x1="0" y1="155" x2="200" y2="155" />
+			<line x1="0" y1="175" x2="200" y2="175" />
+			<line x1="0" y1="195" x2="200" y2="195" />
+		</g>
+		<radialGradient id="ballGradient" fx="35%" fy="35%">
+			<stop offset="10%" stop-color="#FEFBCA" />
+			<stop offset="95%" stop-color="#9F7056" />
+		</radialGradient>
+		<g id="circ">
+			<!--circle cx="0" cy="0" r="50" fill="#FDEB8C" /-->
+			<circle cx="0" cy="0" r="50" fill="url(#ballGradient)"/>
+		</g>
+		</defs>
+
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#bfbfbf" />
+	<use xlink:href="#red" transform="translate(0,0)" class="hide" />
+	<use xlink:href="#green" transform="translate(200,0)" class="hide" />
+	<use xlink:href="#red" transform="translate(400,0)" class="hide" />
+	<use xlink:href="#green" transform="translate(600,0)" class="hide" />
+	<use xlink:href="#green" transform="translate(0,200)" class="hide" />
+	<use xlink:href="#red" transform="translate(200,200)" class="hide" />
+	<use xlink:href="#green" transform="translate(400,200)" class="hide" />
+	<use xlink:href="#red" transform="translate(600,200)" class="hide" />
+	<use xlink:href="#red" transform="translate(0,400)" class="hide" />
+	<use xlink:href="#green" transform="translate(200,400)" class="hide" />
+	<use xlink:href="#red" transform="translate(400,400)" class="hide" />
+	<use xlink:href="#green" transform="translate(600,400)" class="hide" />
+
+	<use xlink:href="#circ" transform="translate(100,100)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(300,100)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(500,100)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(700,100)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(100,300)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(300,300)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(500,300)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(700,300)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(100,500)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(300,500)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(500,500)" id="c1" class="draggable" />
+	<use xlink:href="#circ" transform="translate(700,500)" id="c1" class="draggable" />
+
+	<use xlink:href="#green" transform="translate(0,0)" class="hide" />
+	<use xlink:href="#red" transform="translate(200,0)" class="hide" />
+	<use xlink:href="#green" transform="translate(400,0)" class="hide" />
+	<use xlink:href="#red" transform="translate(600,0)" class="hide" />
+	<use xlink:href="#red" transform="translate(0,200)" class="hide" />
+	<use xlink:href="#green" transform="translate(200,200)" class="hide" />
+	<use xlink:href="#red" transform="translate(400,200)" class="hide" />
+	<use xlink:href="#green" transform="translate(600,200)" class="hide" />
+	<use xlink:href="#green" transform="translate(0,400)" class="hide" />
+	<use xlink:href="#red" transform="translate(200,400)" class="hide" />
+	<use xlink:href="#green" transform="translate(400,400)" class="hide" />
+	<use xlink:href="#red" transform="translate(600,400)" class="hide" />
+	
+
+	
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+function InitDraw(evt) {
+         SVGDocument = evt.target.ownerDocument;
+         SVGRoot = SVGDocument.documentElement;
+         TrueCoords = SVGRoot.createSVGPoint();
+         GrabPoint = SVGRoot.createSVGPoint();
+         BackDrop = SVGDocument.getElementById('BackDrop');
+		 Init();
+      }
+
+      function Grab(evt) {
+         var targetElement = evt.target;
+         if (BackDrop != targetElement) {
+			if(targetElement.id === "c1") {;
+		        DragTarget = targetElement;
+		        DragTarget.parentNode.appendChild( DragTarget );
+		        DragTarget.setAttribute('pointer-events', 'none');
+		        var transMatrix = DragTarget.getCTM();
+		        GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+		        GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+			}
+         }
+      };
+
+      function Drag(evt) {
+         GetTrueCoords(evt);
+         if (DragTarget) {
+            var newX = TrueCoords.x - GrabPoint.x;
+            var newY = TrueCoords.y - GrabPoint.y;
+            DragTarget.setAttribute('transform', 'translate(' + newX + ',' + newY + ')');
+         }
+      };
+
+
+      function Drop(evt) {
+         if (DragTarget) {
+            var targetElement = evt.target;
+            DragTarget.setAttribute('pointer-events', 'all');
+            DragTarget = null;
+         }
+      };
+
+
+      function GetTrueCoords(evt) {
+         var newScale = SVGRoot.currentScale;
+         var translation = SVGRoot.currentTranslate;
+         TrueCoords.x = (evt.clientX - translation.x)/newScale;
+         TrueCoords.y = (evt.clientY - translation.y)/newScale;
+      };
+
+]]></script>
+
+</svg>

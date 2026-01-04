@@ -1,0 +1,51 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick(evt)"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Munker White illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="white" />
+<g fill="black" class="hide">
+	<rect x="400" y="0" width="400" height="600"/>
+</g>
+
+<g  fill="red" stroke-width="0px">
+	<rect  x="0" y="0" width="800" height="25"/>
+	<rect  x="0" y="50" width="800" height="25"/>
+	<rect  x="0" y="100" width="800" height="25"/>
+	<rect x="0" y="150" width="800" height="25"/>
+	<rect x="0" y="200" width="800" height="25"/>
+	<rect x="0" y="250" width="800" height="25"/>
+	<rect x="0" y="300" width="800" height="25"/>
+	<rect x="0" y="350" width="800" height="25"/>
+	<rect x="0" y="400" width="800" height="25"/>
+	<rect x="0" y="450" width="800" height="25"/>
+	<rect x="0" y="500" width="800" height="25"/>
+	<rect x="0" y="550" width="800" height="25"/>
+</g>
+
+<script><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+		var elements = document.getElementsByClassName('hide');
+		for (var i = 0; i < elements.length; i++) {
+			if(hide) {
+			elements[i].setAttribute('fill', 'none');
+		} else {
+			elements[i].setAttribute('fill', 'black');
+		}
+		
+		}
+		hide = !hide;
+}
+
+]]></script>
+
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="600"
+     viewBox="100 100 600 400"
+     onload="init(evt)"
+     onmousedown="grab(evt)"
+     onmousemove="drag(evt)"
+     onmouseup="drop(evt)">
+
+  <metadata>Author: Simon Pavlin, 2021</metadata>
+
+  <style>
+    .draggable {
+      cursor: grab;
+    }
+    .dragging {
+      cursor: grabbing;
+    }
+  </style>
+
+  <rect id="BackDrop"
+        x="0" y="0" width="800" height="600"
+        fill="#f8f8f8"
+        pointer-events="all"/>
+
+  <path id="Arc1" class="draggable"
+        fill="blue" stroke="black" stroke-width="2"
+        d="M0,200 a200,200 0 0,1 200,-200 v 50 a150,150 0 0,0 -150,150 z"
+        data-x="300" data-y="200"
+        transform="translate(300,200)"/>
+
+  <path id="Arc2" class="draggable"
+        fill="red" stroke="black" stroke-width="2"
+        d="M0,200 a200,200 0 0,1 200,-200 v 50 a150,150 0 0,0 -150,150 z"
+        data-x="250" data-y="150"
+        transform="translate(250,150)"/>
+
+  <script><![CDATA[
+    let svg, dragTarget = null;
+    let grabPoint, trueCoords;
+
+    function init(evt) {
+      svg = evt.target;
+      grabPoint = svg.createSVGPoint();
+      trueCoords = svg.createSVGPoint();
+    }
+
+    function getTrueCoords(evt) {
+      const scale = svg.currentScale;
+      const translate = svg.currentTranslate;
+      trueCoords.x = (evt.clientX - translate.x) / scale;
+      trueCoords.y = (evt.clientY - translate.y) / scale;
+    }
+
+function grab(evt) {
+  const target = evt.target;
+  if (!target.classList.contains('draggable')) return;
+
+  getTrueCoords(evt);
+  dragTarget = target;
+
+  // 🔹 TO JE KLJUČNO – aktivni objekt gre na vrh
+  svg.appendChild(dragTarget);
+
+  dragTarget.classList.add('dragging');
+
+  const x = parseFloat(dragTarget.dataset.x);
+  const y = parseFloat(dragTarget.dataset.y);
+
+  grabPoint.x = trueCoords.x - x;
+  grabPoint.y = trueCoords.y - y;
+}
+
+
+    function drag(evt) {
+      if (!dragTarget) return;
+
+      getTrueCoords(evt);
+
+      const newX = trueCoords.x - grabPoint.x;
+      const newY = trueCoords.y - grabPoint.y;
+
+      dragTarget.dataset.x = newX;
+      dragTarget.dataset.y = newY;
+      dragTarget.setAttribute(
+        "transform",
+        `translate(${newX},${newY})`
+      );
+    }
+
+    function drop(evt) {
+      if (!dragTarget) return;
+      dragTarget.classList.remove('dragging');
+      dragTarget = null;
+    }
+  ]]></script>
+
+</svg>

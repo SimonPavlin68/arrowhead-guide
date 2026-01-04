@@ -1,0 +1,46 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 100 800 350"
+	onclick="OnClick()" style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Zöllner illusion</title>
+<defs>
+		<pattern id="diagonalRight" width="6" height="8" patternTransform="rotate(70 0 0)" patternUnits="userSpaceOnUse">
+		  <line x1="0" y1="0" x2="0" y2="8" stroke="black" stroke-width="3" />
+		</pattern>
+		<pattern id="diagonalLeft" width="6" height="8" patternTransform="rotate(-70 0 0)" patternUnits="userSpaceOnUse">
+		  <line x1="0" y1="0" x2="0" y2="8" stroke="black" stroke-width="3" />
+		</pattern>
+</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+	<path class="hide" d="M 375, 270 l50,0 l-25, -20 z" fill="black" stroke="black" stroke-width="2" stroke-linejoin="round" />
+	<path class="hide" d="M 590, 180 l100,0 l-50, 50 z" fill="black" stroke="black" stroke-width="2" stroke-linejoin="round" />
+	<rect class="hide" x="150" y="230" width="500" height="20" stroke="black" stroke-width="2" fill="url(#diagonalRight)" />
+	<rect class="hide" x="300" y="270" width="200" height="70" stroke="black" stroke-width="2" fill="url(#diagonalLeft)" />
+
+<script><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for (var i = 0; i < elements.length; i++) {
+		if(hide) {
+		elements[i].setAttribute('fill', 'none');
+		elements[i].setAttribute('stroke', i<2 ? 'none' : 'black');
+	} else {
+		elements[i].setAttribute('fill', i<2 ? 'black' : getPattern(i));
+		elements[i].setAttribute('stroke', 'black');
+	}
+	
+	}
+	hide = !hide;
+}
+
+function getPattern(i) {
+	return (i%2 == 0) ? 'url(#diagonalRight)' : 'url(#diagonalLeft)';
+}
+
+]]></script>
+
+</svg>

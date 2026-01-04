@@ -1,0 +1,37 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#bfbfbf" />
+	<path id='circle' d='M 400, 300 m-100, 0 a 100,100 0 1,0  200,0 a 100,100 0 1,0 -200,0' fill='none' stroke='none' stroke-width='2' class="hide" />
+	<g>	
+	<rect x="0" y="0" rx="5" ry="5" width="300" height="300" stroke="blue" stroke-width="10" fill="none" transform='translate(-150, -150)' />
+	<line x1="140" y1="140" x2="160" y2="160" stroke-width="5" stroke="#bfbfbf" stroke-linecap="round" transform='translate(-150, -150)' class="hide" />
+	<line x1="140" y1="160" x2="160" y2="140" stroke-width="5" stroke="#bfbfbf" stroke-linecap="round" transform='translate(-150, -150)' class="hide" />
+	  <animateMotion dur="3s" repeatCount="indefinite">
+		<mpath xlink:href="#circle" />
+	  </animateMotion>
+	</g>
+	<rect id="rect" x="150" y="50" height="200" width="200" stroke="#bfbfbf" stroke-width="10" fill="#bfbfbf" class="hide" />
+	<rect id="rect" x="450" y="50" height="200" width="200" stroke="#bfbfbf" stroke-width="10" fill="#bfbfbf" class="hide"/>
+	<rect id="rect" x="150" y="350" height="200" width="200" stroke="#bfbfbf" stroke-width="10" fill="#bfbfbf" class="hide"/>
+	<rect id="rect" x="450" y="350" height="200" width="200" stroke="#bfbfbf" stroke-width="10" fill="#bfbfbf" class="hide"/>
+
+<script><![CDATA[
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('stroke', elements[i].id !== 'rect' ? 'red' : 'black');
+			elements[i].setAttribute('fill', 'none');
+		} else {
+			elements[i].setAttribute('stroke', '#bfbfbf');
+			elements[i].setAttribute('fill', '#bfbfbf');
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+</svg>

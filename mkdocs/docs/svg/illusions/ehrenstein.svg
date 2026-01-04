@@ -1,0 +1,21 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Ehrenstein Illusion</title>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<g id="grid" stroke-width="5px" stroke="black" stroke-linecap="round">
+		<line x1="100" y1="300" x2="300" y2="300" />
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(30 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(60 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(90 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(120 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(150 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(180 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(210 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(240 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(270 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(300 350, 300)"/>
+		<line x1="100" y1="300" x2="300" y2="300" transform="rotate(330 350, 300)"/>
+	</g>
+
+</svg>

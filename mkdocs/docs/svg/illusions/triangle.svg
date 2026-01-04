@@ -1,0 +1,38 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Ponzo illusion</title>	
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	
+	<g stroke="black" stroke-width="5" stroke-linecap="round">
+
+
+	<line class="hide" x1="5" y1="300" x2="790" y2="5" />
+	<line class="hide" x1="5" y1="300" x2="790" y2="595" />
+	
+	<line x1="300" y1="190" x2="300" y2="410" />
+	<line x1="570" y1="190" x2="570" y2="410" />
+
+	</g>
+
+<script><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>

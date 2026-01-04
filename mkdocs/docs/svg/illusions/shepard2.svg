@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+width="700" viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Sheppard table Illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<defs>
+		<g id="romb">
+			<polygon points="124,342 335,342 382,114 326,114"/>
+		</g>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+<g stroke="black" stroke-width="2px" fill="none">
+		<!-- levo-->
+		<polygon points="124,342 335,342 382,114 326,114"/>
+		<!-- spredaj-->
+		<polygon points="124,342 335,342 335,462 124,462" fill="#b0b0b0"/>
+		<!-- stranica -->
+		<polygon points="335,342 382,114 382,214 335,462" fill="#6f6f6f"/>
+		<!-- desno -->
+		<polygon points="443,372 676,372 665,314 400,163"/>
+		<!-- spredaj-->
+		<polygon points="443,372 676,372 676,462 443,462" fill="#b0b0b0"/>
+		<!-- stranica -->
+		<polygon points="443,462 443,372 400,163 400,333" fill="#6f6f6f"/>
+	</g>
+
+	<g stroke-width="4" fill="#8b5a2b" stroke="black" stroke-linejoin="round">
+	
+	<use xlink:href="#romb" fill="red" id="myRomb" opacity="0" stroke-width="2px">
+		<animateTransform id="rotate1" attributeType="xml" attributeName="transform" type="rotate" from="0 335, 342" to="78.5 335, 342" dur="2s" fill="freeze" begin="rotate1.begin"/>
+		<animateTransform attributeType="xml" attributeName="transform" type="translate" from="0 0" to="50 -100" dur="2s" fill="freeze" additive="sum" begin="rotate1.begin"/>
+		<animateTransform id="rotate2" attributeType="xml" attributeName="transform" type="rotate" from="78.5 335,342" to="0 335, 342" dur="2s" fill="freeze" begin="rotate2.begin"/>
+		<animateTransform attributeType="xml" attributeName="transform" type="translate" from="50 -100" to="0 0" dur="2s" fill="freeze" additive="sum" begin="rotate2.begin"/>
+		 <!-- Animacija prikaza romba -->
+  <animate attributeType="xml" id="fadeIn" attributeName="opacity" from="0" to="1" dur="2s" fill="freeze" begin="indefinite" />
+
+  <!-- Animacija izginjanja romba -->
+  <animate attributeType="xml" id="fadeOut" attributeName="opacity" from="1" to="0" dur="2s" fill="freeze" begin="indefinite" />
+
+	</use>
+	</g>
+
+
+	<script type="text/ecmascript"><![CDATA[
+
+var vertical = true;
+
+function OnClick() {
+console.log("click");
+    const romb = document.getElementById('myRomb');
+    
+    // Pokaži romb pred animacijo
+    const fadeIn = document.getElementById('fadeIn');
+    fadeIn.beginElement();
+
+    // Počakaj, da se romb prikaže, nato začni rotacijo
+    setTimeout(() => {
+        if (vertical) {
+            const rotate1 = document.getElementById('rotate1');
+            rotate1.beginElement();
+        } else {
+            const rotate2 = document.getElementById('rotate2');
+            rotate2.beginElement();
+        }
+        vertical = !vertical;
+
+        // Počakaj, da se rotacija konča, nato naj romb izgine
+        setTimeout(() => {
+            const fadeOut = document.getElementById('fadeOut');
+            fadeOut.beginElement();
+        }, 2000); // Čas trajanja rotacije
+    }, 2000); // Čas trajanja prikaza romba
+}
+
+
+    ]]> </script>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" stroke="black" stroke-width="4px"/>
+
+<g stroke-width="4px" stroke="black" fill="none" class="hide">
+<path d="M-800,600 L50 300,-800, 0" />
+<path d="M-700,600 L150 300,-700, 0" />
+<path d="M-600,600 L250 300,-600, 0" />
+<path d="M-500,600 L350 300,-500, 0" />
+<path d="M-400,600 L450 300,-400, 0" />
+<path d="M-300,600 L550 300,-300, 0" />
+<path d="M-200,600 L650 300,-200, 0" />
+<path d="M-100,600 L750 300,-100, 0" />
+<path d="M0,600 L850 300,0, 0" />
+<path d="M100,600 L950 300,100, 0" />
+<path d="M200,600 L1050 300,200, 0" />
+<path d="M300,600 L1150 300,300, 0" />
+<path d="M400,600 L1250 300,400, 0" />
+<path d="M500,600 L1350 300,500, 0" />
+<path d="M600,600 L1450 300,600, 0" />
+<path d="M700,600 L1550 300,700, 0" />
+<path d="M800,600 L1650 300,800, 0" />
+<path d="M900,600 L1750 300,900, 0" />
+<path d="M1000,600 L1850 300,1000, 0" />
+<path d="M1100,600 L1950 300,1100, 0" />
+</g>
+	<path d="M200,300 L400 100 L600 300 L400 500 z" fill="none" stroke="black" stroke-width="4px" />
+
+<script><![CDATA[
+
+var hide = true;
+
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for (var i = 0; i < elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>

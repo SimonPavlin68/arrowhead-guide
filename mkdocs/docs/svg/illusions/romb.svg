@@ -1,0 +1,59 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+	onload="InitDraw(evt)"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Müller-Lyer Illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#bfbfbf" />
+	
+	<g fill="black" stroke="black" stroke-width="5" stroke-linecap="round">
+		
+		<line x1="150" y1="200" x2="400" y2="400" id="Line1" />
+		<line x1="400" y1="400" x2="650" y2="200" id="Line2" />
+		
+		<line class="hide" x1="50" y1="400" x2="150" y2="200" id="Line3" />
+		<line class="hide" x1="150" y1="200" x2="650" y2="200" id="Line4" />
+		<line class="hide" x1="650" y1="200" x2="550" y2="400" id="Line5" />
+		<line class="hide" x1="550" y1="400" x2="50" y2="400" id="Line6" />
+		<!--line x1="200" y1="400" x2="500" y2="400" id="Line2" class="draggable" />
+		<line class="hide" x1="200" y1="400" x2="270" y2="330" />
+		<line class="hide" x1="200" y1="400" x2="270" y2="470" />
+		<line class="hide" x1="500" y1="400" x2="430" y2="330" />
+		<line class="hide" x1="500" y1="400" x2="430" y2="470" /-->
+	</g>
+
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+
+]]></script>
+
+</svg>

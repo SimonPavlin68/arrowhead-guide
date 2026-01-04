@@ -1,0 +1,130 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick(evt)"
+	onload="InitDrag(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Munker White illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+<g class="hide" stroke="black" stroke-width="0px">
+	<rect  x="100" y="100" width="600" height="25"/>
+	<rect x="100" y="150" width="600" height="25"/>
+	<rect x="100" y="200" width="600" height="25"/>
+	<rect x="100" y="250" width="600" height="25"/>
+	<rect x="100" y="300" width="600" height="25"/>
+	<rect x="100" y="350" width="600" height="25"/>
+	<rect x="100" y="400" width="600" height="25"/>
+	<rect x="100" y="450" width="600" height="25"/>
+</g>
+<g fill="gray">
+	<rect x="200" y="125" width="100" height="25" class="draggable"/>
+	<rect x="200" y="175" width="100" height="25" class="draggable"/>
+	<rect x="200" y="225" width="100" height="25" class="draggable"/>
+	<rect x="200" y="275" width="100" height="25" class="draggable"/>
+	<rect x="200" y="325" width="100" height="25" class="draggable"/>
+	<rect x="200" y="375" width="100" height="25" class="draggable"/>
+	<rect x="200" y="425" width="100" height="25" class="draggable"/>
+	
+	<rect x="500" y="100" width="100" height="25" class="draggable"/>
+	<rect x="500" y="150" width="100" height="25" class="draggable"/>
+	<rect x="500" y="200" width="100" height="25" class="draggable"/>
+	<rect x="500" y="250" width="100" height="25" class="draggable"/>
+	<rect x="500" y="300" width="100" height="25" class="draggable"/>
+	<rect x="500" y="350" width="100" height="25" class="draggable"/>
+	<rect x="500" y="400" width="100" height="25" class="draggable"/>
+	<rect x="500" y="450" width="100" height="25" class="draggable"/>
+</g>
+
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+function InitDrag(evt) {
+	SVGDocument = evt.target.ownerDocument;
+	SVGRoot = SVGDocument.documentElement;
+	TrueCoords = SVGRoot.createSVGPoint();
+	GrabPoint = SVGRoot.createSVGPoint();
+	BackDrop = SVGDocument.getElementById('BackDrop');
+}
+
+function Grab(evt) {
+ var targetElement = evt.target;
+ if (BackDrop != targetElement) {
+	console.log(targetElement);
+	if(targetElement.classList.contains("draggable")) {
+        DragTarget = targetElement;
+        DragTarget.parentNode.appendChild( DragTarget );
+        DragTarget.setAttribute('pointer-events', 'none');
+        var transMatrix = DragTarget.getCTM();
+        GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+        GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+	} else {
+		console.log("kwa?");
+	}
+ }
+}
+
+function Drag(evt) {
+ GetTrueCoords(evt);
+ if (DragTarget) {
+    var newX = TrueCoords.x - GrabPoint.x;
+    newY = TrueCoords.y - GrabPoint.y;
+    DragTarget.setAttribute('transform', 'translate(' + newX + ',' + newY + ')');
+ }
+};
+
+
+function Drop(evt) {
+ if (DragTarget) {
+    var targetElement = evt.target;
+    DragTarget.setAttribute('pointer-events', 'all');
+    DragTarget = null;
+ }
+};
+
+
+function GetTrueCoords(evt) {
+ var newScale = SVGRoot.currentScale;
+ var translation = SVGRoot.currentTranslate;
+ TrueCoords.x = (evt.clientX - translation.x)/newScale;
+ TrueCoords.y = (evt.clientY - translation.y)/newScale;
+};
+
+var hide = true;
+
+function OnClick(evt) {
+	var targetElement = evt.target;
+	if (BackDrop == targetElement) {
+		var elements = document.getElementsByClassName('hide');
+		for (var i = 0; i < elements.length; i++) {
+			if(hide) {
+			elements[i].setAttribute('fill', 'none');
+		} else {
+			elements[i].setAttribute('fill', 'black');
+		}
+		
+		}
+		hide = !hide;
+	}
+}
+
+]]></script>
+
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="40 40 681 441"
+	onload="Init(evt)"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Mising square</title>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8"
+	onclick="OnClick()" />
+	
+	<g fill="black" stroke="black" stroke-width="2" stroke-linecap="round">
+		<path id="o1" d="M0,0 h320 v-120 z" fill= "red" transform="translate(120,400)" />
+		<path id="o2" d="M0,0 h200 v-80 z" fill= "blue" transform="translate(440,280)" />
+		<path id="o3" d="M0,0 h80 v-40 h120 v-40 h-200z" fill= "yellow" transform="translate(440,360)" />
+		<path id="o4" d="M0,0 h200 v-80 h-120 v40 h-80z" fill= "green" transform="translate(440,400)" />
+	</g>
+
+	<animateTransform xlink:href="#o1" id="f1" attributeName="transform" type="translate"
+			from="120,400" to="120,200" dur="1.5s" begin="indefinite" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o3" id="f2" attributeName="transform" type="translate"
+			from="440,360" to="320,360" dur="1.5s" begin="f1.end" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o3" id="f3" attributeName="transform" type="translate"
+			from="320,360" to="320,400" dur="1.5s" begin="f2.end" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o2" id="f4" attributeName="transform" type="translate"
+			from="440,280" to="120,280" dur="1.5s" begin="f3.end" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o2" id="f5" attributeName="transform" type="translate"
+			from="120,280" to="120,400" dur="1.5s" begin="f4.end" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o1" id="f6" attributeName="transform" type="translate"
+			from="120,200" to="320,200" dur="1.5s" begin="f5.end" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o1" id="f6" attributeName="transform" type="translate"
+				from="320,200" to="320,320" dur="1.5s" begin="f6.end" fill="freeze" repeacount="indefinite" />
+
+	<animateTransform xlink:href="#o1" id="b1" attributeName="transform" type="translate"
+			from="320,320" to="120,400" dur="2s" begin="indefinite" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o2" id="b2" attributeName="transform" type="translate"
+			from="120,400" to="440,280" dur="2s" begin="b1.begin" fill="freeze" repeacount="indefinite" />
+	<animateTransform xlink:href="#o3" id="b4" attributeName="transform" type="translate"
+			from="320,400" to="440,360" dur="2s" begin="b1.begin" fill="freeze" repeacount="indefinite" />
+
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+
+var SVGDocument = null;
+var SVGRoot = null;
+
+function Init() {
+	for (var i = 0; i < 21; i += 1) {
+			var line = document.createElementNS(svgns, 'line');
+			line.setAttribute('x1', i*40);
+			line.setAttribute('y1', 0);
+			line.setAttribute('x2', i*40);
+			line.setAttribute('y2', 600);
+			line.setAttribute('stroke', 'black');
+			line.setAttribute('stroke-width', 1);
+			svg.appendChild(line);
+	}
+
+	for (var j = 0; j<16; j++) {
+		var line = document.createElementNS(svgns, 'line');
+		line.setAttribute('x1', 0);
+		line.setAttribute('y1', j*40);
+		line.setAttribute('x2', 800);
+		line.setAttribute('y2', j*40);
+		line.setAttribute('stroke', 'black');
+		line.setAttribute('stroke-width', 1);
+		svg.appendChild(line);
+	
+	}
+}
+
+var goRight = true;
+
+function OnClick() {
+	if(goRight) {
+		var elem = document.getElementById('f1');
+		elem.beginElement();
+	} else {
+		var elem = document.getElementById('b1');
+		elem.beginElement();
+	}
+	goRight = !goRight;
+}
+
+]]></script>
+
+</svg>

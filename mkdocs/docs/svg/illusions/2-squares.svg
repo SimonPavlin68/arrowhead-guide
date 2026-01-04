@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1"
+     width="700"
+     viewBox="0 0 800 600"
+     onload="InitDraw(evt)"
+     onmousedown="Grab(evt)"
+     onmousemove="Drag(evt)"
+     onmouseup="Drop(evt)"
+     style="background:#f8f8f8">
+
+<metadata>Author: Simon Pavlin, 2021</metadata>
+
+<style>
+  .draggable { cursor: move; }
+</style>
+
+<defs>
+  <g id="squa">
+    <rect x="0" y="0" width="100" height="100" fill="#9697C5"/>
+  </g>
+</defs>
+
+<rect x="0" y="0" width="400" height="600" fill="#B0AFB5"/>
+<rect x="400" y="0" width="400" height="600" fill="#747BF0"/>
+
+<use xlink:href="#squa" class="draggable" transform="translate(150,250)"/>
+<use xlink:href="#squa" class="draggable" transform="translate(550,250)"/>
+
+<script><![CDATA[
+
+let svg;
+let dragTarget = null;
+let grabOffset = { x: 0, y: 0 };
+let svgPoint;
+
+function InitDraw(evt) {
+  svg = evt.target;               // ✅ PRAVI SVG
+  svgPoint = svg.createSVGPoint();
+
+  // inicializiraj pozicije
+  svg.querySelectorAll('.draggable').forEach(el => {
+    const t = el.getAttribute('transform');
+    const m = /translate\(([^,]+),([^)]+)\)/.exec(t);
+    el.dataset.x = m ? parseFloat(m[1]) : 0;
+    el.dataset.y = m ? parseFloat(m[2]) : 0;
+  });
+}
+
+function getMousePosition(evt) {
+  svgPoint.x = evt.clientX;
+  svgPoint.y = evt.clientY;
+  return svgPoint.matrixTransform(svg.getScreenCTM().inverse());
+}
+
+function Grab(evt) {
+  if (!evt.target.classList.contains('draggable')) return;
+
+  dragTarget = evt.target;
+  svg.appendChild(dragTarget); // 🔝 na vrh
+
+  const pos = getMousePosition(evt);
+
+  grabOffset.x = pos.x - parseFloat(dragTarget.dataset.x);
+  grabOffset.y = pos.y - parseFloat(dragTarget.dataset.y);
+
+  dragTarget.setAttribute('pointer-events', 'none');
+}
+
+function Drag(evt) {
+  if (!dragTarget) return;
+
+  const pos = getMousePosition(evt);
+
+  const x = pos.x - grabOffset.x;
+  const y = pos.y - grabOffset.y;
+
+  dragTarget.dataset.x = x;
+  dragTarget.dataset.y = y;
+
+  dragTarget.setAttribute(
+    'transform',
+    `translate(${x},${y})`
+  );
+}
+
+function Drop(evt) {
+  if (!dragTarget) return;
+
+  dragTarget.setAttribute('pointer-events', 'all');
+  dragTarget = null;
+}
+
+]]></script>
+
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="700" viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Hering illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<defs>
+		<g id="line" stroke-width="4" fill="none" stroke="black">
+			<line  x1="400" y1="-200" x2="400" y2="800"  class="hide"/>
+		</g>
+		<g id="square" stroke-width="6" fill="none" stroke="black">
+			<rect x="350" y="250" width="100" height="100" />
+		</g>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<use xlink:href="#line" />
+	<use xlink:href="#line" transform="rotate(10 400 300)"/>
+	<use xlink:href="#line" transform="rotate(20 400 300)"/>
+	<use xlink:href="#line" transform="rotate(30 400 300)"/>
+	<use xlink:href="#line" transform="rotate(40 400 300)"/>
+	<use xlink:href="#line" transform="rotate(50 400 300)"/>
+	<use xlink:href="#line" transform="rotate(60 400 300)"/>
+	<use xlink:href="#line" transform="rotate(70 400 300)"/>
+	<use xlink:href="#line" transform="rotate(80 400 300)"/>
+	<use xlink:href="#line" transform="rotate(90 400 300)"/>
+	<use xlink:href="#line" transform="rotate(100 400 300)"/>
+	<use xlink:href="#line" transform="rotate(110 400 300)"/>
+	<use xlink:href="#line" transform="rotate(120 400 300)"/>
+	<use xlink:href="#line" transform="rotate(130 400 300)"/>
+	<use xlink:href="#line" transform="rotate(140 400 300)"/>
+	<use xlink:href="#line" transform="rotate(150 400 300)"/>
+	<use xlink:href="#line" transform="rotate(160 400 300)"/>
+	<use xlink:href="#line" transform="rotate(170 400 300)"/>
+
+	<use xlink:href="#square" />
+	<use xlink:href="#square" transform="translate(-120)"/>
+	<use xlink:href="#square" transform="translate(120)"/>
+	<use xlink:href="#square" transform="translate(-120, -120)"/>
+	<use xlink:href="#square" transform="translate(0, -120)"/>
+	<use xlink:href="#square" transform="translate(120, -120)"/>
+	<use xlink:href="#square" transform="translate(-120, 120)"/>
+	<use xlink:href="#square" transform="translate(0, 120)"/>
+	<use xlink:href="#square" transform="translate(120, 120)"/>
+
+	<script type="text/ecmascript"><![CDATA[
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for (var i = 0; i < elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+
+    ]]> </script>
+</svg>

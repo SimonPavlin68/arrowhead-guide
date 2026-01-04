@@ -1,0 +1,84 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='800' height='600' viewBox="0 0 800 600"
+    onload="Init()"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Angle</title>
+	<defs>
+            <g id="piece" stroke-width="2">
+                    <path d="M141.6,-141.6 A200,200 0 0,1 200,0 L0, 0 Z " stroke="black" />
+            </g>
+            <marker id="startarrow" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto" fill="red">
+              <polygon points="10 0, 10 7, 0 3.5"/>
+            </marker>
+            <marker id="endarrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="red">
+                <polygon points="0 0, 10 3.5, 0 7"/>
+            </marker>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#bfbfbf" />
+	<g transform="translate(400,300)" fill="none">
+            <g id="angle" opacity="0" stroke="red" stroke-width="2">
+               <path d="M0,0 L350, 0 M0,0 L247.5, -247.5 " />
+               <path d="M212,-212 A300,300 0 0,1 300,0" marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+               <text x="300" y="-120" stroke-width="1">45°</text>
+            </g>
+            <use xlink:href="#piece" opacity="1" fill="blue" />
+            <use xlink:href="#piece" id="piece1" transform="rotate(45,0,0)" class="hide" opacity="0" />
+            <use xlink:href="#piece" id="piece2" transform="rotate(90,0,0)" class="hide" opacity="0" />
+            <use xlink:href="#piece" id="piece3" transform="rotate(135,0,0)" class="hide" opacity="0" />
+            <use xlink:href="#piece" id="piece4" transform="rotate(180,0,0)" class="hide" opacity="0" />
+            <use xlink:href="#piece" id="piece5" transform="rotate(225,0,0)" class="hide" opacity="0" />
+            <use xlink:href="#piece" id="piece6" transform="rotate(270,0,0)" class="hide" opacity="0" />
+            <use xlink:href="#piece" id="piece7" transform="rotate(315,0,0)" class="hide" opacity="0" />	
+	</g>
+	
+	<animate xlink:href="#piece1" id="anim1" attributeName="opacity" begin="anim2.end" values="0;1" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece2" id="anim2" attributeName="opacity" begin="anim3.end" values="0;1" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece3" id="anim3" attributeName="opacity" begin="anim4.end" values="0;1" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece4" id="anim4" attributeName="opacity" begin="anim5.end" values="0;1" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece5" id="anim5" attributeName="opacity" begin="anim6.end" values="0;1" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece6" id="anim6" attributeName="opacity" begin="anim7.end" values="0;1" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece7" id="anim7" attributeName="opacity" begin="indefinite" values="0;1" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#angle" id="anim15" attributeName="opacity" begin="indefinite" values="0;1" dur="3.5s" fill="freeze" />
+	
+	<animate xlink:href="#piece1" id="anim8" attributeName="opacity" begin="anim9.end" values="1;0" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece2" id="anim9" attributeName="opacity" begin="anim10.end" values="1;0" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece3" id="anim10" attributeName="opacity" begin="anim11.end" values="1;0" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece4" id="anim11" attributeName="opacity" begin="anim12.end" values="1;0" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece5" id="anim12" attributeName="opacity" begin="anim13.end" values="1;0" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece6" id="anim13" attributeName="opacity" begin="anim14.end" values="1;0" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#piece7" id="anim14" attributeName="opacity" begin="indefinite" values="1;0" dur="0.5s" fill="freeze" />
+	<animate xlink:href="#angle" id="anim16" attributeName="opacity" begin="indefinite" values="1;0" dur="3.5s" fill="freeze" />
+	<script><![CDATA[
+
+function Init() {
+	for (var i=0; i < 1; i++) {
+	    var angle = 45*i;
+		console.log(angle);
+		var piece = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+		piece.setAttributeNS('http://www.w3.org/1999/xlink', "xlink:href", "#piece");
+		piece.setAttribute("transform", "rotate(" + angle + ",0,0)");
+		piece.setAttribute("id", "piece"+i);
+		piece.setAttribute("class", "hide");
+		// svg.appendChild(piece);
+	}
+
+}
+
+var hide = true;
+function OnClick() {
+	var elements = document.getElementsByTagName('animate');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			if(elements[i].id === 'anim7' || elements[i].id === 'anim15')
+				elements[i].beginElement();
+		} else {
+			if(elements[i].id === 'anim14' || elements[i].id === 'anim16')
+				elements[i].beginElement();
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>

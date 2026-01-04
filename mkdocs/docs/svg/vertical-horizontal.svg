@@ -1,0 +1,37 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Vertical-horizontal Illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+	<g  stroke-width="4px" stroke="red" stroke-linecap="round">
+	<line x1="300" y1="400" x2="500" y2="400" />
+	<line x1="400" y1="200" x2="400" y2="400">
+		<animateTransform id="rotate1" attributeType="xml" attributeName="transform" type="rotate" from="0 400 300" to="90 400 300" dur="2s" fill="freeze" begin="rotate1.begin"/>
+		<animateTransform id="rotate2" attributeType="xml" attributeName="transform" type="rotate" from="90 400 300" to="0 400 300" dur="2s" fill="freeze" begin="rotate2.begin"/>
+	</line>
+	</g>
+<script><![CDATA[
+
+var vertical = true;
+
+function OnClick() {
+    console.log(vertical);
+	if (vertical) {
+		var element = document.getElementById('rotate1');
+		element.beginElement();
+	} else {
+		var element = document.getElementById('rotate2');
+		element.beginElement();
+	}
+	vertical = !vertical;
+}
+
+]]></script>
+
+</svg>

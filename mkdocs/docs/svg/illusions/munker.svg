@@ -1,0 +1,92 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick(evt)"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+	<title>Munker Illusion</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+
+
+
+<g class="hide" fill="yellow" stroke-width="0px">
+	<rect  x="0" y="25" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="75" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="125" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="175" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="225" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="275" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="325" width="800" height="25" fill="#0000ff"/>	
+	<rect  x="0" y="375" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="425" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="475" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="525" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="575" width="800" height="25" fill="#0000ff"/>
+	<rect  x="0" y="0" width="800" height="25"/>
+	<rect  x="0" y="50" width="800" height="25"/>
+	<rect  x="0" y="100" width="800" height="25"/>
+	<rect x="0" y="150" width="800" height="25"/>
+	<rect x="0" y="200" width="800" height="25"/>
+	<rect x="0" y="250" width="800" height="25"/>
+	<rect x="0" y="300" width="800" height="25"/>
+	<rect x="0" y="350" width="800" height="25"/>
+	<rect x="0" y="400" width="800" height="25"/>
+	<rect x="0" y="450" width="800" height="25"/>
+	<rect x="0" y="500" width="800" height="25"/>
+	<rect x="0" y="550" width="800" height="25"/>
+</g>
+<g fill="#00ff00" class="animate">
+	<animateTransform id="translate1" attributeType="xml" attributeName="transform" type="translate" from="0 0" to="0 25" dur="2s" fill="freeze" begin="translate1.begin"/>
+	<animateTransform id="translate2" attributeType="xml" attributeName="transform" type="translate" from="0 25" to="0 0" dur="2s" fill="freeze" begin="translate2.begin"/>
+	<rect x="200" y="-25" width="100" height="25"/>
+	<rect x="200" y="25" width="100" height="25"/>
+	<rect x="200" y="75" width="100" height="25"/>
+	<rect x="200" y="125" width="100" height="25"/>
+	<rect x="200" y="175" width="100" height="25"/>
+	<rect x="200" y="225" width="100" height="25"/>
+	<rect x="200" y="275" width="100" height="25"/>
+	<rect x="200" y="325" width="100" height="25"/>
+	<rect x="200" y="375" width="100" height="25"/>
+	<rect x="200" y="425" width="100" height="25"/>
+	<rect x="200" y="475" width="100" height="25"/>
+	<rect x="200" y="525" width="100" height="25"/>
+	<rect x="200" y="575" width="100" height="25"/>
+	
+	<rect x="500" y="0" width="100" height="25"/>
+	<rect x="500" y="50" width="100" height="25"/>
+	<rect x="500" y="100" width="100" height="25"/>
+	<rect x="500" y="150" width="100" height="25"/>
+	<rect x="500" y="200" width="100" height="25"/>
+	<rect x="500" y="250" width="100" height="25"/>
+	<rect x="500" y="300" width="100" height="25"/>
+	<rect x="500" y="350" width="100" height="25"/>
+	<rect x="500" y="400" width="100" height="25"/>
+	<rect x="500" y="450" width="100" height="25"/>
+	<rect x="500" y="500" width="100" height="25"/>
+	<rect x="500" y="550" width="100" height="25"/>
+</g>
+
+<script><![CDATA[
+
+var vertical = true;
+
+function OnClick() {
+    console.log(vertical);
+	if (vertical) {
+		var element = document.getElementById('translate1');
+		element.beginElement();
+	} else {
+		var element = document.getElementById('translate2');
+		element.beginElement();
+	}
+	vertical = !vertical;
+}
+
+]]></script>
+
+</svg>

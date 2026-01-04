@@ -1,0 +1,47 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' 
+width='600' viewBox="50 50 700 450">
+	<metadata>Author: Simon Pavlin, 2021</metadata>
+<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+	<g stroke="black" stroke-width="3px">
+	// navpične levo
+	<line x1="200" y1="150" x2="200" y2="180" />
+	<line x1="200" y1="210" x2="200" y2="240" />
+	<line x1="200" y1="270" x2="200" y2="300" />
+	<line x1="200" y1="330" x2="200" y2="360" />
+	// navpične sredina
+	<line x1="260" y1="180" x2="260" y2="210" />
+	<line x1="260" y1="240" x2="260" y2="270" />
+	<line x1="260" y1="300" x2="260" y2="330" />
+	<line x1="260" y1="360" x2="260" y2="390" />
+	// navpične desno
+	<line x1="560" y1="180" x2="560" y2="210" />
+	<line x1="560" y1="270" x2="560" y2="300" />
+	<line x1="560" y1="360" x2="560" y2="390" />
+	// vodoravne zgoraj
+	<line x1="200" y1="150" x2="500" y2="150" />
+	<line x1="200" y1="210" x2="560" y2="210" />
+	<line x1="200" y1="270" x2="560" y2="270" />
+	<line x1="200" y1="330" x2="500" y2="330" />
+	// vodoravne spodaj
+	<line x1="260" y1="180" x2="560" y2="180" />
+	<line x1="260" y1="240" x2="500" y2="240" />
+	<line x1="260" y1="300" x2="560" y2="300" />
+	<line x1="260" y1="360" x2="560" y2="360" />
+	<line x1="260" y1="390" x2="560" y2="390" />
+	// poševne levo
+	<line x1="200" y1="150" x2="260" y2="180" />
+	<line x1="200" y1="180" x2="260" y2="210" />
+	<line x1="200" y1="210" x2="260" y2="240" />
+	<line x1="200" y1="240" x2="260" y2="270" />
+	<line x1="200" y1="270" x2="260" y2="300" />
+	<line x1="200" y1="300" x2="260" y2="330" />
+	<line x1="200" y1="330" x2="260" y2="360" />
+	<line x1="200" y1="360" x2="260" y2="390" />
+	// poševne desno
+	<line x1="500" y1="150" x2="560" y2="180" />
+	<line x1="500" y1="240" x2="560" y2="270" />
+	<line x1="500" y1="330" x2="560" y2="360" />
+
+	</g>
+</svg>

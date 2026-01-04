@@ -1,0 +1,45 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+onclick="OnClick()">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Hermann Grid Illusion</title>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="black" />
+	<g id="grid" stroke-width="20px" stroke="white">
+		<!-- vertical -->
+		<line x1="0" y1="0" x2="0" y2="600" />
+		<line x1="100" y1="0" x2="100" y2="600" />
+		<line x1="200" y1="0" x2="200" y2="600" />
+		<line x1="300" y1="0" x2="300" y2="600" />
+		<line x1="400" y1="0" x2="400" y2="600" />
+		<line x1="500" y1="0" x2="500" y2="600" />
+		<line x1="600" y1="0" x2="600" y2="600" />
+		<line x1="700" y1="0" x2="700" y2="600" />
+		<line x1="800" y1="0" x2="800" y2="600" />
+		<!-- horizontal -->
+		<line x1="0" y1="0" x2="800" y2="0" />
+		<line x1="0" y1="100" x2="800" y2="100" />
+		<line x1="0" y1="200" x2="800" y2="200" />
+		<line x1="0" y1="300" x2="800" y2="300" />
+		<line x1="0" y1="400" x2="800" y2="400" />
+		<line x1="0" y1="500" x2="800" y2="500" />
+		<line x1="0" y1="600" x2="800" y2="600" />
+	</g>
+	
+ <script><![CDATA[
+
+var negative = true;
+function OnClick() {
+	var element = document.getElementById('BackDrop');
+	var grid = document.getElementById('grid');
+	if(negative) {
+		element.setAttribute('fill', 'black');
+		grid.setAttribute('stroke', 'white');
+	} else {
+		element.setAttribute('fill', 'white');
+		grid.setAttribute('stroke', 'black');
+	}
+	
+	negative = !negative;
+}
+   ]]></script>
+</svg>

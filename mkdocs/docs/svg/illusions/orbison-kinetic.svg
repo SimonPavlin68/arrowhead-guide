@@ -1,0 +1,41 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='700' viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Orbison kinetic illusion</title>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+	<g fill="none" stroke="black" stroke-width="2px">
+		<circle cx="400" cy="300" r="25" />
+		<circle cx="400" cy="300" r="50" />
+		<circle cx="400" cy="300" r="75" />
+		<circle cx="400" cy="300" r="100" />
+		<circle cx="400" cy="300" r="125" />
+		<circle cx="400" cy="300" r="150" />
+		<circle cx="400" cy="300" r="175" />
+		<circle cx="400" cy="300" r="200" />
+		<circle cx="400" cy="300" r="225" />
+		<circle cx="400" cy="300" r="250" />
+	</g>
+	<path id="motionPath" d="M200,300 L400 100 L600 300 L400 500 z" fill="none" stroke="red" stroke-width="2px" opacity="0"/>
+	
+	<circle r="5" fill="blue">
+    <animateMotion
+	  dur="10s"
+      repeatCount="indefinite">
+      <mpath href="#motionPath" />
+    </animateMotion>
+  </circle>
+
+<script><![CDATA[
+
+var opacity = 0;
+function OnClick() {
+	opacity = opacity == 0 ? 1 : 0;
+	var elements = document.getElementById("motionPath").setAttribute('opacity', opacity);
+}
+
+]]></script>
+
+</svg>

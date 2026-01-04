@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" 
+width="700" viewBox="0 0 800 600" onclick="OnClick()"
+style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2023</metadata>
+	<title>Chess</title>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8"/>
+
+<image id="image1" href="../../img/chess2.png" x="100" y="0" width="600" height="600"/>
+<image id="image2" href="../../img/chess1.png" x="100" y="0" width="600" height="600" opacity="1"/>
+<script><![CDATA[
+
+var opacity = 1;
+function OnClick() {
+	opacity = opacity == 0 ? 1 : 0;
+	document.getElementById("image2").setAttribute('opacity', opacity);
+}
+
+]]></script>
+
+</svg>
