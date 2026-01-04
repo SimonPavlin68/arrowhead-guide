@@ -24,3 +24,52 @@
   .zoom-container:hover .zoom-image {
     transform: scale(1.2);
   }
+
+.illusion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.illusion-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.illusion-grid img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: zoom-in;
+}
+
+.illusion-grid img:hover {
+  transform: scale(1.8);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.illusion-grid figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.centered-svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.figure-center {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.figure-center figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.9em;
+  color: #555;
+}
+

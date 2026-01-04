@@ -37,8 +37,14 @@ nav:
           - Teorija: sl/theory.md
           - Skrivnostni obrat: sl/mystery.md
       - Optične prevare:
-          - Optične prevare: sl/illusions.md
-          - Primeri: sl/illusions-example.md
+          - Osnove: sl/illusions/index.md 
+          - Arrowhead: sl/illusions/illusions.md
+          - Primeri:
+                - Geometrijske iluzije: sl/illusions/geometry.md
+                - Iluzorne konture: sl/illusions/contures.md
+                - Svetlobne iluzije: sl/illusions/colors.md
+                - Nemogoči predmeti: sl/illusions/impossible.md
+                - Ostalo: sl/illusions/misc.md
       - Kavč: sl/sofa.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
