@@ -62,6 +62,10 @@ Velikost iluzije je odvisna od lastnosti zastirajočega vzorca in narave njegovi
 <object type="image/svg+xml" data="../../../svg/illusions/poggendorff-arch.svg" class="centered-svg"></object>
 <figcaption>Varianta 2</figcaption>
 </figure>
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../../svg/illusions/shifted-lines.svg" class="centered-svg"></object>
+<figcaption>Varianta 2</figcaption>
+</figure>
 </details>
 
 <details>
