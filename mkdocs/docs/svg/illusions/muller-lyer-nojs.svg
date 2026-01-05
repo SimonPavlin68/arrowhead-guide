@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
- width="700" viewBox="0 0 800 600" onclick="OnClick()"
+ width="700" viewBox="0 100 800 400" onclick="OnClick()"
  style="cursor:pointer;">
 	<metadata>Author: Simon Pavlin, 2023</metadata>
 	<title>Muller-Lyer</title>
