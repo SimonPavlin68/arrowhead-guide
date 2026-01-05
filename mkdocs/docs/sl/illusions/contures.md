@@ -27,7 +27,7 @@ S figurami Kanizse je tesno povezana Ehrensteinova iluzija. Namesto uporabe "Pac
 Rubinova vaza (včasih znana kot Rubinov obraz) je znan primer dvoumnih ali bi-stabilnih dvodimenzionalnih oblik, ki jih je okoli leta 1915 razvil danski psiholog Edgar Rubin.
 Upodobljeno različico Rubinove vaze lahko vidimo kot bela profila dveh oseb, ki gledata drug proti drugemu, ali kot črno vazo, vendar ne oboje hkrati. 
 <figure class="figure-center">
-<img src="../../../img/rubin_vase.png" alt="Rubinova vaza" style="width: 400px;"  class="centered-svg"/>
+<img src="../../../img/rubin_vase.png" alt="Rubinova vaza" style="width: 300px;"  class="centered-svg"/>
 <figcaption>Rubinova vaza</figcaption>
 </figure>
 </details>

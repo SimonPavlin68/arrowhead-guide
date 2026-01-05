@@ -33,12 +33,17 @@ Pri strelih pod naklonom je treba ločiti dva različna kota, ki imata različen
 **kot tarče** (geometrijski kot)
 Kot med linijo do tarče in vodoravnico.
 Ta kot opisuje teren in položaj tarče, ne pa balistike leta puščice.
-<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up.svg"></object>
-
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/angle-up.svg" class="centered-svg"></object>
+<figcaption>Kot tarče</figcaption>
+</figure>
 **kot izmeta**
 Dejanski kot, pod katerim puščica zapusti lok.
 Ta kot določa čas leta, padec puščice in s tem potrebno nastavitev merilne naprave.
-<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up-bow.svg"></object>
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/angle-up-bow.svg" class="centered-svg"></object>
+<figcaption>Kot izmeta</figcaption>
+</figure>
 
 ---
 
@@ -49,12 +54,18 @@ Pri strelih navzgor in navzdol razdalja do tarče ostaja enaka, spremeni pa se r
 ### *Strel navzgor*
 Pri strelu navzgor se del začetne kinetične energije puščice porabi za pridobivanje potencialne energije (dvig v višino).  
 Zaradi tega se zmanjša razpoložljiva energija za gibanje naprej, hitrost se zmanjša, pot puščice do tarče pa je krajša kot pri vodoravnem strelu.
-<object id="archer-object" type="image/svg+xml" data="../../svg/parabola.svg"></object>
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/parabola.svg" class="centered-svg"></object>
+<figcaption>Parabola</figcaption>
+</figure>
 Posledično ima gravitacija manj vpliva na padec puščice, zato je potrebno na merilni napravi izvesti korekcijo v skladu z geometrijo strela (po izračunu).
 
 ### *Strel navzdol*
 Pri strelu navzdol se potencialna energija pretvarja v dodatno kinetično energijo. Hitrost puščice se poveča, čas leta se skrajša, pot puščice do tarče pa je prav tako krajša kot pri vodoravnem strelu.
-<object id="archer-object" type="image/svg+xml" data="../../svg/parabola-down.svg"></object>
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/parabola-down.svg" class="centered-svg"></object>
+<figcaption>Parabola</figcaption>
+</figure>
 Ker ima gravitacija manj časa za delovanje, puščica pade manj, zato je pri strelu navzdol na merilni napravi vedno potrebno odvzemati.
 
 ### *Energijsko prelivanje in realni učinek na zadetek*
@@ -95,8 +106,14 @@ Pri strelih pod naklonom se spremeni:
 Če se drža telesa spremeni, se spremeni tudi izmetna geometrija – ne glede na pravilno nastavljeno merilno napravo.
 Že majhna sprememba v drži lahko pomeni veliko razliko v tem, kako bo puščica letela, ne glede na vse ostalo.
 Zato je pozornost v pravilno telesno pozicijo ravno tako pomembna kot vse ostale tehnične nastavitve, če ne še bolj.
-<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up-bow-fire.svg"></object>
-<object id="archer-object" type="image/svg+xml" data="../../svg/angle-up-bow-fire-Z.svg"></object>
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/angle-up-bow-fire.svg" class="centered-svg"></object>
+<figcaption>Pravilna T-postavitev</figcaption>
+</figure>
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/angle-up-bow-fire-Z.svg" class="centered-svg"></object>
+<figcaption>Nepravilna Z-postavitev</figcaption>
+</figure>
 ---
 
 ## *Psihologija*

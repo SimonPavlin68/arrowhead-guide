@@ -4,17 +4,21 @@ Ko streljamo po razgibanem terenu, se lahko zgodi, da puščice priletijo nekoli
 Na to vpliva več dejavnikov: od svetlobe in nagiba terena do položaja strelca, ko streljamo bočno na pobočje.
 Tudi pri strelih navzgor ali navzdol pogosto ne ustrelimo enako kot na ravni površini, kar še dodatno vpliva na smer zadetka.
 
-<object type="image/svg+xml" data="../../svg/left-right-1.svg"></object>
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/left-right-1.svg" class="centered-svg"></object>
+<figcaption>Streljanje bočno na nagib terena.</figcaption>
+</figure>
 
-Streljanje bočno na nagib terena.
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/left-right-2.svg" class="centered-svg"></object>
+<figcaption>Svetloba lahko vpliva na zadetke levo, desno.</figcaption>
+</figure>
 
-<object type="image/svg+xml" data="../../svg/left-right-2.svg"></object>
+<figure class="figure-center">
+<object type="image/svg+xml" data="/svg/left-right-3.svg" class="centered-svg"></object>
+<figcaption>Kadar je tarča izven horizontale, običajno naš položaj pri strelu ni kot na ravnem, kar vodi do zadetkov levo ali desno.</figcaption>
+</figure>
 
-Svetloba lahko vpliva na zadetke levo, desno.
-
-<object type="image/svg+xml" data="../../svg/left-right-3.svg"></object>
-
-Kadar je tarča izven horizontale, običajno naš položaj pri strelu ni kot na ravnem, kar vodi do zadetkov levo ali desno.
 
 
 
