@@ -124,8 +124,10 @@ Pri strelih na terenu, ki ni vodoraven (bočni nagib), se pogosto pojavljajo zad
 
 Vzrok ni balistika, temveč nezavedna prilagoditev strelca terenu.
 
-<object id="archer-object" type="image/svg+xml" data="../../../svg/horizontal-animate.svg"></object>
-
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../../svg/horizontal-animate.svg" class="centered-svg"></object>
+<figcaption>Optični premik</figcaption>
+</figure>
 Ko strelec stoji na nagnjeni podlagi, možgani težijo k temu, da »poravnajo« okolico. Posledica je, da strelec:
 
 - nezavedno nagne lok,
