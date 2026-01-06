@@ -42,7 +42,6 @@ Nepravilna postavitev telesa vodi v t. i. črko Z, ki povzroča nenatančne stre
 
 Če je stojišče neravno in streljamo navzgor, pokrčimo nogo, ki je bližje tarči, da ohranimo poravnavo trupa.
 
-<object type="image/svg+xml" data="../../svg/.svg"></object>
 <figure class="figure-center">
 <object type="image/svg+xml" data="../../svg/archer-T-up-animate.svg" class="centered-svg"></object>
 <figcaption>Navzgor</figcaption>
