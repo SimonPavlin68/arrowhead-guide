@@ -73,6 +73,23 @@
   color: #3f51b5;
 }
 
+/* Skrij vse, kar presega dimenzije figure */
+.zoomable-container {
+    display: inline-block;
+	color: #3f51b5;
+	cursor: zoom-in;
+}
+
+/* Razred za slike, ki se bodo povečale */
+.zoomable {
+    transition: transform 0.3s ease-in-out; /* Gladka prehodnost pri povečanju */
+}
+
+.zoomable-container:hover .zoomable {
+    transform: scale(2); /* Poveča sliko ob hoverju */
+}
+
+
 .md-typeset details > summary::before {
   background-color: #3f51b5;
 

@@ -7,17 +7,15 @@ Do 10 metrov je geometrija tista, ki vpliva na višino leta puščice,
 pri daljših razdaljah pa gravitacija prevzame nadzor in začne vplivati na merilno napravo,
 kar povzroči spremembo v smeri dviga. Na blizu torej prevladuje geometrija, pri večjih razdaljah pa gravitacija.
 
-<figure class="figure-center">
-<img src="../../../img/mystery2.png" alt="Mystery 2" style="height: 300px;"  class="centered-svg"/>
+<figure class="zoomable-container">
+<img src="../../../img/mystery2.png" alt="Mystery 2" style="height: 300px;"  class="zoomable"/>
 <figcaption>Parabola</figcaption>
 </figure>
 
-<figure class="figure-center">
-<img src="../../../img/mystery1.png" alt="Mystery 1" style="height: 300px;"  class="centered-svg"/>
+<figure class="zoomable-container">
+<img src="../../../img/mystery1.png" alt="Mystery 1" style="height: 300px;"  class="zoomable"/>
 <figcaption>Geometrija</figcaption>
 </figure>
-
- 
  
  
 
