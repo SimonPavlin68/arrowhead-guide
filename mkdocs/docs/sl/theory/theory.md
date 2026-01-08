@@ -8,8 +8,8 @@ Zračni upor smo pri tem zanemarili.
 V navpični smeri **y** pa je gibanje, dokler se telo giblje navzgor, enako gibanju teles pri metu navzgor, torej enakomerno pojemajoče.
 Ko se začne gibati navzdol, je gibanje telesa enako gibanju pri prostem padu, torej enakomerno pospešeno.
 V navpični smeri na telo ves čas deluje sila teže (gravitacija).
-<figure class="figure-center">
-<img src="../../../img/po_met3.jpg" alt="Penrosove stopnice" style="height: 300px;"  class="centered-svg"/>
+<figure class="zoomable-container">
+<img src="../../../img/po_met3.jpg" alt="Parabola" style="height: 300px;"  class="zoomable"/>
 <figcaption>Parabola</figcaption>
 </figure>
 Začetno hitrost v₀ razstavimo na komponenti:
