@@ -13,7 +13,7 @@ kar povzroči spremembo v smeri dviga. Na blizu torej prevladuje geometrija, pri
 </figure>
 
 <figure class="zoomable-container">
-<img src="../../../img/mystery1.png" alt="Mystery 1" style="height: 300px;"  class="zoomable"/>
+<img src="../../../img/mystery1a.png" alt="Mystery 1" style="height: 300px;"  class="zoomable"/>
 <figcaption>Geometrija</figcaption>
 </figure>
  
