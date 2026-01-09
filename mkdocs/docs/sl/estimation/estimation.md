@@ -30,14 +30,14 @@ Ocenjevanje "na palec" je v bistvu precej stara metoda in je predhodnica viziran
 # Viziranje - prepovedan sadež
 Viziranje je ena bolj natančnih metod ocenjevanja razdalje do tarče. Ideja viziranja temelji na Talesov-em izreku o sorazmerjih.
 <figure class="figure-center">
-<object type="image/svg+xml" data="/svg/teorija.svg" width="900" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../svg/teorija.svg" width="900" class="centered-svg"></object>
 <figcaption>Talesov izrek</figcaption>
 </figure>
 Kako si s tem lahko pomagamo?
 Vzemimo da je a razdalja med očesom in merkom, b je premer merka, C razdalja do tarče in D premer tarče, oziroma sorazmerni delež pokritosti tarče z merkom.
 Privzamemo da so a, b in D konstante, potem lahko iz teh podatkov izračunamo C.
 <figure class="figure-center">
-<object type="image/svg+xml" data="/svg/archer-more.svg" width="750"></object>
+<object type="image/svg+xml" data="../../../svg/archer-more.svg" width="750"></object>
 <figcaption>Viziranje</figcaption>
 </figure>
 

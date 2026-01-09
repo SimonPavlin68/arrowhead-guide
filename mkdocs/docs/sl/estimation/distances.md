@@ -7,14 +7,14 @@ Ločijo se po barvah količkov: rdeči, modri, rumeni in beli.
 Polovica razdalj ni znanih, na teh tarčah je razdaljo treba oceniti.
 
 <figure class="zoomable-container">
-<img src="../../img/known.jpg" alt="Znane razdalje" class="zoomable"/>
+<img src="../../../img/known.jpg" alt="Znane razdalje" class="zoomable"/>
 <figcaption>Znane razdalje</figcaption>
 </figure>
 
 Polovica razdalj je znanih, so pa v povprečju malo dlje kot neznane razdalje.
 
 <figure class="zoomable-container">
-<img src="../../img/unknown.jpg" alt="Neznane razdalje" class="zoomable"/>
+<img src="../../../img/unknown.jpg" alt="Neznane razdalje" class="zoomable"/>
 <figcaption>Neznane razdaljee</figcaption>
 </figure>
 

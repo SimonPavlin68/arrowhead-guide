@@ -29,9 +29,9 @@ nav:
       - Namesto uvoda: sl/getting-started.md
       - Zgodba o poševnem metu: sl/graph.md
       - Ocenjevanje razdalj:
-          - Razdalje: sl/distances.md
-          - Metode: sl/estimation.md
-          - Test viziranja: sl/test.md
+          - Razdalje: sl/estimation/distances.md
+          - Metode: sl/estimation/estimation.md
+          - Test viziranja: sl/estimation/test.md
       - Fizikalne osnove:
           - Teorija: sl/theory/index.md
           - Poševni met: sl/theory/theory.md
