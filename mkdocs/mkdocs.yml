@@ -1,4 +1,4 @@
-site_name: Arrowhead Guide
+site_name: Arrowhead navodila za uporabo
 theme:
   name: material
   custom_dir: overrides
@@ -12,40 +12,41 @@ theme:
   favicon: img/field.ico
 
 nav:
-  - En:
-      - Instead of an introduction: en/getting-started.md
-      - Position: en/position.md
-      - Left - right: en/left-right.md
-      - Distances: en/distances.md
-      - Distance Estimation: en/estimation.md
-      - Test: en/test.md
-      - Oblique throw: en/graph.md
-      - Sofa: en/sofa.md
-      - Before the competition: en/other.md
-      - Calculator: en/calculate.md
-      - Finally: en/about.md
-      - Opinions: en/feedback.md
+  #- En:
+  #    - Instead of an introduction: en/getting-started.md
+  #    - Position: en/position.md
+  #    - Left - right: en/left-right.md
+  #    - Distances: en/distances.md
+  #    - Distance Estimation: en/estimation.md
+  #    - Test: en/test.md
+  #    - Oblique throw: en/graph.md
+  #    - Sofa: en/sofa.md
+  #    - Before the competition: en/other.md
+  #    - Calculator: en/calculate.md
+  #    - Finally: en/about.md
+  #    - Opinions: en/feedback.md
   - Sl:
       - Namesto uvoda: sl/getting-started.md
-      - Postavitev: sl/position.md
-      - Levo - desno: sl/left-right.md
-      - Razdalje: sl/distances.md
-      - Ocenjevanje razdalj: sl/estimation.md
-      - Test: sl/test.md
-      - Poševni met: sl/graph.md
-      - Teorija:
+      - Zgodba o poševnem metu: sl/graph.md
+      - Ocenjevanje razdalj:
+          - Razdalje: sl/distances.md
+          - Metode: sl/estimation.md
+          - Test viziranja: sl/test.md
+      - Fizikalne osnove:
           - Teorija: sl/theory/index.md
           - Poševni met: sl/theory/theory.md
           - Skrivnostni obrat: sl/theory/mystery.md
       - Optične prevare:
           - Osnove: sl/illusions/index.md 
           - Arrowhead: sl/illusions/illusions.md
+          - Levo - desno: sl/left-right.md
           - Primeri:
                 - Geometrijske iluzije: sl/illusions/geometry.md
                 - Iluzorne konture: sl/illusions/contures.md
                 - Svetlobne iluzije: sl/illusions/colors.md
                 - Nemogoči predmeti: sl/illusions/impossible.md
                 - Ostalo: sl/illusions/misc.md
+      - Postavitev: sl/position.md
       - Kavč: sl/sofa.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
@@ -95,8 +96,8 @@ extra:
 #  search:
 #    language: en
   alternate:
-    - name: 🇬🇧 English
-      link: en/getting-started
+    #- name: 🇬🇧 English
+    #  link: en/getting-started
     - name: 🇸🇮 Slovenščina
       link: sl/getting-started
     - name: 🇷🇸 Srpski

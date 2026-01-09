@@ -46,7 +46,7 @@ V nadaljevanju so opisani najpogostejši primeri optičnih prevar v fieldu.
 
 ---
 
-### 1. Strel navzgor – tarča deluje bližje
+### Strel navzgor – tarča deluje bližje
 
 Pri strelih navzgor tarča pogosto deluje bližje, kot je v resnici. Razlog je v tem, da oko težje oceni globino prostora, kadar gleda v pobočje ali proti nebu, kjer primanjkuje referenčnih točk.
 
@@ -60,7 +60,7 @@ To je klasičen primer, kjer se optična prevara lahko prekriva z balističnim u
 
 ---
 
-### 2. Strel navzdol – tarča deluje dlje
+### Strel navzdol – tarča deluje dlje
 
 Pri strelih navzdol se pogosto zgodi nasprotno: tarča deluje dlje, kot je dejanska razdalja. Globina prostora je zaradi odprtega terena ali doline optično poudarjena, kar povzroči precenjevanje razdalje.
 
@@ -74,7 +74,7 @@ Ta prevara je ena najpogostejših pri začetnikih, vendar se pojavlja tudi pri i
 
 ---
 
-### 3. Temno ozadje – tarča deluje bližje
+### Temno ozadje – tarča deluje bližje
 
 Tarča pred temnim ozadjem (gozd, senca, skalovje) pogosto deluje bližje. Kontrast poveča zaznano velikost tarče, kar možgani interpretirajo kot krajšo razdaljo.
 
@@ -85,7 +85,7 @@ Pogosta posledica:
 
 ---
 
-### 4. Svetlo ozadje – tarča deluje dlje
+### Svetlo ozadje – tarča deluje dlje
 
 Tarča pred svetlim ozadjem (nebo, odprt travnik, svetla skala) deluje manjša in bolj oddaljena.
 
@@ -96,7 +96,7 @@ Pogosta posledica:
 
 ---
 
-### 5. Razgiban teren – izguba referenc
+### Razgiban teren – izguba referenc
 
 Na neravnem ali razgibanem terenu izginejo običajne referenčne točke (višina oči, vodoravnica, vertikale). Možgani zato razdaljo ocenjujejo predvsem po občutku, ki je lahko močno zavajajoč.
 
@@ -107,7 +107,7 @@ Pogosta posledica:
 
 ---
 
-### 6. Velikost tarče in perspektiva
+### Velikost tarče in perspektiva
 
 Tarče enake velikosti, postavljene v različna okolja, ne delujejo enako oddaljene. Tarča, ki je postavljena višje ali nižje glede na strelca, lahko deluje manjša ali večja zaradi perspektive.
 
@@ -118,7 +118,7 @@ Pogosta posledica:
 
 ---
 
-### 7. Nagnjen teren – stranski odklon zadetka zaradi nagiba loka
+### Nagnjen teren – stranski odklon zadetka zaradi nagiba loka
 
 Pri strelih na terenu, ki ni vodoraven (bočni nagib), se pogosto pojavljajo zadetki levo ali desno, kljub pravilni oceni razdalje in višine.
 

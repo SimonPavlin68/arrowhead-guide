@@ -9,7 +9,7 @@ V navpični smeri **y** pa je gibanje, dokler se telo giblje navzgor, enako giba
 Ko se začne gibati navzdol, je gibanje telesa enako gibanju pri prostem padu, torej enakomerno pospešeno.
 V navpični smeri na telo ves čas deluje sila teže (gravitacija).
 <figure class="zoomable-container">
-<img src="../../../img/po_met3.jpg" alt="Parabola" style="height: 300px;"  class="zoomable"/>
+<img src="../../../img/po_met3.jpg" alt="Parabola" class="zoomable"/>
 <figcaption>Parabola</figcaption>
 </figure>
 Začetno hitrost v₀ razstavimo na komponenti:

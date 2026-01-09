@@ -1,6 +1,4 @@
-﻿# Teorija
-
-### *Terminologija korekcije merilne naprave*
+﻿# *Terminologija*
 
 V tem priročniku uporabljamo naslednje izraze:
 
@@ -14,7 +12,7 @@ Ta terminologija se nanaša izključno na delo z merilno napravo.
 
 Gre za praktičen jezik field streljanja, kjer korekcija ne izhaja neposredno iz izmerjene razdalje, temveč iz razumevanja leta puščice.
 
-### *Balistična terminologija*
+# *Balistična terminologija*
 
 Pri poševnem metu sta dve različni “dolžini”, ki se pogosto pomešata:
 
@@ -45,13 +43,11 @@ Ta kot določa čas leta, padec puščice in s tem potrebno nastavitev merilne n
 <figcaption>Parabola</figcaption>
 </figure>
 
----
-
-## *Strel navzgor in navzdol – fizikalni pogled*
+# *Strel navzgor in navzdol – fizikalni pogled*
 
 Pri strelih navzgor in navzdol razdalja do tarče ostaja enaka, spremeni pa se razporeditev energije puščice in s tem njen let.
 
-### *Strel navzgor*
+## *Strel navzgor*
 Pri strelu navzgor se del začetne kinetične energije puščice porabi za pridobivanje potencialne energije (dvig v višino).  
 Zaradi tega se zmanjša razpoložljiva energija za gibanje naprej, hitrost se zmanjša, pot puščice do tarče pa je krajša kot pri vodoravnem strelu.
 <figure class="figure-center">
@@ -60,7 +56,7 @@ Zaradi tega se zmanjša razpoložljiva energija za gibanje naprej, hitrost se zm
 </figure>
 Posledično ima gravitacija manj vpliva na padec puščice, zato je potrebno na merilni napravi izvesti korekcijo v skladu z geometrijo strela (po izračunu).
 
-### *Strel navzdol*
+## *Strel navzdol*
 Pri strelu navzdol se potencialna energija pretvarja v dodatno kinetično energijo. Hitrost puščice se poveča, čas leta se skrajša, pot puščice do tarče pa je prav tako krajša kot pri vodoravnem strelu.
 <figure class="figure-center">
 <object type="image/svg+xml" data="../../svg/parabola-down.svg" class="centered-svg"></object>
@@ -68,7 +64,7 @@ Pri strelu navzdol se potencialna energija pretvarja v dodatno kinetično energi
 </figure>
 Ker ima gravitacija manj časa za delovanje, puščica pade manj, zato je pri strelu navzdol na merilni napravi vedno potrebno odvzemati.
 
-### *Energijsko prelivanje in realni učinek na zadetek*
+## *Energijsko prelivanje in realni učinek na zadetek*
 
 Med letom puščice se kinetična in potencialna energija neprestano prelivata.
 Pri strelu navzgor se del kinetične energije pretvarja v potencialno, pri strelu navzdol pa obratno. V idealnem modelu bi to pomenilo krajši čas leta in manjši padec.
@@ -90,9 +86,7 @@ Razlog je v tem, da se pri takih strelih čas leta zaradi zmanjšanja hitrosti i
 Zato velja:
 fizika razloži smer vpliva, zadetek pa določi realna balistika.
 
----
-
-## *Drža telesa*
+# *Drža telesa*
 Pri strelih pod naklonom se spremeni:
 
 - poravnava ramen,
@@ -114,9 +108,8 @@ Zato je pozornost v pravilno telesno pozicijo ravno tako pomembna kot vse ostale
 <object type="image/svg+xml" data="../../svg/angle-up-bow-fire-Z.svg" class="centered-svg"></object>
 <figcaption>Nepravilna Z-postavitev</figcaption>
 </figure>
----
 
-## *Psihologija*
+# *Psihologija*
 Psihološki vpliv je pri strelih navzgor in navzdol izrazit:
 
 - podzavestna želja po "varnem" strelu,

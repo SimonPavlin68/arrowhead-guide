@@ -80,13 +80,19 @@
 	cursor: zoom-in;
 }
 
+.md-typeset img {
+	width: 250px;
+}
+
 /* Razred za slike, ki se bodo povečale */
 .zoomable {
     transition: transform 0.3s ease-in-out; /* Gladka prehodnost pri povečanju */
 }
 
 .zoomable-container:hover .zoomable {
-    transform: scale(2); /* Poveča sliko ob hoverju */
+    transform: scale(2.5); /* Poveča sliko ob hoverju */
+	box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+	border-radius: 3px;
 }
 
 
