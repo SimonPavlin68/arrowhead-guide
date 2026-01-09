@@ -2,13 +2,13 @@
 
 <img src="/img/skala-86.png" alt="Skala 1986" style="float: right; margin: 0 0 1em 1em; width: 70px;" />
 
-Dlje ko streljamo nižje je treba nastaviti merek na merilni napravi in obratno. Vendar se nekaj čudnega zgodi pri desetih metrih.
-Tam se "logika" obrne. Zakaj?
+Dlje kot streljamo, nižje je treba nastaviti merek na merilni napravi in obratno. Vendar se nekaj posebnega zgodi pri desetih metrih.
+Takrat se "logika" obrne. Zakaj?
 
-Zgodi se obrat, kjer se mešanica vplivov gravitacije in geometrije prevesi v korist gravitacije.
-Do 10 metrov je geometrija (kot med očesom, puščico, merkom in tarčo) tista, ki bolj vpliva na višino nastavitve merka,
-pri daljših razdaljah pa gravitacija prevzame nadzor in začne vplivati na merilno napravo,
-kar povzroči spremembo v smeri dviga. Na blizu torej prevladuje geometrija, pri večjih razdaljah pa gravitacija.
+Pri streljanju se pojavi preobrat, kjer vplivi gravitacije in geometrije preidejo v ravnotežje, pri čemer gravitacija prevzame prevlado.
+Do 10 metrov je geometrija (kot med očesom, puščico, merkom in tarčo) tista, ki močneje vpliva na nastavitev višine merka.
+Pri večjih razdaljah pa začne gravitacija prevladovati, kar vpliva na smer nastavitve merilne naprave.
+Na kratkih razdaljah tako prevladuje geometrijski vpliv, medtem ko na daljših razdaljah začne gravitacija odločati o tem, kako nastaviti merilno napravo.
 
 <figure class="zoomable-container">
 <img src="../../../img/mystery1a.png" alt="Mystery 1" class="zoomable"/>

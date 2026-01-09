@@ -15,11 +15,17 @@ Moj postopek je sledeč:
 # Rezervna oprema
 Vedno imej v rezervi, tab, šlingo, tetivo...
 
-![Rezerva](../img/reserve.jpg)
+<figure class="zoomable-container">
+<img src="../../img/reserve.jpg" alt="Rezerva" class="zoomable"/>
+<figcaption>Rezerva</figcaption>
+</figure>
 
 Priporočljivo je imeti s seboj škatlico z drobnarijami in orodjem.
 
-![Orodje](../img/tool_box.jpg)
+<figure class="zoomable-container">
+<img src="../../img/tool_box.jpg" alt="Orodje" class="zoomable"/>
+<figcaption>Orodje</figcaption>
+</figure>
 
  
  
