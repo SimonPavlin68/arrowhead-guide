@@ -4,24 +4,24 @@ Spodaj lahko vneseš začetno hitrost, razdaljo in kot, ter izračunaš kako nas
 
 <div class="form-row">
     <label for="v0">Začetna hitrost (m/s):</label>
-    <input id="v0" type="number" value="55" style="color: #3f51b5;">
+    <input id="v0" type="number" value="50" min="30">
 </div>
 
 <div class="form-row">
     <label for="distance">Razdalja (m):</label>
-    <input id="distance" type="number" value="30" style="color: #3f51b5;">
+    <input id="distance" type="number" value="30" min="1">
 </div>
 
 <div class="form-row">
     <label for="angle">Kot (stopinje):</label>
-    <input id="angle" type="number" value="0" style="color: #3f51b5;">
+    <input id="angle" type="number" value="0" min="-90" max="90">
 </div>
 
 <button id="calcBtn">Izračunaj</button>
 
 <div class="form-row">
     <label for="merek">Merek (m):</label>
-    <input id="merek" readonly style="color: #3f51b5;">
+    <input id="merek" readonly>
 </div>
 
 
