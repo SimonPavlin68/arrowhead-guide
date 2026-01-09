@@ -28,7 +28,7 @@ width="700" viewBox="0 0 800 600"
 		<!-- spredaj-->
 		<polygon points="443,372 676,372 676,462 443,462" fill="#b0b0b0"/>
 		<!-- stranica -->
-		<polygon points="443,462 443,372 400,163 400,333" fill="#6f6f6f"/>
+		<polygon points="443,462 443,372 400,163 400,253" fill="#6f6f6f"/>
 	</g>
 
 	<g stroke-width="4" fill="#8b5a2b" stroke="black" stroke-linejoin="round">

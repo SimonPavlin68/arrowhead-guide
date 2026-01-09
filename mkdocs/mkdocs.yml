@@ -39,7 +39,7 @@ nav:
       - Optične prevare:
           - Osnove: sl/illusions/index.md 
           - Arrowhead: sl/illusions/illusions.md
-          - Levo - desno: sl/left-right.md
+          - Levo - desno: sl/illusions/left-right.md
           - Primeri:
                 - Geometrijske iluzije: sl/illusions/geometry.md
                 - Iluzorne konture: sl/illusions/contures.md
