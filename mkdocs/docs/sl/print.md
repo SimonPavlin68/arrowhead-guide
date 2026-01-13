@@ -2,12 +2,12 @@
 
 <figure class="figure-center">
 <object id="blueSVG" type="image/svg+xml" data="../../svg/print/arrowhead-blue-table-random.svg" class="print-svg"></object>
-<figcaption><button id="blueBtn">Modra tabela</button></figcaption>
+<figcaption><button id="blueBtn">Natisni</button></figcaption>
 </figure>
 
 <figure class="figure-center">
 <object id="redSVG" type="image/svg+xml" data="../../svg/print/arrowhead-red-table-random.svg" class="print-svg"></object>
-<figcaption><button id="redBtn">Rdeča tabela</button></figcaption>
+<figcaption><button id="redBtn">Natisni</button></figcaption>
 </figure>
 
 

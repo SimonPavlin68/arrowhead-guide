@@ -15,7 +15,7 @@ button {
 
 /* Modri gumb */
 #blueBtn {
-    background-color: #007BFF;
+    background-color: #0000FF;
 }
 
 #blueBtn:hover {
@@ -28,7 +28,7 @@ button {
 
 /* Rdeči gumb */
 #redBtn {
-    background-color: #FF5733;
+    background-color: #FF0000;
 }
 
 #redBtn:hover {

@@ -1,0 +1,18 @@
+<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg"
+	viewBox="100 100 700 400"
+	style="background:#f8f8f8;">
+	<g stroke="#303fa1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+		<line x1="490" y1="50" x2="490" y2="500"/>
+		<g transform="rotate(90, 400, 300)">
+			<!-- Desni odtis (desna slika) -->
+			<image href="../img/right-footprint.png" width="200" height="200" 
+				 x="400" y="200" 
+				 transform="rotate(10, 500, 300)" />
+
+			<!-- Levi odtis (leva slika) -->
+			<image href="../img/left-footprint.png" width="200" height="200" 
+				 x="200" y="200" 
+				 transform="rotate(-10, 300, 300)" />
+		</g>
+	</g>
+</svg>

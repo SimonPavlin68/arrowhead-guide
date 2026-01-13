@@ -54,3 +54,20 @@ Pri večjih naklonih lahko celo z eno nogo pokleknemo za večjo stabilnost.
 <object type="image/svg+xml" data="../../svg/archer-T-down-animate.svg" class="centered-svg"></object>
 <figcaption>Navzdol</figcaption>
 </figure>
+
+## Odprta - zaprta postavitev
+Pri streljanju na ravnem je postavitev nog nekako takšna:
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../svg/foot-ok.svg" class="centered-svg"></object>
+<figcaption>Normalna postavitev</figcaption>
+</figure>
+Pri streljanju navzgor zaradi kompenzacije levih zadetkov, postavitev "zapremo":
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../svg/foot-up.svg" class="centered-svg"></object>
+<figcaption>Zaprta postavitev</figcaption>
+</figure>
+Pri streljanju navzdol zaradi kompenzacije desnih zadetkov, postavitev "odpremo":
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../svg/foot-down.svg" class="centered-svg"></object>
+<figcaption>Odprta postavitev</figcaption>
+</figure>

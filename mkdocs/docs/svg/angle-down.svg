@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="500" height="400"  viewBox="150 130 500 350"
+ style="background:#f8f8f8; cursor:pointer;" onclick="startAnimation(evt)">
+ <metadata>Author: Simon Pavlin, 2025</metadata>
+ 	<title>Angle</title>
+<defs>
+	<g id="field" stroke-width="0.5">
+		<circle r="50" stroke="white" fill="black"/>
+		<circle r="40" stroke="white" />
+		<circle r="30" stroke="white" />
+		<circle r="20" stroke="white" />
+		<circle r="10" stroke="black" fill="yellow" />
+		<circle r="5"  stroke="black" fill="none" />
+		<line x1="-2" y1="0" x2="2" y2="0" stroke="black" />
+		<line x1="0" y1="-2" x2="0" y2="2" stroke="black" />
+	</g>
+	<marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+		<path d="M0,0 L0,6 L9,3 z" fill="red"/>
+	</marker>
+</defs>
+	<!-- TLA -->
+	<line x1="160" y1="460" x2="640" y2="460" stroke="silver" stroke-width="10" stroke-linecap="round"/>
+	<!-- linija do tarče -->
+	<line x1="200" y1="350" x2="550" y2="350" stroke="red" stroke-width="1px" />
+	<!-- -->
+	<g id="tekst" opacity="0">
+		<!--animate attributeName="opacity"
+             from="0" to="1"
+             dur="0.5s"
+             begin="indefinate"
+             fill="freeze"/-->
+		<path d="M434,350 A231,231 0 0 0 375,210" stroke="red" stroke-width="1px" fill="none" marker-end="url(#arrow)"/>
+		<text x="440" y="270" font-size="24" fill="red">kot tarče</text>
+	</g>
+	<g id="archer" stroke="#303fa1" stroke-width="20px" fill="none"
+     stroke-linecap="round" stroke-linejoin="round"
+	 transform="translate(20, 225) scale(0.5)">
+	    
+		<g id="body_group" transform="rotate(0, 400,325)">
+		
+			<line x1="400" y1="250" x2="1000" y2="250" stroke="red" stroke-width="2px" />
+			
+			<use xlink:href="#field"  transform="translate(1050,250)" />
+		
+		<!-- ANIMACIJA ROTACIJE -->
+		  <animateTransform 
+			id="rotateAnim"
+			attributeName="transform"
+			type="rotate"
+			dur="2.5s"
+			begin="indefinite"
+			values="0 400 325; -40 400 325"
+			fill="freeze"
+		  />
+
+		  <!-- telo -->
+		  <circle cx="400" cy="210" r="15" stroke-width="15px" />
+		  <line x1="400" y1="250" x2="400" y2="325" />
+		  <line x1="340" y1="250" x2="490" y2="250" />
+
+		  <!-- T -->
+		  <g id="t_mark" opacity="0">
+			<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+		  </g>
+
+		  <!-- lok -->
+		  <path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
+		</g>
+
+		<!-- noge -->
+		<line x1="400" y1="350" x2="440" y2="455" />
+		<line x1="400" y1="350" x2="360" y2="455" />
+	</g>
+	  <script type="application/ecmascript"><![CDATA[
+    function startAnimation(evt) {
+      const svg = evt.currentTarget;
+	  const opa = svg.getElementById("tekst");
+	  opa.style.opacity = 0;
+	  const anim = svg.getElementById("rotateAnim");
+      anim.beginElement();
+	  anim.addEventListener("endEvent", () => {
+		// const opa = svg.getElementById("tekst");
+		opa.style.opacity = 1;
+		});
+    }
+  ]]></script>
+</svg>
