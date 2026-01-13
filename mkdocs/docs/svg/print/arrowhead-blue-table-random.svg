@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="500" width="800" onload='Init()'>
+
+<script type="text/ecmascript"><![CDATA[
+	var svgns = "http://www.w3.org/2000/svg";
+	var width = height = 30;
+	var yOff = 20;
+	var svg = document.getElementsByTagName('svg')[0];
+
+	function Init1(a, xOff) {
+
+// header
+
+	var text = document.createElementNS(svgns, 'text');
+	text.setAttribute('fill', 'black');
+	text.setAttribute('x', xOff +width);
+	text.setAttribute('y', yOff);
+	text.setAttribute('fill', 'blue');
+	text.innerHTML = 'ime:';
+	svg.appendChild(text);
+
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff + height);
+	text.setAttribute('fill', 'blue');
+	text.innerHTML = 'stil:';
+	svg.appendChild(text);
+	
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff + 2*height);
+	text.setAttribute('fill', 'blue');
+	text.innerHTML = 'datum:';
+	svg.appendChild(text);
+
+	var line = document.createElementNS(svgns,'line');
+	line.setAttribute('x1', xOff + 3*width);
+	line.setAttribute('y1', yOff +5);
+	line.setAttribute('x2', xOff + 10*width);
+	line.setAttribute('y2', yOff + 5);
+	line.setAttribute("stroke", "silver");
+	svg.appendChild(line);
+
+	line = document.createElementNS(svgns,'line');
+	line.setAttribute('x1', xOff + 3*width);
+	line.setAttribute('y1', yOff + 5 + height);
+	line.setAttribute('x2', xOff + 10*width);
+	line.setAttribute('y2', yOff + 5 + height);
+	line.setAttribute("stroke", "silver");
+	svg.appendChild(line);
+	
+	line = document.createElementNS(svgns,'line');
+	line.setAttribute('x1', xOff + 3*width);
+	line.setAttribute('y1', yOff + 5 + 2*height);
+	line.setAttribute('x2', xOff + 10*width);
+	line.setAttribute('y2', yOff + 5 + 2*height);
+	line.setAttribute("stroke", "silver");
+	svg.appendChild(line);
+
+	yOff = yOff + 2*height;
+
+	for (var i = 0; i < 12; i += 1) {
+		var x = width;
+	    for (var j = 0; j < 7; j += 1) {
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('x', xOff + x);
+		rect.setAttribute('y', yOff + (i+1)*height);
+		rect.setAttribute('height', height);
+		rect.setAttribute('width', width);
+		rect.setAttribute('stroke-width', '1');
+		rect.setAttribute('fill', 'white');
+		rect.setAttribute('stroke', 'black');
+		switch (j) {
+			case 0:
+				svg.appendChild(rect);
+				var text = document.createElementNS(svgns, 'text');
+				text.setAttribute('fill', 'gray');
+				text.setAttribute('text-anchor', 'middle');
+				text.setAttribute('x', xOff + x + width/2);
+				text.setAttribute('y', yOff + (i+1.7)*height);
+				text.innerHTML = a[i];
+				svg.appendChild(text);
+				x = x + width;
+				break;
+			case 1: 
+				svg.appendChild(rect);
+				var text = document.createElementNS(svgns, 'text');
+				text.setAttribute('fill', 'blue');
+				text.setAttribute('font-weight', 'bold');
+				text.setAttribute('text-anchor', 'middle');
+				text.setAttribute('x', xOff + x+width/2);
+				text.setAttribute('y', yOff + (i+1.7)*height);
+
+				if(i < 3) {
+					text.innerHTML = 5 + i*5;
+				} else if (i<9){
+					text.innerHTML = i*5;
+				} else {
+					text.innerHTML = i*5 - 5;
+				}
+				svg.appendChild(text);
+				x = x + 2 * width;
+				break;
+			case 2:
+			case 3:
+			case 4:
+				svg.appendChild(rect);
+				x = x + width;
+				break;
+			case 5:
+				svg.appendChild(rect);
+				rect.setAttribute('width', width*1.5);
+				x = x + width*1.5;
+				break;
+			case 6:
+				if(i!==0) {
+					svg.appendChild(rect);
+				}
+				rect.setAttribute('width', width*1.5);
+				x = x + width*1.5;
+				break;
+		}
+	    }
+		if(i>0 && i%3 == 0) {
+			line = document.createElementNS(svgns,'line');
+			line.setAttribute('x1', xOff + width);
+			line.setAttribute('y1', yOff + (i+1)*height);
+			line.setAttribute('x2', xOff + 3*width);
+			line.setAttribute('y2', yOff + (i+1)*height);
+			line.setAttribute("stroke", "black");
+			line.setAttribute("stroke-width", "2.5");
+			svg.appendChild(line);
+		}
+	}
+}
+
+function shuffle(array) {
+  var tmp, current, top = array.length;
+  if(top) while(--top) {
+    current = Math.floor(Math.random() * (top + 1));
+    tmp = array[current];
+    array[current] = array[top];
+    array[top] = tmp;
+  }
+  return array;
+}
+
+function Init() {
+	for (var a=[],i=0;i<12;++i) {
+			a[i]=i+1;
+		}
+		a = shuffle(a);
+
+		//a = [20,20,20,40,40,40,60,60,60,80,80,80];
+	Init1(a, 0);
+	yOff = 20;
+	Init1(a, 400);
+}
+
+    ]]> </script>
+</svg>

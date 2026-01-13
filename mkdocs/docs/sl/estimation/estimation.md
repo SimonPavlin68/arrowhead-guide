@@ -10,6 +10,12 @@ Pri tej metodi celotno razdaljo razdelimo približno na pol in potem ocenimo bli
 Ne pozabi: Če napačno oceniš razdaljo do polovice, boš naredili dvojno napako.
 # Polaganje "metrov"
 Ta metoda je uporabna pri majhnih razdaljah, ideja pa je, da poskušamo razdaljo oceniti tako da "polagamo" meter za metrom.
+olaganje "deske"
+# Polaganje "deske"
+Ko pa gre za večje razdalje, postane zgornja metoda manj praktična, saj fizično "polaganje" metrov postane preveč zamudno.
+Za večje razdalje si lahko pomagamo z večjimi enotami — na primer, 4-metrskimi deskami.
+Tako si zamislimo, da namesto da bi postavljali vsak meter posebej, "polagamo" deske po 4 metre.
+To nam omogoča, da razdaljo hitro ocenimo z manjšim številom enot.
 # Tehnika 10 metrov
 Naučite se oceniti, kolikšna je razdalja 10 metrov na različnih vrstah terena.
 Poiščite točko na terenu, ki je 10 metrov oddaljena od vas. Preverite, kako pogosto se ta razdalja ujema med vami in ciljem. Preostalo razdaljo prištejte ali odštejte.
@@ -24,7 +30,8 @@ Premakni glavo bočno in opazuj, kako se predmet premika glede na tarčo.
 Če se predmet premika v skladu z gibanjem glave, je predmet na polovici poti, 
 če pa se predmet premika bolj, je predmet manj kot na pol poti do tarče.
 # Metoda "dodajanja"
-Pri streljanju v urejenem gozdu (drevoredu) ali vzdolž ograje, lahko seštejete fiksne razdalje. Recimo razdalje med stebri ograje, med drevesi drevoreda...
+Pri streljanju v urejenem gozdu (drevoredu) ali vzdolž ograje, lahko seštejete fiksne razdalje.
+Recimo razdalje med stebri ograje, med drevesi drevoreda...
 # Ocenjevanje "na palec"
 Ocenjevanje "na palec" je v bistvu precej stara metoda in je predhodnica viziranja. Pri tej metodi iztegnemo roko in gledamo koliko dvignjen palec pokrije nek predmet (slika). Bolj ga pokrije daljša je razdalja in obratno.  
 # Viziranje - prepovedan sadež

@@ -1,0 +1,74 @@
+/* Skupni stil za vse gumbe */
+button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Modri gumb */
+#blueBtn {
+    background-color: #007BFF;
+}
+
+#blueBtn:hover {
+    background-color: #0056b3; /* Temnejši odtenek modre ob hoverju */
+}
+
+#blueBtn:focus {
+    outline: none;
+}
+
+/* Rdeči gumb */
+#redBtn {
+    background-color: #FF5733;
+}
+
+#redBtn:hover {
+    background-color: #c0392b; /* Temnejši odtenek rdeče ob hoverju */
+}
+
+#redBtn:focus {
+    outline: none;
+}
+
+/* Rumeni gumb */
+#yellowBtn {
+    background-color: #FFEB3B;
+}
+
+#yellowBtn:hover {
+    background-color: #f1c40f; /* Temnejši odtenek rumene ob hoverju */
+}
+
+#yellowBtn:focus {
+    outline: none;
+}
+
+#redBtn::before, #blueBtn::before {
+  content: "";
+  display: inline-block;
+  width: 20px; /* Nastavite širino ikone */
+  height: 20px; /* Nastavite višino ikone */
+  margin-right: 8px; /* Razmik med ikono in besedilom */
+  background-color: #fff; /* Določite barvo ozadja za ikono (bela) */
+  mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+  <path d='M6 2H18C18.55 2 19 2.45 19 3V5H5V3C5 2.45 5.45 2 6 2ZM4 6H20V18H4V6ZM12 20C12.55 20 13 19.55 13 19C13 18.45 12.55 18 12 18C11.45 18 11 18.45 11 19C11 19.55 11.45 20 12 20ZM16 16H8V14H16V16Z'/>\
+  </svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+  <path d='M6 2H18C18.55 2 19 2.45 19 3V5H5V3C5 2.45 5.45 2 6 2ZM4 6H20V18H4V6ZM12 20C12.55 20 13 19.55 13 19C13 18.45 12.55 18 12 18C11.45 18 11 18.45 11 19C11 19.55 11.45 20 12 20ZM16 16H8V14H16V16Z'/>\
+  </svg>");
+  vertical-align: middle; /* Poravnava ikone z besedilom */
+}
+
+
+

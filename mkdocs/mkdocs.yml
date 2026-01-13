@@ -50,6 +50,7 @@ nav:
       - Kavč: sl/sofa.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
+      - Print: sl/print.md
       - Za konec: sl/about.md
       - Mnenja: sl/feedback.md
 
@@ -77,6 +78,7 @@ plugins:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/arrowhead.css
+  - stylesheets/print.css
 
 markdown_extensions:
   - md_in_html
@@ -88,6 +90,7 @@ extra_javascript:
   - js/global.js
   - js/language_switcher.js
   - js/login.js
+  - js/print.js
   # - js/logout.js
   #- js/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
