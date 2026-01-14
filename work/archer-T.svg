@@ -40,7 +40,7 @@
 	  fill="freeze"/>
 	</use>
 	<!-- linije oko - tarča -->
-	<line x1="400" y1="210" x2="700" y2="250" stroke="silver" stroke-width="1">
+	<line x1="420" y1="210" x2="700" y2="250" stroke="silver" stroke-width="1">
 		<animate
 		  begin="transformAnim.begin"	
 		  attributeName="x2" 
@@ -71,8 +71,8 @@
 	  <g id="t_mark" opacity="1">
         <!--line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
         <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" /-->
-		<line x1="600" y1="250" x2="600" y2="200" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)"/>
-		<line x1="610" y1="250" x2="800" y2="250" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)"/>
+		<line x1="592" y1="270" x2="592" y2="240" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)"/>
+		<line x1="700" y1="250" x2="900" y2="250" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)"/>
 	  </g>
 
       <!-- lok -->
@@ -81,12 +81,12 @@
 	  <!-- merilna -->
 	  <line x1="520" y1="230" x2="580" y2="230" stroke-width="10px"/>
 	  <line x1="580" y1="210" x2="580" y2="260" stroke-width="10px"/>
-	  <circle cx="590" cy="236" r="5" stroke-width="5px">
+	  <circle cx="590" cy="234" r="5" stroke-width="5px">
 	  <animate
 		  begin="transformAnim.begin"	
 		  attributeName="cy" 
-		  from="236" 
-		  to="223" 
+		  from="234" 
+		  to="222" 
 		  dur="3s"
 		  fill="freeze"/>
 	  </circle>
