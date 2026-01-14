@@ -24,7 +24,18 @@ Na kratkih razdaljah tako prevladuje geometrijski vpliv, medtem ko na daljših r
 <img src="../../../img/mystery3a.png" alt="Mystery 3" class="zoomable"/>
 <figcaption>Skala</figcaption>
 </figure>
- 
+
+Naj ponazorimo še s slikami:
+
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../../svg/archer-T-geometry.svg" class="centered-svg"></object>
+<figcaption>Premik merka zaradi oddaljevanja tarče in geometrije</figcaption>
+</figure>
+
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../../svg/archer-T-freefall.svg" class="centered-svg"></object>
+<figcaption>Premik merka zaradi oddaljevanja tarče in poševnega meta</figcaption>
+</figure>
  
 
 
