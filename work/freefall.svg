@@ -1,0 +1,172 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1' width='1000' height='400' viewBox="0 0 1000 400"
+	onclick="OnClick()"
+	onload="InitDrag(evt)"
+	onmousedown="Grab(evt)"
+	onmousemove="Drag(evt)"
+	onmouseup="Drop(evt)">
+	<metadata>Author: Simon Pavlin, 2022</metadata>
+	<title>Prosti pad</title>
+	<style>
+      .draggable {
+        cursor: move;
+    }
+    </style>
+	<defs>
+		<g id="field" stroke-width="0.5">
+			<circle r="50" stroke="black" fill="black"/>
+			<circle r="40" stroke="white" />
+			<circle r="30" stroke="white" />
+			<circle r="20" stroke="white" />
+			<circle r="10" stroke="black" fill="yellow" />
+			<circle r="5"  stroke="black" fill="none" />
+			<line x1="-2" y1="0" x2="2" y2="0" stroke="black" />
+			<line x1="0" y1="-2" x2="0" y2="2" stroke="black" />
+		</g>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="1000" height="400" pointer-events="all" fill="#bfbfbf" />
+
+	<use href="#field" x="400" y="200" id="target1" class="draggable"/>
+	<g stroke="black" stroke-width="2" fill="blue">
+		<g id="arrow">
+			<path d="M50, 190 h40 l20,10 l-20,10 h-40 l20,-10z" />
+			<line x1="50" y1="200" x2="250" y2="200" />
+			<path d="M250, 190 l30,10 l-30,10 z" />
+		</g>
+                <g opacity="0.25">
+                    <line stroke="red" stroke-width="10" x1="290" y1="110" x2="290" y2="200" />
+                </g>
+	</g>
+	
+
+<script><![CDATA[
+
+var svg = document.getElementsByTagName('svg')[0];
+var svgns = "http://www.w3.org/2000/svg";
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+
+var M=1050.0;
+var g=9.81;
+var v0 = 53;
+
+function izracun(s) {
+	var h = (g*(Math.pow(s,2)/Math.pow(v0,2)))/2;
+	var x = ((M*h*1000.0)/(s*1000.0)).toFixed(1);
+	console.log(s + ' / ' + x );
+	var angle = 3*(Math.atan((g*s)/(Math.pow(v0,2))))/2;
+	var rot = 'rotate(-' + r2d(angle) + ', 50, 200)';
+	console.log(rot);
+	SVGDocument.getElementById('arrow').setAttribute('transform', rot);
+}
+
+function r2d(rad) {
+  var pi = Math.PI;
+  return rad * (180/pi);
+}
+
+function init() {
+var x=300;
+var y=300;
+
+	var line = document.createElementNS(svgns, 'line');
+	line.setAttribute('x1', 0);
+	line.setAttribute('y1', y);
+	line.setAttribute('x2', 1000);
+	line.setAttribute('y2', y);
+	line.setAttribute('stroke', 'gray');
+	line.setAttribute('stroke-width', 3);;
+	svg.appendChild(line);
+
+	for(var i=1; i<7; i++) {
+		line = document.createElementNS(svgns, 'line');
+		line.setAttribute('x1', (x +i*100));
+		line.setAttribute('y1', y);
+		line.setAttribute('x2', (x+i*100));
+		line.setAttribute('y2', y-10);
+		line.setAttribute('stroke', 'gray');
+		line.setAttribute('stroke-width', 3);;
+		svg.appendChild(line);
+		
+		var text = document.createElementNS(svgns, 'text');
+		text.setAttributeNS(null, 'x', (x-12+i*100));
+		text.setAttributeNS(null, 'y', (y-12));
+		text.innerHTML = (i*10 + 'm');
+		svg.appendChild(text);
+	}
+	izracun(10);
+}
+
+
+function InitDrag(evt) {
+	SVGDocument = evt.target.ownerDocument;
+	SVGRoot = SVGDocument.documentElement;
+	TrueCoords = SVGRoot.createSVGPoint();
+	GrabPoint = SVGRoot.createSVGPoint();
+	BackDrop = SVGDocument.getElementById('BackDrop');
+	init();
+}
+
+function Grab(evt) {
+ var targetElement = evt.target;
+ if (BackDrop != targetElement) {
+	if(targetElement.id === "target1") {
+        DragTarget = targetElement;
+        DragTarget.parentNode.appendChild( DragTarget );
+        DragTarget.setAttribute('pointer-events', 'none');
+        var transMatrix = DragTarget.getCTM();
+        GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+        GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+	}
+ }
+}
+
+function Drag(evt) {
+ GetTrueCoords(evt);
+ if (DragTarget) {
+    var newX = TrueCoords.x - GrabPoint.x;
+    newY = 0; //TrueCoords.y - GrabPoint.y;
+    DragTarget.setAttribute('transform', 'translate(' + newX + ',' + newY + ')');
+    console.log(newX);
+    izracun((100+newX)/10);
+ }
+};
+
+
+function Drop(evt) {
+ if (DragTarget) {
+    var targetElement = evt.target;
+    DragTarget.setAttribute('pointer-events', 'all');
+    DragTarget = null;
+ }
+};
+
+
+function GetTrueCoords(evt) {
+ var newScale = SVGRoot.currentScale;
+ var translation = SVGRoot.currentTranslate;
+ TrueCoords.x = (evt.clientX - translation.x)/newScale;
+ TrueCoords.y = (evt.clientY - translation.y)/newScale;
+};
+
+var hide = true;
+
+function OnClick() {
+	var elements = document.getElementsByClassName('hide');
+	for(i=0; i<elements.length; i++) {
+		if(hide) {
+			elements[i].setAttribute('opacity', 0);
+		} else {
+			elements[i].setAttribute('opacity', 1);
+		}
+	}
+	hide = !hide;
+}
+
+]]></script>
+
+</svg>
