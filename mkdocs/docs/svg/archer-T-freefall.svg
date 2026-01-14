@@ -58,31 +58,28 @@
 	</line>
 	
 	      <!-- T -->
-	  <g id="t_mark" opacity="1">
+	  <g id="t_mark" opacity="0">
         <!--line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
         <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" /-->
-		<line x1="565" y1="170" x2="572" y2="200" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)" opacity="0">
-			<animate
+		<line x1="565" y1="170" x2="572" y2="200" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)" opacity="1">
+			<!--animate
 			attributeName="opacity"
 			from="0"
 			to="1"
 			begin="showArrow.end"
 			dur="2s"
-			fill="freeze" />
+			fill="freeze" /-->
 		</line>
 		
-				<path
-  d="M500 220 Q800 170 1000 250"
-          opacity="0"
-		  stroke="red" stroke-width="2px" stroke-dasharray="5 12">
-      <animate
+				<path id="trajektorija" d="M500 220 Q800 170 1000 250" opacity="1" stroke="red" stroke-width="2px" stroke-dasharray="5 12">
+      <!--animate
 	    id="showArrow"
         attributeName="opacity"
         from="0"
         to="1"
         begin="transformAnim.end"
         dur="1s"
-        fill="freeze" />
+        fill="freeze" /-->
     </path>
 		<!--line x1="600" y1="250" x2="900" y2="250" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)" opacity="0">
 			<animate
@@ -137,14 +134,14 @@
 <script type="application/ecmascript"><![CDATA[
     function startAnimation(evt) {
       const svg = evt.currentTarget;
-      const anim = svg.getElementById("transformAnim");
-	  //const tMark = document.getElementById("t_mark");
-	  //tMark.style.opacity = 0;
+      const tMark = svg.getElementById("t_mark");
+	  tMark.style.opacity = 0;
+	  const anim = svg.getElementById("transformAnim");
       anim.beginElement();
-	  //anim.addEventListener("endEvent", () => {
-		//const tMark = document.getElementById("t_mark");
-	    //tMark.style.opacity = 1;
-	  //});
+	  anim.addEventListener("endEvent", () => {
+		const tMark = document.getElementById("t_mark");
+	    tMark.style.opacity = 1;
+	  });
     }
   ]]></script>
 
