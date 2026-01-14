@@ -58,11 +58,40 @@
 	</line>
 	
 	      <!-- T -->
-	  <g id="t_mark" opacity="0">
+	  <g id="t_mark" opacity="1">
         <!--line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
         <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" /-->
-		<line x1="565" y1="170" x2="572" y2="200" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)"/>
-		<line x1="700" y1="250" x2="900" y2="250" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)"/>
+		<line x1="565" y1="170" x2="572" y2="200" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)" opacity="0">
+			<animate
+			attributeName="opacity"
+			from="0"
+			to="1"
+			begin="showArrow.end"
+			dur="2s"
+			fill="freeze" />
+		</line>
+		
+				<path
+  d="M500 220 Q800 170 1000 250"
+          opacity="0"
+		  stroke="red" stroke-width="2px" stroke-dasharray="5 12">
+      <animate
+	    id="showArrow"
+        attributeName="opacity"
+        from="0"
+        to="1"
+        begin="transformAnim.end"
+        dur="1s"
+        fill="freeze" />
+    </path>
+		<!--line x1="600" y1="250" x2="900" y2="250" stroke="red" stroke-width="2px" fill="none" marker-end="url(#arrow)" opacity="0">
+			<animate
+			attributeName="opacity"
+			from="0"
+			to="1"
+			dur="1s"
+			fill="freeze" />
+		</line-->
 	  </g>
 	
     <g id="body_group" transform="rotate(0, 400,325)">
@@ -88,7 +117,7 @@
 	  <!-- merilna -->
 	  <line x1="520" y1="230" x2="580" y2="230" stroke-width="10px"/>
 	  <line x1="580" y1="210" x2="580" y2="260" stroke-width="10px"/>
-	  <circle cx="590" cy="234" r="5" stroke-width="5px">
+	  <circle cx="590" cy="234" r="5" stroke-width="5px" stroke="red">
 	  <animate
 		  begin="transformAnim.begin"	
 		  attributeName="cy" 
@@ -109,13 +138,13 @@
     function startAnimation(evt) {
       const svg = evt.currentTarget;
       const anim = svg.getElementById("transformAnim");
-	  const tMark = document.getElementById("t_mark");
-	  tMark.style.opacity = 0;
+	  //const tMark = document.getElementById("t_mark");
+	  //tMark.style.opacity = 0;
       anim.beginElement();
-	  anim.addEventListener("endEvent", () => {
-		const tMark = document.getElementById("t_mark");
-	    tMark.style.opacity = 1;
-	  });
+	  //anim.addEventListener("endEvent", () => {
+		//const tMark = document.getElementById("t_mark");
+	    //tMark.style.opacity = 1;
+	  //});
     }
   ]]></script>
 
