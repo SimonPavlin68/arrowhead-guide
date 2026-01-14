@@ -1,0 +1,83 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='600' height='400' viewBox="0 0 800 600"
+	onclick="OnClick()"
+	style="cursor:pointer;">
+	<metadata>Author: Simon Pavlin, 2026</metadata>
+	<defs>
+		<filter id="shadow" x="-100%" y="-100%" width="300%" height="300%">
+            <feOffset id="shoff" result="offOut" in="SourceAlpha" dx="0" dy="-1" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+		<filter id="S">
+			<feDropShadow dx="0" dy="10" stdDeviation="3" flood-color="red"/>
+		</filter>
+		<g id="field" stroke-width="0.5">
+			<circle r="50" stroke="black" fill="black"/>
+			<circle r="40" stroke="white" />
+			<circle r="30" stroke="white" />
+			<circle r="20" stroke="white" />
+			<circle r="10" stroke="black" fill="yellow" />
+			<circle r="5"  stroke="black" fill="none" />
+			<line x1="-2" y1="0" x2="2" y2="0" stroke="black" />
+			<line x1="0" y1="-2" x2="0" y2="2" stroke="black" />
+		</g>
+	</defs>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+<!-- TLA -->
+	<line id="line" x1="0" y1="400" x2="800" y2="400" stroke="silver" stroke-width="10" />
+	
+	<rect1 x="0" y="300" width="800" height="10" fill="black" filter="url(#S)"/>
+	<!--line id="line" x1="0" y1="300" x2="800" y2="300" stroke="black" stroke-width="10" /-->
+	<use xlink:href="#field"  transform="translate(400,300) scale(2)" filter="url(#shadow)" />
+	<g id="arrows" transform="translate(400, 300)" fill="magenta">;
+		<circle cx="0" cy="-11" r="10" />
+		<circle cx="11" cy="8" r="10" />
+		<circle cx="-11" cy="8" r="10" />
+		<animateTransform
+			xlink:href="#arrows"
+			attributeName="transform"
+			type="translate"
+			from="400,330"
+			to="400,300"
+			dur="1.5s"
+			begin="anim3.begin" 
+			fill="freeze"
+			repeacount="indefinite" />
+		<animateTransform
+			xlink:href="#arrows"
+			attributeName="transform"
+			type="translate"
+			from="400,300"
+			to="400,330"
+			dur="1.5s"
+			begin="anim1.begin" 
+			fill="freeze"
+			repeacount="indefinite" />
+	</g>
+
+	<circle id="sun" cx="400" cy="-50" r="30" fill="orange" />
+	<animate xlink:href="#sun" id="anim3" attributeName="cy" values="100; -50;" begin="indefinite" dur="1.5s" fill="freeze" />
+	<animate xlink:href="#shoff" attributeName="dy" values="20; -1;" begin="anim3.begin" dur="1.5s" fill="freeze" />
+	<animate xlink:href="#sun" id="anim1" attributeName="cy" values="-50; 100;" begin="indefinite" dur="1.5s" fill="freeze" />
+	<animate xlink:href="#shoff" attributeName="dy" values="-1; 20;" begin="anim1.begin" dur="1.5s" fill="freeze" />
+
+<script><![CDATA[
+
+var first = true;
+
+function OnClick() {
+	if(first) {
+		var elem = document.getElementById('anim1');
+		elem.beginElement();
+	} else {
+		var elem = document.getElementById('anim3');
+		elem.beginElement();
+	}
+	first = !first;
+}
+
+]]></script>
+
+</svg>

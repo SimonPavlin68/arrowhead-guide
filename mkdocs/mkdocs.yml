@@ -32,6 +32,7 @@ nav:
           - Razdalje: sl/estimation/distances.md
           - Metode: sl/estimation/estimation.md
           - Test viziranja: sl/estimation/test.md
+          - Plonk listek: sl/estimation/chat-sheet.md
       - Fizikalne osnove:
           - Teorija: sl/theory/index.md
           - Poševni met: sl/theory/theory.md
@@ -39,7 +40,8 @@ nav:
       - Optične prevare:
           - Osnove: sl/illusions/index.md 
           - Arrowhead: sl/illusions/illusions.md
-          - Levo - desno: sl/illusions/left-right.md
+          - Vpliv terena: sl/illusions/left-right.md
+          - Vpliv sonca: sl/illusions/sun.md
           - Primeri:
                 - Geometrijske iluzije: sl/illusions/geometry.md
                 - Iluzorne konture: sl/illusions/contures.md
