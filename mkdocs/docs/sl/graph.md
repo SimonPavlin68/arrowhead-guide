@@ -33,22 +33,42 @@ Seveda je potrebno pri tem upoštevati, da se ustreli tako kot na ravnem. Se pra
 Ena misel: Ko so vprašali najboljšega plezalca vseh časov Wolfganga Güllicha, katera mišica je najpomembnejša pri plezanju. Je odgovoril: glava. To velja tudi v lokostrelstvu. 
 
 <details>
-  <summary>Grafi pri različnih začetnih hitrostih</summary>
-  <div style="display: flex; gap: 10px; justify-content: center;">
-    <figure class="zoomable-container">
-      <img src="../../img/30-s.jpg" alt="Izračunan graf pri začetni hitrosti puščice 30m/s" class="zoomable"/>
+  <summary>Izberi graf glede na začetno hitrost</summary>
+  <div class="image-gallery">
+    <figure>
+      <a href="../../img/30-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 30m/s">
+        <img src="../../img/30-s.jpg" alt="30 m/s" class="thumbnail"/>
+      </a>
       <figcaption>30 m/s</figcaption>
     </figure>
-    <figure class="zoomable-container">
-      <img src="../../img/35-s.jpg" alt="Izračunan graf pri začetni hitrosti puščice 35m/s" class="zoomable"/>
+    <figure>
+      <a href="../../img/35-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 35m/s">
+        <img src="../../img/35-s.jpg" alt="35 m/s" class="thumbnail"/>
+      </a>
       <figcaption>35 m/s</figcaption>
     </figure>
-    <figure class="zoomable-container">
-      <img src="../../img/40-s.jpg" alt="Izračunan graf pri začetni hitrosti puščice 40m/s" class="zoomable"/>
+    <figure>
+      <a href="../../img/40-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 40m/s">
+        <img src="../../img/40-s.jpg" alt="40 m/s" class="thumbnail"/>
+      </a>
       <figcaption>40 m/s</figcaption>
+    </figure>
+    <figure>
+      <a href="../../img/45-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 45m/s">
+        <img src="../../img/45-s.jpg" alt="45 m/s" class="thumbnail"/>
+      </a>
+      <figcaption>45 m/s</figcaption>
+    </figure>
+    <figure>
+      <a href="../../img/50-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 50m/s">
+        <img src="../../img/50-s.jpg" alt="50 m/s" class="thumbnail"/>
+      </a>
+      <figcaption>50 m/s</figcaption>
     </figure>
   </div>
 </details>
+
+
 
 
 
