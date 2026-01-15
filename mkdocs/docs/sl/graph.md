@@ -15,7 +15,6 @@ Naredili so ga Švedi. Na strelišče so pripeljali ogromen žerjav, potem pa st
 
 V roke vzamem svinčnik in papir in po nekaj dneh mi uspe razvozljati uganko, dobim formulo. Zanemaril sem zračni upor, ki bi se tako ali tako kompenziral, saj se dolžina parabole malenkost spremeni pod različnimi koti. Zanimivo je to, da edino kar vpliva na izračun, je začetna hitrost in pa seveda gravitacijski pospešek. Slednji je pri nas tako ali tako približno 9.81 m/s2. Izpeljava je bila kar trd oreh, ker se je v formuli pojavila kar kompleksna trigonometrična funkcija, pa ne bi sedaj o tem.
 
-</figure>
 <figure class="zoomable-container">
 <img src="../../img/izracun.jpg" alt="Izpeljana formula na papirju" class="zoomable"/>
 <figcaption>Izpeljana formula na papirju</figcaption>
@@ -25,7 +24,6 @@ Nato pa za računalnik, sprogramirati in narisati graf.
 <!--V spustnem meniju so predstavljeni grafi v odvisnosti od začetne hitrosti (v0).-->
 Kratka razlaga: različno obarvane pikice so kjer je treba dodati ali odvzeti meter, dva, tri ...
 
-</figure>
 <figure class="zoomable-container">
 <img src="../../img/35-s.jpg" alt="Izračunan graf pri začetni hitrosti puščice 35m/s" class="zoomable"/>
 <figcaption>Izračunan graf pri začetni hitrosti puščice 35m/s</figcaption>
@@ -33,6 +31,24 @@ Kratka razlaga: različno obarvane pikice so kjer je treba dodati ali odvzeti me
 Seveda je potrebno pri tem upoštevati, da se ustreli tako kot na ravnem. Se pravi zgornji del, ramenski obroč, roke v liniji, spust... Bistvo je da se prepogneš v bokih. Je težko, samo z nekaj treninga se da.
 
 Ena misel: Ko so vprašali najboljšega plezalca vseh časov Wolfganga Güllicha, katera mišica je najpomembnejša pri plezanju. Je odgovoril: glava. To velja tudi v lokostrelstvu. 
+
+<details>
+  <summary>Grafi pri različnih začetnih hitrostih</summary>
+  <div style="display: flex; gap: 10px; justify-content: center;">
+    <figure class="zoomable-container">
+      <img src="../../img/30-s.jpg" alt="Izračunan graf pri začetni hitrosti puščice 30m/s" class="zoomable"/>
+      <figcaption>30 m/s</figcaption>
+    </figure>
+    <figure class="zoomable-container">
+      <img src="../../img/35-s.jpg" alt="Izračunan graf pri začetni hitrosti puščice 35m/s" class="zoomable"/>
+      <figcaption>35 m/s</figcaption>
+    </figure>
+    <figure class="zoomable-container">
+      <img src="../../img/40-s.jpg" alt="Izračunan graf pri začetni hitrosti puščice 40m/s" class="zoomable"/>
+      <figcaption>40 m/s</figcaption>
+    </figure>
+  </div>
+</details>
 
 
 

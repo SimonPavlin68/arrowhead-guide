@@ -5,6 +5,7 @@
 Dlje kot streljamo, nižje je treba nastaviti merek na merilni napravi in obratno. Vendar se nekaj posebnega zgodi pri desetih metrih.
 Takrat se "logika" obrne. Zakaj?
 
+## Teoretične osnove
 Pri streljanju se pojavi preobrat, kjer vplivi gravitacije in geometrije preidejo v ravnotežje, pri čemer gravitacija prevzame prevlado.
 Do 10 metrov je geometrija (kot med očesom, puščico, merkom in tarčo) tista, ki močneje vpliva na nastavitev višine merka.
 Pri večjih razdaljah pa začne gravitacija prevladovati, kar vpliva na smer nastavitve merilne naprave.
@@ -25,16 +26,18 @@ Na kratkih razdaljah tako prevladuje geometrijski vpliv, medtem ko na daljših r
 <figcaption>Skala</figcaption>
 </figure>
 
-Naj ponazorimo še s slikami:
+## Grafični prikaz
+Premik merka zaradi **geometrije** (vpliv kota med očesom, puščico in tarčo). Zaradi tega **razmika** moramo merek dvigovati z večanjem razdalje do tarče.
 
 <figure class="figure-center">
 <object type="image/svg+xml" data="../../../svg/archer-T-geometry.svg" class="centered-svg"></object>
-<figcaption>Premik merka zaradi oddaljevanja tarče in geometrije</figcaption>
+<figcaption>Vpliv geometrije</figcaption>
 </figure>
 
+Zaradi **poševnega meta** moramo merek spuščati z večanjem razdalje do tarče.
 <figure class="figure-center">
 <object type="image/svg+xml" data="../../../svg/archer-T-freefall.svg" class="centered-svg"></object>
-<figcaption>Premik merka zaradi oddaljevanja tarče in poševnega meta</figcaption>
+<figcaption>Vpliv gravitacije</figcaption>
 </figure>
  
 

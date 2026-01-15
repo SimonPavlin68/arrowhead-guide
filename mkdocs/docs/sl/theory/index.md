@@ -2,15 +2,26 @@
 
 V tem priročniku uporabljamo naslednje izraze:
 
-**dodati**  
-Pomeni nastaviti merilno napravo na *večjo razdaljo*, kot je dejanska razdalja do tarče.
+**Dodati**  
 
-**odvzeti**  
-Pomeni nastaviti merilno napravo na *manjšo razdaljo*, kot je dejanska razdalja do tarče.
+Pomeni nastaviti merilno napravo na **daljšo razdaljo**, kot je dejanska razdalja do tarče.
 
-Ta terminologija se nanaša izključno na delo z merilno napravo.
+**Odvzeti**  
 
-Gre za praktičen jezik field streljanja, kjer korekcija ne izhaja neposredno iz izmerjene razdalje, temveč iz razumevanja leta puščice.
+Pomeni nastaviti merilno napravo na **krajšo razdaljo**, kot je dejanska razdalja do tarče.
+
+**Tarča nosi**
+
+To pomeni, da so zadetki na tarči **levo** ali **desno**.
+Vzroki za to odstopanje so lahko optični (kot je na primer napaka zaradi osvetlitve),
+posledica postavitve streljanja (navzgor ali navzdol), psihološki dejavniki ali drugi dejavniki.
+
+**Opomba:**
+
+Terminologija v tem priročniku se nanaša izključno merjenje, delo z merilno napravo in streljanjem,
+kjer se korekcije izvajajo na podlagi razumevanja leta puščice in drugih vplivov,
+ne pa neposredno na izmerjeni razdalji do tarče. Ponavadi pa je to vsota več vzrokov,
+če se med seboj seštevajo, je vpliv še toliko bolj zaznaven.
 
 # *Balistična terminologija*
 
