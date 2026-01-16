@@ -55,7 +55,6 @@
 	text = document.createElementNS(svgns, 'text');
 	text.setAttribute('x', xOff + width);
 	text.setAttribute('y', yOff + 3*height);
-	text.setAttribute('fill', 'blue');
 	text.innerHTML = 'rumen količek';
 	svg.appendChild(text);
 

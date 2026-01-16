@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('blueBtn').addEventListener('click', bluePrint);
 	document.getElementById('redBtn').addEventListener('click', redPrint);
+	document.getElementById('yellowBtn').addEventListener('click', yellowPrint);
 });
 
 function bluePrint() {
@@ -10,6 +11,11 @@ function bluePrint() {
 
 function redPrint() {
     const objectElement = document.getElementById('redSVG');
+	jeba(objectElement);
+}
+
+function yellowPrint() {
+    const objectElement = document.getElementById('yellowSVG');
 	jeba(objectElement);
 }
 
