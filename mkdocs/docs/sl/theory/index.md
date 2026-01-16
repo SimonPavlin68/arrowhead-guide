@@ -12,16 +12,15 @@ Pomeni nastaviti merilno napravo na **krajšo razdaljo**, kot je dejanska razdal
 
 **Tarča nosi**
 
-To pomeni, da so zadetki na tarči **levo** ali **desno**.
+To pomeni, da so zadetki na tarči **levo** ali **desno**, ponavadi se ta izraz nanaša na smer zadetkov lahko tudi na višino.
 Vzroki za to odstopanje so lahko optični (kot je na primer napaka zaradi osvetlitve),
 posledica postavitve streljanja (navzgor ali navzdol), psihološki dejavniki ali drugi dejavniki.
 
 **Opomba:**
 
-Terminologija v tem priročniku se nanaša izključno merjenje, delo z merilno napravo in streljanjem,
-kjer se korekcije izvajajo na podlagi razumevanja leta puščice in drugih vplivov,
-ne pa neposredno na izmerjeni razdalji do tarče. Ponavadi pa je to vsota več vzrokov,
-če se med seboj seštevajo, je vpliv še toliko bolj zaznaven.
+Terminologija v tem priročniku se nanaša izključno na merjenje, delo z merilno napravo in streljanjem,
+kjer se korekcije izvajajo na podlagi razumevanja leta puščice in drugih vplivov.
+Ponavadi so odstopanja vsota več vzrokov, če se med seboj seštevajo, je vpliv še toliko bolj zaznaven.
 
 # *Balistična terminologija*
 

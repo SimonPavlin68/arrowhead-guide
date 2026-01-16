@@ -13,21 +13,18 @@
 	var text = document.createElementNS(svgns, 'text');
 	text.setAttribute('x', xOff +width);
 	text.setAttribute('y', yOff);
-	text.setAttribute('fill', 'red');
 	text.innerHTML = 'ime:';
 	svg.appendChild(text);
 
 	text = document.createElementNS(svgns, 'text');
 	text.setAttribute('x', xOff + width);
 	text.setAttribute('y', yOff + height);
-	text.setAttribute('fill', 'red');
 	text.innerHTML = 'stil:';
 	svg.appendChild(text);
 	
 	text = document.createElementNS(svgns, 'text');
 	text.setAttribute('x', xOff + width);
 	text.setAttribute('y', yOff + 2*height);
-	text.setAttribute('fill', 'red');
 	text.innerHTML = 'datum:';
 	svg.appendChild(text);
 
@@ -58,8 +55,8 @@
 	text = document.createElementNS(svgns, 'text');
 	text.setAttribute('x', xOff + width);
 	text.setAttribute('y', yOff + 3*height);
-	text.setAttribute('fill', 'red');
-	text.innerHTML = 'rdeč količek';
+	text.setAttribute('fill', 'blue');
+	text.innerHTML = 'rumen količek';
 	svg.appendChild(text);
 
 	yOff = yOff + 3*height;
@@ -90,16 +87,20 @@
 			case 1: 
 				svg.appendChild(rect);
 				var text = document.createElementNS(svgns, 'text');
-				text.setAttribute('fill', 'red');
+				text.setAttribute('fill', 'black');
 				text.setAttribute('font-weight', 'bold');
 				text.setAttribute('text-anchor', 'middle');
 				text.setAttribute('x', xOff + x+width/2);
 				text.setAttribute('y', yOff + (i+1.7)*height);
 
 				if(i < 3) {
-					text.innerHTML = 10 + i*5;
+					text.innerHTML = 5 + i*5;
+				} else if (i<6){
+					text.innerHTML = i*5 - 5;
+				} else if (i<9){
+					text.innerHTML = i*5 - 10;
 				} else {
-					text.innerHTML = i*5+5;
+					text.innerHTML = i*5 - 15;
 				}
 				svg.appendChild(text);
 				x = x + 2 * width;
@@ -157,7 +158,7 @@ function Init() {
 		//a = [20,20,20,40,40,40,60,60,60,80,80,80];
 	Init1(a, 0);
 	yOff = 19;
-	Init1(a, 350);
+	Init1(a, 400);
 }
 
     ]]> </script>
