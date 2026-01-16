@@ -65,6 +65,36 @@ Ena misel: Ko so vprašali najboljšega plezalca vseh časov Wolfganga Güllicha
       </a>
       <figcaption>50 m/s</figcaption>
     </figure>
+	<figure>
+      <a href="../../img/55-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 55m/s">
+        <img src="../../img/55-s.jpg" alt="55 m/s" class="thumbnail"/>
+      </a>
+      <figcaption>55 m/s</figcaption>
+    </figure>
+	<figure>
+      <a href="../../img/60-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 60m/s">
+        <img src="../../img/60-s.jpg" alt="60 m/s" class="thumbnail"/>
+      </a>
+      <figcaption>60 m/s</figcaption>
+    </figure>
+	<figure>
+      <a href="../../img/65-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 65m/s">
+        <img src="../../img/65-s.jpg" alt="65 m/s" class="thumbnail"/>
+      </a>
+      <figcaption>65 m/s</figcaption>
+    </figure>
+	<figure>
+      <a href="../../img/70-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 70m/s">
+        <img src="../../img/70-s.jpg" alt="70 m/s" class="thumbnail"/>
+      </a>
+      <figcaption>70 m/s</figcaption>
+    </figure>
+	<figure>
+      <a href="../../img/75-s.jpg" data-lightbox="gallery" data-title="Izračunan graf pri začetni hitrosti 75m/s">
+        <img src="../../img/75-s.jpg" alt="75 m/s" class="thumbnail"/>
+      </a>
+      <figcaption>75 m/s</figcaption>
+    </figure>
   </div>
 </details>
 
