@@ -52,7 +52,9 @@ nav:
       - Kavč: sl/sofa.md
       - Pred tekmovanjem: sl/other.md
       - Kalkulator: sl/calculate.md
-      - Print: sl/print.md
+      - Trening:
+          - Načrt za priprave: sl/training.md
+          - Tabele: sl/print.md
       - Za konec: sl/about.md
       - Mnenja: sl/feedback.md
 
