@@ -28,7 +28,7 @@ Tudi tu ohranimo črko T.
 Nepravilna postavitev telesa vodi v t. i. črko Z, ki povzroča nenatančne strele in nestabilno tehniko.
 
 <figure class="figure-center">
-<object type="image/svg+xml" data="../../../position/svg/archer-Z-up-animate.svg" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../svg/position/archer-Z-up-animate.svg" class="centered-svg"></object>
 <figcaption>Nepravilna postavitev pri streljanju navzgor.</figcaption>
 </figure>
 
