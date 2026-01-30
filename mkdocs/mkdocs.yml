@@ -50,7 +50,8 @@ nav:
                 - ❌ Nemogoči predmeti: sl/illusions/impossible.md
                 - 🗂️ Ostalo: sl/illusions/misc.md
       - 📍 Postavitev:
-                - gor-dol: sl/position/position.md
+                - ravno: sl/position/position-flat.md
+                - postrani: sl/position/position-slope.md
                 - rotacija: sl/position/rotation.md
       - 🛋️ Kavč: sl/sofa.md
       - 🏁 Pred tekmovanjem: sl/other.md
