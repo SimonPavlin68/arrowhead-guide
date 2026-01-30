@@ -9,7 +9,7 @@ Pri strelu navzgor ohranimo stabilno T-postavitev.
 Če stojimo na ravnem stojišču, naj bo zgornji del telesa vedno poravnan.
 
 <figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/archer-T-up-flat-animate.svg" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../svg/position/archer-T-up-flat-animate.svg" class="centered-svg"></object>
 <figcaption>Pravilna T-postavitev pri streljanju navzgor na ravnem stojišču.</figcaption>
 </figure>
 
@@ -19,7 +19,7 @@ Pri strelu navzdol pazimo, da nas spodnji krak loka ne udari v nogo.
 Tudi tu ohranimo črko T.
 
 <figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/archer-T-down-flat-animate.svg" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../svg/position/archer-T-down-flat-animate.svg" class="centered-svg"></object>
 <figcaption>Pravilna T-postavitev pri streljanju navzdol na ravnem stojišču.</figcaption>
 </figure>
 
@@ -28,12 +28,12 @@ Tudi tu ohranimo črko T.
 Nepravilna postavitev telesa vodi v t. i. črko Z, ki povzroča nenatančne strele in nestabilno tehniko.
 
 <figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/archer-Z-up-animate.svg" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../position/svg/archer-Z-up-animate.svg" class="centered-svg"></object>
 <figcaption>Nepravilna postavitev pri streljanju navzgor.</figcaption>
 </figure>
 
 <figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/archer-Z-down-animate.svg" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../svg/position/archer-Z-down-animate.svg" class="centered-svg"></object>
 <figcaption>Nepravilna postavitev pri streljanju navzdol.</figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ Nepravilna postavitev telesa vodi v t. i. črko Z, ki povzroča nenatančne stre
 Če je stojišče neravno in streljamo navzgor, pokrčimo nogo, ki je bližje tarči, da ohranimo poravnavo trupa.
 
 <figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/archer-T-up-animate.svg" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../svg/position/archer-T-up-animate.svg" class="centered-svg"></object>
 <figcaption>Navzgor</figcaption>
 </figure>
 
@@ -51,23 +51,6 @@ Nepravilna postavitev telesa vodi v t. i. črko Z, ki povzroča nenatančne stre
 Pri večjih naklonih lahko celo z eno nogo pokleknemo za večjo stabilnost.
 
 <figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/archer-T-down-animate.svg" class="centered-svg"></object>
+<object type="image/svg+xml" data="../../../svg/position/archer-T-down-animate.svg" class="centered-svg"></object>
 <figcaption>Navzdol</figcaption>
-</figure>
-
-## Odprta - zaprta postavitev
-Pri streljanju na ravnem je postavitev nog nekako takšna:
-<figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/foot-ok.svg" class="centered-svg"></object>
-<figcaption>Normalna postavitev</figcaption>
-</figure>
-Pri streljanju navzgor zaradi kompenzacije levih zadetkov, postavitev "zapremo":
-<figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/foot-up.svg" class="centered-svg"></object>
-<figcaption>Zaprta postavitev</figcaption>
-</figure>
-Pri streljanju navzdol zaradi kompenzacije desnih zadetkov, postavitev "odpremo":
-<figure class="figure-center">
-<object type="image/svg+xml" data="../../svg/foot-down.svg" class="centered-svg"></object>
-<figcaption>Odprta postavitev</figcaption>
 </figure>

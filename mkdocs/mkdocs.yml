@@ -12,7 +12,7 @@ theme:
   favicon: img/field.ico
 
 nav:
-  #- En:
+  #- 🇬🇧 En:
   #    - Instead of an introduction: en/getting-started.md
   #    - Position: en/position.md
   #    - Left - right: en/left-right.md
@@ -25,40 +25,44 @@ nav:
   #    - Calculator: en/calculate.md
   #    - Finally: en/about.md
   #    - Opinions: en/feedback.md
-  - Sl:
-      - Namesto uvoda: sl/getting-started.md
-      - Zgodba o poševnem metu: sl/graph.md
-      - Ocenjevanje razdalj:
-          - Razdalje: sl/estimation/distances.md
-          - Metode: sl/estimation/estimation.md
-          - Test viziranja: sl/estimation/test.md
-          - Plonk listek: sl/estimation/chat-sheet.md
-      - Fizikalne osnove:
-          - Teorija: sl/theory/index.md
-          - Poševni met: sl/theory/theory.md
-          - Skrivnostni obrat: sl/theory/mystery.md
-      - Optične prevare:
-          - Osnove: sl/illusions/index.md 
-          - Arrowhead: sl/illusions/illusions.md
-          - Vpliv terena: sl/illusions/left-right.md
-          - Vpliv sonca: sl/illusions/sun.md
-          - Primeri:
-                - Geometrijske iluzije: sl/illusions/geometry.md
-                - Iluzorne konture: sl/illusions/contures.md
-                - Svetlobne iluzije: sl/illusions/colors.md
-                - Nemogoči predmeti: sl/illusions/impossible.md
-                - Ostalo: sl/illusions/misc.md
-      - Postavitev: sl/position.md
-      - Kavč: sl/sofa.md
-      - Pred tekmovanjem: sl/other.md
-      - Kalkulator: sl/calculate.md
-      - Trening:
-          - Načrt za priprave: sl/training.md
-          - Tabele: sl/print.md
-      - Za konec: sl/about.md
-      - Mnenja: sl/feedback.md
+  - 🇸🇮 Sl:
+      - 🏁 Namesto uvoda: sl/getting-started.md
+      - 📖 Zgodba o poševnem metu: sl/graph.md
+      - 🎯 Ocenjevanje razdalj:
+          - 🟢 Osnove: sl/estimation/basic.md
+          - ⚡ Metode: sl/estimation/estimation.md
+          - 📏 Razdalje: sl/estimation/distances.md
+          - 📝 Test viziranja: sl/estimation/test.md
+          - 📋 Plonk listek: sl/estimation/chat-sheet.md
+      - 🧠 Za radovedne glave:
+          - ↗️ Poševni met: sl/theory/theory.md
+          - ⚛️ Fizikalne osnove: sl/theory/index.md
+          - 🔄 Skrivnostni obrat: sl/theory/mystery.md
+      - 🌀 Optične prevare:
+          - 🟢 Osnove: sl/illusions/index.md 
+          - 🏹 Arrowhead: sl/illusions/illusions.md
+          - 🌲 Vpliv terena: sl/illusions/left-right.md
+          - ☀️ Vpliv sonca: sl/illusions/sun.md
+          - 🔍 Primeri:
+                - 📐 Geometrijske iluzije: sl/illusions/geometry.md
+                - ✏️ Iluzorne konture: sl/illusions/contures.md
+                - 🎨 Svetlobne iluzije: sl/illusions/colors.md
+                - ❌ Nemogoči predmeti: sl/illusions/impossible.md
+                - 🗂️ Ostalo: sl/illusions/misc.md
+      - 📍 Postavitev:
+                - gor-dol: sl/position/position.md
+                - rotacija: sl/position/rotation.md
+      - 🛋️ Kavč: sl/sofa.md
+      - 🏁 Pred tekmovanjem: sl/other.md
+      - 🧮 Kalkulator: sl/calculate.md
+      - 🏋️ Trening:
+          - 📅 Načrt za priprave: sl/training.md
+          - 📊 Tabele: sl/print.md
+      - 🎬 Za konec: sl/about.md
+      - 💬 Mnenja: sl/feedback.md
 
-  - Sr:
+
+  - 🇷🇸 Sr:
       - Уместо увода: sr/getting-started.md
       - Распоред: sr/position.md     
       - Лево - Десно: sr/left-right.md

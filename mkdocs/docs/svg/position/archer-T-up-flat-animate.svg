@@ -2,7 +2,7 @@
      width="500" height="400"  viewBox="150 130 500 350"
 	 style="background:#f8f8f8; cursor:pointer;" onclick="startAnimation(evt)">
 <metadata>Author: Simon Pavlin, 2025</metadata>
-  <title>Archer</title>
+<title>Archer</title>
 
   <g id="archer" stroke="#303fa1" stroke-width="20px" fill="none"
      stroke-linecap="round" stroke-linejoin="round">
@@ -16,19 +16,9 @@
         type="rotate"
         dur="3s"
         begin="indefinite"
-        values="0 400 325; 50 400 325;"
+        values="0 400 325; -50 400 325;"
         fill="freeze"
       />
-
-      <!-- Rdeči klicaj (blink) -->
-      <animate 
-        xlink:href="#warning"
-        attributeName="opacity"
-        begin="rotateAnim.begin + 1.2s"
-        dur="2s"
-        values="0;1;0;1"
-        repeatCount="3"
-/>
 
       <!-- telo -->
       <circle cx="400" cy="210" r="15" stroke-width="15px" />
@@ -37,8 +27,8 @@
 
       <!-- T -->
 	  <g id="t_mark" opacity="0">
-        <line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
-        <line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+		<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+		<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
 	  </g>
 
       <!-- lok -->
@@ -51,11 +41,9 @@
 
   </g>
   <!-- znaki -->
-  <text id="checkmark_right" x="360" y="300" font-size="50" fill="green" opacity="0">✔</text>
-  <text id="warning" x="440" y="420" font-size="50" fill="red" opacity="0">!</text>
+  <text id="checkmark_right" x="380" y="280" font-size="50" fill="green" opacity="0">✔</text>
   
-
-<script type="application/ecmascript"><![CDATA[
+  <script type="application/ecmascript"><![CDATA[
     function startAnimation(evt) {
       const svg = evt.currentTarget;
       const anim = svg.getElementById("rotateAnim");

@@ -2,12 +2,12 @@
 	viewBox="100 100 700 400"
 	style="background:#f8f8f8;">
 <g stroke="#303fa1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="400" y1="50" x2="400" y2="500"/>
-  <g transform="rotate(30, 400, 300)">
-	  <image href="../img/right-footprint.png" width="200" height="200" 
+	<line x1="430" y1="50" x2="430" y2="500"/>
+  <g transform="rotate(60, 400, 300)">
+	  <image href="right-footprint.png" width="200" height="200" 
 			 x="400" y="200" 
 			 transform="rotate(10, 500, 300)" />
-	  <image href="../img/left-footprint.png" width="200" height="200" 
+	  <image href="left-footprint.png" width="200" height="200" 
 			 x="200" y="200" 
 			 transform="rotate(-10, 300, 300)" />
 	</g>
