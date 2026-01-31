@@ -10,8 +10,8 @@
       <line x1="400" y1="250" x2="400" y2="325" />
 
       <!-- arm shape -->
-      <line id="arm" x1="400" y1="250" x2="490" y2="250">
-        <animate id="armAnim" attributeName="x1" from="400" to="340" dur="1.5s" begin="indefinite" fill="freeze" />
+      <line id="arm" x1="380" y1="250" x2="490" y2="250">
+        <animate id="armAnim" attributeName="x1" from="380" to="340" dur="1.5s" begin="indefinite" fill="freeze" />
       </line>
 
       <!-- bow shape -->

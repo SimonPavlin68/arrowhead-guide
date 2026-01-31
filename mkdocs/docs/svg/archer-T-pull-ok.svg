@@ -20,11 +20,11 @@
       <line x1="400" y1="250" x2="400" y2="325" />
 
       <!-- arm shape -->
-      <line id="arm" x1="400" y1="250" x2="490" y2="250">
+      <line id="arm" x1="380" y1="250" x2="490" y2="250">
         <!-- arm animation -->
         <animate id="armAnim"
                  attributeName="x1"
-                 from="400" to="340"
+                 from="380" to="340"
                  dur="1.5s"
                  begin="indefinite"
                  fill="freeze"/>
@@ -44,7 +44,7 @@
     </g>
 
     <g transform="rotate(0, 440,455)">
-      <line x1="200" y1="455" x2="550" y2="455" stroke="silver" stroke-width="5px"/>
+      <line x1="250" y1="455" x2="550" y2="455" stroke="silver" stroke-width="5px"/>
     </g>
 
     <line x1="400" y1="350" x2="440" y2="455" />
@@ -89,7 +89,7 @@
 	}, { once:true });
 
       // 2) Reset the visible attributes on the shapes (now safe because animations are not in DOM)
-      armShape.setAttribute("x1", "400");
+      armShape.setAttribute("x1", "380");
       bowShape.setAttribute("d", "M500,140 Q530,250 500,360");
 
       // 3) Wire end-event: when rotate ends, start armAnim and bowAnim
