@@ -3,7 +3,7 @@
 <svg width="600" height="670" viewBox="100 0 550 670"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
->
+	 style="background:#f8f8f8">
 
   <title>Arrowhead</title>
   <style>
@@ -36,9 +36,6 @@
 	  <rect x="90" y="45" width="200" height="10" fill="url(#screwPattern)" stroke="red" stroke-width="2px" />
     </g>
   </defs>
-
-  <rect id="BackDrop" x="-10%" y="-10%" width="110%" height="110%" pointer-events="all" fill="AliceBlue" />
-
 
   <g transform="translate(200,120)" stroke-width="0.5" fill="none">
     <g transform="scale(1)">  <!-- direktna končna transformacija -->

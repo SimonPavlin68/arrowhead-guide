@@ -12,7 +12,7 @@
 	</marker>
 </defs>
 <g stroke="#303fa1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="400" y1="500" x2="400" y2="50" marker-end="url(#arrow2)"/>
+  <line x1="400" y1="550" x2="400" y2="75" marker-end="url(#arrow2)"/>
 	  
   <g transform="rotate(30, 400, 300)">
 	  <image href="right-footprint.png" width="200" height="200" 
