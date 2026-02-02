@@ -62,7 +62,7 @@
   <use xlink:href="#sight" id="Sign" transform="translate(158,550)" />
   
   <text x="350" y="220" font-size="30" font-weight="bold">20m</text>
-    <text x="300" y="430" font-size="30" font-weight="bold">30m</text>
-    <text x="280" y="650" font-size="30" font-weight="bold">40m</text>
+  <text x="300" y="430" font-size="30" font-weight="bold">30m</text>
+  <text x="280" y="650" font-size="30" font-weight="bold">40m</text>
 
 </svg>
