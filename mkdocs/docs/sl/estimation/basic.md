@@ -12,5 +12,12 @@ Na tekmah si lokostrelci lahko pomagajo z listkom, na katerega so zapisane razda
 
 #Opazovanje
 
-Opazuj dogajanje okrog sebe in zbiraj vse razpoložljive informacije. Pomagaj si z opazovanjem puščic predhodnih strelcev, ocenjuj velikost lic (80 cm ali 60 cm) ter višino tarče glede na predmete ali ljudi pred njo. Hkrati pa ne pomagaj nasprotnikom: ko popišeš in pobereš puščice, pojdi čim prej naprej, da ne omogočiš drugim strelcem ocenjevanja razdalje na podlagi tvojega dela – to je športno in pošteno.
+Opazuj dogajanje okrog sebe in zbiraj vse razpoložljive informacije.
+Pomagaj si z opazovanjem leta puščic predhodnih strelcev,
+ocenjuj velikost lic (80cm ali 60cm) ter višino tarče glede na predmete ali ljudi pred njo.
+Hkrati pa ne pomagaj nasprotnikom: ko popišeš in pobereš puščice, pojdi čim prej naprej, da ne omogočiš drugim strelcem ocenjevanja razdalje na podlagi tvojega dela – to je športno in pošteno.
+<figure class="figure-center">
+<object type="image/svg+xml" data="../../../svg/archer-target.svg" width="600" class="centered-svg"></object>
+<figcaption>Velikost lica glede na velikost človeka</figcaption>
+</figure>
 
