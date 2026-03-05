@@ -23,7 +23,8 @@
 		<!-- noge -->
 		<line x1="400" y1="350" x2="440" y2="460" />
 		<line x1="400" y1="350" x2="360" y2="460" />
-		
+		<!-- znak -->
+		<text x="300" y="330" font-size="70" fill="red" stroke="red" stroke-width="2px">✖</text>
 		
 	</g>
 </svg>

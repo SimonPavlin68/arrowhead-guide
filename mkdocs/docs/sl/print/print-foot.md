@@ -54,7 +54,7 @@ Zasuk postavitve:
     align-items: center;
     flex-wrap: wrap; /* če je preširoko */
   }
-
+  
   button {
     display: none !important;
   }

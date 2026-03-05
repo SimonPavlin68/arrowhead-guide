@@ -1,17 +1,17 @@
 <div id="print-area">
 
-<table style="width:100%; text-align:center; border-collapse:collapse; border:none;">
+<table>
 <tr>
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-T-up.svg"></object>
 <br>
-<b>pravilna T postavitev</b>
+<b>T postavitev</b>
 </td>
 
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-Z-up.svg"></object>
 <br>
-<b>napačna Z postavitev</b>
+<b>Z postavitev</b>
 </td>
 </tr>
 
@@ -19,13 +19,13 @@
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-T-up-flat.svg"></object>
 <br>
-<b>pravilna T postavitev</b>
+<b>T postavitev</b>
 </td>
 
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-Z-up-flat.svg"></object>
 <br>
-<b>napačna Z postavitev</b>
+<b>Z postavitev</b>
 </td>
 </tr>
 </table>
@@ -49,7 +49,7 @@ td {
 td object {
   display: block;
   margin: 0 auto;
-  max-width: 90%; /* večje slike pri printu */
+  max-width: 100%; /* večje slike pri printu */
   height: auto;
 }
 
@@ -73,9 +73,8 @@ td b {
     position: absolute;
     left: 50%;
     top: 0px;  /* premik navzdol po Y-osi */
-    transform: translateX(-50%) scale(1.5); /* centriraj + premik + povečava */
+    transform: translateX(-50%) scale(1.4); /* centriraj + premik + povečava */
     transform-origin: top center; /* iz katere točke se scale izvede */
-    width: auto;
   }
 
   button {

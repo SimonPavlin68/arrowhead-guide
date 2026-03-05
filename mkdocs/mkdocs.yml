@@ -63,6 +63,7 @@ nav:
                 - rotacija: sl/print/print-foot.md
                 - postavitev gor: sl/print/print-up.md
                 - postavitev dol: sl/print/print-down.md
+                - viziranje merek: sl/print/print-sight.md
       - 🎬 Za konec: sl/about.md
       - 💬 Mnenja: sl/feedback.md
 

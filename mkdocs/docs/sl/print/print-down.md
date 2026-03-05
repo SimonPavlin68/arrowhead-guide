@@ -4,18 +4,18 @@ Navzdol
 
 <div id="print-area">
 
-<table style="width:100%; text-align:center; border-collapse:collapse; border:none;">
+<table>
 <tr>
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-T-down.svg"></object>
 <br>
-<b>pravilna T postavitev</b>
+<b>T postavitev</b>
 </td>
 
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-Z-down.svg"></object>
 <br>
-<b>napačna Z postavitev</b>
+<b>Z postavitev</b>
 </td>
 </tr>
 
@@ -23,13 +23,13 @@ Navzdol
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-T-down-flat.svg"></object>
 <br>
-<b>pravilna T postavitev</b>
+<b>T postavitev</b>
 </td>
 
 <td>
 <object type="image/svg+xml" data="../../../svg/position/archer-Z-down-flat.svg"></object>
 <br>
-<b>napačna Z postavitev</b>
+<b>Z postavitev</b>
 </td>
 </tr>
 </table>
@@ -76,8 +76,8 @@ td b {
   #print-area {
     position: absolute;
     left: 50%;
-    top: 0px;  /* premik navzdol po Y-osi */
-    transform: translateX(-50%) scale(1.5); /* centriraj + premik + povečava */
+    top: -20px;  /* premik navzdol po Y-osi */
+    transform: translateX(-50%) scale(1.4); /* centriraj + premik + povečava */
     transform-origin: top center; /* iz katere točke se scale izvede */
     width: auto;
   }

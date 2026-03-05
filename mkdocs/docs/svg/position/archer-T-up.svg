@@ -24,7 +24,8 @@
 		<!-- noge -->
 		<polyline points="400,350 462,359 488,408 "/>
 		<line x1="400" y1="350" x2="360" y2="455" />
-		
+		<!-- znak -->
+        <text x="300" y="350" font-size="70" fill="green" stroke="green" stroke-width="2px">✔</text>
 		
 	</g>
 </svg>
