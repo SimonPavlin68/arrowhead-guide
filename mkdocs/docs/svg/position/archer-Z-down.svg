@@ -12,15 +12,15 @@
 			<!-- roke -->
 			<line x1="340" y1="250" x2="490" y2="250" />
 			<!-- T -->
-			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="5px" />
+			<line x1="350" y1="250" x2="450" y2="250" stroke="red" stroke-width="7px" />
 			<!-- lok -->
 			<path d="M460,140 Q570,250 460,360 " stroke-width="15px"/>
 		</g>
 		<!-- T -->
-			<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="5px" />
+			<line x1="400" y1="250" x2="400" y2="325" stroke="red" stroke-width="7px" />
 		<!-- podlaga -->
 		<g transform="rotate(20, 440,455)">
-			<line x1="200" y1="455" x2="550" y2="455" stroke="silver" stroke-width="5px"/>
+			<line x1="200" y1="455" x2="550" y2="455" stroke="silver" stroke-width="10px"/>
 		</g>
 		<!-- noge -->
 		<polyline points="400,350 335,363 313,408 "/>

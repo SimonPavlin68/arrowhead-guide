@@ -73,7 +73,7 @@ td b {
     position: absolute;
     left: 50%;
     top: 0px;  /* premik navzdol po Y-osi */
-    transform: translateX(-50%) translateY(20px) scale(1.5); /* centriraj + premik + povečava */
+    transform: translateX(-50%) scale(1.5); /* centriraj + premik + povečava */
     transform-origin: top center; /* iz katere točke se scale izvede */
     width: auto;
   }
