@@ -56,33 +56,41 @@ nav:
       - 🛋️ Kavč: sl/sofa.md
       - 🏁 Pred tekmovanjem: sl/other.md
       - 🧮 Kalkulator: sl/calculate.md
-      - 🏋️ Trening:
-          - 📅 Načrt za priprave: sl/training.md
-          - 📊 Tabele: sl/print.md
+      - 🏋️ Priprave:
+          - 📅 Na kratko: sl/training.md
+          - 📊 Tiskanje:
+                - tabele: sl/print/print.md
+                - rotacija: sl/print/print-foot.md
+                - postavitev gor: sl/print/print-up.md
+                - postavitev dol: sl/print/print-down.md
       - 🎬 Za konec: sl/about.md
       - 💬 Mnenja: sl/feedback.md
 
 
-  - 🇷🇸 Sr:
-      - Уместо увода: sr/getting-started.md
-      - Распоред: sr/position.md     
-      - Лево - Десно: sr/left-right.md
-      - Удаљености: sr/distances.md
-      - Процена удаљености: sr/estimation.md
-      - Тест: sr/test.md
-      - Косо бацање: sr/graph.md
-      - Софа: sr/sofa.md
-      - Пре такмичења: sr/other.md
-      - Калкулатор: sr/calculate.md
-      - Коначно: sr/about.md
-      - Мишљења: sr/feedback.md
+  #- 🇷🇸 Sr:
+  #    - Уместо увода: sr/getting-started.md
+  #    - Распоред: sr/position.md     
+  #    - Лево - Десно: sr/left-right.md
+  #    - Удаљености: sr/distances.md
+  #    - Процена удаљености: sr/estimation.md
+  #    - Тест: sr/test.md
+  #    - Косо бацање: sr/graph.md
+  #    - Софа: sr/sofa.md
+  #    - Пре такмичења: sr/other.md
+  #    - Калкулатор: sr/calculate.md
+  #    - Коначно: sr/about.md
+  #    - Мишљења: sr/feedback.md
 
 # plugins:
 #  - search
 plugins:
   - search:
       enabled: false
-
+  # - pdf-export
+  # - with-pdf:
+  #    cover_title: Moj Dokument
+  #    cover_subtitle: Verzija 1.0
+  #    output_path: dokument.pdf
 
 extra_css:
   - stylesheets/extra.css
