@@ -8,7 +8,7 @@
     sl: { 
         flag: "🇸🇮", 
         name: "Slovenščina",
-        texts: { title: "Vpiši svoje ime", placeholder: "Tvoje ime", pplaceholder:"Tvoje geslo",  button: "Prijava" } 
+        texts: { title: "Vpiši svoje ime", placeholder: "Tvoje ime", button: "Prijava" } 
     },
     sr: { 
         flag: "🇷🇸", 
@@ -18,11 +18,11 @@
 };
 ;
 	
-	function setWithExpiry(key, value, hours = 24, minutes=60) {
+	function setWithExpiry(key, value, hours = 24) {
 		const now = Date.now();
 		const item = {
 			value,
-			expiry: now + hours * minutes * 60 * 1000
+			expiry: now + hours * 60 * 60 * 1000
 			// expiry: now + 2 * 60 * 1000
 		};
 		localStorage.setItem(key, JSON.stringify(item));
@@ -119,11 +119,12 @@
         const input = document.createElement("input");
         input.style = "padding:0.5rem 1rem;border-radius:6px;border:1px solid #ccc;font-size:1rem;width:80%;margin-bottom:1rem;";
 
-		const passwordInput = document.createElement("input");
+        // Input za geslo
+        const passwordInput = document.createElement("input");
         passwordInput.type = "password";
         passwordInput.style = "padding:0.5rem 1rem;border-radius:6px;border:1px solid #ccc;font-size:1rem;width:80%;margin-bottom:1rem;";
-        passwordInput.placeholder = "Password";
-		
+        passwordInput.placeholder = "Password"; // lahko se posodobi glede na jezik
+
         // Dropdown za jezik
         const langSelect = document.createElement("select");
         langSelect.style = "padding:0.3rem 0.5rem;border-radius:6px;border:1px solid #ccc;font-size:0.9rem;width:40%;margin-bottom:1rem;";
@@ -149,7 +150,6 @@
             const texts = LANGUAGES[lang].texts;
             title.textContent = texts.title;
             input.placeholder = texts.placeholder;
-            passwordInput.placeholder = texts.pplaceholder;
             btn.textContent = texts.button;
         };
 
@@ -157,66 +157,34 @@
         updateTexts(); // initial
 
         btn.onclick = async () => {
-            const value = input.value.trim();
-            const pwd = passwordInput.value.trim();
+            const username = input.value.trim();
+            const password = passwordInput.value.trim();
             const lang = langSelect.value;
-            if (!value) return;
 
-            //localStorage.setItem("arrowheadUser", value);
-			// setWithExpiry("arrowheadUser", value, 2);
-			setWithExpiry("arrowheadUser", value, 1, 1);
-			
-            localStorage.setItem("arrowheadLang", lang);
-			// 🟢 POSODBI MENI IKONO TAKOJ
-			if (window.setLanguageFromModal) {
-				window.setLanguageFromModal(lang);
-			}
+            if (!username || !password) return;
 
-			try {
-				const res = await fetch("/api/login", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ username: value, pwd: pwd, lang })
-				});
-				// console.log("response:", res);
-				if (!res.ok) {
-					throw new Error("Login failed: " + res.status);
-				}
+            // POST request na Flask
+            const res = await fetch("/api/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password })
+            });
 
-				const data = await res.json();
-				console.log("data:", data);
-				setWithExpiry("arrowheadUser", value, 24, 60);
-			} catch (err) {
-				console.log("Tukaj čaraj!!!:", err);
-				setWithExpiry("arrowheadUser", value, 1, 1);
-				console.log("setWithExpiry(arrowheadUser, value, 1, 1);");
-			}
-            document.body.removeChild(overlay);
-            initHeaderUser();
-            initFetchPatch();
-			
-			// POST request na Flask
-            //const res = await fetch("/api/login", {
-            //    method: "POST",
-            //    headers: { "Content-Type": "application/json" },
-            //    body: JSON.stringify({ username: value, pwd: pwd, lang })
-            //});
+            const result = await res.json();
+            if (result.success) {
+                setWithExpiry("arrowheadUser", username, 2);
+                localStorage.setItem("arrowheadLang", lang);
 
-            //const result = await res.json();
-            //if (result.success) {
-            //    setWithExpiry("arrowheadUser", username, 2);
-            //    localStorage.setItem("arrowheadLang", lang);
+                if (window.setLanguageFromModal) {
+                    window.setLanguageFromModal(lang);
+                }
 
-            //    if (window.setLanguageFromModal) {
-            //        window.setLanguageFromModal(lang);
-            //    }
-
-            //    document.body.removeChild(overlay);
-            //    initHeaderUser();
-            //    initFetchPatch();
-            //} else {
-            //    alert("Nepravilno uporabniško ime ali geslo.");
-            //}
+                document.body.removeChild(overlay);
+                initHeaderUser();
+                initFetchPatch();
+            } else {
+                alert("Nepravilno uporabniško ime ali geslo.");
+            }
         };
 
         // Dodamo vse elemente po vrsticah
