@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="700" width="1000" onload='Init()'>
+
+<script type="text/ecmascript"><![CDATA[
+	var width = height = 30;
+	var yOff = 200;
+	var xOff = 150;
+	var svg = document.getElementsByTagName('svg')[0];
+
+	function Init() {
+
+		var svgns = "http://www.w3.org/2000/svg";
+
+text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + 11*width);
+	text.setAttribute('y', yOff/3);
+	text.setAttribute('font-size', 24);
+	text.setAttribute('font-weight', 'bold');
+	text.setAttribute('font-style', 'italic');
+	text.setAttribute('fill', 'blue');
+	text.innerHTML = 'Šenčur 7.3.2026';
+	svg.appendChild(text);
+
+for (var a = 0; a < 2; a += 1) {
+// header
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = 'ime in priimek';
+	svg.appendChild(text);
+	
+	line = document.createElementNS(svgns,'line');
+	line.setAttribute('x1', xOff + 5*width);
+	line.setAttribute('y1', yOff/2 + 5);
+	line.setAttribute('x2', xOff + 11*width);
+	line.setAttribute('y2', yOff/2 + 5);
+	line.setAttribute("stroke", "silver");
+	svg.appendChild(line);
+	yOff = yOff + 70;
+
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = 'klub';
+	svg.appendChild(text);
+	
+	line = document.createElementNS(svgns,'line');
+	line.setAttribute('x1', xOff + 4*width);
+	line.setAttribute('y1', yOff/2 + 5);
+	line.setAttribute('x2', xOff + 11*width);
+	line.setAttribute('y2', yOff/2 + 5);
+	line.setAttribute("stroke", "silver");
+	svg.appendChild(line);
+	
+	yOff = yOff + 70;
+	
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = 'stil';
+	svg.appendChild(text);
+	
+	const boxSize = 12;
+	const startX = 4 * width;
+
+
+	const style_labels = ["GL", "UL", "SL"];
+	const y = yOff / 2 + 5;
+
+	style_labels.forEach((label, i) => {
+	  const x = startX + i * 2.5 * width;
+
+	  // kvadratek (checkbox)
+	  const rect = document.createElementNS(svgns, 'rect');
+	  rect.setAttribute('x', xOff + x);
+	  rect.setAttribute('y', y - boxSize + 2);
+	  rect.setAttribute('width', boxSize);
+	  rect.setAttribute('height', boxSize);
+	  rect.setAttribute('fill', 'none');
+	  rect.setAttribute('stroke', 'black');
+	  svg.appendChild(rect);
+
+	  // tekst
+	  const text = document.createElementNS(svgns, 'text');
+	  text.setAttribute('x', xOff + x + boxSize + 10);
+	  text.setAttribute('y', y + 1);
+	  text.setAttribute('font-size', 12);
+	  text.textContent = label;
+	  svg.appendChild(text);
+	});
+	
+	yOff = yOff + 70;
+	
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = 'kategorija';
+	svg.appendChild(text);
+
+	const cat_labels = ["U15", "U18", "U21"];
+	const y2 = yOff / 2 + 5;
+
+	cat_labels.forEach((label, i) => {
+		const x = startX + i * 2.5 * width;
+
+	  // kvadratek (checkbox)
+	  const rect = document.createElementNS(svgns, 'rect');
+	  rect.setAttribute('x', xOff + x);
+	  rect.setAttribute('y', y2 - boxSize + 2);
+	  rect.setAttribute('width', boxSize);
+	  rect.setAttribute('height', boxSize);
+	  rect.setAttribute('fill', 'none');
+	  rect.setAttribute('stroke', 'black');
+	  svg.appendChild(rect);
+
+	  // tekst
+	  const text = document.createElementNS(svgns, 'text');
+	  text.setAttribute('x', xOff + x + boxSize + 10);
+	  text.setAttribute('y', y2 + 1);
+	  text.setAttribute('font-size', 12);
+	  text.textContent = label;
+	  svg.appendChild(text);
+	});
+	
+	yOff = yOff + 70;
+	
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = 'količek';
+	svg.appendChild(text);
+	
+	const color_labels = ["moder", "rdeč"];
+	const y3 = yOff / 2 + 5;
+
+	color_labels.forEach((label, i) => {
+	  const x = startX + i * 2.5 * width;
+
+	  // kvadratek (checkbox)
+	  const rect = document.createElementNS(svgns, 'rect');
+	  rect.setAttribute('x', xOff + x);
+	  rect.setAttribute('y', y3 - boxSize + 2);
+	  rect.setAttribute('width', boxSize);
+	  rect.setAttribute('height', boxSize);
+	  rect.setAttribute('fill', 'none');
+	  rect.setAttribute('stroke', 'black');
+	  svg.appendChild(rect);
+
+	  // tekst
+	  const text = document.createElementNS(svgns, 'text');
+	  text.setAttribute('x', xOff + x + boxSize + 10);
+	  text.setAttribute('y', y3 + 1);
+	  text.setAttribute('font-size', 12);
+	  text.textContent = label;
+	  svg.appendChild(text);
+	});
+	
+	
+	yOff = yOff + 40;
+	line = document.createElementNS(svgns,'line');
+	line.setAttribute('x1', xOff + width);
+	line.setAttribute('y1', yOff/2 + 5);
+	line.setAttribute('x2', xOff + 11*width);
+	line.setAttribute('y2', yOff/2 + 5);
+	line.setAttribute("stroke", "silver");
+	svg.appendChild(line);
+	
+	yOff = yOff + 70;
+	
+
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = 'tarča';
+	svg.appendChild(text)
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + 6*width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = '∑';
+	svg.appendChild(text)
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + 7.5*width);
+	text.setAttribute('y', yOff/2+35);
+	text.innerHTML = '∑';
+	svg.appendChild(text)
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + 9*width+5);
+	text.setAttribute('y', yOff/2-10);
+	text.innerHTML = "ocenjena";
+	svg.appendChild(text)
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + 9*width+7);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = "razdalja";
+	svg.appendChild(text)
+	
+	yOff = yOff - 310;
+
+	for (var i = 0; i < 12; i += 1) {
+		var x = xOff + width;
+	    for (var j = 1; j < 8; j += 1) {
+		var rect = document.createElementNS(svgns, 'rect');
+		rect.setAttribute('x', x);
+		rect.setAttribute('y', yOff + (i+1)*height);
+		rect.setAttribute('height', height);
+		rect.setAttribute('width', width);
+		rect.setAttribute('stroke-width', '1');
+		rect.setAttribute('fill', 'white');
+		rect.setAttribute('stroke', 'black');
+		switch (j) {
+			case 0:
+				svg.appendChild(rect);
+				var text = document.createElementNS(svgns, 'text');
+				text.setAttribute('fill', 'gray');
+				text.setAttribute('text-anchor', 'middle');
+				text.setAttribute('x', x + width/2);
+				text.setAttribute('y', yOff + (i+1.7)*height);
+				text.innerHTML = a[i];
+				svg.appendChild(text);
+				x = x + width;
+				break;
+			case 1: 
+				svg.appendChild(rect);
+				var text = document.createElementNS(svgns, 'text');
+				//text.setAttribute('fill', 'yellow');
+				text.setAttribute('text-anchor', 'middle');
+				text.setAttribute('x', x+width/2);
+				text.setAttribute('y', yOff + (i+1.7)*height);
+
+				//if(i < 3) {
+				//	text.innerHTML = 5 + i*5;
+				//} else if (i < 6){
+				//	text.innerHTML = i*5 - 5;
+				//} else if (i < 9) {
+				//	text.innerHTML = i*5 - 10;
+				//} else {
+				//	text.innerHTML = i*5 - 15;
+				//}
+				text.innerHTML = i + 1;
+				svg.appendChild(text);
+				x = x + 1.4 * width;
+				break;
+			case 2:
+			case 3:
+			case 4:
+				svg.appendChild(rect);
+				x = x + width;
+				break;
+			case 5:
+				svg.appendChild(rect);
+				rect.setAttribute('width', width*1.5);
+				x = x + width*1.5;
+				break;
+			case 6:
+				if(i!==0) {
+					svg.appendChild(rect);
+				}
+				rect.setAttribute('width', width*1.5);
+				x = x + width*2.5;
+				break;
+			case 7:
+				rect.setAttribute('width', width*1.5);
+				svg.appendChild(rect);
+				// x = x + width;
+				break;
+		}
+	    }
+	}
+	xOff = 600;
+	yOff = 200;
+	}
+}
+
+    ]]> </script>
+</svg>
