@@ -11,15 +11,18 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 g = 9.81
 
+
 def merek_neg(v0, alpha, beta):
     real = beta - alpha if beta > 0 else -alpha + beta
     m = v0**2 * math.sin(math.radians(real*2)) / g
     return m
 
+
 def merek_pos(v0, alpha, beta):
     real = beta - alpha
     m = v0**2 * math.sin(math.radians(real*2)) / g
     return m
+
 
 def compute_result(v0, l, deg):
     x = l * math.cos(math.radians(deg))
@@ -38,6 +41,7 @@ def compute_result(v0, l, deg):
         m = merek_pos(v0, deg, beta)
 
     return round(m, 1)
+
 
 def get_ip(request):
     # Cloudflare (če uporabljaš)
@@ -67,6 +71,7 @@ def get_ip(request):
 
 FEEDBACK_FILE = 'feedback.json'
 
+
 # preberi mnenja iz JSON datoteke
 def load_feedback():
     if not os.path.exists(FEEDBACK_FILE):
@@ -74,14 +79,18 @@ def load_feedback():
     with open(FEEDBACK_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+
 # shrani mnenja v JSON datoteko
 def save_feedback(feedbacks):
     with open(FEEDBACK_FILE, 'w', encoding='utf-8') as f:
         json.dump(feedbacks, f, ensure_ascii=False, indent=2)
 
+
 @app.route("/api/hello", methods=["GET"])
 def hello():
-    return jsonify({"message": "Hello, world!"})
+    msg = "Hello, world..."
+    print(msg)
+    return jsonify({"message": msg})
 
 
 @app.route("/api/merek", methods=["POST"])
@@ -97,23 +106,37 @@ def api_merek():
     result = compute_result(v0, distance, angle)
     return jsonify({"merek": result})
 
+
+def get_ip(request):
+    return request.remote_addr or "unknown"
+
 # login endpoint
 @app.route("/api/login", methods=["POST"])
 def api_login():
     data = request.json
     username = data.get("username", "Unknown")
-    # ip = request.remote_addr
+    password = data.get("pwd", "Unknown")
+    lang = data.get("lang", "Unknown")
     ip = get_ip(request)
     timestamp = datetime.utcnow().isoformat()
 
-    # zapiši v datoteko
+    # Preveri uporabnika
+    with open("users.json", "r") as f:
+        users = json.load(f)
+
+    user_match = any(u["username"].lower() == username.lower() and u["password"] == password for u in users)
+
+    # Zapiši v log
     with open("logins.csv", "a") as f:
-        # f.write(f"{timestamp},{ip},{username}\n")
-        f.write(f"{timestamp},{ip},{username},{lang}\n")
+        f.write(f"{timestamp},{ip},{username},{lang},{user_match}\n")
 
+    if user_match:
+        print(f"[LOGIN SUCCESS] {timestamp} {ip} {username}")
+        return jsonify({"status": "ok"})
+    else:
+        print(f"[LOGIN FAILED] {timestamp} {ip} {username}")
+        return jsonify({"status": "failed"}), 401
 
-    print(f"[LOGIN] {timestamp} {ip} {username}")
-    return jsonify({"status": "ok"})
 
 @app.route("/api/feedback", methods=["GET"])
 @cross_origin(origin="http://127.0.0.1:5000")  # frontend origin
@@ -121,6 +144,7 @@ def get_feedback():
     feedbacks = load_feedback()
     # zadnja mnenja naj bodo zgoraj
     return jsonify(list(reversed(feedbacks)))
+
 
 @app.route("/api/feedback", methods=["POST"])
 def post_feedback():
@@ -143,6 +167,7 @@ def post_feedback():
     })
     save_feedback(feedbacks)
     return jsonify({"ok": True})
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000)
