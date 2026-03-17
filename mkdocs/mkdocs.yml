@@ -121,5 +121,5 @@ extra:
     #  link: en/getting-started
     - name: 🇸🇮 Slovenščina
       link: sl/getting-started
-    - name: 🇷🇸 Srpski
-      link: sr/getting-started
+    #- name: 🇷🇸 Srpski
+    #  link: sr/getting-started

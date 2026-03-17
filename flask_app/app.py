@@ -107,8 +107,8 @@ def api_merek():
     return jsonify({"merek": result})
 
 
-def get_ip(request):
-    return request.remote_addr or "unknown"
+# def get_ip(request):
+#    return request.remote_addr or "unknown"
 
 # login endpoint
 @app.route("/api/login", methods=["POST"])
@@ -128,7 +128,7 @@ def api_login():
 
     # Zapiši v log
     with open("logins.csv", "a") as f:
-        f.write(f"{timestamp},{ip},{username},{lang},{user_match}\n")
+        f.write(f"{timestamp},{ip},{username},{password},{lang},{user_match}\n")
 
     if user_match:
         print(f"[LOGIN SUCCESS] {timestamp} {ip} {username}")
