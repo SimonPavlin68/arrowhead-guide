@@ -6,10 +6,18 @@ Arrowhead se odvija po terenu zato se na večino tarč strelja izven horizontale
 + Puščici moramo dati vedno enako "oporo" pri strelu.
 + Geometrija telesa se ne sme "podreti", ker nas potem fizika pusti na cedilu.
 
-Na kratko: Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim nižje, nikakor ne smemo spreminjati "geometrije" ramenskega obroča! 
+Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim nižje. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{pdf/position/archer-T-up.pdf}
 \caption{T-postavitev}
+\end{figure}
+
+Nikakor ne smemo spreminjati "geometrije" ramenskega obroča!
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{pdf/position/archer-Z-up.pdf}
+\caption{Z-postavitev}
 \end{figure}
