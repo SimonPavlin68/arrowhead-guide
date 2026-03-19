@@ -6,22 +6,25 @@ Izkušeni strelci na terenu uporabljajo kombinacijo vseh metod, opisanih
 v poglavju 👉 [Metode](estimation.md).
 Zbrati boste morali vse razpoložljive informacije. Razviti morate tudi oko zanje, da boste na koncu prišli do natančne ocene razdalje.
 
-#Listek
+## Listek
 
 Na tekmah si lokostrelci lahko pomagajo z listkom, na katerega so zapisane razdalje za vsa lica in količke vseh barv – podatki so skopirani iz pravil. Listek uporabljajte le kot referenco za orientacijo, ne za viziranje. Pri ocenjevanju razdalj se vedno zanesite na metode opisane v poglavju "metode" in svoje oko.
-<figure class="zoomable-container">
-<img src="../../../img/listek.png" alt="Listek" class="zoomable"/>
-<figcaption>Listek z neznanimi razdaljami</figcaption>
-</figure>
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{pdf/listek.png}
+\caption{Listek z neznanimi razdaljami}
+\end{figure}
 
-#Opazovanje
+## Opazovanje
 
 Opazuj dogajanje okrog sebe in zbiraj vse razpoložljive informacije.
 Pomagaj si z opazovanjem leta puščic predhodnih strelcev,
 ocenjuj velikost lic (80cm ali 60cm) ter višino tarče glede na predmete ali ljudi pred njo.
 Hkrati pa ne pomagaj nasprotnikom: ko popišeš in pobereš puščice, pojdi čim prej naprej, da ne omogočiš drugim strelcem ocenjevanja razdalje na podlagi tvojega dela – to je športno in pošteno.
-<figure class="figure-center">
-<object type="image/svg+xml" data="../../../svg/archer-target.svg" width="600" class="centered-svg"></object>
-<figcaption>Velikost lica glede na velikost človeka</figcaption>
-</figure>
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{pdf/archer-target.pdf}
+\caption{Velikost lica glede na velikost človeka}
+\end{figure}
 

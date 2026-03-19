@@ -1,8 +1,8 @@
 (function() {
     const LANGUAGES = {
-        en: { flag: "🇬🇧", name: "English", texts: { title: "Enter your name", placeholder: "Your name", pplaceholder:"Password", button: "Login", error:"Login failed!" } },
+        // en: { flag: "🇬🇧", name: "English", texts: { title: "Enter your name", placeholder: "Your name", pplaceholder:"Password", button: "Login", error:"Login failed!" } },
         sl: { flag: "🇸🇮", name: "Slovenščina", texts: { title: "Vpiši svoje ime", placeholder: "ime", pplaceholder:"geslo", button: "Prijava", error:"Prijava ni uspela!" } },
-        sr: { flag: "🇷🇸", name: "Српски", texts: { title: "Унесите своје име", placeholder: "Твоје име", pplaceholder:"Лозинка", button: "Пријава", error:"Пријава није успела!" } }
+        // sr: { flag: "🇷🇸", name: "Српски", texts: { title: "Унесите своје име", placeholder: "Твоје име", pplaceholder:"Лозинка", button: "Пријава", error:"Пријава није успела!" } }
     };
 
     function setWithExpiry(key, value, hours=24, minutes=60, seconds=60) {
@@ -140,10 +140,11 @@
             if (window.setLanguageFromModal) window.setLanguageFromModal(lang);
 
             try {
+                // const res = await fetch("/api/login", {
                 const res = await fetch("http://localhost:5000/api/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ username: value, pwd: pwd, lang })
+                    body: JSON.stringify({ username: value, pwd: pwd, lang: lang })
                 });
                 if (!res.ok) throw new Error("Login failed: " + res.status);
                 const data = await res.json();

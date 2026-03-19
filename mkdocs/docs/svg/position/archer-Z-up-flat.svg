@@ -4,7 +4,7 @@
 <metadata>Author: Simon Pavlin, 2025</metadata>
 	<title>Archer</title>
 	
-	<g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+	<g transform="translate(100,0)" stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
 		<!-- trup zgoraj -->
 		<line x1="400" y1="250" x2="400" y2="325" />
 		<g transform="rotate(-20, 400,250)">

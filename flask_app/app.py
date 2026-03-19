@@ -114,6 +114,7 @@ def api_merek():
 @app.route("/api/login", methods=["POST"])
 def api_login():
     data = request.json
+    print(data)
     username = data.get("username", "Unknown")
     password = data.get("pwd", "Unknown")
     lang = data.get("lang", "Unknown")
