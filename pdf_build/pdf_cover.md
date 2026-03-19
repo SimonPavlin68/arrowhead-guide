@@ -10,4 +10,5 @@ header-includes:
   - \renewcommand{\figurename}{Slika}
   - \usepackage[labelformat=empty]{caption}
   - \usepackage{graphicx}
+  - \usepackage{float}
 ---

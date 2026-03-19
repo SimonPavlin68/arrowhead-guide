@@ -8,7 +8,7 @@ Arrowhead se odvija po terenu zato se na večino tarč strelja izven horizontale
 
 Na kratko: Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim nižje, nikakor ne smemo spreminjati "geometrije" ramenskega obroča! 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{pdf/position/archer-T-up.pdf}
 \caption{T-postavitev}
