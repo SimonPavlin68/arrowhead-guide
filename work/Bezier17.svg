@@ -65,53 +65,52 @@ svg {
 
 </style>
 <g id="grid" stroke="silver" fill="transparent"></g>
-<image id="image" href="grif-1.jpg" x="0" y="0" 
+<image id="image" href="grif-1.jpg1" x="0" y="0" 
    width="600" height="600" transform="scale(1) translate(150,0)" />
 <rect id="BackDrop" x="0%" y="0%" width="100%" height="100%" stroke="red" fill="none" pointer-events="all" />
 <g id="Krneki" stroke="red" fill="black">
 <g id="sketch" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 
 
-<pattern id="screwPattern" patternUnits="userSpaceOnUse" width="5" height="20">
-    <line x1="0" y1="20" x2="10" y2="0" stroke="red" stroke-width="2" />
+<pattern id="grass" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="6" x2="3" y2="0" stroke="#5a8c3a" stroke-width="1"/>
+  <line x1="3" y1="6" x2="6" y2="0" stroke="#5a8c3a" stroke-width="1"/>
 </pattern>
 
-<!-- button -->
-<circle cx="412" cy="215" r="12" fill="silver"/>
-<rect x="425" y="210" width="115" height="10" fill="url(#screwPattern)"/>
-<rect x="480" y="200" width="35" height="30" fill="blue" rx="5"/>
-<rect x="515" y="200" width="20" height="30" fill="blue" rx="5"/>
+<pattern id="kikla" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="6" x2="3" y2="0" stroke="#303fa1" stroke-width="1"/>
+  <line x1="3" y1="6" x2="6" y2="0" stroke="#303fa1" stroke-width="1"/>
+</pattern>
 
-<!-- bow -->
-<path d="M440,100 v130 a10,10 0 0 1 -10,10 h-70 a10,10 0 0 0 0,20 h100 a10,10 0 0 0 10,-10 v-150 C464,90 451,109 440,100 " fill="blue"/>
-<path d="M360 260 C435,290 348,383 396,432 h30 C474,383 387,290 462,260z" fill="silver"/>
-<path d="M396,432 v50 C406,490 413,474 426,482 v-50 z"  fill="blue"/>
+<g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="rotate(-20, 500,325)">
+		<ellipse cx="500" cy="330" rx="120" ry="50" stroke="#303fa1" stroke-width="1px" fill="url(#kikla)"/>
+        <circle cx="500" cy="210" r="15" stroke-width="15px" />
+        <!-- trup zgoraj -->
+        <line x1="500" y1="250" x2="500" y2="325" />
+        <!-- roke -->
+        <line x1="440" y1="250" x2="590" y2="250" />
+        <!-- T -->
+        <line x1="500" y1="250" x2="500" y2="325" stroke="lightgreen" stroke-width="7px" />
+        <line x1="450" y1="250" x2="550" y2="250" stroke="lightgreen" stroke-width="7px" />
+        <!-- lok -->
+        <path d="M560,140 Q670,250 560,360 " stroke-width="15px"/>
+    </g>
+
+    <!-- podlaga -->
+	<ellipse cx="500" cy="465" rx="120" ry="50" stroke="#5a8c3a" stroke-width="1px" fill="url(#grass)"/>
+
+    <!-- noge -->
+    <line x1="500" y1="350" x2="540" y2="460" />
+    <line x1="500" y1="350" x2="460" y2="460" />
+
+    <!-- znak -->
+    <!--text x="400" y="350" font-size="70" fill="green" stroke="green" stroke-width="2px">✔</text-->
+</g>
 
 
 
 
-<!-- telo -->
-<!--rect fill="black" x="200" y="300" width="500" height="7"/-->
-<!--konica -->
-<!--path d="M200,300 Q190,300 180,304 Q190,307 200,307"/-->
-<!-- jahač -->
-<!--path stroke="#00ff00" fill="#00ff00" d="M700,300 h10 a1,1 0 0 1 0 7 h-10 "/-->
-<!-- peresa -->
-<!--path stroke="#ff0000" fill="#ff0000" d="M600,300 C650,285 670,285 675,300 z"/>
-<path stroke="#ff0000" fill="#ff0000" d="M600,307 C650,322 670,322 675,307 z"/>
-<path stroke="#ffff00" fill="#00ffff" d="M600,303.5 h75" stroke-width="2" /-->
-
-<!--g fill="black" font-size="13px" font-weight="normal" stroke-width="0.2">
-<text x="180" y="260" >KONICA</text>
-<line x1="200" y1="265" x2="195" y2="295" stroke-width="2"/>
-<text x="400" y="260" font-size="13px">TELO</text>
-<line x1="417" y1="265" x2="417" y2="295" stroke-width="2"/>
-<text stroke-width="0.2" x="570" y="260" font-size="13px">PERESA</text>
-<line x1="600" y1="265" x2="630" y2="285" stroke-width="2"/>
-<text stroke-width="0.2" x="680" y="260" font-size="13px">JAHAČ</text>
-<line x1="705" y1="265" x2="705" y2="295" stroke-width="2"/>
-</g-->
-<!--text fill="red" font-family="SpeedFez" x="350" y="500" font-size="120px" font-weight="normal">2023</text-->
 
 </g>
 </g>
