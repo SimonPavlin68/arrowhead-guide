@@ -52,7 +52,7 @@ Ocenjevanje "na palec" je v bistvu precej stara metoda in je predhodnica viziran
 Viziranje je ena bolj natančnih metod ocenjevanja razdalje do tarče. Ideja viziranja temelji na Talesov-em izreku o sorazmerjih.
 ...
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.4\textwidth]{pdf/sight-circle-target.pdf}
 \caption{Viziranje z merkom}

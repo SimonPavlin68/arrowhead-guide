@@ -5,8 +5,8 @@
 	<title>Archer</title>
 	
 <pattern id="grass" width="6" height="6" patternUnits="userSpaceOnUse">
-  <line x1="0" y1="6" x2="3" y2="0" stroke="#5a8c3a" stroke-width="1"/>
-  <line x1="3" y1="6" x2="6" y2="0" stroke="#5a8c3a" stroke-width="1"/>
+  <line x1="0" y1="6" x2="3" y2="0" stroke="silver" stroke-width="1"/>
+  <line x1="3" y1="6" x2="6" y2="0" stroke="silver" stroke-width="1"/>
 </pattern>
 
 <pattern id="kikla" width="6" height="6" patternUnits="userSpaceOnUse">
@@ -15,8 +15,19 @@
 </pattern>
 	
 <g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <g transform="rotate(20, 500,325)">
-		<ellipse cx="500" cy="330" rx="120" ry="50" stroke="#303fa1" stroke-width="1px" fill="url(#kikla)"/>
+        <!-- podlaga -->
+    <!--line x1="350" y1="455" x2="650" y2="455" stroke="silver" stroke-width="10px"/-->
+	<ellipse cx="500" cy="465" rx="120" ry="50" stroke="silver" stroke-width="1px" fill="url(#grass)"/>
+
+    <!-- noge -->
+    <line x1="500" y1="350" x2="540" y2="460" />
+    <line x1="500" y1="350" x2="460" y2="460" />
+
+    <!-- znak -->
+    <!--text x="400" y="330" font-size="70" fill="green" stroke="green" stroke-width="2px">✔</text-->
+	
+	<g transform="rotate(20, 500,325)">
+		<ellipse cx="500" cy="330" rx="120" ry="50" stroke="#303fa1" stroke-width="1px" fill="white"/>
         <circle cx="500" cy="210" r="15" stroke-width="15px" />
         <!-- trup zgoraj -->
         <line x1="500" y1="250" x2="500" y2="325" />
@@ -29,15 +40,6 @@
         <path d="M560,140 Q670,250 560,360 " stroke-width="15px"/>
     </g>
 
-    <!-- podlaga -->
-    <!--line x1="350" y1="455" x2="650" y2="455" stroke="silver" stroke-width="10px"/-->
-	<ellipse cx="500" cy="465" rx="120" ry="50" stroke="#5a8c3a" stroke-width="1px" fill="url(#grass)"/>
 
-    <!-- noge -->
-    <line x1="500" y1="350" x2="540" y2="460" />
-    <line x1="500" y1="350" x2="460" y2="460" />
-
-    <!-- znak -->
-    <!--text x="400" y="330" font-size="70" fill="green" stroke="green" stroke-width="2px">✔</text-->
 </g>
 </svg>

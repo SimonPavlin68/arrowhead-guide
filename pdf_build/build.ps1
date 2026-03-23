@@ -7,7 +7,9 @@ $files = @(
 	"$scriptDir\pdf_cover.md",
     "$scriptDir\getting-started-pdf.md",
     "$scriptDir\estimation\basic-pdf.md",
-    "$scriptDir\estimation\estimation-pdf.md"
+    "$scriptDir\estimation\estimation-pdf.md",
+    "$scriptDir\position\rotation-pdf.md",
+    "$scriptDir\position\position-flat-pdf.md"
 )
 
 # PDF output

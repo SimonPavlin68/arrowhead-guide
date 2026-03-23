@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN" "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 120 600 380">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 120 600 410">
 <metadata>Author: Simon Pavlin, 2025</metadata>
 	<title>Archer</title>
 	
+<pattern id="grass" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="6" x2="3" y2="0" stroke="silver" stroke-width="1"/>
+  <line x1="3" y1="6" x2="6" y2="0" stroke="silver" stroke-width="1"/>
+</pattern>
+
 <g stroke="#303fa1" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+	<!-- podlaga -->
+	<!--line x1="350" y1="465" x2="650" y2="465" stroke="silver" stroke-width="10px"/-->
+	<ellipse cx="500" cy="475" rx="120" ry="50" stroke="silver" stroke-width="1px" fill="url(#grass)"/>
+	
+	<ellipse cx="500" cy="345" rx="120" ry="50" stroke="#303fa1" stroke-width="1px" fill="white"/>
 	<!-- trup zgoraj -->
 	<line x1="500" y1="260" x2="500" y2="335" />
+
 	
 	<g transform="rotate(-20, 500,260)">
 		<circle cx="500" cy="220" r="15" stroke-width="15px" />
@@ -24,16 +36,11 @@
 	<!-- T -->
 	<line x1="500" y1="260" x2="500" y2="335" stroke="red" stroke-width="7px" />
 
-	<!-- podlaga -->
-	<g transform="rotate(0, 460,465)">
-		<line x1="350" y1="465" x2="650" y2="465" stroke="silver" stroke-width="10px"/>
-	</g>
-
 	<!-- noge -->
 	<line x1="500" y1="360" x2="540" y2="470" />
 	<line x1="500" y1="360" x2="460" y2="470" />
 
 	<!-- znak -->
-	<text x="400" y="360" font-size="70" fill="red" stroke="red" stroke-width="2px">✖</text>
+	<!--text x="400" y="360" font-size="70" fill="red" stroke="red" stroke-width="2px">✖</text-->
 </g>
 </svg>
