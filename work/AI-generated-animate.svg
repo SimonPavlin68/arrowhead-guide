@@ -1,0 +1,47 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#303fa1" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- podlaga -->
+    <line x1="350" y1="455" x2="650" y2="455" stroke="silver" stroke-width="5"/>
+	
+	<!-- noge -->
+    <line x1="500" y1="350" x2="540" y2="460" />
+    <line x1="500" y1="350" x2="460" y2="460" />
+    
+    <!-- trup kot krivulja -->
+    <path id="trup" d="M500,250 Q500,300 500,350">
+      <animate 
+        attributeName="d"
+        dur="1s"
+        fill="freeze"
+        values="
+          M500,250 Q500,300 500,350;
+          M460,260 Q500,300 500,350
+        " />
+    </path>
+
+    <!-- zgornji del (glava + roke) -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 500 350"
+        to="-25 500 350"
+        dur="1s"
+        fill="freeze" />
+      
+      <!-- glava -->
+      <circle cx="500" cy="210" r="15" />
+
+      <!-- roke -->
+      <line x1="440" y1="250" x2="590" y2="250" />
+	  
+	  <!-- lok -->
+	  <path d="M560,140 Q670,250 560,360" stroke="green" stroke-width="10"/>
+	  <!-- trup -->
+	  <line x1="500" y1="250" x2="500" y2="350" stroke="red"/>
+    </g>
+
+    
+  </g>
+</svg>

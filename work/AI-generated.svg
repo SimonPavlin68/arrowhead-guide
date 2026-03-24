@@ -1,0 +1,24 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#303fa1" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    
+	<!-- podlaga -->
+    <line x1="350" y1="455" x2="650" y2="455" stroke="silver" stroke-width="5"/>
+	
+    <!-- trup kot krivulja -->
+    <path d="M500,250 Q500,310 500,350" />
+
+    <!-- glava -->
+    <circle cx="500" cy="210" r="15" />
+
+    <!-- roke -->
+    <line x1="440" y1="250" x2="590" y2="250" />
+
+    <!-- noge -->
+    <line x1="500" y1="350" x2="540" y2="460" />
+    <line x1="500" y1="350" x2="460" y2="460" />
+
+    <!-- lok -->
+    <path d="M560,140 Q670,250 560,360" stroke="green" stroke-width="10"/>
+    
+  </g>
+</svg>

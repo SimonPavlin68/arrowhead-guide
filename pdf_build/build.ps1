@@ -19,6 +19,9 @@ $output = "$scriptDir\quick_guide.pdf"
 $resourcePath = "$scriptDir\pdf"
 
 # build PDF
+# prej naredi tole:
+# $env:Path = "C:\Program Files\Pandoc;" + $env:Path
+
 pandoc $files -o $output --pdf-engine=xelatex --toc --resource-path=$resourcePath
 # pandoc $files -o $output --pdf-engine=xelatex --resource-path=$resourcePath
 
