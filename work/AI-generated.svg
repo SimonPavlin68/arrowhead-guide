@@ -1,11 +1,11 @@
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <g stroke="#303fa1" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#303fa1" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round">
     
 	<!-- podlaga -->
-    <line x1="350" y1="455" x2="650" y2="455" stroke="silver" stroke-width="5"/>
+    <line x1="350" y1="460" x2="650" y2="460" stroke="silver"/>
 	
     <!-- trup kot krivulja -->
-    <path d="M500,250 Q500,310 500,350" />
+    <path d="M500,250 Q500,310 500,335" />
 
     <!-- glava -->
     <circle cx="500" cy="210" r="15" />
@@ -18,7 +18,7 @@
     <line x1="500" y1="350" x2="460" y2="460" />
 
     <!-- lok -->
-    <path d="M560,140 Q670,250 560,360" stroke="green" stroke-width="10"/>
+    <path d="M560,140 Q670,250 560,360" stroke="green"/>
     
   </g>
 </svg>

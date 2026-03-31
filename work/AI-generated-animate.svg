@@ -1,22 +1,22 @@
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <g stroke="#303fa1" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#303fa1" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round">
     
     <!-- podlaga -->
-    <line x1="350" y1="455" x2="650" y2="455" stroke="silver" stroke-width="5"/>
+    <line x1="350" y1="460" x2="650" y2="460" stroke="silver"/>
 	
 	<!-- noge -->
     <line x1="500" y1="350" x2="540" y2="460" />
     <line x1="500" y1="350" x2="460" y2="460" />
     
     <!-- trup kot krivulja -->
-    <path id="trup" d="M500,250 Q500,300 500,350">
+    <path id="trup" d="M500,250 Q500,300 500,335">
       <animate 
         attributeName="d"
         dur="1s"
         fill="freeze"
         values="
-          M500,250 Q500,300 500,350;
-          M460,260 Q500,300 500,350
+          M500,250 Q500,300 500,335;
+          M460,260 Q500,300 500,335
         " />
     </path>
 
@@ -25,8 +25,8 @@
       <animateTransform
         attributeName="transform"
         type="rotate"
-        from="0 500 350"
-        to="-25 500 350"
+        from="0 500 335"
+        to="-25 500 335"
         dur="1s"
         fill="freeze" />
       
@@ -37,9 +37,9 @@
       <line x1="440" y1="250" x2="590" y2="250" />
 	  
 	  <!-- lok -->
-	  <path d="M560,140 Q670,250 560,360" stroke="green" stroke-width="10"/>
+	  <path d="M560,140 Q670,250 560,360" stroke="green"/>
 	  <!-- trup -->
-	  <line x1="500" y1="250" x2="500" y2="350" stroke="red"/>
+	  <line x1="500" y1="250" x2="500" y2="335" stroke="red"/>
     </g>
 
     

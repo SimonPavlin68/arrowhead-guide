@@ -3,7 +3,7 @@
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{pdf/archer-art-85.pdf}
-\caption{T-postavitev}
+\caption{Spirala}
 \end{figure}
 
 Arrowhead se odvija po terenu zato se na večino tarč strelja izven horizontale. Pri takem streljanju pa nastane problem, ker zadetki "strižejo" po višini in tudi po smeri. Zato je potrebno upoštevati naklon. Za uspešen strel je potrebno zadostiti naslednjim pogojem:
