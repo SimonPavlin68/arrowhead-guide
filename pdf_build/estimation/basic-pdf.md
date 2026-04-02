@@ -11,7 +11,7 @@ Zbrati boste morali vse razpoložljive informacije. Razviti morate tudi oko zanj
 Na tekmah si lokostrelci lahko pomagajo z listkom, na katerega so zapisane razdalje za vsa lica in količke vseh barv – podatki so skopirani iz pravil. Listek uporabljajte le kot referenco za orientacijo, ne za viziranje. Pri ocenjevanju razdalj se vedno zanesite na metode opisane v poglavju "metode" in svoje oko.
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\textwidth]{pdf/listek.png}
+\includegraphics[width=0.5\textwidth]{pdf/listek.png}
 \caption{Listek z neznanimi razdaljami}
 \end{figure}
 
@@ -28,3 +28,4 @@ Hkrati pa ne pomagaj nasprotnikom: ko popišeš in pobereš puščice, pojdi či
 \caption{Velikost lica glede na velikost človeka}
 \end{figure}
 
+\newpage

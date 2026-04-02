@@ -13,7 +13,7 @@ $files = @(
 )
 
 # PDF output
-$output = "$scriptDir\quick_guide.pdf"
+$output = "$scriptDir\quick_guide_1.pdf"
 
 # resource path za slike (če so v docs/sl/images)
 $resourcePath = "$scriptDir\pdf"

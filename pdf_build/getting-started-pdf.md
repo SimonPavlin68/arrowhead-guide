@@ -1,29 +1,30 @@
-# Namesto uvoda
-
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{pdf/archer-art-85.pdf}
-\caption{Spirala}
+\includegraphics[width=0.25\textwidth]{pdf/archer-art-85.pdf}
 \end{figure}
 
-Arrowhead se odvija po terenu zato se na večino tarč strelja izven horizontale. Pri takem streljanju pa nastane problem, ker zadetki "strižejo" po višini in tudi po smeri. Zato je potrebno upoštevati naklon. Za uspešen strel je potrebno zadostiti naslednjim pogojem:
 
-+ Postavitev lokostrelca mora biti takšna kot je na ravnem -> postavitev T.
-+ Puščici moramo dati vedno enako "oporo" pri strelu.
-+ Geometrija telesa se ne sme "podreti", ker nas potem fizika pusti na cedilu.
+# Namesto uvoda
+Arrowhead poteka po razgibanem terenu, zato se na večino tarč strelja pod različnimi koti. Pri takem streljanju puščice pogosto zgrešijo višino ali smer, zato je treba upoštevati naklon in pravilno držo telesa. Za uspešen strel upoštevaj naslednje:
 
-Pri streljanju gor/dol se poskušajmo "prepogniti" v bokih, čim nižje. 
++ Postavitev lokostrelca naj bo enaka kot na ravnem terenu – T-postavitev.
++ Puščico vedno ustrelimo z enako dinamiko, da dobi vedno enako energijo. 
++ Telo naj ostane stabilno; če se “podre”, strel ne bo natančen.  
+
+Pri streljanju gor ali dol se poskusi prepogniti v bokih, čim nižje.  
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{pdf/position/archer-T-up.pdf}
-\caption{T-postavitev}
+\caption{Pravilna T-postavitev}
 \end{figure}
 
-Nikakor ne smemo spreminjati "geometrije" ramenskega obroča!
+Nikoli ne spreminjaj položaja ramenskega obroča, ker to vpliva na natančnost strela.  
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{pdf/position/archer-Z-up.pdf}
-\caption{Z-postavitev}
+\caption{Z-postavitev – napačna drža}
 \end{figure}
+
+\newpage

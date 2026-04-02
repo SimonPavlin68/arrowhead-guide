@@ -49,12 +49,31 @@ Ocenjevanje "na palec" je v bistvu precej stara metoda in je predhodnica viziran
 
 ## Viziranje - prepovedan sadež
 
-Viziranje je ena bolj natančnih metod ocenjevanja razdalje do tarče. Ideja viziranja temelji na Talesov-em izreku o sorazmerjih.
+Viziranje je ena bolj natančnih metod ocenjevanja razdalje do tarče.
+Ideja viziranja temelji na Talesov-em izreku o sorazmerjih.
 ...
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{pdf/sight-circle-target.pdf}
-\caption{Viziranje z merkom}
+\begin{minipage}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{pdf/sight-circle-target.pdf}
+  \caption{Horizontalno prekrivanje}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{pdf/sight-circle-target-vertical.pdf}
+  \caption{Vertikalno prekrivanje}
+\end{minipage}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.4\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{pdf/button-target.pdf}
+  \caption{Primer viziranja z "Berger gumbom"}
+\end{minipage}
+\end{figure}
+
+\newpage
