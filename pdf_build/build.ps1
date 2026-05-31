@@ -9,11 +9,14 @@ $files = @(
     "$scriptDir\estimation\basic-pdf.md",
     "$scriptDir\estimation\estimation-pdf.md",
     "$scriptDir\position\rotation-pdf.md",
-    "$scriptDir\position\position-flat-pdf.md"
+    "$scriptDir\position\position-flat-pdf.md",
+    "$scriptDir\illusions\illusions-pdf.md",
+    "$scriptDir\illusions\left-right-pdf.md",
+    "$scriptDir\illusions\sun-pdf.md"
 )
 
 # PDF output
-$output = "$scriptDir\quick_guide_1.pdf"
+$output = "$scriptDir\quick_guide_3.pdf"
 
 # resource path za slike (če so v docs/sl/images)
 $resourcePath = "$scriptDir\pdf"

@@ -49,6 +49,14 @@ Ocenjevanje "na palec" je v bistvu precej stara metoda in je predhodnica viziran
 
 ## Viziranje - prepovedan sadež
 
+[!] Opozorilo
+
+*Uradno merjenje razdalj s kakršnim koli pripomočkom ni dovoljeno!*
+
+Če viziramo tega ne smemo nikoli priznati. Če dvignemo lok in viziramo, pač rečemo, da smo lok napeli, ne pa da smo merili ali ocenjevali razdaljo.
+Na loku ne sme biti nobenega dodatnega pripomočka, ki ne sodi k potrebni opremi, s katerim bi lahko merili.
+Na primer če imamo goli lok, na njem ne sme biti pritrjen nosilec za merilno napravo ali kak nepotreben vijak z matico, ki ga imamo le zaradi merjenja.
+
 Viziranje je ena bolj natančnih metod ocenjevanja razdalje do tarče.
 Ideja viziranja temelji na Talesov-em izreku o sorazmerjih.
 ...

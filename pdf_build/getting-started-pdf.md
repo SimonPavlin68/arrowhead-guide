@@ -3,8 +3,16 @@
 \includegraphics[width=0.25\textwidth]{pdf/archer-art-85.pdf}
 \end{figure}
 
-
 # Namesto uvoda
+
+Ta priročnik je namenjen izključno lastni uporabi kot pomoč pri odkrivanju skrivnosti Arrowheada.
+Če vam po njegovem branju uspe zadeti več rumenih krogov kot prej, je to zgolj posledica marljive vadbe, nikakor pa ne odgovornost avtorja.
+
+Vse metode, ideje in zvijače iz tega priročnika uporabljate na lastno odgovornost.
+
+Če ste ta priročnik odprli v upanju, da boste odkrili vse skrivnosti Arrowheada, vas moram razočarati – nekaj jih bo še vedno ostalo skritih, odkrili jih boste sami.
+Če pa boste po branju lažje razumeli, zakaj puščica leti previsoko ali prenizko, levo ali desno, je svoj namen dosegel.
+
 Arrowhead poteka po razgibanem terenu, zato se na večino tarč strelja pod različnimi koti. Pri takem streljanju puščice pogosto zgrešijo višino ali smer, zato je treba upoštevati naklon in pravilno držo telesa. Za uspešen strel upoštevaj naslednje:
 
 + Postavitev lokostrelca naj bo enaka kot na ravnem terenu – T-postavitev.

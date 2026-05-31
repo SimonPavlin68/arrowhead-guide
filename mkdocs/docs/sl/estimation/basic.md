@@ -8,7 +8,10 @@ Zbrati boste morali vse razpoložljive informacije. Razviti morate tudi oko zanj
 
 #Listek
 
-Na tekmah si lokostrelci lahko pomagajo z listkom, na katerega so zapisane razdalje za vsa lica in količke vseh barv – podatki so skopirani iz pravil. Listek uporabljajte le kot referenco za orientacijo, ne za viziranje. Pri ocenjevanju razdalj se vedno zanesite na metode opisane v poglavju "metode" in svoje oko.
+Na tekmah si lokostrelci lahko pomagajo z listkom, na katerem so zapisane razdalje za vsa lica in količke vseh barv.
+Listek je dovoljen kot kopija ali prepis, ne sme pa imeti nobenih drugi oznak ali zabeležk.
+Listek uporabljajte le kot referenco za orientacijo, ne za viziranje.
+Pri ocenjevanju razdalj se vedno zanesite na metode opisane v poglavju "metode" in svoje oko.
 <figure class="zoomable-container">
 <img src="../../../img/listek.png" alt="Listek" class="zoomable"/>
 <figcaption>Listek z neznanimi razdaljami</figcaption>
