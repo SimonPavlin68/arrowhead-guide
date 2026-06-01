@@ -1,4 +1,4 @@
-﻿# Vpliv terena
+﻿## Vpliv terena
 
 Ko streljamo po razgibanem terenu, se lahko zgodi, da puščice priletijo nekoliko izven smeri – bolj levo ali desno, kot bi pričakovali.
 Na to vpliva več dejavnikov: od svetlobe in nagiba terena do položaja strelca, ko streljamo bočno na pobočje.

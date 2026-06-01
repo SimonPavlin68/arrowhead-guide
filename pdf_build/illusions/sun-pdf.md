@@ -1,4 +1,4 @@
-﻿# Vpliv sončne svetlobe
+﻿## Vpliv sončne svetlobe
 
 Sonce lahko vpliva na natančnost streljanja, zlasti pri daljših razdaljah.
 

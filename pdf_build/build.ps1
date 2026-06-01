@@ -8,8 +8,8 @@ $files = @(
     "$scriptDir\getting-started-pdf.md",
     "$scriptDir\estimation\basic-pdf.md",
     "$scriptDir\estimation\estimation-pdf.md",
-    "$scriptDir\position\rotation-pdf.md",
     "$scriptDir\position\position-flat-pdf.md",
+	"$scriptDir\position\rotation-pdf.md",
     "$scriptDir\illusions\illusions-pdf.md",
     "$scriptDir\illusions\left-right-pdf.md",
     "$scriptDir\illusions\sun-pdf.md"
@@ -25,7 +25,7 @@ $resourcePath = "$scriptDir\pdf"
 # prej naredi tole:
 # $env:Path = "C:\Program Files\Pandoc;" + $env:Path
 
-pandoc $files -o $output --pdf-engine=xelatex --toc --resource-path=$resourcePath
+pandoc $files -o $output --pdf-engine=xelatex --toc --resource-path=$resourcePath --toc-depth=3
 # pandoc $files -o $output --pdf-engine=xelatex --resource-path=$resourcePath
 
 Write-Host "PDF build completed!"

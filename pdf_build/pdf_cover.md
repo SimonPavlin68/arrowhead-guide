@@ -1,9 +1,9 @@
 ---
-title: "Arrowhead navodila za uporabo"
-subtitle: "- Prvi del -"
+title: "Arrowhead"
+subtitle: "- navodila za uporabo -"
 author: "Simon Pavlin"
 lang: "sl"
-date: "Verzija 1.2 – maj 2026"
+date: "Verzija 1.2 – junij 2026"
 geometry: margin=2cm
 header-includes:
   - \usepackage{fancyhdr}               # header/footer package

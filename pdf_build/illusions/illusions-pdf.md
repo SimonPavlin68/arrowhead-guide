@@ -144,7 +144,7 @@ To ni zavestna napaka, temveč refleks.
 Pri streljanju na nagnjenem terenu ni treba »poravnati« sveta, temveč lok.
 Teren je lahko poševen – gravitacija ni.
 
-## Ključna misel
+### Ključna misel
 
 Optične prevare ni mogoče odpraviti, mogoče jo je le prepoznati.
 Ko strelec prepozna tipično prevaro, lahko zavestno prilagodi odločitev in prepreči avtomatski, napačen popravek.

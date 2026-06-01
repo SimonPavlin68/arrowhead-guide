@@ -1,6 +1,6 @@
-﻿# Zasuk postavitve v naklonu
+﻿## Zasuk
 
-## Streljanje na ravnem
+### Streljanje na ravnem
 
 Pri streljanju na ravnem je postavitev nog nekako takšna:
 \begin{figure}[H]
@@ -9,11 +9,11 @@ Pri streljanju na ravnem je postavitev nog nekako takšna:
 \caption{Normalna postavitev}
 \end{figure}
 
-## Streljanje navzgor
+### Streljanje navzgor
 
 Pri streljanju navzgor zaradi kompenzacije levih zadetkov, postavitev "zapiramo", odvisno od naklona.
 
-## Streljanje navzdol
+### Streljanje navzdol
 
 Pri streljanju navzdol zaradi kompenzacije desnih zadetkov, postavitev "odpiramo", odvisno od naklona.
 

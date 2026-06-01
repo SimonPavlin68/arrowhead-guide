@@ -1,9 +1,11 @@
-﻿# Postavitev strelca v naklonu
+﻿# Streljanje v naklonu
+
+## Postavitev strelca
 
 Pri streljanju navzgor ali navzdol je ključnega pomena, da prepogib izvedemo v bokih, ne v pasu ali ramenih.
 Zgornji del telesa mora ostati v obliki črke T, ne glede na naklon terena.
 
-## Pravilne postavitve - črka T
+### Pravilne postavitve - črka T
 
 Pri strelu navzgor ohranimo stabilno T-postavitev.
 Če stojimo na ravnem stojišču, naj bo zgornji del telesa vedno poravnan.
@@ -19,7 +21,7 @@ Pri strelu navzdol pazimo, da nas spodnji krak loka ne udari v nogo. Tudi tu ohr
 \caption{Pravilna T-postavitev pri streljanju navzdol na ravnem stojišču.}
 \end{figure}
 
-## Nepravilne postavitve – črka Z
+### Nepravilne postavitve – črka Z
 
 Nepravilna postavitev telesa vodi v t. i. črko Z, ki povzroča nenatančne strele in nestabilno tehniko.
 \begin{figure}[H]
