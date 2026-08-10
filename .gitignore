@@ -1,6 +1,7 @@
 mkdocs/site
 mkdocs/venv
 venv
+.venv
 site
 **/*.bak
 
