@@ -4,4 +4,5 @@ venv
 .venv
 site
 **/*.bak
+flask_app/logins.csv
 
