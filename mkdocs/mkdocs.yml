@@ -87,7 +87,7 @@ nav:
 plugins:
   - search:
       enabled: false
-  # - pdf-export
+  # - pdf-export:
   # - with-pdf:
   #    cover_title: Moj Dokument
   #    cover_subtitle: Verzija 1.0
