@@ -1,11 +1,34 @@
 ﻿# Streljanje v naklonu
 
+Arrowhead poteka po razgibanem terenu, zato se na večino tarč strelja pod različnimi koti. Pri takem streljanju puščice pogosto zgrešijo višino ali smer, zato je treba upoštevati naklon in pravilno držo telesa. Za uspešen strel upoštevaj naslednje:
+
++ Postavitev lokostrelca naj bo enaka kot na ravnem terenu – T-postavitev.
++ Puščico vedno ustrelimo z enako dinamiko, da dobi vedno enako energijo. 
++ Telo naj ostane stabilno; če se “podre”, strel ne bo natančen.  
+
+Pri streljanju gor ali dol se poskusi prepogniti v bokih, čim nižje.  
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{pdf/position/archer-T-up.pdf}
+\caption{Pravilna T-postavitev}
+\end{figure}
+
+Nikoli ne spreminjaj položaja ramenskega obroča, ker to vpliva na natančnost strela.  
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{pdf/position/archer-Z-up.pdf}
+\caption{Z-postavitev – napačna drža}
+\end{figure}
+
 ## Postavitev strelca
 
 Pri streljanju navzgor ali navzdol je ključnega pomena, da prepogib izvedemo v bokih, ne v pasu ali ramenih.
 Zgornji del telesa mora ostati v obliki črke T, ne glede na naklon terena.
 
-### Pravilne postavitve - črka T
+
+### Pravilna postavitev
 
 Pri strelu navzgor ohranimo stabilno T-postavitev.
 Če stojimo na ravnem stojišču, naj bo zgornji del telesa vedno poravnan.
@@ -21,7 +44,7 @@ Pri strelu navzdol pazimo, da nas spodnji krak loka ne udari v nogo. Tudi tu ohr
 \caption{Pravilna T-postavitev pri streljanju navzdol na ravnem stojišču.}
 \end{figure}
 
-### Nepravilne postavitve – črka Z
+### Nepravilna postavitev
 
 Nepravilna postavitev telesa vodi v t. i. črko Z, ki povzroča nenatančne strele in nestabilno tehniko.
 \begin{figure}[H]
