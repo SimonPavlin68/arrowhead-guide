@@ -16,7 +16,7 @@ text = document.createElementNS(svgns, 'text');
 	text.setAttribute('font-size', 24);
 	text.setAttribute('font-weight', 'bold');
 	text.setAttribute('font-style', 'italic');
-	text.setAttribute('fill', 'red');
+	text.setAttribute('fill', 'blue');
 	text.innerHTML = 'Šenčur 6.6.2026';
 	svg.appendChild(text);
 
@@ -121,42 +121,41 @@ for (var a = 0; a < 2; a += 1) {
 	  svg.appendChild(text);
 	});
 	
-	yOff = yOff + 40;
+	yOff = yOff + 70;
 	
+	text = document.createElementNS(svgns, 'text');
+	text.setAttribute('x', xOff + width);
+	text.setAttribute('y', yOff/2 + 5);
+	text.innerHTML = 'količek';
+	svg.appendChild(text);
 	
-	// text = document.createElementNS(svgns, 'text');
-	//text.setAttribute('x', xOff + width);
-	//text.setAttribute('y', yOff/2 + 5);
-	//text.innerHTML = 'količek';
-	//svg.appendChild(text);
-	
-	//const color_labels = ["moder", "rdeč"];
-	//const y3 = yOff / 2 + 5;
+	const color_labels = ["moder", "rdeč"];
+	const y3 = yOff / 2 + 5;
 
-	//color_labels.forEach((label, i) => {
-	//  const x = startX + i * 2.5 * width;
+	color_labels.forEach((label, i) => {
+	  const x = startX + i * 2.5 * width;
 
 	  // kvadratek (checkbox)
-	//  const rect = document.createElementNS(svgns, 'rect');
-	//  rect.setAttribute('x', xOff + x);
-	//  rect.setAttribute('y', y3 - boxSize + 2);
-	//  rect.setAttribute('width', boxSize);
-	//  rect.setAttribute('height', boxSize);
-	//  rect.setAttribute('fill', 'none');
-	//  rect.setAttribute('stroke', 'black');
-	  //svg.appendChild(rect);
+	  const rect = document.createElementNS(svgns, 'rect');
+	  rect.setAttribute('x', xOff + x);
+	  rect.setAttribute('y', y3 - boxSize + 2);
+	  rect.setAttribute('width', boxSize);
+	  rect.setAttribute('height', boxSize);
+	  rect.setAttribute('fill', 'none');
+	  rect.setAttribute('stroke', 'black');
+	  svg.appendChild(rect);
 
 	  // tekst
-	//  const text = document.createElementNS(svgns, 'text');
-	//  text.setAttribute('x', xOff + x + boxSize + 10);
-	//  text.setAttribute('y', y3 + 1);
-	//  text.setAttribute('font-size', 12);
-	//  text.textContent = label;
-	  //svg.appendChild(text);
-	//});
+	  const text = document.createElementNS(svgns, 'text');
+	  text.setAttribute('x', xOff + x + boxSize + 10);
+	  text.setAttribute('y', y3 + 1);
+	  text.setAttribute('font-size', 12);
+	  text.textContent = label;
+	  svg.appendChild(text);
+	});
 	
 	
-	// yOff = yOff + 40;
+	yOff = yOff + 40;
 	line = document.createElementNS(svgns,'line');
 	line.setAttribute('x1', xOff + width);
 	line.setAttribute('y1', yOff/2 + 5);
@@ -194,7 +193,7 @@ for (var a = 0; a < 2; a += 1) {
 	text.innerHTML = "razdalja";
 	svg.appendChild(text)
 	
-	yOff = yOff - 270;
+	yOff = yOff - 310;
 
 	for (var i = 0; i < 12; i += 1) {
 		var x = xOff + width;

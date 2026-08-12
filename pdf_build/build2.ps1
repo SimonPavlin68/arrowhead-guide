@@ -1,0 +1,33 @@
+# build.ps1
+# določi root skripte
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+
+# absolutne poti do Markdown datotek
+$files = @(
+	"$scriptDir\pdf_cover.md",
+    "$scriptDir\getting-started-pdf.md",
+    "$scriptDir\estimation\basic-pdf.md",
+    "$scriptDir\estimation\estimation-pdf.md",
+    "$scriptDir\estimation\test-pdf.md",
+    "$scriptDir\position\position-flat-pdf.md",
+	"$scriptDir\position\rotation-pdf.md",
+    "$scriptDir\illusions\illusions-pdf.md",
+    "$scriptDir\illusions\left-right-pdf.md",
+    "$scriptDir\illusions\sun-pdf.md",
+	"$scriptDir\the_end.md"
+)
+
+# PDF output
+$output = "$scriptDir\quick_guide_boc.pdf"
+
+# resource path za slike (če so v docs/sl/images)
+$resourcePath = "$scriptDir\pdf"
+
+# build PDF
+# prej naredi tole:
+# $env:Path = "C:\Program Files\Pandoc;" + $env:Path
+
+pandoc $files -o $output --pdf-engine=xelatex --toc --resource-path=$resourcePath --toc-depth=3
+# pandoc $files -o $output --pdf-engine=xelatex --resource-path=$resourcePath
+
+Write-Host "PDF build completed!"
