@@ -87,6 +87,9 @@ nav:
 plugins:
   - search:
       enabled: false
+  - print-site:
+  - exporter:
+  
   # - pdf-export
   # - with-pdf:
   #    cover_title: Moj Dokument
