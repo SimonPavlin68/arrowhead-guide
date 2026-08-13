@@ -1,0 +1,60 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink" version='1.1'
+ width='600' height='400' viewBox="220 120 600 400">
+	<metadata>Author: Simon Pavlin, 2026</metadata>
+	<defs>
+		<g id="field" stroke-width="0.5">
+			<circle r="50" stroke="black" fill="black"/>
+			<circle r="40" stroke="white" />
+			<circle r="30" stroke="white" />
+			<circle r="20" stroke="white" />
+			<circle r="10" stroke="black" fill="yellow" />
+			<circle r="5"  stroke="black" fill="none" />
+			<line x1="-2" y1="0" x2="2" y2="0" stroke="black" />
+			<line x1="0" y1="-2" x2="0" y2="2" stroke="black" />
+		</g>
+					<marker id="arrow" markerWidth="10" markerHeight="10"
+            refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+    </marker>
+	</defs>
+			<style>
+@page {
+    margin: 0;
+}
+
+svg {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+</style>
+	<rect id="BackDrop" x="0" y="0" width="800" height="600" pointer-events="all" fill="#f8f8f8" />
+
+<!-- TLA -->
+	<!--line id="line" x1="0" y1="400" x2="800" y2="400" stroke="silver" stroke-width="10" /-->
+	
+<line id="line" x1="400" y1="300" x2="550" y2="300" stroke="silver" stroke-width="1" />
+<line id="line" x1="400" y1="370" x2="550" y2="370" stroke="silver" stroke-width="1" />
+	
+	  <!-- Puščica -->
+  <line id="puscica" x1="530" y1="300" x2="530" y2="352"
+      stroke="red" stroke-width="2"
+      marker-end="url(#arrow)">
+		
+		</line>
+		
+	<text x="570" y="340"
+      font-family="Arial"
+      font-size="20"
+      fill="black">
+    5 m premalo
+</text>
+	<!--line id="line" x1="0" y1="300" x2="800" y2="300" stroke="black" stroke-width="10" /-->
+	<use xlink:href="#field"  transform="translate(400,300) scale(2)" />
+	<g id="arrows" transform="translate(400, 370)" fill="magenta">;
+		<circle cx="0" cy="-11" r="10" />
+		<circle cx="11" cy="8" r="10" />
+		<circle cx="-11" cy="8" r="10" />
+	</g>
+
+</svg>

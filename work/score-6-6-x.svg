@@ -17,7 +17,7 @@ text = document.createElementNS(svgns, 'text');
 	text.setAttribute('font-weight', 'bold');
 	text.setAttribute('font-style', 'italic');
 	text.setAttribute('fill', 'blue');
-	text.innerHTML = 'Šenčur 7.3.2026';
+	text.innerHTML = 'Šenčur 6.6.2026';
 	svg.appendChild(text);
 
 for (var a = 0; a < 2; a += 1) {

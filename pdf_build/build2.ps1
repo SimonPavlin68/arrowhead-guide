@@ -18,7 +18,7 @@ $files = @(
 )
 
 # PDF output
-$output = "$scriptDir\quick_guide_6.pdf"
+$output = "$scriptDir\quick_guide_boc.pdf"
 
 # resource path za slike (če so v docs/sl/images)
 $resourcePath = "$scriptDir\pdf"

@@ -87,10 +87,14 @@ nav:
 plugins:
   - search:
       enabled: false
+<<<<<<< HEAD
   - print-site:
   - exporter:
   
   # - pdf-export
+=======
+  # - pdf-export:
+>>>>>>> d3b5925d64785eea433934bb2728daac28c37390
   # - with-pdf:
   #    cover_title: Moj Dokument
   #    cover_subtitle: Verzija 1.0
