@@ -65,6 +65,13 @@
     }
 
     function showLoginModal() {
+		
+		// TEMP - bypass login
+		setWithExpiry("arrowheadUser", "Simon", 24, 60);
+		localStorage.setItem("arrowheadLang", "sl");
+		initHeaderUser();
+		return;
+		
         const user = getWithExpiry("arrowheadUser");
         const savedLang = localStorage.getItem("arrowheadLang") || "sl";
         if (user) { initHeaderUser(); return; }
