@@ -141,6 +141,10 @@ input {
   transform: scale(10); /* Povečanje slike ob hoverju */
 }
 
+figcaption::before {
+    display: none;
+}
+
 
 
 

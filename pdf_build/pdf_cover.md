@@ -3,7 +3,7 @@ title: "Arrowhead"
 subtitle: "- biblija -"
 author: "Simon Pavlin"
 lang: "sl"
-date: "Verzija 1.4 – julij 2026"
+date: "Verzija 1.5 – avgust 2026"
 geometry: margin=2cm
 header-includes:
   - \usepackage{fancyhdr}               # header/footer package
